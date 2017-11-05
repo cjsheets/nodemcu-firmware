@@ -2,7 +2,7 @@ site_name: NodeMCU Documentation
 site_description: Description of the NodeMCU documentation
 repo_url: https://github.com/nodemcu/nodemcu-firmware/
 
-theme: readthedocs
+theme: rtd-dropdown
 strict: true
 
 markdown_extensions:
@@ -18,7 +18,7 @@ extra_css:
 extra_javascript:
 - js/extra.js
 
-site_favicon: img/favicon.png
+#site_favicon: img/favicon.png
 
 pages:
 - Overview: 'index.md'
