@@ -10,6 +10,7 @@
   <link rel="shortcut icon" href="../../../img/favicon.ico">
   <title>dht - NodeMCU Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
@@ -50,334 +51,402 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../..">Overview</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../build/">Building the firmware</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../flash/">Flashing the firmware</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../spiffs/">Internal filesystem notes</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../sdcard/">Filesystem on SD card</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../upload/">Uploading code</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">FAQs</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../support/">Support</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Modules</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../adc/">adc</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ads1115/">ads1115</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../adxl345/">adxl345</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../am2320/">am2320</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../apa102/">apa102</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../bit/">bit</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../bme280/">bme280</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../bmp085/">bmp085</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../cjson/">cjson</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../coap/">coap</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../cron/">cron</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../crypto/">crypto</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">dht</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#dht-module">DHT Module</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#constants">Constants</a></li>
-        
-            <li><a class="toctree-l4" href="#dhtread">dht.read()</a></li>
-        
-            <li><a class="toctree-l4" href="#dhtread11">dht.read11()</a></li>
-        
-            <li><a class="toctree-l4" href="#dhtreadxx">dht.readxx()</a></li>
-        
-        </ul>
-    
 
+  <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="/en/lua-developer-faq">FAQs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+
+  <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+
+  <a class="current" href="/en/modules/adc">Modules</a>
+  <ul class="subnav">
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../adc/">adc</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ads1115/">ads1115</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../adxl345/">adxl345</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../am2320/">am2320</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../apa102/">apa102</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../bit/">bit</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../bme280/">bme280</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../bmp085/">bmp085</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../cjson/">cjson</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../coap/">coap</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../cron/">cron</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../crypto/">crypto</a>
+        </li>
+        <li class="toctree-l2 current">
+          
+
+  <a class="current" href="./">dht</a>
+  <ul class="subnav">
+      
+  
+    <li class="toctree-l3"><a href="#dht-module">DHT Module</a></li>
+  
+  
+    <ul class="">
+    
+        <li class="toctree-l4 toc-item" >
+          <a class="toctree-l4" href="#constants">Constants</a>
+        </li>
+    
+        <li class="toctree-l4 toc-item" >
+          <a class="toctree-l4" href="#dhtread">dht.read()</a>
+        </li>
+    
+        <li class="toctree-l4 toc-item" >
+          <a class="toctree-l4" href="#dhtread11">dht.read11()</a>
+        </li>
+    
+        <li class="toctree-l4 toc-item" >
+          <a class="toctree-l4" href="#dhtreadxx">dht.readxx()</a>
+        </li>
+    
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ds18b20/">ds18b20</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../encoder/">encoder</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../enduser-setup/">enduser setup</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file/">file</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../gdbstub/">gdbstub</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../gpio/">gpio</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../hdc1080/">hdc1080</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../hmc5883l/">hmc5883l</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../http/">http</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../hx711/">hx711</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../i2c/">i2c</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../l3g4200d/">l3g4200d</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../mcp4725/">mcp4725</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../mdns/">mdns</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../mqtt/">mqtt</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../net/">net</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../node/">node</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ow/">ow (1-Wire)</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../pcm/">pcm</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../perf/">perf</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../pwm/">pwm</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rc/">rc</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rfswitch/">rfswitch</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rotary/">rotary</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rtcfifo/">rtcfifo</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rtcmem/">rtcmem</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../rtctime/">rtctime</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../si7021/">si7021</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../sigma-delta/">sigma delta</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../sjson/">sjson</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../sntp/">sntp</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../somfy/">somfy</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../spi/">spi</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../struct/">struct</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../switec/">switec</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tcs34725/">tcs34725</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tls/">tls</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tm1829/">tm1829</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tmr/">tmr</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tsl2561/">tsl2561</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../u8g/">u8g</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../uart/">uart</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ucg/">ucg</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../websocket/">websocket</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../wifi/">wifi</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../wps/">wps</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ws2801/">ws2801</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ws2812/">ws2812</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../xpt2046/">xpt2046</a>
-                </li>
-    </ul>
+  
+
+  </ul>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ds18b20/">ds18b20</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../encoder/">encoder</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../enduser-setup/">enduser setup</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../file/">file</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../gdbstub/">gdbstub</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../gpio/">gpio</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../hdc1080/">hdc1080</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../hmc5883l/">hmc5883l</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../http/">http</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../hx711/">hx711</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../i2c/">i2c</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../l3g4200d/">l3g4200d</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../mcp4725/">mcp4725</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../mdns/">mdns</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../mqtt/">mqtt</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../net/">net</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../node/">node</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ow/">ow (1-Wire)</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../pcm/">pcm</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../perf/">perf</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../pwm/">pwm</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rc/">rc</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rfswitch/">rfswitch</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rotary/">rotary</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rtcfifo/">rtcfifo</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rtcmem/">rtcmem</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../rtctime/">rtctime</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../si7021/">si7021</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../sigma-delta/">sigma delta</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../sjson/">sjson</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../sntp/">sntp</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../somfy/">somfy</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../spi/">spi</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../struct/">struct</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../switec/">switec</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../tcs34725/">tcs34725</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../tls/">tls</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../tm1829/">tm1829</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../tmr/">tmr</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../tsl2561/">tsl2561</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../u8g/">u8g</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../uart/">uart</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ucg/">ucg</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../websocket/">websocket</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../wifi/">wifi</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../wps/">wps</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ws2801/">ws2801</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../ws2812/">ws2812</a>
+        </li>
+        <li class="toctree-l2">
+          
+
+  <a class="" href="../xpt2046/">xpt2046</a>
+        </li>
+  </ul>
 	    </li>
           
         </ul>

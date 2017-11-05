@@ -149,9 +149,9 @@ form .search-query {
     display: inherit;
 }
 
-.wy-menu-vertical li ul.subnav ul.subnav{
+/* .wy-menu-vertical li ul.subnav ul.subnav{
     padding-left: 1em;
-}
+} */
 
 .wy-menu-vertical .subnav li.current > a {
     padding-left: 2.42em;
@@ -192,3 +192,26 @@ td, th {
    border-collapse: collapse;
 }
 
+/*
+ * readthedocs-nested overrides
+ */
+
+.wy-menu-vertical li ul {
+  display: none
+}
+
+.wy-menu-vertical li.current ul {
+    display: block;
+}
+
+.toc-item, .toc-item:hover {
+    background: #c9c9c9;
+}
+
+.wy-menu-vertical li span.toctree-expand {
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px 0px 0px -14px;
+    overflow-x: hidden;
+
+}
