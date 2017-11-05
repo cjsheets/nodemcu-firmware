@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>struct - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "struct";
+    var mkdocs_page_input_path = "en/modules/struct.md";
+    var mkdocs_page_url = "/en/modules/struct/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">struct</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#struct-module">Struct Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#format-string">Format String</a></li>
+        
+            <li><a class="toctree-l4" href="#structpack">struct.pack()</a></li>
+        
+            <li><a class="toctree-l4" href="#structunpack">struct.unpack()</a></li>
+        
+            <li><a class="toctree-l4" href="#structsize">struct.size()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>struct</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/struct.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="struct-module">Struct Module<a class="headerlink" href="#struct-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-02-13</td>
+<td align="left"><a href="http://www.inf.puc-rio.br/~roberto/struct/">Roberto Ierusalimschy</a>, <a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="../../../../app/modules/struct.c">struct.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module offers basic facilities to convert Lua values to and from C structs. Its main functions are <code>struct.pack</code>, which packs multiple Lua values into a struct-like string; and <code>struct.unpack</code>, which unpacks multiple Lua values from a given struct-like string.</p>
+<p>The first argument to both functions is a <em>format string</em>, which describes the layout of the structure. The format string is a sequence of conversion elements, which respect the current endianess and the current alignment requirements. Initially, the current endianess is the machine's native endianness and the current alignment requirement is 1 (meaning no alignment at all). You can change these settings with appropriate directives in the format string.</p>
+<p>Note that the float and double conversions are only available with a floating point NodeMCU build.</p>
+<h3 id="format-string">Format String<a class="headerlink" href="#format-string" title="Permanent link">&para;</a></h3>
+<p>The elements in the format string are as follows:</p>
+<ul>
+<li><code>" "</code> (empty space) ignored.</li>
+<li><code>"!n"</code> flag to set the current alignment requirement to <em>n</em>
+    (necessarily a power of 2); an absent <em>n</em> means the machine's native
+    alignment.</li>
+<li><code>"&gt;"</code> flag to set mode to big endian.</li>
+<li><code>"&lt;"</code> flag to set mode to little endian.</li>
+<li><code>"x"</code> a padding zero byte with no corresponding Lua value.</li>
+<li><code>"b"</code> a signed <code>char</code>.</li>
+<li><code>"B"</code> an unsigned <code>char</code>.</li>
+<li><code>"h"</code> a signed <code>short</code> (native size).</li>
+<li><code>"H"</code> an unsigned <code>short</code> (native size).</li>
+<li><code>"l"</code> a signed <code>long</code> (native size).</li>
+<li><code>"L"</code> an unsigned <code>long</code> (native size).</li>
+<li><code>"T"</code> a <code>size_t</code> (native size).</li>
+<li><code>"in"</code> a signed integer with <em>n</em> bytes. An absent <em>n</em> means the
+    native size of an <code>int</code>.</li>
+<li><code>"In"</code> like <code>"in"</code> but unsigned.</li>
+<li><code>"f"</code> a <code>float</code> (native size).</li>
+<li><code>"d"</code> a <code>double</code> (native size).</li>
+<li><code>"s"</code> a zero-terminated string.</li>
+<li><code>"cn"</code> a sequence of exactly <em>n</em> chars corresponding to a single Lua
+    string. An absent <em>n</em> means 1. When packing, the given string must
+    have at least <em>n</em> characters (extra characters are discarded).</li>
+<li><code>"c0"</code> this is like <code>"cn"</code>, except that the <em>n</em> is given by other
+    means: When packing, <em>n</em> is the length of the given string; when
+    unpacking, <em>n</em> is the value of the previous unpacked value (which
+    must be a number). In that case, this previous value is not
+    returned.</li>
+</ul>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<p>To pack and unpack the structure</p>
+<pre><code>    struct Str {
+      char b;
+      int i[4];
+    };
+</code></pre>
+<p>you can use the string <code>"&lt;!4biiii"</code>.</p>
+<p>To pack a string with its length coded in its first byte, use the
+following code:</p>
+<pre><code>    x = struct.pack("Bc0", string.len(s), s)
+</code></pre>
+<p>To unpack that string, do as follows:</p>
+<pre><code>    s = struct.unpack("Bc0", x)
+</code></pre>
+<p>Note that the length (read by the element <code>"B"</code>) is not returned.</p>
+<p>To pack a string in a fixed-width field of 10 characters padded with
+blanks, do as follows:</p>
+<pre><code>    x = struct.pack("c10", s .. string.rep(" ", 10))
+</code></pre>
+<h2 id="structpack">struct.pack()<a class="headerlink" href="#structpack" title="Permanent link">&para;</a></h2>
+<p>Returns a string containing the values <code>d1</code>, <code>d2</code>, etc. packed
+according to the format string <code>fmt</code>.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>struct.pack (fmt, d1, d2, ...)</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>fmt</code> The format string in the format above</li>
+<li><code>d1</code> The first data item to be packed</li>
+<li><code>d2</code> The second data item to be packed etc.</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>The packed string.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code>s = struct.pack(&quot;I&quot;, 0x41424344)
+print(s)
+</code></pre>
+
+<h2 id="structunpack">struct.unpack()<a class="headerlink" href="#structunpack" title="Permanent link">&para;</a></h2>
+<p>Returns the values packed in string <code>s</code> according to the format
+string <code>fmt</code>. An optional <code>i</code> marks where in <code>s</code> to start reading
+(default is 1). After the read values, this function also returns
+the index in <code>s</code> where it stopped reading, which is also where you
+should start to read the rest of the string.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>struct.unpack (fmt, s[, offset])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>fmt</code> The format string in the format above</li>
+<li><code>s</code> The string holding the data to be unpacked</li>
+<li><code>offset</code> The position to start in the string (default is 1)</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>All the unpacked data.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<p>Suppose we have to decode a string <code>s</code> with an unknown number of
+doubles; the end is marked by a zero value. We can use the following
+code:</p>
+<pre><code>    local a = {}
+    local i = 1         -- index where to read
+    while true do
+      local d
+      d, i = struct.unpack("d", s, i)
+      if d == 0 then break end
+      a[#a + 1] = d
+    end
+</code></pre>
+<h2 id="structsize">struct.size()<a class="headerlink" href="#structsize" title="Permanent link">&para;</a></h2>
+<p>Returns the size of a string formatted according to the format
+string <code>fmt</code>. The format string should contain neither the option
+<code>s</code> nor the option <code>c0</code>.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>struct.size (fmt)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>fmt</code> The format string in the format above</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>The size of the string that would be output in a pack operation with this format string.</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code>print(struct.size(&quot;i&quot;))
+</code></pre>
+
+<p>This prints the size of the native integer type.</p>
+<h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>This package is distributed under the MIT license. See copyright notice
+at the end of file <code>struct.c</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../switec/" class="btn btn-neutral float-right" title="switec">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../spi/" class="btn btn-neutral" title="spi"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../spi/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../switec/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

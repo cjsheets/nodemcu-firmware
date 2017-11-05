@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>rfswitch - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "rfswitch";
+    var mkdocs_page_input_path = "en/modules/rfswitch.md";
+    var mkdocs_page_url = "/en/modules/rfswitch/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">rfswitch</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#rfswitch-module">rfswitch Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#connection-of-transmitter">Connection of transmitter</a></li>
+        
+            <li><a class="toctree-l4" href="#selecting-proper-protocol">Selecting proper protocol</a></li>
+        
+            <li><a class="toctree-l4" href="#rfswitchsend">rfswitch.send()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>rfswitch</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/rfswitch.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rfswitch-module">rfswitch Module<a class="headerlink" href="#rfswitch-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2016-12-01</td>
+<td align="left"><a href="https://github.com/ffedoroff">Roman Fedorov</a></td>
+<td align="left"><a href="https://github.com/ffedoroff">Roman Fedorov</a></td>
+<td align="left"><a href="../../../../app/modules/rfswitch.c">rfswitch.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>Module to operate 433/315Mhz devices like power outlet sockets, relays, etc. This will most likely work with all popular low cost power outlet sockets with a SC5262 / SC5272, HX2262 / HX2272, PT2262 / PT2272, EV1527, RT1527, FP1527 or HS1527 chipset.</p>
+<p>This module uses some code from the <a href="https://github.com/sui77/rc-switch/">original rc-switch Arduino lib</a> but NodeMCU and Arduino are not fully compatible. This required that <strong>rc-switch</strong> was rewritten into  <strong>rfswitch</strong> NodeMCU with Lua support.</p>
+<h3 id="connection-of-transmitter">Connection of transmitter<a class="headerlink" href="#connection-of-transmitter" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Transmitter</th>
+<th align="left">ESP8266</th>
+<th align="left">comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">vin or +</td>
+<td align="left">3V3</td>
+<td align="left">3.3 - 5 volts on ESP8266 or other power source</td>
+</tr>
+<tr>
+<td align="left">ground or -</td>
+<td align="left">GND</td>
+<td align="left">ground should be connected to ESP8266 and to power source</td>
+</tr>
+<tr>
+<td align="left">data pin</td>
+<td align="left">6</td>
+<td align="left">almost any pin on ESP8266</td>
+</tr>
+</tbody>
+</table>
+<p>You can read more about connection <a href="https://alexbloggt.com/wp-content/uploads/2015/10/nodemcu_433_transmitter.png">here</a>.</p>
+<h3 id="selecting-proper-protocol">Selecting proper protocol<a class="headerlink" href="#selecting-proper-protocol" title="Permanent link">&para;</a></h3>
+<p>This module supports <strong>transmitting</strong> data using 6 different protocols
+and you should use one most suitable for your needs. <strong>Receiving</strong> data is not supported yet. So, you cannot listen radio air and get protocol details using Lua.</p>
+<p>The easiest way to get the correct protocol is to connect the radio receiver to your ESP8266 or <a href="https://github.com/sui77/rc-switch/wiki/HowTo_Receive">Arduino</a>,
+then run <a href="https://github.com/sui77/rc-switch/blob/master/examples/ReceiveDemo_Advanced/ReceiveDemo_Advanced.ino">ReceiveDemo_Advanced.ino</a>
+and view output in serial console (<a href="http://www.instructables.com/id/Control-CoTech-Remote-Switch-With-Arduino-433Mhz/?ALLSTEPS">example1</a>,
+<a href="http://randomnerdtutorials.com/esp8266-remote-controlled-sockets/">example2</a>).</p>
+<p>You should get something like this:</p>
+<pre><code>Decimal: 11001351 (24Bit)
+Binary: 101001111101111000000111
+Tri-State: not applicable
+PulseLength: 517 microseconds
+Protocol: 5
+
+Raw data: 7200,1004,528,504,1048,980,336,1176,356,1176,352,1180,1108,412,356,1172,364,1168,356,1160,1176,1124,412,336,1180,1116,440,328,1188,340,1228,1060,416,1160,380,1160,1108,464,1068,436,328,1232,1060,412,1116,440,1088,428,3024,
+</code></pre>
+
+<p>More detailed about low level protocol specifications could be found <a href="https://github.com/sui77/rc-switch/wiki/KnowHow_LineCoding">here</a>
+You can visualize a telegram copy the raw data by paste it into <a href="">http://test.sui.li/oszi/</a></p>
+<h2 id="rfswitchsend">rfswitch.send()<a class="headerlink" href="#rfswitchsend" title="Permanent link">&para;</a></h2>
+<p>Transmit data using the radio module.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>rfswitch.send(protocol_id, pulse_length, repeat, pin, value, length)</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>protocol_id</code> positive integer value, from 1-6</li>
+<li><code>pulse_length</code> length of one pulse in microseconds, usually from 100 to 650</li>
+<li><code>repeat</code> repeat value, usually from 1 to 5. This is a synchronous task. Setting the repeat count to a large value will cause problems.
+The recommended limit is about 1-4. If you need more,
+then call it asynchronously a few more times (e.g. using <a href="../../modules/node/#nodetaskpost">node.task.post</a>)</li>
+<li><code>pin</code> I/O index of pin, example 6 is for GPIO12, see <a href="../../modules/gpio/">details</a></li>
+<li><code>value</code> positive integer value, this is the primary data which will be sent</li>
+<li><code>length</code> bit length of value, if value length is 3 bytes, then length is 24</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- lua transmit radio code using protocol #1
+-- pulse_length 300 microseconds
+-- repeat 5 times
+-- use pin #7 (GPIO13)
+-- value to send is 560777
+-- value length is 24 bits (3 bytes)
+rfswitch.send(1, 300, 5, 7, 560777, 24)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rotary/" class="btn btn-neutral float-right" title="rotary">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../rc/" class="btn btn-neutral" title="rc"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../rc/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rotary/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

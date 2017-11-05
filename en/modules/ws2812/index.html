@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ws2812 - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ws2812";
+    var mkdocs_page_input_path = "en/modules/ws2812.md";
+    var mkdocs_page_url = "/en/modules/ws2812/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ws2812</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ws2812-module">WS2812 Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ws2812init">ws2812.init()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812write">ws2812.write()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#buffer-module">Buffer module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#example_1">Example</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812newbuffer">ws2812.newBuffer()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferget">ws2812.buffer:get()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferset">ws2812.buffer:set()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812buffersize">ws2812.buffer:size()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferfill">ws2812.buffer:fill()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferdump">ws2812.buffer:dump()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferreplace">ws2812.buffer:replace()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812buffermix">ws2812.buffer:mix()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferpower">ws2812.buffer:power()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812bufferfade">ws2812.buffer:fade()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812buffershift">ws2812.buffer:shift()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812buffersub">ws2812.buffer:sub()</a></li>
+        
+            <li><a class="toctree-l4" href="#ws2812buffer__concat">ws2812.buffer:__concat()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>ws2812</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/ws2812.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ws2812-module">WS2812 Module<a class="headerlink" href="#ws2812-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-02-05</td>
+<td align="left"><a href="https://github.com/dereulenspiegel">Till Klocke</a>, <a href="https://github.com/Alkorin">Thomas Soëte</a></td>
+<td align="left"><a href="https://github.com/dereulenspiegel">Till Klocke</a></td>
+<td align="left"><a href="../../../../app/modules/ws2812.c">ws2812.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>ws2812 is a library to handle ws2812-like led strips.
+It works at least on WS2812, WS2812b, APA104, SK6812 (RGB or RGBW).</p>
+<p>The library uses UART1 routed on GPIO2 (Pin D4 on NodeMCU DEVKIT) to
+generate the bitstream. It can use UART0 routed to TXD0 as well to
+handle two led strips at the same time.</p>
+<p><strong>WARNING</strong>: In dual mode, you will loose access to the Lua's console
+through the serial port (it will be reconfigured to support WS2812-like 
+protocol). If you want to keep access to Lua's console, you will have to 
+use an other input channel like a TCP server (see <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/telnet.lua">example</a>)</p>
+<h2 id="ws2812init">ws2812.init()<a class="headerlink" href="#ws2812init" title="Permanent link">&para;</a></h2>
+<p>Initialize UART1 and GPIO2, should be called once and before write().
+Initialize UART0 (TXD0) too if <code>ws2812.MODE_DUAL</code> is set.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>ws2812.init([mode])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>mode</code> (optional) either <code>ws2812.MODE_SINGLE</code> (default if omitted) or <code>ws2812.MODE_DUAL</code></li>
+</ul>
+<p>In <code>ws2812.MODE_DUAL</code> mode you will be able to handle two strips in parallel but will lose access to Lua's serial console as it shares the same UART and PIN.</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="ws2812write">ws2812.write()<a class="headerlink" href="#ws2812write" title="Permanent link">&para;</a></h2>
+<p>Send data to one or two led strip using its native format which is generally Green,Red,Blue for RGB strips
+and Green,Red,Blue,White for RGBW strips.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>ws2812.write(data1, [data2])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>data1</code> payload to be sent to one or more WS2812 like leds through GPIO2</li>
+<li><code>data2</code> (optional) payload to be sent to one or more WS2812 like leds through TXD0 (<code>ws2812.MODE_DUAL</code> mode required)</li>
+</ul>
+<p>Payload type could be:
+- <code>nil</code> nothing is done
+- <code>string</code> representing bytes to send
+- <code>ws2812.buffer</code> see <a href="#buffer-module">Buffer module</a></p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">ws2812.init()
+ws2812.write(string.char(255, 0, 0, 255, 0, 0)) -- turn the two first RGB leds to green
+</code></pre>
+
+<pre><code class="lua">ws2812.init()
+ws2812.write(string.char(0, 0, 0, 255, 0, 0, 0, 255)) -- turn the two first RGBW leds to white
+</code></pre>
+
+<pre><code class="lua">ws2812.init(ws2812.MODE_DUAL)
+ws2812.write(string.char(255, 0, 0, 255, 0, 0), string.char(0, 255, 0, 0, 255, 0)) -- turn the two first RGB leds to green on the first strip and red on the second strip
+</code></pre>
+
+<pre><code class="lua">ws2812.init(ws2812.MODE_DUAL)
+ws2812.write(nil, string.char(0, 255, 0, 0, 255, 0)) -- turn the two first RGB leds to red on the second strip, do nothing on the first
+</code></pre>
+
+<h1 id="buffer-module">Buffer module<a class="headerlink" href="#buffer-module" title="Permanent link">&para;</a></h1>
+<p>For more advanced animations, it is useful to keep a "framebuffer" of the strip,
+interact with it and flush it to the strip.</p>
+<p>For this purpose, the ws2812 library offers a read/write buffer. This buffer has a <code>__tostring</code> method so that it can be printed. This is useful for debugging.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<p>Led chaser with a RGBW strip</p>
+<pre><code class="lua">ws2812.init()
+local i, buffer = 0, ws2812.newBuffer(300, 4); buffer:fill(0, 0, 0, 0); tmr.create():alarm(50, 1, function()
+  i = i + 1
+  buffer:fade(2)
+  buffer:set(i % buffer:size() + 1, 0, 0, 0, 255)
+  ws2812.write(buffer)
+end)
+</code></pre>
+
+<h2 id="ws2812newbuffer">ws2812.newBuffer()<a class="headerlink" href="#ws2812newbuffer" title="Permanent link">&para;</a></h2>
+<p>Allocate a new memory buffer to store led values.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>ws2812.newBuffer(numberOfLeds, bytesPerLed)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>numberOfLeds</code> length of the led strip</li>
+<li><code>bytesPerLed</code> 3 for RGB strips and 4 for RGBW strips</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>ws2812.buffer</code></p>
+<h2 id="ws2812bufferget">ws2812.buffer:get()<a class="headerlink" href="#ws2812bufferget" title="Permanent link">&para;</a></h2>
+<p>Return the value at the given position</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>buffer:get(index)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>index</code> position in the buffer (1 for first led)</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>(color)</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer = ws2812.newBuffer(32, 4)
+print(buffer:get(1))
+0   0   0   0
+</code></pre>
+
+<h2 id="ws2812bufferset">ws2812.buffer:set()<a class="headerlink" href="#ws2812bufferset" title="Permanent link">&para;</a></h2>
+<p>Set the value at the given position</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>buffer:set(index, color)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>index</code> position in the buffer (1 for the first led)</li>
+<li><code>color</code> payload of the color</li>
+</ul>
+<p>Payload could be:
+- <code>number, number, ...</code> you should pass as many arguments as <code>bytesPerLed</code>
+- <code>table</code> should contains <code>bytesPerLed</code> numbers
+- <code>string</code> should contains <code>bytesPerLed</code> bytes</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer = ws2812.newBuffer(32, 3)
+buffer:set(1, 255, 0, 0) -- set the first led green for a RGB strip
+</code></pre>
+
+<pre><code class="lua">buffer = ws2812.newBuffer(32, 4)
+buffer:set(1, {0, 0, 0, 255}) -- set the first led white for a RGBW strip
+</code></pre>
+
+<pre><code class="lua">buffer = ws2812.newBuffer(32, 3)
+buffer:set(1, string.char(255, 0, 0)) -- set the first led green for a RGB strip
+</code></pre>
+
+<h2 id="ws2812buffersize">ws2812.buffer:size()<a class="headerlink" href="#ws2812buffersize" title="Permanent link">&para;</a></h2>
+<p>Return the size of the buffer in number of leds</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>buffer:size()</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>int</code></p>
+<h2 id="ws2812bufferfill">ws2812.buffer:fill()<a class="headerlink" href="#ws2812bufferfill" title="Permanent link">&para;</a></h2>
+<p>Fill the buffer with the given color.
+The number of given bytes must match the number of bytesPerLed of the buffer</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>buffer:fill(color)</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>color</code> bytes of the color, you should pass as many arguments as <code>bytesPerLed</code></li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer:fill(0, 0, 0) -- fill the buffer with black for a RGB strip
+</code></pre>
+
+<h2 id="ws2812bufferdump">ws2812.buffer:dump()<a class="headerlink" href="#ws2812bufferdump" title="Permanent link">&para;</a></h2>
+<p>Returns the contents of the buffer (the pixel values) as a string. This can then be saved to a file or sent over a network.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>buffer:dump()</code></p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>A string containing the pixel values. </p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local s = buffer:dump() 
+</code></pre>
+
+<h2 id="ws2812bufferreplace">ws2812.buffer:replace()<a class="headerlink" href="#ws2812bufferreplace" title="Permanent link">&para;</a></h2>
+<p>Inserts a string (or a buffer) into another buffer with an offset.
+The buffer must have the same number of colors per led or an error will be thrown.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>buffer:replace(source[, offset])</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>source</code> the pixel values to be set into the buffer. This is either a string or a buffer.</li>
+<li><code>offset</code> the offset where the source is to be placed in the buffer. Default is 1. Negative values can be used.</li>
+</ul>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer:replace(anotherbuffer:dump()) -- copy one buffer into another via a string
+buffer:replace(anotherbuffer) -- copy one buffer into another
+newbuffer = buffer.sub(1)     -- make a copy of a buffer into a new buffer
+</code></pre>
+
+<h2 id="ws2812buffermix">ws2812.buffer:mix()<a class="headerlink" href="#ws2812buffermix" title="Permanent link">&para;</a></h2>
+<p>This is a general method that loads data into a buffer that is a linear combination of data from other buffers. It can be used to copy a buffer or,
+more usefully, do a cross fade. The pixel values are computed as integers and then range limited to [0, 255]. This means that negative
+factors work as expected, and that the order of combining buffers does not matter.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>buffer:mix(factor1, buffer1, ...)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>factor1</code> This is the factor that the contents of <code>buffer1</code> are multiplied by. This factor is scaled by a factor of 256. Thus <code>factor1</code> value of 256 is a factor of 1.0.</li>
+<li><code>buffer1</code> This is the source buffer. It must be of the same shape as the destination buffer.</li>
+</ul>
+<p>There can be any number of factor/buffer pairs.</p>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- loads buffer with a crossfade between buffer1 and buffer2
+buffer:mix(256 - crossmix, buffer1, crossmix, buffer2)
+
+-- multiplies all values in buffer by 0.75
+-- This can be used in place of buffer:fade
+buffer:mix(192, buffer)
+</code></pre>
+
+<h2 id="ws2812bufferpower">ws2812.buffer:power()<a class="headerlink" href="#ws2812bufferpower" title="Permanent link">&para;</a></h2>
+<p>Computes the total energy requirement for the buffer. This is merely the total sum of all the pixel values (which assumes that each color in each
+pixel consumes the same amount of power). A real WS2812 (or WS2811) has three constant current drivers of 20mA -- one for each of R, G and B. The
+pulse width modulation will cause the <em>average</em> current to scale linearly with pixel value. </p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>buffer:power()</code></p>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p>An integer which is the sum of all the pixel values.</p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- Dim the buffer to no more than the PSU can provide
+local psu_current_ma = 1000
+local led_current_ma = 20
+local led_sum = psu_current_ma * 255 / led_current_ma
+
+local p = buffer:power()
+if p &gt; led_sum then
+  buffer:mix(256 * led_sum / p, buffer) -- power is now limited
+end
+</code></pre>
+
+<h2 id="ws2812bufferfade">ws2812.buffer:fade()<a class="headerlink" href="#ws2812bufferfade" title="Permanent link">&para;</a></h2>
+<p>Fade in or out. Defaults to out. Multiply or divide each byte of each led with/by the given value. Useful for a fading effect. </p>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>buffer:fade(value [, direction])</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>value</code> value by which to divide or multiply each byte</li>
+<li><code>direction</code> ws2812.FADE_IN or ws2812.FADE_OUT. Defaults to ws2812.FADE_OUT</li>
+</ul>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer:fade(2)
+buffer:fade(2, ws2812.FADE_IN)
+</code></pre>
+
+<h2 id="ws2812buffershift">ws2812.buffer:shift()<a class="headerlink" href="#ws2812buffershift" title="Permanent link">&para;</a></h2>
+<p>Shift the content of (a piece of) the buffer in positive or negative direction. This allows simple animation effects. A slice of the buffer can be specified by using the 
+standard start and end offset Lua notation. Negative values count backwards from the end of the buffer.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>buffer:shift(value [, mode[, i[, j]]])</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>value</code> number of pixels by which to rotate the buffer. Positive values rotate forwards, negative values backwards. </li>
+<li><code>mode</code> is the shift mode to use. Can be one of <code>ws2812.SHIFT_LOGICAL</code> or <code>ws2812.SHIFT_CIRCULAR</code>. In case of SHIFT_LOGICAL, the freed pixels are set to 0 (off). In case of SHIFT_CIRCULAR, the buffer is treated like a ring buffer, inserting the pixels falling out on one end again on the other end. Defaults to SHIFT_LOGICAL. </li>
+<li><code>i</code> is the first offset in the buffer to be affected. Negative values are permitted and count backwards from the end. Default is 1.</li>
+<li><code>j</code> is the last offset in the buffer to be affected. Negative values are permitted and count backwards from the end. Default is -1.</li>
+</ul>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">buffer:shift(3)
+</code></pre>
+
+<h2 id="ws2812buffersub">ws2812.buffer:sub()<a class="headerlink" href="#ws2812buffersub" title="Permanent link">&para;</a></h2>
+<p>This implements the extraction function like <code>string.sub</code>. The indexes are in leds and all the same rules apply.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>buffer1:sub(i[, j])</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>i</code> This is the start of the extracted data. Negative values can be used.</li>
+<li><code>j</code> this is the end of the extracted data. Negative values can be used. The default is -1.</li>
+</ul>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p>A buffer containing the extracted piece.</p>
+<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<pre><code>b = buffer:sub(1,10)
+</code></pre>
+
+<h2 id="ws2812buffer__concat">ws2812.buffer:__concat()<a class="headerlink" href="#ws2812buffer__concat" title="Permanent link">&para;</a></h2>
+<p>This implements the <code>..</code> operator to concatenate two buffers. They must have the same number of colors per led.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>buffer1 .. buffer2</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>buffer1</code> this is the start of the resulting buffer</li>
+<li><code>buffer2</code> this is the end of the resulting buffer</li>
+</ul>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>The concatenated buffer.</p>
+<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<pre><code>ws2812.write(buffer1 .. buffer2)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../xpt2046/" class="btn btn-neutral float-right" title="xpt2046">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ws2801/" class="btn btn-neutral" title="ws2801"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ws2801/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../xpt2046/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

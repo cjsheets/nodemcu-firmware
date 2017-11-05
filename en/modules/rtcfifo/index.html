@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>rtcfifo - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "rtcfifo";
+    var mkdocs_page_input_path = "en/modules/rtcfifo.md";
+    var mkdocs_page_url = "/en/modules/rtcfifo/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">rtcfifo</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#rtc-fifo-module">RTC FIFO Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#rtcfifodsleep_until_sample">rtcfifo.dsleep_until_sample()</a></li>
+        
+            <li><a class="toctree-l4" href="#rtcfifopeek">rtcfifo.peek()</a></li>
+        
+            <li><a class="toctree-l4" href="#rtcfifopop">rtcfifo.pop()</a></li>
+        
+            <li><a class="toctree-l4" href="#rtcfifoprepare">rtcfifo.prepare()</a></li>
+        
+            <li><a class="toctree-l4" href="#rtcfifoput">rtcfifo.put()</a></li>
+        
+            <li><a class="toctree-l4" href="#rtcfifoready">rtcfifo.ready()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>rtcfifo</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/rtcfifo.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rtc-fifo-module">RTC FIFO Module<a class="headerlink" href="#rtc-fifo-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-06-26</td>
+<td align="left"><a href="https://github.com/DiUS">DiUS</a>, <a href="https://github.com/jmattsson">Johny Mattsson</a>, Bernd Meyer <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#109;&#101;&#121;&#101;&#114;&#64;&#100;&#105;&#117;&#115;&#46;&#99;&#111;&#109;&#46;&#97;&#117;">&#98;&#109;&#101;&#121;&#101;&#114;&#64;&#100;&#105;&#117;&#115;&#46;&#99;&#111;&#109;&#46;&#97;&#117;</a></td>
+<td align="left"><a href="https://github.com/jmattsson">Johny Mattsson</a></td>
+<td align="left"><a href="../../../../app/modules/rtcfifo.c">rtcfifo.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The rtcfifo module implements a first-in,first-out storage intended for sensor readings. As the name suggests, it is backed by the <a href="https://en.wikipedia.org/wiki/Real-time_clock">RTC</a> user memory and as such survives deep sleep cycles. Conceptually it can be thought of as a cyclic array of <code>{ timestamp, name, value }</code> tuples. Internally it uses a space-optimized storage format to allow the greatest number of samples to be kept. This comes with several trade-offs, and as such is not a one-solution-fits-all. Notably:</p>
+<ul>
+<li>Timestamps are stored with second-precision.</li>
+<li>Sample frequency must be at least once every 8.5 minutes. This is a side-effect of delta-compression being used for the time stamps.</li>
+<li>Values are limited to 16 bits of precision, but have a separate field for storing an E<sup>-n</sup> multiplier. This allows for high fidelity even when working with very small values. The effective range is thus 1E<sup>-7</sup> to 65535.</li>
+<li>Sensor names are limited to a maximum of 4 characters.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This module uses two sets of RTC memory slots, 10-20 for its control block, and a variable number of slots for samples and sensor names. By default these span 32-127, but this is configurable. Slots are claimed when <a href="#rtcfifoprepare"><code>rtcfifo.prepare()</code></a> is called.</p>
+</div>
+<p>This is a companion module to the <a href="../rtcmem/">rtcmem</a> and <a href="../rtctime/">rtctime</a> modules.</p>
+<h2 id="rtcfifodsleep_until_sample">rtcfifo.dsleep_until_sample()<a class="headerlink" href="#rtcfifodsleep_until_sample" title="Permanent link">&para;</a></h2>
+<p>When the rtcfifo module is compiled in together with the rtctime module, this convenience function is available. It allows for some measure of separation of concerns, enabling writing of modularized Lua code where a sensor reading abstraction may not need to be aware of the sample frequency (which is largely a policy decision, rather than an intrinsic of the sensor). Use of this function is effectively equivalent to <a href="../rtctime/#rtctimedsleep_aligned"><code>rtctime.dsleep_aligned(interval_us, minsleep_us)</code></a> where <code>interval_us</code> is what was given to <a href="#rtcfifoprepare"><code>rtcfifo.prepare()</code></a>.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.dsleep_until_sample(minsleep_us)</code></p>
+<h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h4>
+<p><code>minsleep_us</code> minimum sleep time, in microseconds</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- deep sleep until it's time to take the next sample
+rtcfifo.dsleep_until_sample(0)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="../rtctime/#rtctimedsleep_aligned"><code>rtctime.dsleep_aligned()</code></a></p>
+<h2 id="rtcfifopeek">rtcfifo.peek()<a class="headerlink" href="#rtcfifopeek" title="Permanent link">&para;</a></h2>
+<p>Reads a sample from the rtcfifo. An offset into the rtcfifo may be specified, but by default it reads the first sample (offset 0).</p>
+<h4 id="syntax_1">Syntax:<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.peek([offset])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p><code>offset</code> Peek at sample at position <code>offset</code> in the fifo. This is a relative offset, from the current head. Zero-based. Default value is 0.</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>The values returned match the input arguments used to <a href="#rtcfifoput"><code>rtcfifo.put()</code></a>.</p>
+<ul>
+<li><code>timestamp</code> timestamp in seconds</li>
+<li><code>value</code> the value</li>
+<li><code>neg_e</code> scaling factor</li>
+<li><code>name</code> sensor name</li>
+</ul>
+<p>If no sample is available (at the specified offset), nothing is returned.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local timestamp, value, neg_e, name = rtcfifo.peek()
+</code></pre>
+
+<h2 id="rtcfifopop">rtcfifo.pop()<a class="headerlink" href="#rtcfifopop" title="Permanent link">&para;</a></h2>
+<p>Reads the first sample from the rtcfifo, and removes it from there.</p>
+<h4 id="syntax_2">Syntax:<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.pop()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>The values returned match the input arguments used to <a href="#rtcfifoput"><code>rtcfifo.put()</code></a>.</p>
+<ul>
+<li><code>timestamp</code> timestamp in seconds</li>
+<li><code>value</code> the value</li>
+<li><code>neg_e</code> scaling factor</li>
+<li><code>name</code> sensor name</li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">while rtcfifo.count() &gt; 0 do
+  local timestamp, value, neg_e, name = rtcfifo.pop()
+  -- do something with the sample, e.g. upload to somewhere
+end
+</code></pre>
+
+<h2 id="rtcfifoprepare">rtcfifo.prepare()<a class="headerlink" href="#rtcfifoprepare" title="Permanent link">&para;</a></h2>
+<p>Initializes the rtcfifo module for use.</p>
+<p>Calling <a href="#rtcfifoprepare"><code>rtcfifo.prepare()</code></a> unconditionally re-initializes the storage - any samples stored are discarded.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.prepare([table])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p>This function takes an optional configuration table as an argument. The following items may be configured:</p>
+<ul>
+<li><code>interval_us</code> If wanting to make use of the <a href="#rtcfifosleep_until_sample"><code>rtcfifo.sleep_until_sample()</code></a> function, this field sets the sample interval (in microseconds) to use. It is effectively the first argument of <a href="../rtctime/#rtctimedsleep_aligned"><code>rtctime.dsleep_aligned()</code></a>.</li>
+<li><code>sensor_count</code> Specifies the number of different sensors to allocate name space for. This directly corresponds to a number of slots reserved for names in the variable block. The default value is 5, minimum is 1, and maximum is 16.</li>
+<li><code>storage_begin</code> Specifies the first RTC user memory slot to use for the variable block. Default is 32. Only takes effect if <code>storage_end</code> is also specified.</li>
+<li><code>storage_end</code> Specified the end of the RTC user memory slots. This slot number will <em>not</em> be touched. Default is 128. Only takes effect if <code>storage_begin</code> is also specified.</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- Initialize with default values
+rtcfifo.prepare()
+-- Use RTC slots 19 and up for variable storage
+rtcfifo.prepare({storage_begin=21, storage_end=128})
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#rtcfifoready"><code>rtcfifo.ready()</code></a></li>
+<li><a href="#rtcfifoprepare"><code>rtcfifo.prepare()</code></a></li>
+</ul>
+<h2 id="rtcfifoput">rtcfifo.put()<a class="headerlink" href="#rtcfifoput" title="Permanent link">&para;</a></h2>
+<p>Puts a sample into the rtcfifo.</p>
+<p>If the rtcfifo has not been prepared, this function does nothing.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.put(timestamp, value, neg_e, name)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>timestamp</code> Timestamp in seconds. The timestamp would typically come from <a href="../rtctime/#rtctimeget"><code>rtctime.get()</code></a>.</li>
+<li><code>value</code> The value to store.</li>
+<li><code>neg_e</code> The effective value stored is valueE<sup>neg_e</sup>.</li>
+<li><code>name</code> Name of the sensor.  Only the first four (ASCII) characters of <code>name</code> are used.</li>
+</ul>
+<p>Note that if the timestamp delta is too large compared to the previous sample stored, the rtcfifo evicts all earlier samples to store this one. Likewise, if <code>name</code> would mean there are more than the <code>sensor_count</code> (as specified to <a href="#rtcfifoprepare"><code>rtcfifo.prepare()</code></a>) names in use, the rtcfifo evicts all earlier samples.</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- Obtain a sample value from somewhere
+local sample = ... 
+-- Store sample with no scaling, under the name &quot;foo&quot;
+rtcfifo.put(rtctime.get(), sample, 0, &quot;foo&quot;)
+</code></pre>
+
+<h2 id="rtcfifoready">rtcfifo.ready()<a class="headerlink" href="#rtcfifoready" title="Permanent link">&para;</a></h2>
+<p>Returns non-zero if the rtcfifo has been prepared and is ready for use, zero if not.</p>
+<h4 id="syntax_5">Syntax:<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>rtcfifo.ready()</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>Non-zero if the rtcfifo has been prepared and is ready for use, zero if not.</p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- Prepare the rtcfifo if not already done
+if not rtcfifo.ready() then
+  rtcfifo.prepare()
+end
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rtcmem/" class="btn btn-neutral float-right" title="rtcmem">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../rotary/" class="btn btn-neutral" title="rotary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../rotary/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rtcmem/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

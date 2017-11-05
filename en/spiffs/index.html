@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Internal filesystem notes - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Internal filesystem notes";
+    var mkdocs_page_input_path = "en/spiffs.md";
+    var mkdocs_page_url = "/en/spiffs/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Internal filesystem notes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#spiffs-file-system">SPIFFS File System</a></li>
+    
+
+    <li class="toctree-l2"><a href="#spiffsimg-manipulate-spi-flash-file-system-disk-images">spiffsimg - Manipulate SPI Flash File System disk images</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#syntax">Syntax</a></li>
+        
+            <li><a class="toctree-l3" href="#supported-operations">Supported operations:</a></li>
+        
+            <li><a class="toctree-l3" href="#available-commands">Available commands:</a></li>
+        
+            <li><a class="toctree-l3" href="#example">Example:</a></li>
+        
+            <li><a class="toctree-l3" href="#known-limitations">Known limitations:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#technical-details">Technical Details</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../modules/adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Internal filesystem notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/spiffs.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="spiffs-file-system">SPIFFS File System<a class="headerlink" href="#spiffs-file-system" title="Permanent link">&para;</a></h1>
+<p>The NodeMCU project uses the <a href="https://github.com/pellepl/spiffs">SPIFFS</a> 
+filesystem to store files in the flash chip. The technical details about how this is configured can be found below, along with various build time options.</p>
+<h1 id="spiffsimg-manipulate-spi-flash-file-system-disk-images">spiffsimg - Manipulate SPI Flash File System disk images<a class="headerlink" href="#spiffsimg-manipulate-spi-flash-file-system-disk-images" title="Permanent link">&para;</a></h1>
+<p>Ever wished you could prepare a SPIFFS image offline and flash the whole
+thing onto your microprocessor's storage instead of painstakingly upload
+file-by-file through your app on the micro? With spiffsimg you can!</p>
+<p>NodeMCU uses a SPIFFS filesystem that knows how big it is -- i.e. when you build a file system
+image, it must fit into the flash chip, and it cannot be expanded once flashed.
+It is important to give the <code>spiffimg</code> tool the correct size. You can provide either the <code>-c</code> option or both the <code>-U</code> and <code>-S</code> options.</p>
+<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<pre><code>spiffsimg -f &lt;filename&gt; 
+    [-o &lt;offsetfile&gt;]
+    [-c &lt;size&gt;] 
+    [-S &lt;flashsize&gt;]
+    [-U &lt;usedsize&gt;]
+    [-d]
+    [-l | -i | -r &lt;scriptname&gt; ]
+</code></pre>
+
+<h3 id="supported-operations">Supported operations:<a class="headerlink" href="#supported-operations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-f</code> specifies the filename for the disk image. '%x' will be replaced by the calculated offset of the file system (<code>-U</code> must also be specified to calculate the offset).</li>
+<li><code>-o</code> specifies the filename which is to contain the calculated offset.</li>
+<li><code>-S</code> specifies the size of the flash chip. <code>32m</code> is 32 mbits, <code>4MB</code> is 4 megabytes.</li>
+<li><code>-U</code> specifies the amount of flash used by the firmware. Decimal or Hex bytes (if starts with 0x).</li>
+<li><code>-c</code> Create a blank disk image of the given size. Decimal or Hex bytes (if starts with 0x).</li>
+<li><code>-l</code> List the contents of the given disk image.</li>
+<li><code>-i</code> Interactive commands.</li>
+<li><code>-r</code> Scripted commands from filename.</li>
+<li><code>-d</code> causes the disk image to be deleted on error. This makes it easier to script.</li>
+</ul>
+<h3 id="available-commands">Available commands:<a class="headerlink" href="#available-commands" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ls</code> List contents. Output format is {type} {size} {name}.</li>
+<li><code>cat &lt;filename&gt;</code> Dump file contents to stdout.</li>
+<li><code>rm &lt;filename&gt;</code> Delete file.</li>
+<li><code>info</code> Display SPIFFS usage estimates.</li>
+<li><code>import &lt;srcfile&gt; &lt;spiffsname&gt;</code> Import a file into the disk image.</li>
+<li><code>export &lt;spiffsname&gt; &lt;dstfile&gt;</code> Export a file from the disk image.</li>
+</ul>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<pre><code class="lua"># spiffsimg -f flash.img -S 32m -U 524288 -i
+&gt; import myapp/lua/init.lua init.lua
+&gt; import myapp/lua/httpd.lua httpd.lua
+&gt; import myapp/html/index.html http/index.html
+&gt; import myapp/html/favicon.ico http/favicon.ico
+&gt; ls
+f    122 init.lua
+f   5169 httpd.lua
+f   2121 http/index.html
+f    880 http/favicon.ico
+&gt;^D
+#
+</code></pre>
+
+<h3 id="known-limitations">Known limitations:<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The block &amp; page sizes are hard-coded to be compatible with nodemcu.</li>
+<li>Error handling is not entirely consistent, some errors result in an
+    early exit, others just print an error (both cause a non-zero exit though).</li>
+<li>Only flat SPIFFS is supported.</li>
+</ul>
+<h1 id="technical-details">Technical Details<a class="headerlink" href="#technical-details" title="Permanent link">&para;</a></h1>
+<p>The SPIFFS configuration is 4k sectors (the only size supported by the SDK) and 8k blocks. 256 byte pages. Magic is enabled and magic_len is also enabled. This allows the firmware to find the start of the filesystem (and also the size).
+One of the goals is to make the filsystem more persistent across reflashing of the firmware. However, there are still cases
+where spiffs detects a filesystem and uses it when it isn't valid. If you are getting weirdness with the filesystem, then just reformat it.</p>
+<p>There are two significant sizes of flash -- the 512K and 4M (or bigger). </p>
+<p>The file system has to start on a 4k boundary, but since it ends on a much bigger boundary (a 16k boundary), it also starts on an 8k boundary. For the small flash chip, there is 
+not much spare space, so a newly formatted file system will start as low as possible (to get as much space as possible). For the large flash, the 
+file system will start on a 64k boundary. A newly formatted file system will start between 64k and 128k from the end of the firmware. This means that the file 
+system will survive lots of reflashing and at least 64k of firmware growth. </p>
+<p>The standard build process for the firmware builds the <code>spiffsimg</code> tool (found in the <code>tools/spiffsimg</code> subdirectory).
+The top level Makfile also checks if
+there is any data in the <code>local/fs</code> directory tree, and it will then copy these files
+into the flash disk image. Two images will normally be created -- one for the 512k flash part and the other for the 4M flash part. If the data doesn't 
+fit into the 512k part after the firmware is included, then the file will not be generated.
+The disk image file is placed into the <code>bin</code> directory and it is named <code>0x&lt;offset&gt;-&lt;size&gt;.bin</code> where the offset is the location where it should be 
+flashed, and the size is the size of the flash part. It is quite valid (and quicker) to flash the 512k image into a 4M part. However, there will probably be
+limited space in the file system for creating new files.</p>
+<p>The default configuration will try and build three different file systems for 512KB, 1MB and 4MB flash sizes. The 1MB size is suitable for the ESP8285. This can be overridden by specifying the FLASHSIZE parameter to the makefile.</p>
+<p>If the <code>local/fs</code> directory is empty, then no flash images will be created (and the ones from the last build will be removed). The <code>spiffsimg</code> tool can 
+then be used to build an image as required. </p>
+<p>If no file system is found during platform boot, then a new file system will be formatted. This can take some time on the first boot.</p>
+<p>Note that the last 16k of the flash chip is reserved for the SDK to store parameters (such as the client wifi settings).</p>
+<p>In order to speed up the boot time, it is possible to define (at build time) the size of the SPIFFS Filesystem to be formatted. This can be as small as 32768 bytes which gives a filesystem with about 15k bytes of usable space.
+Just place the following define in <code>user_config.h</code> or some other file that is included during the build.</p>
+<pre><code>#define SPIFFS_MAX_FILESYSTEM_SIZE  32768
+</code></pre>
+
+<p>This filesystem size limit only affects the formatting of a file system -- if the firm finds an existing valid filesystem (of any size) it will use that. However, if the 
+filesystem is reformatted from Lua (using file.format()) then the new file system will obey the size limit. </p>
+<p>There is also an option to control the positioning of the SPIFFS file system:</p>
+<pre><code>#define SPIFFS_FIXED_LOCATION       0x100000
+</code></pre>
+
+<p>This specifies that the SPIFFS filesystem starts at 1Mb from the start of the flash. Unless otherwise specified, it will run to the end of the flash (excluding the 16k of space reserved by the SDK). </p>
+<p>There is an option that limits the size of the file system to run up to the next 1MB boundary (minus the 16k for the parameter space). This may be useful when dealing with OTA upgrades.</p>
+<pre><code>#define SPIFFS_SIZE_1M_BOUNDARY
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sdcard/" class="btn btn-neutral float-right" title="Filesystem on SD card">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../flash/" class="btn btn-neutral" title="Flashing the firmware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../flash/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../sdcard/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/extra.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

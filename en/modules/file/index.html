@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>file - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "file";
+    var mkdocs_page_input_path = "en/modules/file.md";
+    var mkdocs_page_url = "/en/modules/file/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">file</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#file-module">file Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#filechdir">file.chdir()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileexists">file.exists()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileformat">file.format()</a></li>
+        
+            <li><a class="toctree-l4" href="#filefscfg">file.fscfg ()</a></li>
+        
+            <li><a class="toctree-l4" href="#filefsinfo">file.fsinfo()</a></li>
+        
+            <li><a class="toctree-l4" href="#filelist">file.list()</a></li>
+        
+            <li><a class="toctree-l4" href="#filemount">file.mount()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileon">file.on()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileopen">file.open()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileremove">file.remove()</a></li>
+        
+            <li><a class="toctree-l4" href="#filerename">file.rename()</a></li>
+        
+            <li><a class="toctree-l4" href="#filestat">file.stat()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#file-access-functions">File access functions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#basic-model">Basic model</a></li>
+        
+            <li><a class="toctree-l4" href="#object-model">Object model</a></li>
+        
+            <li><a class="toctree-l4" href="#fileclose-fileobjclose">file.close(), file.obj:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileflush-fileobjflush">file.flush(), file.obj:flush()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileread-fileobjread">file.read(), file.obj:read()</a></li>
+        
+            <li><a class="toctree-l4" href="#filereadline-fileobjreadline">file.readline(), file.obj:readline()</a></li>
+        
+            <li><a class="toctree-l4" href="#fileseek-fileobjseek">file.seek(), file.obj:seek()</a></li>
+        
+            <li><a class="toctree-l4" href="#filewrite-fileobjwrite">file.write(), file.obj:write()</a></li>
+        
+            <li><a class="toctree-l4" href="#filewriteline-fileobjwriteline">file.writeline(), file.obj:writeline()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>file</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/file.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="file-module">file Module<a class="headerlink" href="#file-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-22</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="../../../../app/modules/file.c">file.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The file module provides access to the file system and its individual files.</p>
+<p>The file system is a flat file system, with no notion of subdirectories/folders.</p>
+<p>Besides the SPIFFS file system on internal flash, this module can also access FAT partitions on an external SD card if <a href="../../sdcard/">FatFS is enabled</a>.</p>
+<pre><code class="lua">-- open file in flash:
+if file.open(&quot;init.lua&quot;) then
+  print(file.read())
+  file.close()
+end
+
+-- or with full pathspec
+file.open(&quot;/FLASH/init.lua&quot;)
+
+-- open file on SD card
+if file.open(&quot;/SD0/somefile.txt&quot;) then
+  print(file.read())
+  file.close()
+end
+</code></pre>
+
+<h2 id="filechdir">file.chdir()<a class="headerlink" href="#filechdir" title="Permanent link">&para;</a></h2>
+<p>Change current directory (and drive). This will be used when no drive/directory is prepended to filenames.</p>
+<p>Current directory defaults to the root of internal SPIFFS (<code>/FLASH</code>) after system start.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Function is only available when <a href="../../sdcard/#enabling-fatfs">FatFS support</a> is compiled into the firmware.</p>
+</div>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>file.chdir(dir)</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p><code>dir</code> directory name - <code>/FLASH</code>, <code>/SD0</code>, <code>/SD1</code>, etc.</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h2 id="fileexists">file.exists()<a class="headerlink" href="#fileexists" title="Permanent link">&para;</a></h2>
+<p>Determines whether the specified file exists.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>file.exists(filename)</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>filename</code> file to check</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>true of the file exists (even if 0 bytes in size), and false if it does not exist</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">files = file.list()
+if files[&quot;device.config&quot;] then
+    print(&quot;Config file exists&quot;)
+end
+
+if file.exists(&quot;device.config&quot;) then
+    print(&quot;Config file exists&quot;)
+end
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="#filelist"><code>file.list()</code></a></p>
+<h2 id="fileformat">file.format()<a class="headerlink" href="#fileformat" title="Permanent link">&para;</a></h2>
+<p>Format the file system. Completely erases any existing file system and writes a new one. Depending on the size of the flash chip in the ESP, this may take several seconds.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Function is not supported for SD cards.</p>
+</div>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>file.format()</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#fileremove"><code>file.remove()</code></a></p>
+<h2 id="filefscfg">file.fscfg ()<a class="headerlink" href="#filefscfg" title="Permanent link">&para;</a></h2>
+<p>Returns the flash address and physical size of the file system area, in bytes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Function is not supported for SD cards.</p>
+</div>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>file.fscfg()</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>flash address</code> (number)</li>
+<li><code>size</code> (number)</li>
+</ul>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(string.format(&quot;0x%x&quot;, file.fscfg()))
+</code></pre>
+
+<h2 id="filefsinfo">file.fsinfo()<a class="headerlink" href="#filefsinfo" title="Permanent link">&para;</a></h2>
+<p>Return size information for the file system. The unit is Byte for SPIFFS and kByte for FatFS.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>file.fsinfo()</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>remaining</code> (number)</li>
+<li><code>used</code>      (number)</li>
+<li><code>total</code>     (number)</li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- get file system info
+remaining, used, total=file.fsinfo()
+print(&quot;\nFile system info:\nTotal : &quot;..total..&quot; (k)Bytes\nUsed : &quot;..used..&quot; (k)Bytes\nRemain: &quot;..remaining..&quot; (k)Bytes\n&quot;)
+</code></pre>
+
+<h2 id="filelist">file.list()<a class="headerlink" href="#filelist" title="Permanent link">&para;</a></h2>
+<p>Lists all files in the file system.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>file.list()</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>a lua table which contains the {file name: file size} pairs</p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">l = file.list();
+for k,v in pairs(l) do
+  print(&quot;name:&quot;..k..&quot;, size:&quot;..v)
+end
+</code></pre>
+
+<h2 id="filemount">file.mount()<a class="headerlink" href="#filemount" title="Permanent link">&para;</a></h2>
+<p>Mounts a FatFs volume on SD card.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Function is only available when <a href="../../sdcard/#enabling-fatfs">FatFS support</a> is compiled into the firmware and it is not supported for internal flash.</p>
+</div>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>file.mount(ldrv[, pin])</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ldrv</code> name of the logical drive, <code>/SD0</code>, <code>/SD1</code>, etc.</li>
+<li><code>pin</code> 1~12, IO index for SS/CS, defaults to 8 if omitted.</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>Volume object</p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">vol = file.mount(&quot;/SD0&quot;)
+vol:umount()
+</code></pre>
+
+<h2 id="fileon">file.on()<a class="headerlink" href="#fileon" title="Permanent link">&para;</a></h2>
+<p>Registers callback functions.</p>
+<p>Trigger events are:</p>
+<ul>
+<li><code>rtc</code> deliver current date &amp; time to the file system. Function is expected to return a table containing the fields <code>year</code>, <code>mon</code>, <code>day</code>, <code>hour</code>, <code>min</code>, <code>sec</code> of current date and time. Not supported for internal flash.</li>
+</ul>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>file.on(event[, function()])</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>event</code> string</li>
+<li><code>function()</code> callback function. Unregisters the callback if <code>function()</code> is omitted.</li>
+</ul>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">sntp.sync(server_ip,
+  function()
+    print(&quot;sntp time sync ok&quot;)
+    file.on(&quot;rtc&quot;,
+      function()
+        return rtctime.epoch2cal(rtctime.get())
+      end)
+  end)
+</code></pre>
+
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="../rtctime/#rtctimeepoch2cal"><code>rtctime.epoch2cal()</code></a></p>
+<h2 id="fileopen">file.open()<a class="headerlink" href="#fileopen" title="Permanent link">&para;</a></h2>
+<p>Opens a file for access, potentially creating it (for write modes).</p>
+<p>When done with the file, it must be closed using <code>file.close()</code>.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>file.open(filename, mode)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>filename</code> file to be opened</li>
+<li><code>mode</code>:<ul>
+<li>"r": read mode (the default)</li>
+<li>"w": write mode</li>
+<li>"a": append mode</li>
+<li>"r+": update mode, all previous data is preserved</li>
+<li>"w+": update mode, all previous data is erased</li>
+<li>"a+": append update mode, previous data is preserved, writing is only allowed at the end of file</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p>file object if file opened ok. <code>nil</code> if file not opened, or not exists (read modes).</p>
+<h4 id="example-basic-model">Example (basic model)<a class="headerlink" href="#example-basic-model" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua', print the first line.
+if file.open(&quot;init.lua&quot;, &quot;r&quot;) then
+  print(file.readline())
+  file.close()
+end
+</code></pre>
+
+<h4 id="example-object-model">Example (object model)<a class="headerlink" href="#example-object-model" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua', print the first line.
+fd = file.open(&quot;init.lua&quot;, &quot;r&quot;)
+if fd then
+  print(fd:readline())
+  fd:close(); fd = nil
+end
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#fileclose-fileobjclose"><code>file.close()</code></a></li>
+<li><a href="#filereadline-fileobjreadline"><code>file.readline()</code></a></li>
+</ul>
+<h2 id="fileremove">file.remove()<a class="headerlink" href="#fileremove" title="Permanent link">&para;</a></h2>
+<p>Remove a file from the file system. The file must not be currently open.</p>
+<h3 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h3>
+<p><code>file.remove(filename)</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<p><code>filename</code> file to remove</p>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- remove &quot;foo.lua&quot; from file system.
+file.remove(&quot;foo.lua&quot;)
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<p><a href="#fileopen"><code>file.open()</code></a></p>
+<h2 id="filerename">file.rename()<a class="headerlink" href="#filerename" title="Permanent link">&para;</a></h2>
+<p>Renames a file. If a file is currently open, it will be closed first.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>file.rename(oldname, newname)</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>oldname</code> old file name</li>
+<li><code>newname</code> new file name</li>
+</ul>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> on error.</p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- rename file 'temp.lua' to 'init.lua'.
+file.rename(&quot;temp.lua&quot;,&quot;init.lua&quot;)
+</code></pre>
+
+<h2 id="filestat">file.stat()<a class="headerlink" href="#filestat" title="Permanent link">&para;</a></h2>
+<p>Get attribtues of a file or directory in a table. Elements of the table are:</p>
+<ul>
+<li><code>size</code> file size in bytes</li>
+<li><code>name</code> file name</li>
+<li>
+<p><code>time</code> table with time stamp information. Default is 1970-01-01 00:00:00 in case time stamps are not supported (on SPIFFS).</p>
+<ul>
+<li><code>year</code></li>
+<li><code>mon</code></li>
+<li><code>day</code></li>
+<li><code>hour</code></li>
+<li><code>min</code></li>
+<li><code>sec</code></li>
+</ul>
+</li>
+<li>
+<p><code>is_dir</code> flag <code>true</code> if item is a directory, otherwise <code>false</code></p>
+</li>
+<li><code>is_rdonly</code> flag <code>true</code> if item is read-only, otherwise <code>false</code></li>
+<li><code>is_hidden</code> flag <code>true</code> if item is hidden, otherwise <code>false</code></li>
+<li><code>is_sys</code> flag <code>true</code> if item is system, otherwise <code>false</code></li>
+<li><code>is_arch</code> flag <code>true</code> if item is archive, otherwise <code>false</code></li>
+</ul>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>file.stat(filename)</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p><code>filename</code> file name</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p>table containing file attributes</p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">s = file.stat(&quot;/SD0/myfile&quot;)
+print(&quot;name: &quot; .. s.name)
+print(&quot;size: &quot; .. s.size)
+
+t = s.time
+print(string.format(&quot;%02d:%02d:%02d&quot;, t.hour, t.min, t.sec))
+print(string.format(&quot;%04d-%02d-%02d&quot;, t.year, t.mon, t.day))
+
+if s.is_dir then print(&quot;is directory&quot;) else print(&quot;is file&quot;) end
+if s.is_rdonly then print(&quot;is read-only&quot;) else print(&quot;is writable&quot;) end
+if s.is_hidden then print(&quot;is hidden&quot;) else print(&quot;is not hidden&quot;) end
+if s.is_sys then print(&quot;is system&quot;) else print(&quot;is not system&quot;) end
+if s.is_arch then print(&quot;is archive&quot;) else print(&quot;is not archive&quot;) end
+
+s = nil
+t = nil
+</code></pre>
+
+<h1 id="file-access-functions">File access functions<a class="headerlink" href="#file-access-functions" title="Permanent link">&para;</a></h1>
+<p>The <code>file</code> module provides several functions to access the content of a file after it has been opened with <a href="#fileopen"><code>file.open()</code></a>. They can be used as part of a basic model or an object model:</p>
+<h2 id="basic-model">Basic model<a class="headerlink" href="#basic-model" title="Permanent link">&para;</a></h2>
+<p>In the basic model there is max one file opened at a time. The file access functions operate on this file per default. If another file is opened, the previous default file needs to be closed beforehand.</p>
+<pre><code class="lua">-- open 'init.lua', print the first line.
+if file.open(&quot;init.lua&quot;, &quot;r&quot;) then
+  print(file.readline())
+  file.close()
+end
+</code></pre>
+
+<h2 id="object-model">Object model<a class="headerlink" href="#object-model" title="Permanent link">&para;</a></h2>
+<p>Files are represented by file objects which are created by <code>file.open()</code>. File access functions are available as methods of this object, and multiple file objects can coexist.</p>
+<pre><code class="lua">src = file.open(&quot;init.lua&quot;, &quot;r&quot;)
+if src then
+  dest = file.open(&quot;copy.lua&quot;, &quot;w&quot;)
+  if dest then
+    local line
+    repeat
+      line = src:read()
+      if line then
+        dest:write(line)
+      end
+    until line == nil
+    dest:close(); dest = nil
+  end
+  src:close(); dest = nil
+end
+</code></pre>
+
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>It is recommended to use only one single model within the application. Concurrent use of both models can yield unpredictable behavior: Closing the default file from basic model will also close the correspoding file object. Closing a file from object model will also close the default file if they are the same file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maximum number of open files on SPIFFS is determined at compile time by <code>SPIFFS_MAX_OPEN_FILES</code> in <code>user_config.h</code>.</p>
+</div>
+<h2 id="fileclose-fileobjclose">file.close(), file.obj:close()<a class="headerlink" href="#fileclose-fileobjclose" title="Permanent link">&para;</a></h2>
+<p>Closes the open file, if any.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>file.close()</code></p>
+<p><code>fd:close()</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_5">See also<a class="headerlink" href="#see-also_5" title="Permanent link">&para;</a></h4>
+<p><a href="#fileopen"><code>file.open()</code></a></p>
+<h2 id="fileflush-fileobjflush">file.flush(), file.obj:flush()<a class="headerlink" href="#fileflush-fileobjflush" title="Permanent link">&para;</a></h2>
+<p>Flushes any pending writes to the file system, ensuring no data is lost on a restart. Closing the open file using <a href="#fileclose-fileobjclose"><code>file.close()</code> / <code>fd:close()</code></a> performs an implicit flush as well.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>file.flush()</code></p>
+<p><code>fd:flush()</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example-basic-model_1">Example (basic model)<a class="headerlink" href="#example-basic-model_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua' in 'a+' mode
+if file.open(&quot;init.lua&quot;, &quot;a+&quot;) then
+  -- write 'foo bar' to the end of the file
+  file.write('foo bar')
+  file.flush()
+  -- write 'baz' too
+  file.write('baz')
+  file.close()
+end
+</code></pre>
+
+<h4 id="see-also_6">See also<a class="headerlink" href="#see-also_6" title="Permanent link">&para;</a></h4>
+<p><a href="#fileclose-fileobjclose"><code>file.close()</code> / <code>file.obj:close()</code></a></p>
+<h2 id="fileread-fileobjread">file.read(), file.obj:read()<a class="headerlink" href="#fileread-fileobjread" title="Permanent link">&para;</a></h2>
+<p>Read content from the open file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function temporarily allocates 2 * (number of requested bytes) on the heap for buffering and processing the read data. Default chunk size (<code>FILE_READ_CHUNK</code>) is 1024 bytes and is regarded to be safe. Pushing this by 4x or more can cause heap overflows depending on the application. Consider this when selecting a value for parameter <code>n_or_char</code>.</p>
+</div>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>file.read([n_or_char])</code></p>
+<p><code>fd:read([n_or_char])</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>n_or_char</code>:<ul>
+<li>if nothing passed in, then read up to <code>FILE_READ_CHUNK</code> bytes or the entire file (whichever is smaller).</li>
+<li>if passed a number <code>n</code>, then read up to <code>n</code> bytes or the entire file (whichever is smaller).</li>
+<li>if passed a string containing the single character <code>char</code>, then read until <code>char</code> appears next in the file, <code>FILE_READ_CHUNK</code> bytes have been read, or EOF is reached.</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>File content as a string, or nil when EOF</p>
+<h4 id="example-basic-model_2">Example (basic model)<a class="headerlink" href="#example-basic-model_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print the first line of 'init.lua'
+if file.open(&quot;init.lua&quot;, &quot;r&quot;) then
+  print(file.read('\n'))
+  file.close()
+end
+</code></pre>
+
+<h4 id="example-object-model_1">Example (object model)<a class="headerlink" href="#example-object-model_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print the first 5 bytes of 'init.lua'
+fd = file.open(&quot;init.lua&quot;, &quot;r&quot;)
+if fd then
+  print(fd:read(5))
+  fd:close(); fd = nil
+end
+</code></pre>
+
+<h4 id="see-also_7">See also<a class="headerlink" href="#see-also_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#fileopen"><code>file.open()</code></a></li>
+<li><a href="#filereadline-fileobjreadline"><code>file.readline()</code> / <code>file.obj:readline()</code></a></li>
+</ul>
+<h2 id="filereadline-fileobjreadline">file.readline(), file.obj:readline()<a class="headerlink" href="#filereadline-fileobjreadline" title="Permanent link">&para;</a></h2>
+<p>Read the next line from the open file. Lines are defined as zero or more bytes ending with a EOL ('\n') byte. If the next line is longer than 1024, this function only returns the first 1024 bytes.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>file.readline()</code></p>
+<p><code>fd:readline()</code></p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p>File content in string, line by line, including EOL('\n'). Return <code>nil</code> when EOF.</p>
+<h4 id="example-basic-model_3">Example (basic model)<a class="headerlink" href="#example-basic-model_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print the first line of 'init.lua'
+if file.open(&quot;init.lua&quot;, &quot;r&quot;) then
+  print(file.readline())
+  file.close()
+end
+</code></pre>
+
+<h4 id="see-also_8">See also<a class="headerlink" href="#see-also_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#fileopen"><code>file.open()</code></a></li>
+<li><a href="#fileclose-fileobjclose"><code>file.close()</code> / <code>file.obj:close()</code></a></li>
+<li><a href="#fileread-fileobjread"><code>file.read()</code> / <code>file.obj:read()</code></a></li>
+</ul>
+<h2 id="fileseek-fileobjseek">file.seek(), file.obj:seek()<a class="headerlink" href="#fileseek-fileobjseek" title="Permanent link">&para;</a></h2>
+<p>Sets and gets the file position, measured from the beginning of the file, to the position given by offset plus a base specified by the string whence.</p>
+<h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
+<p><code>file.seek([whence [, offset]])</code></p>
+<p><code>fd:seek([whence [, offset]])</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>whence</code><ul>
+<li>"set": base is position 0 (beginning of the file)</li>
+<li>"cur": base is current position (default value)</li>
+<li>"end": base is end of file</li>
+</ul>
+</li>
+<li><code>offset</code> default 0</li>
+</ul>
+<p>If no parameters are given, the function simply returns the current file offset.</p>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p>the resulting file position, or <code>nil</code> on error</p>
+<h4 id="example-basic-model_4">Example (basic model)<a class="headerlink" href="#example-basic-model_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">if file.open(&quot;init.lua&quot;, &quot;r&quot;) then
+  -- skip the first 5 bytes of the file
+  file.seek(&quot;set&quot;, 5)
+  print(file.readline())
+  file.close()
+end
+</code></pre>
+
+<h4 id="see-also_9">See also<a class="headerlink" href="#see-also_9" title="Permanent link">&para;</a></h4>
+<p><a href="#fileopen"><code>file.open()</code></a></p>
+<h2 id="filewrite-fileobjwrite">file.write(), file.obj:write()<a class="headerlink" href="#filewrite-fileobjwrite" title="Permanent link">&para;</a></h2>
+<p>Write a string to the open file.</p>
+<h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
+<p><code>file.write(string)</code></p>
+<p><code>fd:write(string)</code></p>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<p><code>string</code> content to be write to file</p>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if the write is ok, <code>nil</code> on error</p>
+<h4 id="example-basic-model_5">Example (basic model)<a class="headerlink" href="#example-basic-model_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua' in 'a+' mode
+if file.open(&quot;init.lua&quot;, &quot;a+&quot;) then
+  -- write 'foo bar' to the end of the file
+  file.write('foo bar')
+  file.close()
+end
+</code></pre>
+
+<h4 id="example-object-model_2">Example (object model)<a class="headerlink" href="#example-object-model_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua' in 'a+' mode
+fd = file.open(&quot;init.lua&quot;, &quot;a+&quot;)
+if fd then
+  -- write 'foo bar' to the end of the file
+  fd:write('foo bar')
+  fd:close()
+end
+</code></pre>
+
+<h4 id="see-also_10">See also<a class="headerlink" href="#see-also_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#fileopen"><code>file.open()</code></a></li>
+<li><a href="#filewriteline-fileobjwriteline"><code>file.writeline()</code> / <code>file.obj:writeline()</code></a></li>
+</ul>
+<h2 id="filewriteline-fileobjwriteline">file.writeline(), file.obj:writeline()<a class="headerlink" href="#filewriteline-fileobjwriteline" title="Permanent link">&para;</a></h2>
+<p>Write a string to the open file and append '\n' at the end.</p>
+<h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
+<p><code>file.writeline(string)</code></p>
+<p><code>fd:writeline(string)</code></p>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<p><code>string</code> content to be write to file</p>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if write ok, <code>nil</code> on error</p>
+<h4 id="example-basic-model_6">Example (basic model)<a class="headerlink" href="#example-basic-model_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- open 'init.lua' in 'a+' mode
+if file.open(&quot;init.lua&quot;, &quot;a+&quot;) then
+  -- write 'foo bar' to the end of the file
+  file.writeline('foo bar')
+  file.close()
+end
+</code></pre>
+
+<h4 id="see-also_11">See also<a class="headerlink" href="#see-also_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#fileopen"><code>file.open()</code></a></li>
+<li><a href="#filereadline-fileobjreadline"><code>file.readline()</code> / <code>file.obj:readline()</code></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gdbstub/" class="btn btn-neutral float-right" title="gdbstub">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../enduser-setup/" class="btn btn-neutral" title="enduser setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../enduser-setup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../gdbstub/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

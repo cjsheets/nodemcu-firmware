@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>gpio - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "gpio";
+    var mkdocs_page_input_path = "en/modules/gpio.md";
+    var mkdocs_page_url = "/en/modules/gpio/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">gpio</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#gpio-module">GPIO Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#gpiomode">gpio.mode()</a></li>
+        
+            <li><a class="toctree-l4" href="#gpioread">gpio.read()</a></li>
+        
+            <li><a class="toctree-l4" href="#gpioserout">gpio.serout()</a></li>
+        
+            <li><a class="toctree-l4" href="#gpiotrig">gpio.trig()</a></li>
+        
+            <li><a class="toctree-l4" href="#gpiowrite">gpio.write()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>gpio</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/gpio.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gpio-module">GPIO Module<a class="headerlink" href="#gpio-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-22</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="../../../../app/modules/gpio.c">gpio.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module provides access to the <a href="https://en.wikipedia.org/wiki/General-purpose_input/output">GPIO</a> (General Purpose Input/Output) subsystem.</p>
+<p>All access is based on the I/O index number on the NodeMCU dev kits, not the internal GPIO pin. For example, the D0 pin on the dev kit is mapped to the internal GPIO pin 16.</p>
+<p>If not using a NodeMCU dev kit, please refer to the below GPIO pin maps for the index↔gpio mapping.</p>
+<table>
+<thead>
+<tr>
+<th align="right">IO index</th>
+<th align="left">ESP8266 pin</th>
+<th align="right">IO index</th>
+<th align="left">ESP8266 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0 [*]</td>
+<td align="left">GPIO16</td>
+<td align="right">7</td>
+<td align="left">GPIO13</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">GPIO5</td>
+<td align="right">8</td>
+<td align="left">GPIO15</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">GPIO4</td>
+<td align="right">9</td>
+<td align="left">GPIO3</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">GPIO0</td>
+<td align="right">10</td>
+<td align="left">GPIO1</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">GPIO2</td>
+<td align="right">11</td>
+<td align="left">GPIO9</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">GPIO14</td>
+<td align="right">12</td>
+<td align="left">GPIO10</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">GPIO12</td>
+<td align="right"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><strong> [*] D0(GPIO16) can only be used as gpio read/write. No support for open-drain/interrupt/pwm/i2c/ow. </strong></p>
+<h2 id="gpiomode">gpio.mode()<a class="headerlink" href="#gpiomode" title="Permanent link">&para;</a></h2>
+<p>Initialize pin to GPIO mode, set the pin in/out direction, and optional internal weak pull-up.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>gpio.mode(pin, mode [, pullup])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> pin to configure, IO index</li>
+<li><code>mode</code> one of gpio.OUTPUT, gpio.OPENDRAIN, gpio.INPUT, or gpio.INT (interrupt mode)</li>
+<li><code>pullup</code> gpio.PULLUP enables the weak pull-up resistor; default is gpio.FLOAT</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">gpio.mode(0, gpio.OUTPUT)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#gpioread"><code>gpio.read()</code></a></li>
+<li><a href="#gpiowrite"><code>gpio.write()</code></a></li>
+</ul>
+<h2 id="gpioread">gpio.read()<a class="headerlink" href="#gpioread" title="Permanent link">&para;</a></h2>
+<p>Read digital GPIO pin value.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>gpio.read(pin)</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> pin to read, IO index</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>a number, 0 = low, 1 = high</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- read value of gpio 0.
+gpio.read(0)
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#gpiomode"><code>gpio.mode()</code></a></p>
+<h2 id="gpioserout">gpio.serout()<a class="headerlink" href="#gpioserout" title="Permanent link">&para;</a></h2>
+<p>Serialize output based on a sequence of delay-times in µs. After each delay, the pin is toggled. After the last cycle and last delay the pin is not toggled.</p>
+<p>The function works in two modes: 
+<em> synchronous - for sub-50 µs resolution, restricted to max. overall duration,
+</em> asynchrounous - synchronous operation with less granularity but virtually unrestricted duration.</p>
+<p>Whether the asynchronous mode is chosen is defined by presence of the <code>callback</code> parameter. If present and is of function type the function goes asynchronous and the callback function is invoked when sequence finishes. If the parameter is numeric the function still goes asynchronous but no callback is invoked when done.</p>
+<p>For the asynchronous version, the minimum delay time should not be shorter than 50 μs and maximum delay time is 0x7fffff μs (~8.3 seconds).
+In this mode the function does not block the stack and returns immediately before the output sequence is finalized. HW timer <code>FRC1_SOURCE</code> mode is used to change the states. As there is only a single hardware timer, there
+are restrictions on which modules can be used at the same time. An error will be raised if the timer is already in use.</p>
+<p>Note that the synchronous variant (no or nil <code>callback</code> parameter) function blocks the stack and as such any use of it must adhere to the SDK guidelines (also explained <a href="../../extn-developer-faq/#extension-developer-faq">here</a>). Failure to do so may lead to WiFi issues or outright to crashes/reboots. In short it means that the sum of all delay times multiplied by the number of cycles should not exceed 15 ms.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>gpio.serout(pin, start_level, delay_times [, cycle_num[, callback]])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code>  pin to use, IO index</li>
+<li><code>start_level</code> level to start on, either <code>gpio.HIGH</code> or <code>gpio.LOW</code></li>
+<li><code>delay_times</code> an array of delay times in µs between each toggle of the gpio pin. </li>
+<li><code>cycle_num</code> an optional number of times to run through the sequence. (default is 1)</li>
+<li><code>callback</code> an optional callback function or number, if present the function returns immediately and goes asynchronous.</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">gpio.mode(1,gpio.OUTPUT,gpio.PULLUP)
+gpio.serout(1,gpio.HIGH,{30,30,60,60,30,30})  -- serial one byte, b10110010
+gpio.serout(1,gpio.HIGH,{30,70},8)  -- serial 30% pwm 10k, lasts 8 cycles
+gpio.serout(1,gpio.HIGH,{3,7},8)  -- serial 30% pwm 100k, lasts 8 cycles
+gpio.serout(1,gpio.HIGH,{0,0},8)  -- serial 50% pwm as fast as possible, lasts 8 cycles
+gpio.serout(1,gpio.LOW,{20,10,10,20,10,10,10,100}) -- sim uart one byte 0x5A at about 100kbps
+gpio.serout(1,gpio.HIGH,{8,18},8) -- serial 30% pwm 38k, lasts 8 cycles
+
+gpio.serout(1,gpio.HIGH,{5000,995000},100, function() print(&quot;done&quot;) end) -- asynchronous 100 flashes 5 ms long every second with a callback function when done
+gpio.serout(1,gpio.HIGH,{5000,995000},100, 1) -- asynchronous 100 flashes 5 ms long, no callback
+</code></pre>
+
+<h2 id="gpiotrig">gpio.trig()<a class="headerlink" href="#gpiotrig" title="Permanent link">&para;</a></h2>
+<p>Establish or clear a callback function to run on interrupt for a pin.</p>
+<p>This function is not available if GPIO_INTERRUPT_ENABLE was undefined at compile time.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>gpio.trig(pin, [type [, callback_function]])</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> <strong>1-12</strong>, pin to trigger on, IO index. Note that pin 0 does not support interrupts.</li>
+<li><code>type</code> "up", "down", "both", "low", "high", which represent <em>rising edge</em>, <em>falling edge</em>, <em>both 
+edges</em>, <em>low level</em>, and <em>high level</em> trigger modes respectivey. If the type is "none" or omitted 
+then the callback function is removed and the interrupt is disabled.</li>
+<li><code>callback_function(level, when)</code> callback function when trigger occurs. The level of the specified pin 
+at the interrupt passed as the first parameter to the callback. The timestamp of the event is passed
+as the second parameter. This is in microseconds and has the same base as for <code>tmr.now()</code>. This timestamp
+is grabbed at interrupt level and is more consistent than getting the time in the callback function.
+The previous callback function will be used if the function is omitted.</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">do
+  -- use pin 1 as the input pulse width counter
+  local pin, pulse1, du, now, trig = 1, 0, 0, tmr.now, gpio.trig
+  gpio.mode(pin,gpio.INT)
+  local function pin1cb(level, pulse2)
+    print( level, pulse2 - pulse1 )
+    pulse1 = pulse2
+    trig(pin, level == gpio.HIGH  and &quot;down&quot; or &quot;up&quot;)
+  end
+  trig(pin, &quot;down&quot;, pin1cb)
+end
+</code></pre>
+
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#gpiomode"><code>gpio.mode()</code></a></p>
+<h2 id="gpiowrite">gpio.write()<a class="headerlink" href="#gpiowrite" title="Permanent link">&para;</a></h2>
+<p>Set digital GPIO pin value.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>gpio.write(pin, level)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> pin to write, IO index</li>
+<li><code>level</code> <code>gpio.HIGH</code> or <code>gpio.LOW</code></li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- set pin index 1 to GPIO mode, and set the pin to high.
+pin=1
+gpio.mode(pin, gpio.OUTPUT)
+gpio.write(pin, gpio.HIGH)
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#gpiomode"><code>gpio.mode()</code></a></li>
+<li><a href="#gpioread"><code>gpio.read()</code></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hdc1080/" class="btn btn-neutral float-right" title="hdc1080">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gdbstub/" class="btn btn-neutral" title="gdbstub"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../gdbstub/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../hdc1080/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

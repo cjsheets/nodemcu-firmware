@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>rotary - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "rotary";
+    var mkdocs_page_input_path = "en/modules/rotary.md";
+    var mkdocs_page_url = "/en/modules/rotary/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">rotary</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#rotary-module">rotary Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#sources-for-parts">Sources for parts</a></li>
+        
+            <li><a class="toctree-l4" href="#constants">Constants</a></li>
+        
+            <li><a class="toctree-l4" href="#rotarysetup">rotary.setup()</a></li>
+        
+            <li><a class="toctree-l4" href="#rotaryon">rotary.on()</a></li>
+        
+            <li><a class="toctree-l4" href="#rotarygetpos">rotary.getpos()</a></li>
+        
+            <li><a class="toctree-l4" href="#rotaryclose">rotary.close()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>rotary</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/rotary.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rotary-module">rotary Module<a class="headerlink" href="#rotary-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2016-03-01</td>
+<td align="left"><a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="../../../../app/modules/rotary.c">rotary.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module can read the state of cheap rotary encoder switches. These are available at all the standard places for a dollar or two. They are five pin devices where three are used for a gray code encoder for rotation, and two are used for the push switch. These switches are commonly used in car audio systems. </p>
+<p>These switches do not have absolute positioning, but only encode the number of positions rotated clockwise / anti-clockwise. To make use of this module, connect the common pin on the quadrature encoder to ground and the A and B phases to the NodeMCU. One pin of the push switch should also be grounded and the other pin connected to the NodeMCU.</p>
+<h2 id="sources-for-parts">Sources for parts<a class="headerlink" href="#sources-for-parts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Amazon: This <a href="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Dindustrial&amp;field-keywords=rotary+encoder+push+button&amp;rh=n%3A16310091%2Ck%3Arotary+encoder+push+button">search</a> shows a variety.</li>
+<li>Ebay: Somewhat cheaper in this <a href="http://www.ebay.com/sch/i.html?_from=R40&amp;_trksid=p2050601.m570.l1313.TR0.TRC0.H0.Xrotary+encoder+push+button.TRS0&amp;_nkw=rotary+encoder+push+button&amp;_sacat=0">search</a></li>
+<li>Adafruit: <a href="https://www.adafruit.com/products/377">rotary encoder</a></li>
+<li>Aliexpress: This <a href="http://www.aliexpress.com/wholesale?catId=0&amp;initiative_id=SB_20160217173657&amp;SearchText=rotary+encoder+push+button">search</a> reveals all sorts of shapes and sizes.</li>
+</ul>
+<p>There is also a switch mounted on a board with standard 0.1" pins. 
+This is the KY-040, and can also be found at <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=ky-040%20rotary%20encoder">lots of places</a>. 
+Note that the pins are named somewhat eccentrically, and I suspect that it really does need the VCC connected.</p>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>rotary.PRESS = 1</code> The eventtype for the switch press.</li>
+<li><code>rotary.LONGPRESS = 2</code> The eventtype for a long press.</li>
+<li><code>rotary.RELEASE = 4</code> The eventtype for the switch release.</li>
+<li><code>rotary.TURN = 8</code> The eventtype for the switch rotation.</li>
+<li><code>rotary.CLICK = 16</code> The eventtype for a single click (after release)</li>
+<li><code>rotary.DBLCLICK = 32</code> The eventtype for a double click (after second release)</li>
+<li><code>rotary.ALL = 63</code> All event types.</li>
+</ul>
+<h2 id="rotarysetup">rotary.setup()<a class="headerlink" href="#rotarysetup" title="Permanent link">&para;</a></h2>
+<p>Initialize the nodemcu to talk to a rotary encoder switch.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>rotary.setup(channel, pina, pinb[, pinpress[, longpress_time_ms[, dblclick_time_ms]]])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The rotary module supports three switches. The channel is either 0, 1 or 2.</li>
+<li><code>pina</code> This is a GPIO number (excluding 0) and connects to pin phase A on the rotary switch.</li>
+<li><code>pinb</code> This is a GPIO number (excluding 0) and connects to pin phase B on the rotary switch.</li>
+<li><code>pinpress</code> (optional) This is a GPIO number (excluding 0) and connects to the press switch.</li>
+<li><code>longpress_time_ms</code> (optional) The number of milliseconds (default 500) of press to be considered a long press.</li>
+<li><code>dblclick_time_ms</code> (optional) The number of milliseconds (default 500) between a release and a press for the next release to be considered a double click.</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>Nothing. If the arguments are in error, or the operation cannot be completed, then an error is thrown.</p>
+<p>For all API calls, if the channel number is out of range, then an error will be thrown.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code>rotary.setup(0, 5,6, 7)
+</code></pre>
+<h2 id="rotaryon">rotary.on()<a class="headerlink" href="#rotaryon" title="Permanent link">&para;</a></h2>
+<p>Sets a callback on specific events.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>rotary.on(channel, eventtype[, callback])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The rotary module supports three switches. The channel is either 0, 1 or 2.</li>
+<li><code>eventtype</code> This defines the type of event being registered. This is the logical or of one or more of <code>PRESS</code>, <code>LONGPRESS</code>, <code>RELEASE</code>, <code>TURN</code>, <code>CLICK</code> or <code>DBLCLICK</code>.</li>
+<li><code>callback</code> This is a function that will be invoked when the specified event happens. </li>
+</ul>
+<p>If the callback is None or omitted, then the registration is cancelled.</p>
+<p>The callback will be invoked with three arguments when the event happens. The first argument is the eventtype, 
+the second is the current position of the rotary switch, and the third is the time when the event happened. </p>
+<p>The position is tracked
+and is represented as a signed 32-bit integer. Increasing values indicate clockwise motion. The time is the number of microseconds represented
+in a 32-bit integer. Note that this wraps every hour or so.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code>rotary.on(0, rotary.ALL, function (type, pos, when) 
+  print "Position=" .. pos .. " event type=" .. type .. " time=" .. when
+end)
+</code></pre>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
+<p>Events will be delivered in order, but there may be missing TURN events. If there is a long 
+queue of events, then PRESS and RELEASE events may also be missed. Multiple pending TURN events 
+are typically dispatched as one TURN callback with the final position as its parameter.</p>
+<p>Some switches have 4 steps per detent. This means that, in practice, the application
+should divide the position by 4 and use that to determine the number of clicks. It is
+unlikely that a switch will ever reach 30 bits of rotation in either direction -- some
+are rated for under 50,000 revolutions.</p>
+<p>The <code>CLICK</code> and <code>LONGPRESS</code> events are delivered on a timeout. The <code>DBLCLICK</code> event is delivered after a <code>PRESS</code>, <code>RELEASE</code>, <code>PRESS</code>, <code>RELEASE</code> sequence
+where this is a short time gap between the middle <code>RELEASE</code> and <code>PRESS</code>.</p>
+<h4 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h4>
+<p>If an invalid <code>eventtype</code> is supplied, then an error will be thrown.</p>
+<h2 id="rotarygetpos">rotary.getpos()<a class="headerlink" href="#rotarygetpos" title="Permanent link">&para;</a></h2>
+<p>Gets the current position and press status of the switch</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>pos, press, queue = rotary.getpos(channel)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The rotary module supports three switches. The channel is either 0, 1 or 2.</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pos</code> The current position of the switch.</li>
+<li><code>press</code> A boolean indicating if the switch is currently pressed.</li>
+<li><code>queue</code> The number of undelivered callbacks (normally 0).</li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code>print rotary.getpos(0)
+</code></pre>
+<h2 id="rotaryclose">rotary.close()<a class="headerlink" href="#rotaryclose" title="Permanent link">&para;</a></h2>
+<p>Releases the resources associated with the rotary switch.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>rotary.close(channel)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The rotary module supports three switches. The channel is either 0, 1 or 2.</li>
+</ul>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code>rotary.close(0)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rtcfifo/" class="btn btn-neutral float-right" title="rtcfifo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../rfswitch/" class="btn btn-neutral" title="rfswitch"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../rfswitch/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rtcfifo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

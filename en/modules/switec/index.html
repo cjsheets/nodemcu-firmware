@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>switec - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "switec";
+    var mkdocs_page_input_path = "en/modules/switec.md";
+    var mkdocs_page_url = "/en/modules/switec/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">switec</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#switec-module">Switec Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#switecsetup">switec.setup()</a></li>
+        
+            <li><a class="toctree-l4" href="#switecmoveto">switec.moveto()</a></li>
+        
+            <li><a class="toctree-l4" href="#switecreset">switec.reset()</a></li>
+        
+            <li><a class="toctree-l4" href="#switecgetpos">switec.getpos()</a></li>
+        
+            <li><a class="toctree-l4" href="#switecclose">switec.close()</a></li>
+        
+            <li><a class="toctree-l4" href="#calibration">Calibration</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>switec</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/switec.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="switec-module">Switec Module<a class="headerlink" href="#switec-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2016-06-26</td>
+<td align="left"><a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="https://github.com/pjsg">Philip Gladstone</a></td>
+<td align="left"><a href="../../../../app/modules/switec.c">switec.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module controls a <a href="http://www.jukenswisstech.com/?page_id=103">Switec X.27</a> (or compatible) instrument stepper motor. These are the 
+stepper motors that are used in modern automotive instrument clusters. They are incredibly cheap
+and can be found at your favorite auction site or Chinese shopping site. There are varieties
+which are dual axis -- i.e. have two stepper motors driving two concentric shafts so you 
+can mount two needles from the same axis.</p>
+<p>These motors run off 5V (some may work off 3.3V). They draw under 20mA and are designed to be
+driven directly from MCU pins. Since the nodemcu runs at 3.3V, a level translator is required.
+An octal translator like the <a href="http://www.nxp.com/products/discretes-and-logic/logic/voltage-level-translators/octal-dual-supply-translating-transceiver-3-state-based-on-pip-74lvc4245a:74LVC4245A">74LVC4245A</a> can perfom this translation. It also includes all the
+protection diodes required. </p>
+<p>These motors can be driven off three pins, with <code>pin2</code> and <code>pin3</code> being the same GPIO pin. 
+If the motor is directly connected to the MCU, then the current load is doubled and may exceed
+the maximum ratings. If, however, a driver chip is being used, then the load on the MCU is negligible
+and the same MCU pin can be connected to two driver pins. In order to do this, just specify
+the same pin for <code>pin2</code> and <code>pin3</code>.</p>
+<p>These motors do not have absolute positioning, but come with stops at both ends of the range.
+The startup procedure is to drive the motor anti-clockwise until it is guaranteed that the needle
+is on the step. Then this point can be set as zero. It is important not to let the motor
+run into the endstops during normal operation as this will make the pointing inaccurate. 
+This module does not enforce any range limiting.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This module uses the hardware timer interrupt and hence it cannot be used at the same time as the PWM module. Both modules can be compiled into the same firmware image, but an application can only use one. It may be possible for an application to alternate between <code>switec</code> and <code>pwm</code>, but care must be taken.</p>
+</div>
+<h2 id="switecsetup">switec.setup()<a class="headerlink" href="#switecsetup" title="Permanent link">&para;</a></h2>
+<p>Initialize the nodemcu to talk to a switec X.27 or compatible instrument stepper motor. The default
+slew rate is set so that it should work for most motors. Some motors can run at 600 degress per second. </p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>switec.setup(channel, pin1, pin2, pin3, pin4 [, maxDegPerSec])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The switec module supports three stepper motors. The channel is either 0, 1 or 2.</li>
+<li><code>pin1</code> This is a GPIO number and connects to pin 1 on the stepper.</li>
+<li><code>pin2</code> This is a GPIO number and connects to pin 2 on the stepper.</li>
+<li><code>pin3</code> This is a GPIO number and connects to pin 3 on the stepper.</li>
+<li><code>pin4</code> This is a GPIO number and connects to pin 4 on the stepper.</li>
+<li><code>maxDegPerSec</code> (optional) This can set to limit the maximum slew rate. The default is 400 degrees per second.</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>Nothing. If the arguments are in error, or the operation cannot be completed, then an error is thrown.</p>
+<h5 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h5>
+<p>Once a channel is setup, it cannot be re-setup until the needle has stopped moving. </p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">switec.setup(0, 5, 6, 7, 8)
+</code></pre>
+
+<h2 id="switecmoveto">switec.moveto()<a class="headerlink" href="#switecmoveto" title="Permanent link">&para;</a></h2>
+<p>Starts the needle moving to the specified position. If the needle is already moving, then the current
+motion is cancelled, and the needle will move to the new position. It is possible to get a callback
+when the needle stops moving. This is not normally required as multiple <code>moveto</code> operations can
+be issued in quick succession. During the initial calibration, it is important. Note that the 
+callback is not guaranteed to be called -- it is possible that the needle never stops at the
+target location before another <code>moveto</code> operation is triggered.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>switec.moveto(channel, position[, stoppedCallback)</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The switec module supports three stepper motors. The channel is either 0, 1 or 2.</li>
+<li><code>position</code> The position (number of steps clockwise) to move the needle. Typically in the range 0 to around 1000.</li>
+<li><code>stoppedCallback</code> (optional) callback to be invoked when the needle stops moving.</li>
+</ul>
+<h4 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h4>
+<p>The channel must have been setup, otherwise an error is thrown.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">switec.moveto(0, 1000, function ()
+    switec.moveto(0, 0)
+end)
+</code></pre>
+
+<h2 id="switecreset">switec.reset()<a class="headerlink" href="#switecreset" title="Permanent link">&para;</a></h2>
+<p>This sets the current position of the needle as being zero. The needle must be stationary.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>switec.reset(channel)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The switec module supports three stepper motors. The channel is either 0, 1 or 2.</li>
+</ul>
+<h4 id="errors_1">Errors<a class="headerlink" href="#errors_1" title="Permanent link">&para;</a></h4>
+<p>The channel must have been setup and the needle must not be moving, otherwise an error is thrown.</p>
+<h2 id="switecgetpos">switec.getpos()<a class="headerlink" href="#switecgetpos" title="Permanent link">&para;</a></h2>
+<p>Gets the current position of the needle and whether it is moving.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>switec.getpos(channel)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The switec module supports three stepper motors. The channel is either 0, 1 or 2.</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>position</code> the current position of the needle</li>
+<li><code>moving</code> 0 if the needle is stationary. 1 for clockwise, -1 for anti-clockwise.</li>
+</ul>
+<h2 id="switecclose">switec.close()<a class="headerlink" href="#switecclose" title="Permanent link">&para;</a></h2>
+<p>Releases the resources associated with the stepper.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>switec.close(channel)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>channel</code> The switec module supports three stepper motors. The channel is either 0, 1 or 2.</li>
+</ul>
+<h4 id="errors_2">Errors<a class="headerlink" href="#errors_2" title="Permanent link">&para;</a></h4>
+<p>The needle must not be moving, otherwise an error is thrown.</p>
+<h2 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h2>
+<p>In order to set the zero point correctly, the needle should be driven anti-clockwise until
+it runs into the end stop. Then the zero point can be set. The value of -1000 is used as that is
+larger than the range of the motor -- i.e. it drives anti-clockwise through the entire range and 
+onto the end stop.</p>
+<pre><code>switec.setup(0, 5,6,7,8)
+calibration = true
+switec.moveto(0, -1000, function() 
+  switec.reset(0)
+  calibration = false
+end)
+</code></pre>
+<p>Other <code>moveto</code> operations should not be performed while <code>calibration</code> is set.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tcs34725/" class="btn btn-neutral float-right" title="tcs34725">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../struct/" class="btn btn-neutral" title="struct"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../struct/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tcs34725/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

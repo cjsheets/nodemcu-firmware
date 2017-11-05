@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>coap - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "coap";
+    var mkdocs_page_input_path = "en/modules/coap.md";
+    var mkdocs_page_url = "/en/modules/coap/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">coap</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#coap-module">CoAP Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#constants">Constants</a></li>
+        
+            <li><a class="toctree-l4" href="#coapclient">coap.Client()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapserver">coap.Server()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#coap-client">CoAP Client</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#coapclientget">coap.client:get()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapclientput">coap.client:put()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapclientpost">coap.client:post()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapclientdelete">coap.client:delete()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#coap-server">CoAP Server</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#coapserverlisten">coap.server:listen()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapserverclose">coap.server:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapservervar">coap.server:var()</a></li>
+        
+            <li><a class="toctree-l4" href="#coapserverfunc">coap.server:func()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>coap</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/coap.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="coap-module">CoAP Module<a class="headerlink" href="#coap-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-02-04</td>
+<td align="left">Toby Jaffey <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#111;&#98;&#121;&#64;&#49;&#50;&#52;&#56;&#46;&#105;&#111;">&#116;&#111;&#98;&#121;&#64;&#49;&#50;&#52;&#56;&#46;&#105;&#111;</a>, <a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="../../../../app/modules/coap.c">coap.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The CoAP module provides a simple implementation according to <a href="http://tools.ietf.org/html/rfc7252">CoAP</a> protocol.
+The basic endpoint server part is based on <a href="https://github.com/1248/microcoap">microcoap</a>, and many other code reference <a href="https://github.com/obgm/libcoap">libcoap</a>.</p>
+<p>This module implements both the client and the server side. GET/PUT/POST/DELETE is partially supported by the client. Server can register Lua functions and variables. No observe or discover supported yet.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This module is only in the very early stages and not complete yet.</p>
+</div>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<p>Constants for various functions.</p>
+<p><code>coap.CON</code>, <code>coap.NON</code> represent the request types.</p>
+<p><code>coap.TEXT_PLAIN</code>, <code>coap.LINKFORMAT</code>, <code>coap.XML</code>, <code>coap.OCTET_STREAM</code>, <code>coap.EXI</code>, <code>coap.JSON</code> represent content types.</p>
+<h2 id="coapclient">coap.Client()<a class="headerlink" href="#coapclient" title="Permanent link">&para;</a></h2>
+<p>Creates a CoAP client.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>coap.Client()</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>CoAP client</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">cc = coap.Client()
+-- assume there is a coap server at ip 192.168.100
+cc:get(coap.CON, &quot;coap://192.168.18.100:5683/.well-known/core&quot;)
+-- GET is not complete, the result/payload only print out in console.
+cc:post(coap.NON, &quot;coap://192.168.18.100:5683/&quot;, &quot;Hello&quot;)
+</code></pre>
+
+<h2 id="coapserver">coap.Server()<a class="headerlink" href="#coapserver" title="Permanent link">&para;</a></h2>
+<p>Creates a CoAP server.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>coap.Server()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>CoAP server</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- use copper addon for firefox
+cs=coap.Server()
+cs:listen(5683)
+
+myvar=1
+cs:var(&quot;myvar&quot;) -- get coap://192.168.18.103:5683/v1/v/myvar will return the value of myvar: 1
+
+all='[1,2,3]'
+cs:var(&quot;all&quot;, coap.JSON) -- sets content type to json
+
+-- function should tack one string, return one string.
+function myfun(payload)
+  print(&quot;myfun called&quot;)
+  respond = &quot;hello&quot;
+  return respond
+end
+cs:func(&quot;myfun&quot;) -- post coap://192.168.18.103:5683/v1/f/myfun will call myfun
+
+</code></pre>
+
+<h1 id="coap-client">CoAP Client<a class="headerlink" href="#coap-client" title="Permanent link">&para;</a></h1>
+<h2 id="coapclientget">coap.client:get()<a class="headerlink" href="#coapclientget" title="Permanent link">&para;</a></h2>
+<p>Issues a GET request to the server.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>coap.client:get(type, uri[, payload])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> <code>coap.CON</code>, <code>coap.NON</code>, defaults to CON. If the type is CON and request fails, the library retries four more times before giving up.</li>
+<li><code>uri</code> the URI such as "coap://192.168.18.103:5683/v1/v/myvar", only IP addresses are supported i.e. no hostname resoltion.</li>
+<li><code>payload</code> optional, the payload will be put in the payload section of the request.</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="coapclientput">coap.client:put()<a class="headerlink" href="#coapclientput" title="Permanent link">&para;</a></h2>
+<p>Issues a PUT request to the server.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>coap.client:put(type, uri[, payload])</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> <code>coap.CON</code>, <code>coap.NON</code>, defaults to CON. If the type is CON and request fails, the library retries four more times before giving up.</li>
+<li><code>uri</code> the URI such as "coap://192.168.18.103:5683/v1/v/myvar", only IP addresses are supported i.e. no hostname resoltion.</li>
+<li><code>payload</code> optional, the payload will be put in the payload section of the request.</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="coapclientpost">coap.client:post()<a class="headerlink" href="#coapclientpost" title="Permanent link">&para;</a></h2>
+<p>Issues a POST request to the server.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>coap.client:post(type, uri[, payload])</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> coap.CON, coap.NON, defaults to CON. when type is CON, and request failed, the request will retry another 4 times before giving up.</li>
+<li><code>uri</code> the uri such as coap://192.168.18.103:5683/v1/v/myvar, only IP is supported.</li>
+<li><code>payload</code> optional, the payload will be put in the payload section of the request.</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="coapclientdelete">coap.client:delete()<a class="headerlink" href="#coapclientdelete" title="Permanent link">&para;</a></h2>
+<p>Issues a DELETE request to the server.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>coap.client:delete(type, uri[, payload])</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> <code>coap.CON</code>, <code>coap.NON</code>, defaults to CON. If the type is CON and request fails, the library retries four more times before giving up.</li>
+<li><code>uri</code> the URI such as "coap://192.168.18.103:5683/v1/v/myvar", only IP addresses are supported i.e. no hostname resoltion.</li>
+<li><code>payload</code> optional, the payload will be put in the payload section of the request.</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h1 id="coap-server">CoAP Server<a class="headerlink" href="#coap-server" title="Permanent link">&para;</a></h1>
+<h2 id="coapserverlisten">coap.server:listen()<a class="headerlink" href="#coapserverlisten" title="Permanent link">&para;</a></h2>
+<p>Starts the CoAP server on the given port.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>coap.server:listen(port[, ip])</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>port</code> server port (number)</li>
+<li><code>ip</code> optional IP address</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="coapserverclose">coap.server:close()<a class="headerlink" href="#coapserverclose" title="Permanent link">&para;</a></h2>
+<p>Closes the CoAP server.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>coap.server:close()</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="coapservervar">coap.server:var()<a class="headerlink" href="#coapservervar" title="Permanent link">&para;</a></h2>
+<p>Registers a Lua variable as an endpoint in the server. the variable value then can be retrieved by a client via GET method, represented as an <a href="http://tools.ietf.org/html/rfc7252#section-6">URI</a> to the client. The endpoint path for varialble is '/v1/v/'.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>coap.server:var(name[, content_type])</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>name</code> the Lua variable's name</li>
+<li><code>content_type</code> optional, defaults to <code>coap.TEXT_PLAIN</code>, see <a href="http://tools.ietf.org/html/rfc7252#section-5.5.4">Content Negotiation</a></li>
+</ul>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- use copper addon for firefox
+cs=coap.Server()
+cs:listen(5683)
+
+myvar=1
+cs:var(&quot;myvar&quot;) -- get coap://192.168.18.103:5683/v1/v/myvar will return the value of myvar: 1
+-- cs:var(myvar), WRONG, this api accept the name string of the varialbe. but not the variable itself.
+all='[1,2,3]'
+cs:var(&quot;all&quot;, coap.JSON) -- sets content type to json
+</code></pre>
+
+<h2 id="coapserverfunc">coap.server:func()<a class="headerlink" href="#coapserverfunc" title="Permanent link">&para;</a></h2>
+<p>Registers a Lua function as an endpoint in the server. The function then can be called by a client via POST method. represented as an <a href="http://tools.ietf.org/html/rfc7252#section-6">URI</a> to the client. The endpoint path for function is '/v1/f/'. </p>
+<p>When the client issues a POST request to this URI, the payload will be passed to the function as parameter. The function's return value will be the payload in the message to the client.</p>
+<p>The function registered SHOULD accept ONLY ONE string type parameter, and return ONE string value or return nothing.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>coap.server:func(name[, content_type])</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>name</code> the Lua function's name</li>
+<li><code>content_type</code> optional, defaults to <code>coap.TEXT_PLAIN</code>, see <a href="http://tools.ietf.org/html/rfc7252#section-5.5.4">Content Negotiation</a></li>
+</ul>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- use copper addon for firefox
+cs=coap.Server()
+cs:listen(5683)
+
+-- function should take only one string, return one string.
+function myfun(payload)
+  print(&quot;myfun called&quot;)
+  respond = &quot;hello&quot;
+  return respond
+end
+cs:func(&quot;myfun&quot;) -- post coap://192.168.18.103:5683/v1/f/myfun will call myfun
+-- cs:func(myfun), WRONG, this api accept the name string of the function. but not the function itself.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cron/" class="btn btn-neutral float-right" title="cron">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cjson/" class="btn btn-neutral" title="cjson"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../cjson/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cron/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

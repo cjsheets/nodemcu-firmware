@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>tsl2561 - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "tsl2561";
+    var mkdocs_page_input_path = "en/modules/tsl2561.md";
+    var mkdocs_page_url = "/en/modules/tsl2561/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">tsl2561</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#tsl2561-module">TSL2561 Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#tsl2561getlux">tsl2561.getlux()</a></li>
+        
+            <li><a class="toctree-l4" href="#tsl2561getrawchannels">tsl2561.getrawchannels()</a></li>
+        
+            <li><a class="toctree-l4" href="#tsl2561init">tsl2561.init()</a></li>
+        
+            <li><a class="toctree-l4" href="#tsl2561settiming">tsl2561.settiming()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>tsl2561</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/tsl2561.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tsl2561-module">TSL2561 Module<a class="headerlink" href="#tsl2561-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-08-22</td>
+<td align="left"><a href="https://github.com/Aeprox">Michael Lucas</a></td>
+<td align="left"><a href="https://github.com/Aeprox">Michael Lucas</a></td>
+<td align="left"><a href="../../../../app/modules/tsl2561.c">tsl2561.c</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tsl2561getlux">tsl2561.getlux()<a class="headerlink" href="#tsl2561getlux" title="Permanent link">&para;</a></h2>
+<p>Reads sensor values from the device and returns calculated lux value.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>tsl2561.getlux()</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>lux</code> the calculated illuminance in lux (lx)</li>
+<li><code>status</code> value indicating success or failure as explained below:<ul>
+<li><code>tsl2561.TSL2561_OK</code></li>
+<li><code>tsl2561.TSL2561_ERROR_I2CINIT</code> can't initialize I²C bus</li>
+<li><code>tsl2561.TSL2561_ERROR_I2CBUSY</code> I²C bus busy</li>
+<li><code>tsl2561.TSL2561_ERROR_NOINIT</code> initialize I²C bus before calling function</li>
+<li><code>tsl2561.TSL2561_ERROR_LAST</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">status = tsl2561.init(5, 6, tsl2561.ADDRESS_FLOAT, tsl2561.PACKAGE_T_FN_CL)
+
+if status == tsl2561.TSL2561_OK then
+    lux = tsl2561.getlux()
+    print(&quot;Illuminance: &quot;..lux..&quot; lx&quot;) 
+end
+</code></pre>
+
+<h2 id="tsl2561getrawchannels">tsl2561.getrawchannels()<a class="headerlink" href="#tsl2561getrawchannels" title="Permanent link">&para;</a></h2>
+<p>Reads the device's 2 sensors and returns their values.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>tsl2561.getrawchannels()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ch0</code> value of the broad spectrum sensor</li>
+<li><code>ch1</code> value of the IR sensor</li>
+<li><code>status</code> value indicating success or failure as explained below:<ul>
+<li><code>tsl2561.TSL2561_OK</code></li>
+<li><code>tsl2561.TSL2561_ERROR_I2CINIT</code> can't initialize I²C bus</li>
+<li><code>tsl2561.TSL2561_ERROR_I2CBUSY</code> I²C bus busy</li>
+<li><code>tsl2561.TSL2561_ERROR_NOINIT</code> initialize I²C bus before calling function</li>
+<li><code>tsl2561.TSL2561_ERROR_LAST</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">status = tsl2561.init(5, 6, tsl2561.ADDRESS_FLOAT, tsl2561.PACKAGE_T_FN_CL)
+
+if status == tsl2561.TSL2561_OK then
+    ch0, ch1 = tsl2561.getrawchannels()
+    print(&quot;Raw values: &quot;..ch0, ch1)
+    lux = tsl2561.getlux()
+    print(&quot;Illuminance: &quot;..lux..&quot; lx&quot;) 
+end
+</code></pre>
+
+<h2 id="tsl2561init">tsl2561.init()<a class="headerlink" href="#tsl2561init" title="Permanent link">&para;</a></h2>
+<p>Initializes the device on pins sdapin &amp; sclpin. Optionally also configures the devices address and package. Default: address pin floating (0x39) and FN package.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>tsl2561.init(sdapin, sclpin[, address[, package]])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>sdapin</code> pin number of the device's I²C sda connection</li>
+<li><code>sclpin</code> pin number of the device's I²C scl connection</li>
+<li><code>address</code> optional address of the device on the I²C bus<ul>
+<li><code>tsl2561.ADDRESS_GND</code></li>
+<li><code>tsl2561.ADDRESS_FLOAT</code> (default when omitted)</li>
+<li><code>tsl2561.ADDRESS_VDD</code></li>
+</ul>
+</li>
+<li><code>package</code> optional device's package type (slight difference in lux calculation)<ul>
+<li><code>tsl2561.PACKAGE_CS</code></li>
+<li><code>tsl2561.PACKAGE_T_FN_CL</code> (default when omitted)</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>status</code> value indicating success or failure as explained below:</p>
+<ul>
+<li><code>tsl2561.TSL2561_OK</code></li>
+<li><code>tsl2561.TSL2561_ERROR_I2CINIT</code> can't initialize I²C bus</li>
+<li><code>tsl2561.TSL2561_ERROR_I2CBUSY</code> I²C bus busy</li>
+<li><code>tsl2561.TSL2561_ERROR_NOINIT</code> Initialize I²C bus before calling function</li>
+<li><code>tsl2561.TSL2561_ERROR_LAST</code></li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">status = tsl2561.init(5, 6, tsl2561.ADDRESS_FLOAT, tsl2561.PACKAGE_T_FN_CL)
+if status == tsl2561.TSL2561_OK then
+    lux = tsl2561.getlux()
+    print(&quot;Illuminance: &quot;..lux..&quot; lx&quot;) 
+end
+</code></pre>
+
+<h2 id="tsl2561settiming">tsl2561.settiming()<a class="headerlink" href="#tsl2561settiming" title="Permanent link">&para;</a></h2>
+<p>Sets the integration time and gain settings of the device. When <code>tls2561.init()</code> is called, these values default to 402 ms and no gain.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>tsl2561.settiming(integration, gain)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>integration</code> sets the device's integration period. Valid options are:<ul>
+<li><code>tsl2561.INTEGRATIONTIME_13MS</code></li>
+<li><code>tsl2561.INTEGRATIONTIME_101MS</code></li>
+<li><code>tsl2561.INTEGRATIONTIME_402MS</code> (default when omitted)</li>
+</ul>
+</li>
+<li><code>gain</code> sets the device's gain. Valid options are:<ul>
+<li><code>tsl2561.GAIN_1X</code> (default when omitted)</li>
+<li><code>tsl2561.GAIN_16X</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>status</code> value indicating success or failure as explained below:</p>
+<ul>
+<li><code>tsl2561.TSL2561_OK</code></li>
+<li><code>tsl2561.TSL2561_ERROR_I2CINIT</code> can't initialize I²C bus</li>
+<li><code>tsl2561.TSL2561_ERROR_I2CBUSY</code> I²C bus busy</li>
+<li><code>tsl2561.TSL2561_ERROR_NOINIT</code> initialize I²C bus before calling function</li>
+<li><code>tsl2561.TSL2561_ERROR_LAST</code></li>
+</ul>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">status = tsl2561.init(5, 6, tsl2561.ADDRESS_FLOAT, tsl2561.PACKAGE_T_FN_CL)
+if status == tsl2561.TSL2561_OK then
+    status = tsl2561.settiming(tsl2561.INTEGRATIONTIME_101MS, tsl2561.GAIN_16X)
+end
+if status == tsl2561.TSL2561_OK then
+    lux = tsl2561.getlux()
+    print(&quot;Illuminance: &quot;..lux..&quot; lx&quot;) 
+end
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../u8g/" class="btn btn-neutral float-right" title="u8g">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tmr/" class="btn btn-neutral" title="tmr"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tmr/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../u8g/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

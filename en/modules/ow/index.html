@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ow (1-Wire) - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ow (1-Wire)";
+    var mkdocs_page_input_path = "en/modules/ow.md";
+    var mkdocs_page_url = "/en/modules/ow/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ow (1-Wire)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#1-wire-module">1-Wire Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#owcheck_crc16">ow.check_crc16()</a></li>
+        
+            <li><a class="toctree-l4" href="#owcrc16">ow.crc16()</a></li>
+        
+            <li><a class="toctree-l4" href="#owcrc8">ow.crc8()</a></li>
+        
+            <li><a class="toctree-l4" href="#owdepower">ow.depower()</a></li>
+        
+            <li><a class="toctree-l4" href="#owread">ow.read()</a></li>
+        
+            <li><a class="toctree-l4" href="#owread_bytes">ow.read_bytes()</a></li>
+        
+            <li><a class="toctree-l4" href="#owreset">ow.reset()</a></li>
+        
+            <li><a class="toctree-l4" href="#owreset_search">ow.reset_search()</a></li>
+        
+            <li><a class="toctree-l4" href="#owsearch">ow.search()</a></li>
+        
+            <li><a class="toctree-l4" href="#owselect">ow.select()</a></li>
+        
+            <li><a class="toctree-l4" href="#owsetup">ow.setup()</a></li>
+        
+            <li><a class="toctree-l4" href="#owskip">ow.skip()</a></li>
+        
+            <li><a class="toctree-l4" href="#owtarget_search">ow.target_search()</a></li>
+        
+            <li><a class="toctree-l4" href="#owwrite">ow.write()</a></li>
+        
+            <li><a class="toctree-l4" href="#owwrite_bytes">ow.write_bytes()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>ow (1-Wire)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/ow.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-wire-module">1-Wire Module<a class="headerlink" href="#1-wire-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-22</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="../../../../app/modules/ow.c">ow.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module provides functions to work with the <a href="https://en.wikipedia.org/wiki/1-Wire">1-Wire</a> device communications bus system.</p>
+<h2 id="owcheck_crc16">ow.check_crc16()<a class="headerlink" href="#owcheck_crc16" title="Permanent link">&para;</a></h2>
+<p>Computes the 1-Wire CRC16 and compare it against the received CRC.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>ow.check_crc16(buf, inverted_crc0, inverted_crc1[, crc])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>buf</code> string value, data to be calculated check sum in string</li>
+<li><code>inverted_crc0</code> LSB of received CRC</li>
+<li><code>inverted_crc1</code> MSB of received CRC</li>
+<li><code>crc</code> CRC starting value (optional)</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>true if the CRC matches, false otherwise</p>
+<h2 id="owcrc16">ow.crc16()<a class="headerlink" href="#owcrc16" title="Permanent link">&para;</a></h2>
+<p>Computes a Dallas Semiconductor 16 bit CRC.  This is required to check the integrity of data received from many 1-Wire devices.  Note that the CRC computed here is <strong>not</strong> what you'll get from the 1-Wire network, for two reasons:</p>
+<ol>
+<li>The CRC is transmitted bitwise inverted.</li>
+<li>Depending on the endian-ness of your processor, the binary representation of the two-byte return value may have a different byte order than the two bytes you get from 1-Wire.</li>
+</ol>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>ow.crc16(buf[, crc])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>buf</code> string value, data to be calculated check sum in string</li>
+<li><code>crc</code> CRC starting value (optional)</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>the CRC16 as defined by Dallas Semiconductor</p>
+<h2 id="owcrc8">ow.crc8()<a class="headerlink" href="#owcrc8" title="Permanent link">&para;</a></h2>
+<p>Computes a Dallas Semiconductor 8 bit CRC, these are used in the ROM and scratchpad registers.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>ow.crc8(buf)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p><code>buf</code> string value, data to be calculated check sum in string</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>CRC result as byte</p>
+<h2 id="owdepower">ow.depower()<a class="headerlink" href="#owdepower" title="Permanent link">&para;</a></h2>
+<p>Stops forcing power onto the bus. You only need to do this if you used the 'power' flag to <code>ow.write()</code> or used a <code>ow.write_bytes()</code> and aren't about to do another read or write.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>ow.depower(pin)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#owwrite">ow.write()</a></li>
+<li><a href="#owwrite_bytes">ow.write_bytes()</a></li>
+</ul>
+<h2 id="owread">ow.read()<a class="headerlink" href="#owread" title="Permanent link">&para;</a></h2>
+<p>Reads a byte.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>ow.read(pin)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>byte read from slave device</p>
+<h2 id="owread_bytes">ow.read_bytes()<a class="headerlink" href="#owread_bytes" title="Permanent link">&para;</a></h2>
+<p>Reads multi bytes.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>ow.read_bytes(pin, size)</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> 1~12, I/O index</li>
+<li><code>size</code> number of bytes to be read from slave device (up to 256)</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>string</code> bytes read from slave device</p>
+<h2 id="owreset">ow.reset()<a class="headerlink" href="#owreset" title="Permanent link">&para;</a></h2>
+<p>Performs a 1-Wire reset cycle.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>ow.reset(pin)</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>1</code> if a device responds with a presence pulse</li>
+<li><code>0</code> if there is no device or the bus is shorted or otherwise held low for more than 250 µS</li>
+</ul>
+<h2 id="owreset_search">ow.reset_search()<a class="headerlink" href="#owreset_search" title="Permanent link">&para;</a></h2>
+<p>Clears the search state so that it will start from the beginning again.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>ow.reset_search(pin)</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="owsearch">ow.search()<a class="headerlink" href="#owsearch" title="Permanent link">&para;</a></h2>
+<p>Looks for the next device.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>ow.search(pin)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>rom_code</code> string with length of 8 upon success. It contains the rom code of slave device. Returns <code>nil</code> if search was unsuccessful.</p>
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#owtargetsearch">ow.target_search()</a></p>
+<h2 id="owselect">ow.select()<a class="headerlink" href="#owselect" title="Permanent link">&para;</a></h2>
+<p>Issues a 1-Wire rom select command. Make sure you do the <code>ow.reset(pin)</code> first.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>ow.select(pin, rom)</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> 1~12, I/O index</li>
+<li><code>rom</code> string value, len 8, rom code of the slave device</li>
+</ul>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- 18b20 Example
+pin = 9
+ow.setup(pin)
+count = 0
+repeat
+  count = count + 1
+  addr = ow.reset_search(pin)
+  addr = ow.search(pin)
+  tmr.wdclr()
+until (addr ~= nil) or (count &gt; 100)
+if addr == nil then
+  print(&quot;No more addresses.&quot;)
+else
+  print(addr:byte(1,8))
+  crc = ow.crc8(string.sub(addr,1,7))
+  if crc == addr:byte(8) then
+    if (addr:byte(1) == 0x10) or (addr:byte(1) == 0x28) then
+      print(&quot;Device is a DS18S20 family device.&quot;)
+        repeat
+          ow.reset(pin)
+          ow.select(pin, addr)
+          ow.write(pin, 0x44, 1)
+          tmr.delay(1000000)
+          present = ow.reset(pin)
+          ow.select(pin, addr)
+          ow.write(pin,0xBE,1)
+          print(&quot;P=&quot;..present)  
+          data = nil
+          data = string.char(ow.read(pin))
+          for i = 1, 8 do
+            data = data .. string.char(ow.read(pin))
+          end
+          print(data:byte(1,9))
+          crc = ow.crc8(string.sub(data,1,8))
+          print(&quot;CRC=&quot;..crc)
+          if crc == data:byte(9) then
+             t = (data:byte(1) + data:byte(2) * 256) * 625
+             t1 = t / 10000
+             t2 = t % 10000
+             print(&quot;Temperature=&quot;..t1..&quot;.&quot;..t2..&quot;Centigrade&quot;)
+          end                   
+          tmr.wdclr()
+        until false
+    else
+      print(&quot;Device family is not recognized.&quot;)
+    end
+  else
+    print(&quot;CRC is not valid!&quot;)
+  end
+end
+</code></pre>
+
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#owreset">ow.reset()</a></p>
+<h2 id="owsetup">ow.setup()<a class="headerlink" href="#owsetup" title="Permanent link">&para;</a></h2>
+<p>Sets a pin in onewire mode.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>ow.setup(pin)</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="owskip">ow.skip()<a class="headerlink" href="#owskip" title="Permanent link">&para;</a></h2>
+<p>Issues a 1-Wire rom skip command, to address all on bus.</p>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>ow.skip(pin)</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p><code>pin</code> 1~12, I/O index</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="owtarget_search">ow.target_search()<a class="headerlink" href="#owtarget_search" title="Permanent link">&para;</a></h2>
+<p>Sets up the search to find the device type <code>family_code</code>. The search itself has to be initiated with a subsequent call to <code>ow.search()</code>.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>ow.target_search(pin, family_code)</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> 1~12, I/O index</li>
+<li><code>family_code</code> byte for family code</li>
+</ul>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<p><a href="#owsearch">ow.search()</a></p>
+<h2 id="owwrite">ow.write()<a class="headerlink" href="#owwrite" title="Permanent link">&para;</a></h2>
+<p>Writes a byte. If <code>power</code> is 1 then the wire is held high at the end for parasitically powered devices. You are responsible for eventually depowering it by calling <code>ow.depower()</code> or doing another read or write.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>ow.write(pin, v, power)</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> 1~12, I/O index</li>
+<li><code>v</code> byte to be written to slave device </li>
+<li><code>power</code> 1 for wire being held high for parasitically powered devices</li>
+</ul>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<p><a href="#owdepower">ow.depower()</a></p>
+<h2 id="owwrite_bytes">ow.write_bytes()<a class="headerlink" href="#owwrite_bytes" title="Permanent link">&para;</a></h2>
+<p>Writes multi bytes. If <code>power</code> is 1 then the wire is held high at the end for parasitically powered devices. You are responsible for eventually depowering it by calling <code>ow.depower()</code> or doing another read or write.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>ow.write_bytes(pin, buf, power)</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pin</code> 1~12, IO index</li>
+<li><code>buf</code> string to be written to slave device</li>
+<li><code>power</code> 1 for wire being held high for parasitically powered devices</li>
+</ul>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_5">See also<a class="headerlink" href="#see-also_5" title="Permanent link">&para;</a></h4>
+<p><a href="#owdepower">ow.depower()</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pcm/" class="btn btn-neutral float-right" title="pcm">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../node/" class="btn btn-neutral" title="node"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../node/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../pcm/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

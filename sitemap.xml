@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/build/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/flash/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/spiffs/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/sdcard/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/en/upload/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/en/lua-developer-faq/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/extn-developer-faq/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/hardware-faq/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/en/support/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/en/modules/adc/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ads1115/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/adxl345/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/am2320/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/apa102/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/bit/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/bme280/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/bmp085/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/cjson/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/coap/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/cron/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/crypto/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/dht/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ds18b20/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/encoder/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/enduser-setup/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/file/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/gdbstub/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/gpio/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/hdc1080/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/hmc5883l/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/http/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/hx711/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/i2c/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/l3g4200d/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/mcp4725/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/mdns/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/mqtt/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/net/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/node/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ow/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/pcm/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/perf/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/pwm/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rc/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rfswitch/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rotary/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rtcfifo/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rtcmem/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/rtctime/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/si7021/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/sigma-delta/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/sjson/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/sntp/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/somfy/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/spi/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/struct/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/switec/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/tcs34725/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/tls/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/tm1829/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/tmr/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/tsl2561/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/u8g/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/uart/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ucg/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/websocket/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/wifi/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/wps/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ws2801/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/ws2812/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/en/modules/xpt2046/</loc>
+     <lastmod>2017-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

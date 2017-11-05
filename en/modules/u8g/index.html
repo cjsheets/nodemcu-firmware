@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>u8g - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "u8g";
+    var mkdocs_page_input_path = "en/modules/u8g.md";
+    var mkdocs_page_url = "/en/modules/u8g/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">u8g</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#u8g-module">u8g Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l4" href="#i2c-display-drivers">I²C Display Drivers</a></li>
+        
+            <li><a class="toctree-l4" href="#spi-display-drivers">SPI Display Drivers</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gfb_rle">u8g.fb_rle</a></li>
+        
+            <li><a class="toctree-l4" href="#constants">Constants</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#u8gdisp-sub-module">u8g.disp Sub-Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#u8gdispbegin">u8g.disp:begin()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawbitmap">u8g.disp:drawBitmap()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawbox">u8g.disp:drawBox()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawcircle">u8g.disp:drawCircle()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawdisc">u8g.disp:drawDisc()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawellipse">u8g.disp:drawEllipse()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawfilledellipse">u8g.disp:drawFilledEllipse()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawframe">u8g.disp:drawFrame()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawhline">u8g.disp:drawHLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawline">u8g.disp:drawLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawpixel">u8g.disp:drawPixel()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawrbox">u8g.disp:drawRBox()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawrframe">u8g.disp:drawRFrame()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawstr">u8g.disp:drawStr()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawstr90">u8g.disp:drawStr90()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawstr180">u8g.disp:drawStr180()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawstr270">u8g.disp:drawStr270()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawtriangle">u8g.disp:drawTriangle()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawvline">u8g.disp:drawVLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispdrawxbm">u8g.disp:drawXBM()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispfirstpage">u8g.disp:firstPage()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetcolorindex">u8g.disp:getColorIndex()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetfontascent">u8g.disp:getFontAscent()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetfontdescent">u8g.disp:getFontDescent()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetfontlinespacing">u8g.disp:getFontLineSpacing()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetheight">u8g.disp:getHeight()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetmode">u8g.disp:getMode()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetwidth">u8g.disp:getWidth()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispgetstrwidth">u8g.disp:getStrWidth()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispnextpage">u8g.disp:nextPage()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetcolorindex">u8g.disp:setColorIndex()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetcontrast">u8g.disp:setContrast()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetdefaultbackgroundcolor">u8g.disp:setDefaultBackgroundColor()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetdefaultforegroundcolor">u8g.disp:setDefaultForegroundColor()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfont">u8g.disp:setFont()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontlinespacingfactor">u8g.disp:setFontLineSpacingFactor()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontposbaseline">u8g.disp:setFontPosBaseline()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontposbottom">u8g.disp:setFontPosBottom()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontposcenter">u8g.disp:setFontPosCenter()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontpostop">u8g.disp:setFontPosTop()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontrefheightall">u8g.disp:setFontRefHeightAll()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontrefheightextendedtext">u8g.disp:setFontRefHeightExtendedText()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetfontrefheighttext">u8g.disp:setFontRefHeightText()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetrot90">u8g.disp:setRot90()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetrot180">u8g.disp:setRot180()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetrot270">u8g.disp:setRot270()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsetscale2x2">u8g.disp:setScale2x2()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsleepon">u8g.disp:sleepOn()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispsleepoff">u8g.disp:sleepOff()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispundorotation">u8g.disp:undoRotation()</a></li>
+        
+            <li><a class="toctree-l4" href="#u8gdispundoscale">u8g.disp:undoScale()</a></li>
+        
+            <li><a class="toctree-l4" href="#unimplemented-functions">Unimplemented Functions</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>u8g</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/u8g.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="u8g-module">u8g Module<a class="headerlink" href="#u8g-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-01-30</td>
+<td align="left"><a href="https://github.com/olikraus/u8glib">Oli Kraus</a>, <a href="https://github.com/devsaurus">Arnim Läuger</a></td>
+<td align="left"><a href="https://github.com/devsaurus">Arnim Läuger</a></td>
+<td align="left"><a href="../../../../app/u8glib/">u8glib</a></td>
+</tr>
+</tbody>
+</table>
+<p>U8glib is a graphics library developed at <a href="https://github.com/olikraus/u8glib">olikraus/u8glib</a> with support for many different displays. The NodeMCU firmware supports a subset of these.</p>
+<p>I²C and SPI mode:</p>
+<ul>
+<li>sh1106_128x64</li>
+<li>ssd1306 - 128x32, 128x64, and 64x48 variants</li>
+<li>ssd1309_128x64</li>
+<li>ssd1327_96x96_gr</li>
+<li>uc1611 - dogm240 and dogxl240 variants</li>
+</ul>
+<p>SPI only:</p>
+<ul>
+<li>ld7032_60x32</li>
+<li>pcd8544_84x48</li>
+<li>pcf8812_96x65</li>
+<li>ssd1322_nhd31oled - bw and gr variants</li>
+<li>ssd1325_nhd27oled - bw and gr variants</li>
+<li>ssd1351_128x128 - gh and hicolor variants</li>
+<li>st7565_64128n - variants 64128n, dogm128/132, lm6059/lm6063, c12832/c12864</li>
+<li>uc1601_c128032</li>
+<li>uc1608 - 240x128 and 240x64 variants</li>
+<li>uc1610_dogxl160 - bw and gr variants</li>
+<li>uc1611 - dogm240 and dogxl240 variants</li>
+<li>uc1701 - dogs102 and mini12864 variants</li>
+</ul>
+<p>This integration is based on <a href="https://github.com/olikraus/U8glib_Arduino/releases/tag/1.19.1">v1.19.1</a>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="i2c-connection">I²C Connection<a class="headerlink" href="#i2c-connection" title="Permanent link">&para;</a></h3>
+<p>Hook up SDA and SCL to any free GPIOs. Eg. <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_graphics_test.lua">u8g_graphics_test.lua</a> expects SDA=5 (GPIO14) and SCL=6 (GPIO12). They are used to set up nodemcu's I²C driver before accessing the display:</p>
+<pre><code class="lua">sda = 5
+scl = 6
+i2c.setup(0, sda, scl, i2c.SLOW)
+</code></pre>
+
+<h3 id="spi-connection">SPI connection<a class="headerlink" href="#spi-connection" title="Permanent link">&para;</a></h3>
+<p>The HSPI module is used (<a href="http://d.av.id.au/blog/esp8266-hardware-spi-hspi-general-info-and-pinout/">more information</a>), so certain pins are fixed:</p>
+<ul>
+<li>HSPI CLK = GPIO14</li>
+<li>HSPI MOSI = GPIO13</li>
+<li>HSPI MISO = GPIO12 (not used)</li>
+</ul>
+<p>All other pins can be assigned to any available GPIO:</p>
+<ul>
+<li>CS</li>
+<li>D/C</li>
+<li>RES (optional for some displays)</li>
+</ul>
+<p>Also refer to the initialization sequence eg in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_graphics_test.lua">u8g_graphics_test.lua</a>:</p>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, 8, 8)
+</code></pre>
+
+<h3 id="library-usage">Library Usage<a class="headerlink" href="#library-usage" title="Permanent link">&para;</a></h3>
+<p>The Lua bindings for this library closely follow u8glib's object oriented C++ API. Based on the u8g class, you create an object for your display type.</p>
+<p>SSD1306 via I²C:</p>
+<pre><code class="lua">sla = 0x3c
+disp = u8g.ssd1306_128x64_i2c(sla)
+</code></pre>
+
+<p>SSD1306 via SPI:</p>
+<pre><code class="lua">cs  = 8 -- GPIO15, pull-down 10k to GND
+dc  = 4 -- GPIO2
+res = 0 -- GPIO16, RES is optional YMMV
+disp = u8g.ssd1306_128x64_hw_spi(cs, dc, res)
+</code></pre>
+
+<p>This object provides all of u8glib's methods to control the display. Again, refer to <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_graphics_test.lua">u8g_graphics_test.lua</a> to get an impression how this is achieved with Lua code. Visit the <a href="https://github.com/olikraus/u8glib">u8glib homepage</a> for technical details.</p>
+<h3 id="displays">Displays<a class="headerlink" href="#displays" title="Permanent link">&para;</a></h3>
+<p>I²C and HW SPI based displays with support in u8glib can be enabled. To get access to the respective constructors, add the desired entries to the I²C or SPI display tables in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/app/include/u8g_config.h">app/include/u8g_config.h</a>:</p>
+<pre><code class="c">#define U8G_DISPLAY_TABLE_I2C                   \
+    U8G_DISPLAY_TABLE_ENTRY(ssd1306_128x64_i2c) \
+
+#define U8G_DISPLAY_TABLE_SPI                      \
+    U8G_DISPLAY_TABLE_ENTRY(ssd1306_128x64_hw_spi) \
+    U8G_DISPLAY_TABLE_ENTRY(pcd8544_84x48_hw_spi)  \
+    U8G_DISPLAY_TABLE_ENTRY(pcf8812_96x65_hw_spi)  \
+</code></pre>
+
+<h3 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Permanent link">&para;</a></h3>
+<p>u8glib comes with a wide range of fonts for small displays. Since they need to be compiled into the firmware image, you'd need to include them in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/app/include/u8g_config.h">app/include/u8g_config.h</a> and recompile. Simply add the desired fonts to the font table:</p>
+<pre><code class="c">#define U8G_FONT_TABLE \
+    U8G_FONT_TABLE_ENTRY(font_6x10)  \
+    U8G_FONT_TABLE_ENTRY(font_chikita)
+</code></pre>
+
+<p>They'll become available as <code>u8g.&lt;font_name&gt;</code> in Lua.</p>
+<h3 id="bitmaps">Bitmaps<a class="headerlink" href="#bitmaps" title="Permanent link">&para;</a></h3>
+<p>Bitmaps and XBMs are supplied as strings to <code>drawBitmap()</code> and <code>drawXBM()</code>. This off-loads all data handling from the u8g module to generic methods for binary files. See <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_bitmaps.lua">u8g_bitmaps.lua</a>.
+In contrast to the source code based inclusion of XBMs into u8glib, it's required to provide precompiled binary files. This can be performed online with <a href="http://www.online-utility.org/image_converter.jsp">Online-Utility's Image Converter</a>: Convert from XBM to MONO format and upload the binary result with <a href="https://github.com/kmpm/nodemcu-uploader">nodemcu-uploader.py</a>.</p>
+<h2 id="i2c-display-drivers">I²C Display Drivers<a class="headerlink" href="#i2c-display-drivers" title="Permanent link">&para;</a></h2>
+<p>Initialize a display via I²C.</p>
+<p>The init sequence would insert delays to match the display specs. These can destabilize the overall system if wifi service is blocked for too long. It is therefore advisable to disable such delays unless the specific use case can exclude wifi traffic while initializing the display driver.</p>
+<ul>
+<li><code>u8g.sh1106_128x64_i2c()</code></li>
+<li><code>u8g.ssd1306_128x32_i2c()</code></li>
+<li><code>u8g.ssd1306_128x64_i2c()</code></li>
+<li><code>u8g.ssd1306_64x48_i2c()</code></li>
+<li><code>u8g.ssd1309_128x64_i2c()</code></li>
+<li><code>u8g.ssd1327_96x96_gr_i2c()</code></li>
+<li><code>u8g.uc1611_dogm240_i2c()</code></li>
+<li><code>u8g.uc1611_dogxl240_i2c()</code></li>
+</ul>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>u8g.ssd1306_128x64_i2c(address[, use_delay])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>address</code> I²C slave address of display</li>
+<li><code>use_delay</code> '1': use delays in init sequence, '0' if omitted</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>u8g display object</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">sda = 5
+scl = 6
+i2c.setup(0, sda, scl, i2c.SLOW)
+
+sla = 0x3c
+disp = u8g.ssd1306_128x64_i2c(sla)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="#spi-display-drivers">SPI Display Drivers</a></p>
+<h2 id="spi-display-drivers">SPI Display Drivers<a class="headerlink" href="#spi-display-drivers" title="Permanent link">&para;</a></h2>
+<p>Initialize a display via Hardware SPI.</p>
+<p>The init sequence would insert delays to match the display specs. These can destabilize the overall system if wifi service is blocked for too long. It is therefore advisable to disable such delays unless the specific use case can exclude wifi traffic while initializing the display driver.</p>
+<ul>
+<li><code>u8g.ld7032_60x32_hw_spi()</code></li>
+<li><code>u8g.pcd8544_84x48_hw_spi()</code></li>
+<li><code>u8g.pcf8812_96x65_hw_spi()</code></li>
+<li><code>u8g.sh1106_128x64_hw_spi()</code></li>
+<li><code>u8g.ssd1306_128x32_hw_spi()</code></li>
+<li><code>u8g.ssd1306_128x64_hw_spi()</code></li>
+<li><code>u8g.ssd1306_64x48_hw_spi()</code></li>
+<li><code>u8g.ssd1309_128x64_hw_spi()</code></li>
+<li><code>u8g.ssd1322_nhd31oled_bw_hw_spi()</code></li>
+<li><code>u8g.ssd1322_nhd31oled_gr_hw_spi()</code></li>
+<li><code>u8g.ssd1325_nhd27oled_bw_hw_spi()</code></li>
+<li><code>u8g.ssd1325_nhd27oled_gr_hw_spi()</code></li>
+<li><code>u8g.ssd1327_96x96_gr_hw_spi()</code></li>
+<li><code>u8g.ssd1351_128x128_332_hw_spi()</code></li>
+<li><code>u8g.ssd1351_128x128gh_332_hw_spi()</code></li>
+<li><code>u8g.ssd1351_128x128_hicolor_hw_spi()</code></li>
+<li><code>u8g.ssd1351_128x128gh_hicolor_hw_spi()</code></li>
+<li><code>u8g.ssd1353_160x128_332_hw_spi()</code></li>
+<li><code>u8g.ssd1353_160x128_hicolor_hw_spi()</code></li>
+<li><code>u8g.st7565_64128n_hw_spi()</code></li>
+<li><code>u8g.st7565_dogm128_hw_spi()</code></li>
+<li><code>u8g.st7565_dogm132_hw_spi()</code></li>
+<li><code>u8g.st7565_lm6059_hw_spi()</code></li>
+<li><code>u8g.st7565_lm6063_hw_spi()</code></li>
+<li><code>u8g.st7565_nhd_c12832_hw_spi()</code></li>
+<li><code>u8g.st7565_nhd_c12864_hw_spi()</code></li>
+<li><code>u8g.uc1601_c128032_hw_spi()</code></li>
+<li><code>u8g.uc1608_240x128_hw_spi()</code></li>
+<li><code>u8g.uc1608_240x64_hw_spi()</code></li>
+<li><code>u8g.uc1610_dogxl160_bw_hw_spi()</code></li>
+<li><code>u8g.uc1610_dogxl160_gr_hw_spi()</code></li>
+<li><code>u8g.uc1611_dogm240_hw_spi()</code></li>
+<li><code>u8g.uc1611_dogxl240_hw_spi()</code></li>
+<li><code>u8g.uc1701_dogs102_hw_spi()</code></li>
+<li><code>u8g.uc1701_mini12864_hw_spi()</code></li>
+</ul>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>u8g.ssd1306_128x64_spi(cs, dc[, res[, use_delay]])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cs</code> GPIO pin for /CS</li>
+<li><code>dc</code> GPIO pin for DC</li>
+<li><code>res</code> GPIO pin for /RES, none if omitted</li>
+<li><code>use_delay</code> '1': use delays in init sequence, '0' if omitted</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>u8g display object</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, 8, 8)
+
+cs  = 8 -- GPIO15, pull-down 10k to GND
+dc  = 4 -- GPIO2
+res = 0 -- GPIO16, RES is optional YMMV
+disp = u8g.ssd1306_128x64_hw_spi(cs, dc, res)
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#i2c-display-drivers">I²C Display Drivers</a></p>
+<h2 id="u8gfb_rle">u8g.fb_rle<a class="headerlink" href="#u8gfb_rle" title="Permanent link">&para;</a></h2>
+<p>Initialize a virtual display that provides run-length encoded framebuffer contents to a Lua callback.</p>
+<p>The callback function can be used to process the framebuffer line by line. It's called with either <code>nil</code> as parameter to indicate the start of a new frame or with a string containing a line of the framebuffer with run-length encoding. First byte in the string specifies how many pairs of (x, len) follow, while each pair defines the start (leftmost x-coordinate) and length of a sequence of lit pixels. All other pixels in the line are dark.</p>
+<pre><code class="lua">n = struct.unpack(&quot;B&quot;, rle_line)
+print(n..&quot; pairs&quot;)
+for i = 0,n-1 do
+  print(string.format(&quot;  x: %d len: %d&quot;, struct.unpack(&quot;BB&quot;, rle_line, 1+1 + i*2)))
+end
+</code></pre>
+
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>u8g.fb_rle(cb_fn, width, height)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cb_fn([rle_line])</code> callback function. <code>rle_line</code> is a string containing a run-length encoded framebuffer line, or <code>nil</code> to indicate start of frame.</li>
+<li><code>width</code> of display. Must be a multiple of 8, less than or equal to 248.</li>
+<li><code>height</code> of display. Must be a multiple of 8, less than or equal to 248.</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>u8g display object</p>
+<hr />
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<p>Constants for various functions.</p>
+<p><code>u8g.DRAW_UPPER_RIGHT</code>, <code>u8g.DRAW_UPPER_LEFT</code>, <code>u8g.DRAW_LOWER_RIGHT</code>, <code>u8g.DRAW_LOWER_LEFT</code>, <code>u8g.DRAW_ALL</code>,
+<code>u8g.MODE_BW</code>, <code>u8g.MODE_GRAY2BIT</code></p>
+<p><code>u8g.font_6x10</code>, ...</p>
+<h1 id="u8gdisp-sub-module">u8g.disp Sub-Module<a class="headerlink" href="#u8gdisp-sub-module" title="Permanent link">&para;</a></h1>
+<h2 id="u8gdispbegin">u8g.disp:begin()<a class="headerlink" href="#u8gdispbegin" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#begin">u8glib begin()</a>.</p>
+<h2 id="u8gdispdrawbitmap">u8g.disp:drawBitmap()<a class="headerlink" href="#u8gdispdrawbitmap" title="Permanent link">&para;</a></h2>
+<p>Draw a bitmap at the specified x/y position (upper left corner of the bitmap).
+Parts of the bitmap may be outside the display boundaries. The bitmap is specified by the array bitmap. A cleared bit means: Do not draw a pixel. A set bit inside the array means: Write pixel with the current color index. For a monochrome display, the color index 0 will usually clear a pixel and the color index 1 will set a pixel.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>disp:drawBitmap(x, y, cnt, h, bitmap)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>x</code> X-position (left position of the bitmap)</li>
+<li><code>y</code> Y-position (upper position of the bitmap)</li>
+<li><code>cnt</code> number of bytes of the bitmap in horizontal direction. The width of the bitmap is cnt*8.</li>
+<li><code>h</code> height of the bitmap</li>
+<li><code>bitmap</code> bitmap data supplied as string</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/olikraus/u8glib/wiki/userreference#drawbitmap">u8glib drawBitmap()</a></li>
+<li><a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_bitmaps.lua">lua_examples/u8glib/u8g_bitmaps.lua</a></li>
+<li><a href="#u8gdispdrawxbm">u8g.disp:drawXBM()</a></li>
+</ul>
+<h2 id="u8gdispdrawbox">u8g.disp:drawBox()<a class="headerlink" href="#u8gdispdrawbox" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawbox">u8glib drawBox()</a>.</p>
+<h2 id="u8gdispdrawcircle">u8g.disp:drawCircle()<a class="headerlink" href="#u8gdispdrawcircle" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawcircle">u8glib drawCircle()</a>.</p>
+<h2 id="u8gdispdrawdisc">u8g.disp:drawDisc()<a class="headerlink" href="#u8gdispdrawdisc" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawdisc">u8glib drawDisc()</a>.</p>
+<h2 id="u8gdispdrawellipse">u8g.disp:drawEllipse()<a class="headerlink" href="#u8gdispdrawellipse" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawellipse">u8glib drawEllipse()</a>.</p>
+<h2 id="u8gdispdrawfilledellipse">u8g.disp:drawFilledEllipse()<a class="headerlink" href="#u8gdispdrawfilledellipse" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawfilledellipse">u8glib drawFilledEllipse</a>.</p>
+<h2 id="u8gdispdrawframe">u8g.disp:drawFrame()<a class="headerlink" href="#u8gdispdrawframe" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawframe">u8glib drawFrame()</a>.</p>
+<h2 id="u8gdispdrawhline">u8g.disp:drawHLine()<a class="headerlink" href="#u8gdispdrawhline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawhline">u8glib drawHLine()</a>.</p>
+<h2 id="u8gdispdrawline">u8g.disp:drawLine()<a class="headerlink" href="#u8gdispdrawline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawline">u8glib drawLine()</a>.</p>
+<h2 id="u8gdispdrawpixel">u8g.disp:drawPixel()<a class="headerlink" href="#u8gdispdrawpixel" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawpixel">u8glib drawPixel()</a>.</p>
+<h2 id="u8gdispdrawrbox">u8g.disp:drawRBox()<a class="headerlink" href="#u8gdispdrawrbox" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawrbox">u8glib drawRBox()</a>.</p>
+<h2 id="u8gdispdrawrframe">u8g.disp:drawRFrame()<a class="headerlink" href="#u8gdispdrawrframe" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawrframe">u8glib drawRFrame()</a>.</p>
+<h2 id="u8gdispdrawstr">u8g.disp:drawStr()<a class="headerlink" href="#u8gdispdrawstr" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawstr">u8glib drawStr()</a>.</p>
+<h2 id="u8gdispdrawstr90">u8g.disp:drawStr90()<a class="headerlink" href="#u8gdispdrawstr90" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawstr90">u8glib drawStr90</a>.</p>
+<h2 id="u8gdispdrawstr180">u8g.disp:drawStr180()<a class="headerlink" href="#u8gdispdrawstr180" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawstr180">u8glib drawStr180()</a>.</p>
+<h2 id="u8gdispdrawstr270">u8g.disp:drawStr270()<a class="headerlink" href="#u8gdispdrawstr270" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawstr270">u8glib drawStr270()</a>.</p>
+<h2 id="u8gdispdrawtriangle">u8g.disp:drawTriangle()<a class="headerlink" href="#u8gdispdrawtriangle" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawtriangle">u8glib drawTriangle()</a>.</p>
+<h2 id="u8gdispdrawvline">u8g.disp:drawVLine()<a class="headerlink" href="#u8gdispdrawvline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#drawvline">u8glib drawVLine()</a>.</p>
+<h2 id="u8gdispdrawxbm">u8g.disp:drawXBM()<a class="headerlink" href="#u8gdispdrawxbm" title="Permanent link">&para;</a></h2>
+<p>Draw a XBM Bitmap. Position (x,y) is the upper left corner of the bitmap.
+XBM contains monochrome, 1-bit bitmaps. This procedure only draws pixel values 1. The current color index is used for drawing (see setColorIndex). Pixel with value 0 are not drawn (transparent).</p>
+<p>Bitmaps and XBMs are supplied as strings to <code>drawBitmap()</code> and <code>drawXBM()</code>. This off-loads all data handling from the u8g module to generic methods for binary files. In contrast to the source code based inclusion of XBMs into u8glib, it's required to provide precompiled binary files. This can be performed online with <a href="http://www.online-utility.org/image_converter.jsp">Online-Utility's Image Converter</a>: Convert from XBM to MONO format and upload the binary result with <a href="https://github.com/kmpm/nodemcu-uploader">nodemcu-uploader.py</a> or <a href="http://esp8266.ru/esplorer/">ESPlorer</a>.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>disp:drawXBM(x, y, w, h, bitmap)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>x</code> X-position (left position of the bitmap)</li>
+<li><code>y</code> Y-position (upper position of the bitmap)</li>
+<li><code>w</code> width of the bitmap</li>
+<li><code>h</code> height of the bitmap</li>
+<li><code>bitmap</code> XBM data supplied as string</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/olikraus/u8glib/wiki/userreference#drawxbm">u8glib drawXBM()</a></li>
+<li><a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/u8glib/u8g_bitmaps.lua">lua_examples/u8glib/u8g_bitmaps.lua</a></li>
+<li><a href="#u8gdispdrawbitmap">u8g.disp:drawBitmap()</a></li>
+</ul>
+<h2 id="u8gdispfirstpage">u8g.disp:firstPage()<a class="headerlink" href="#u8gdispfirstpage" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#firstpage">u8glib firstPage()</a>.</p>
+<h2 id="u8gdispgetcolorindex">u8g.disp:getColorIndex()<a class="headerlink" href="#u8gdispgetcolorindex" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getcolorindex">u8glib getColorIndex()</a>.</p>
+<h2 id="u8gdispgetfontascent">u8g.disp:getFontAscent()<a class="headerlink" href="#u8gdispgetfontascent" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getfontascent">u8glib getFontAscent()</a>.</p>
+<h2 id="u8gdispgetfontdescent">u8g.disp:getFontDescent()<a class="headerlink" href="#u8gdispgetfontdescent" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getfontdescent">u8glib getFontDescent()</a>.</p>
+<h2 id="u8gdispgetfontlinespacing">u8g.disp:getFontLineSpacing()<a class="headerlink" href="#u8gdispgetfontlinespacing" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getfontlinespacing">u8glib getFontLineSpacing()</a>.</p>
+<h2 id="u8gdispgetheight">u8g.disp:getHeight()<a class="headerlink" href="#u8gdispgetheight" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getheight">u8glib getHeight()</a>.</p>
+<h2 id="u8gdispgetmode">u8g.disp:getMode()<a class="headerlink" href="#u8gdispgetmode" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getmode">u8glib getMode()</a>.</p>
+<h2 id="u8gdispgetwidth">u8g.disp:getWidth()<a class="headerlink" href="#u8gdispgetwidth" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getwidth">u8glib getWidth()</a>.</p>
+<h2 id="u8gdispgetstrwidth">u8g.disp:getStrWidth()<a class="headerlink" href="#u8gdispgetstrwidth" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#getstrwidth">u8glib getStrWidth</a>.</p>
+<h2 id="u8gdispnextpage">u8g.disp:nextPage()<a class="headerlink" href="#u8gdispnextpage" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#nextpage">u8glib nextPage()</a>.</p>
+<h2 id="u8gdispsetcolorindex">u8g.disp:setColorIndex()<a class="headerlink" href="#u8gdispsetcolorindex" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setcolortndex">u8glib setColorIndex()</a>.</p>
+<h2 id="u8gdispsetcontrast">u8g.disp:setContrast()<a class="headerlink" href="#u8gdispsetcontrast" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setcontrast">u8glib setContrast()</a>.</p>
+<h2 id="u8gdispsetdefaultbackgroundcolor">u8g.disp:setDefaultBackgroundColor()<a class="headerlink" href="#u8gdispsetdefaultbackgroundcolor" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setdefaultbackgroundcolor">u8glib setDefaultBackgroundColor()</a>.</p>
+<h2 id="u8gdispsetdefaultforegroundcolor">u8g.disp:setDefaultForegroundColor()<a class="headerlink" href="#u8gdispsetdefaultforegroundcolor" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setdefaultforegroundcolor">u8glib setDefaultForegroundColor()</a>.</p>
+<h2 id="u8gdispsetfont">u8g.disp:setFont()<a class="headerlink" href="#u8gdispsetfont" title="Permanent link">&para;</a></h2>
+<p>u8glib comes with a wide range of fonts for small displays.
+Since they need to be compiled into the firmware image, you'd need to include them in <code>app/include/u8g_config.h</code> and recompile. Simply add the desired fonts to the font table:</p>
+<pre><code class="c">#define U8G_FONT_TABLE \
+    U8G_FONT_TABLE_ENTRY(font_6x10)  \
+    U8G_FONT_TABLE_ENTRY(font_chikita)
+</code></pre>
+
+<p>They'll be available as <code>u8g.&lt;font_name&gt;</code> in Lua.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>disp:setFont(font)</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p><code>font</code> Constant to indentify pre-compiled font</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">disp:setFont(u8g.font_6x10)
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/olikraus/u8glib/wiki/userreference#setfont">u8glib setFont()</a></li>
+</ul>
+<h2 id="u8gdispsetfontlinespacingfactor">u8g.disp:setFontLineSpacingFactor()<a class="headerlink" href="#u8gdispsetfontlinespacingfactor" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontlinespacingfactor">u8glib setFontLineSpacingFactor()</a>.</p>
+<h2 id="u8gdispsetfontposbaseline">u8g.disp:setFontPosBaseline()<a class="headerlink" href="#u8gdispsetfontposbaseline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontposbaseline">u8glib setFontPosBaseline()</a>.</p>
+<h2 id="u8gdispsetfontposbottom">u8g.disp:setFontPosBottom()<a class="headerlink" href="#u8gdispsetfontposbottom" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontposbottom">u8glib setFontPosBottom()</a>.</p>
+<h2 id="u8gdispsetfontposcenter">u8g.disp:setFontPosCenter()<a class="headerlink" href="#u8gdispsetfontposcenter" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontposcenter">u8glib setFontPosCenter()</a>.</p>
+<h2 id="u8gdispsetfontpostop">u8g.disp:setFontPosTop()<a class="headerlink" href="#u8gdispsetfontpostop" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontpostop">u8glib setFontPosTop()</a>.</p>
+<h2 id="u8gdispsetfontrefheightall">u8g.disp:setFontRefHeightAll()<a class="headerlink" href="#u8gdispsetfontrefheightall" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontrefheightall">u8glib setFontRefHeightAll()</a>.</p>
+<h2 id="u8gdispsetfontrefheightextendedtext">u8g.disp:setFontRefHeightExtendedText()<a class="headerlink" href="#u8gdispsetfontrefheightextendedtext" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontrefheightextendedtext">u8glib setFontRefHeightExtendedText()</a>.</p>
+<h2 id="u8gdispsetfontrefheighttext">u8g.disp:setFontRefHeightText()<a class="headerlink" href="#u8gdispsetfontrefheighttext" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setfontrefheighttext">u8glib setFontRefHeightText()</a>.</p>
+<h2 id="u8gdispsetrot90">u8g.disp:setRot90()<a class="headerlink" href="#u8gdispsetrot90" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setrot90">u8glib setRot90()</a>.</p>
+<h2 id="u8gdispsetrot180">u8g.disp:setRot180()<a class="headerlink" href="#u8gdispsetrot180" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setrot180">u8glib setRot180()</a>.</p>
+<h2 id="u8gdispsetrot270">u8g.disp:setRot270()<a class="headerlink" href="#u8gdispsetrot270" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setrot270">u8glib setRot270()</a>.</p>
+<h2 id="u8gdispsetscale2x2">u8g.disp:setScale2x2()<a class="headerlink" href="#u8gdispsetscale2x2" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#setscale2x2">u8glib setScale2x2()</a>.</p>
+<h2 id="u8gdispsleepon">u8g.disp:sleepOn()<a class="headerlink" href="#u8gdispsleepon" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#sleepon">u8glib sleepOn()</a>.</p>
+<h2 id="u8gdispsleepoff">u8g.disp:sleepOff()<a class="headerlink" href="#u8gdispsleepoff" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#sleepoff">u8glib sleepOff()</a>.</p>
+<h2 id="u8gdispundorotation">u8g.disp:undoRotation()<a class="headerlink" href="#u8gdispundorotation" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#undorotation">u8glib undoRotation()</a>.</p>
+<h2 id="u8gdispundoscale">u8g.disp:undoScale()<a class="headerlink" href="#u8gdispundoscale" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/u8glib/wiki/userreference#undoscale">u8glib undoScale()</a>.</p>
+<h2 id="unimplemented-functions">Unimplemented Functions<a class="headerlink" href="#unimplemented-functions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cursor handling<ul>
+<li>disableCursor()</li>
+<li>enableCursor()</li>
+<li>setCursorColor()</li>
+<li>setCursorFont()</li>
+<li>setCursorPos()</li>
+<li>setCursorStyle()</li>
+</ul>
+</li>
+<li>General functions<ul>
+<li>setPrintPos()</li>
+<li>setHardwareBackup()</li>
+<li>setRGB()</li>
+<li>setDefaultMidColor()</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../uart/" class="btn btn-neutral float-right" title="uart">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tsl2561/" class="btn btn-neutral" title="tsl2561"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tsl2561/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../uart/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

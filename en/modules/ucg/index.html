@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ucg - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ucg";
+    var mkdocs_page_input_path = "en/modules/ucg.md";
+    var mkdocs_page_url = "/en/modules/ucg/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ucg</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ucg-module">ucg Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l4" href="#display-drivers">Display Drivers</a></li>
+        
+            <li><a class="toctree-l4" href="#constants">Constants</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#ucgdisp-sub-module">ucg.disp Sub-Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ucgdispbegin">ucg.disp:begin()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispclearscreen">ucg.disp:clearScreen()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdraw90line">ucg.disp:draw90Line()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawbox">ucg.disp:drawBox()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawcircle">ucg.disp:drawCircle()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawdisc">ucg.disp:drawDisc()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawframe">ucg.disp:drawFrame()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawglyph">ucg.disp:drawGlyph()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawgradientbox">ucg.disp:drawGradientBox()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawgradientline">ucg.disp:drawGradientLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawhline">ucg.disp:drawHLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawline">ucg.disp:drawLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawpixel">ucg.disp:drawPixel()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawrbox">ucg.disp:drawRBox()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawrframe">ucg.disp:drawRFrame()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawstring">ucg.disp:drawString()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawtetragon">ucg.disp:drawTetragon()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawtriangle">ucg.disp:drawTriangle()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispdrawvline">ucg.disp:drawVLine()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispgetfontascent">ucg.disp:getFontAscent()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispgetfontdescent">ucg.disp:getFontDescent()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispgetheight">ucg.disp:getHeight()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispgetstrwidth">ucg.disp:getStrWidth()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispgetwidth">ucg.disp:getWidth()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispprint">ucg.disp:print()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetcliprange">ucg.disp:setClipRange()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetcolor">ucg.disp:setColor()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfont">ucg.disp:setFont()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfontmode">ucg.disp:setFontMode()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfontposbaseline">ucg.disp:setFontPosBaseline()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfontposbottom">ucg.disp:setFontPosBottom()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfontposcenter">ucg.disp:setFontPosCenter()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetfontpostop">ucg.disp:setFontPosTop()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetmaxcliprange">ucg.disp:setMaxClipRange()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetprintdir">ucg.disp:setPrintDir()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetprintpos">ucg.disp:setPrintPos()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetrotate90">ucg.disp:setRotate90()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetrotate180">ucg.disp:setRotate180()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetrotate270">ucg.disp:setRotate270()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispsetscale2x2">ucg.disp:setScale2x2()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispundocliprange">ucg.disp:undoClipRange()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispundorotate">ucg.disp:undoRotate()</a></li>
+        
+            <li><a class="toctree-l4" href="#ucgdispundoscale">ucg.disp:undoScale()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>ucg</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/ucg.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ucg-module">ucg Module<a class="headerlink" href="#ucg-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-08-05</td>
+<td align="left"><a href="https://github.com/olikraus/ucglib">Oli Kraus</a>, <a href="https://github.com/devsaurus">Arnim Läuger</a></td>
+<td align="left"><a href="https://github.com/devsaurus">Arnim Läuger</a></td>
+<td align="left"><a href="../../../../app/ucglib/">ucglib</a></td>
+</tr>
+</tbody>
+</table>
+<p>Ucglib is a graphics library developed at <a href="https://github.com/olikraus/ucglib">olikraus/ucglib</a> with support for color TFT displays. The NodeMCU firmware supports a subset of these:</p>
+<ul>
+<li>ILI9163</li>
+<li>ILI9341</li>
+<li>PCF8833</li>
+<li>SEPS225</li>
+<li>SSD1331</li>
+<li>SSD1351</li>
+<li>ST7735</li>
+</ul>
+<p>This integration is based on <a href="https://github.com/olikraus/Ucglib_Arduino/releases/tag/v1.3.3">v1.3.3</a>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="spi-connection">SPI Connection<a class="headerlink" href="#spi-connection" title="Permanent link">&para;</a></h3>
+<p>The HSPI module is used (<a href="http://d.av.id.au/blog/esp8266-hardware-spi-hspi-general-info-and-pinout/">more information</a>), so certain pins are fixed:</p>
+<ul>
+<li>HSPI CLK  = GPIO14</li>
+<li>HSPI MOSI = GPIO13</li>
+<li>HSPI MISO = GPIO12 (not used)</li>
+</ul>
+<p>All other pins can be assigned to any available GPIO:</p>
+<ul>
+<li>CS</li>
+<li>D/C</li>
+<li>RES (optional for some displays)</li>
+</ul>
+<p>Also refer to the initialization sequence eg in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/ucglib/GraphicsTest.lua">GraphicsTest.lua</a>:</p>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, 8, 8)
+</code></pre>
+
+<h3 id="library-usage">Library Usage<a class="headerlink" href="#library-usage" title="Permanent link">&para;</a></h3>
+<p>The Lua bindings for this library closely follow ucglib's object oriented C++ API. Based on the ucg class, you create an object for your display type.</p>
+<p>ILI9341 via SPI:</p>
+<pre><code class="lua">cs  = 8 -- GPIO15, pull-down 10k to GND
+dc  = 4 -- GPIO2
+res = 0 -- GPIO16, RES is optional YMMV
+disp = ucg.ili9341_18x240x320_hw_spi(cs, dc, res)
+</code></pre>
+
+<p>This object provides all of ucglib's methods to control the display.
+Again, refer to <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/ucglib/GraphicsTest.lua">GraphicsTest.lua</a> to get an impression how this is achieved with Lua code. Visit the <a href="https://github.com/olikraus/ucglib">ucglib homepage</a> for technical details.</p>
+<h3 id="displays">Displays<a class="headerlink" href="#displays" title="Permanent link">&para;</a></h3>
+<p>To get access to the display constructors, add the desired entries to the display table in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/app/include/ucg_config.h">app/include/ucg_config.h</a>:</p>
+<pre><code class="c">#define UCG_DISPLAY_TABLE                          \
+    UCG_DISPLAY_TABLE_ENTRY(ili9341_18x240x320_hw_spi, ucg_dev_ili9341_18x240x320, ucg_ext_ili9341_18) \
+    UCG_DISPLAY_TABLE_ENTRY(st7735_18x128x160_hw_spi, ucg_dev_st7735_18x128x160, ucg_ext_st7735_18) \
+</code></pre>
+
+<h3 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Permanent link">&para;</a></h3>
+<p>ucglib comes with a wide range of fonts for small displays. Since they need to be compiled into the firmware image, you'd need to include them in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/app/include/ucg_config.h">app/include/ucg_config.h</a> and recompile. Simply add the desired fonts to the font table:</p>
+<pre><code class="c">#define UCG_FONT_TABLE                              \
+    UCG_FONT_TABLE_ENTRY(font_7x13B_tr)             \
+    UCG_FONT_TABLE_ENTRY(font_helvB12_hr)           \
+    UCG_FONT_TABLE_ENTRY(font_helvB18_hr)           \
+    UCG_FONT_TABLE_ENTRY(font_ncenR12_tr)           \
+    UCG_FONT_TABLE_ENTRY(font_ncenR14_hr)
+</code></pre>
+
+<p>They'll be available as <code>ucg.&lt;font_name&gt;</code> in Lua.</p>
+<h2 id="display-drivers">Display Drivers<a class="headerlink" href="#display-drivers" title="Permanent link">&para;</a></h2>
+<p>Initialize a display via Hardware SPI.</p>
+<ul>
+<li><code>ili9163_18x128x128_hw_spi()</code></li>
+<li><code>ili9341_18x240x320_hw_spi()</code></li>
+<li><code>pcf8833_16x132x132_hw_spi()</code></li>
+<li><code>seps225_16x128x128_uvis_hw_spi()</code></li>
+<li><code>ssd1351_18x128x128_hw_spi()</code></li>
+<li><code>ssd1351_18x128x128_ft_hw_spi()</code></li>
+<li><code>ssd1331_18x96x64_uvis_hw_spi()</code></li>
+<li><code>st7735_18x128x160_hw_spi()</code></li>
+</ul>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>ucg.st7735_18x128x160_hw_spi(cs, dc[, res])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cs</code> GPIO pin for /CS</li>
+<li><code>dc</code> GPIO pin for DC</li>
+<li><code>res</code> GPIO pin for /RES (optional)</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>ucg display object</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, spi.DATABITS_8, 0)
+
+cs  = 8 -- GPIO15, pull-down 10k to GND
+dc  = 4 -- GPIO2
+res = 0 -- GPIO16, RES is optional YMMV
+disp = ucg.st7735_18x128x160_hw_spi(cs, dc, res)
+</code></pre>
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<p>Constants for various functions.</p>
+<p><code>ucg.FONT_MODE_TRANSPARENT</code>, <code>ucg.FONT_MODE_SOLID</code>, <code>ucg.DRAW_UPPER_RIGHT</code>,
+<code>ucg.DRAW_UPPER_LEFT</code>, <code>ucg.DRAW_LOWER_RIGHT</code>, <code>ucg.DRAW_LOWER_LEFT</code>, <code>ucg.DRAW_ALL</code></p>
+<p><code>ucg.font_7x13B_tr</code>, ...</p>
+<h1 id="ucgdisp-sub-module">ucg.disp Sub-Module<a class="headerlink" href="#ucgdisp-sub-module" title="Permanent link">&para;</a></h1>
+<h2 id="ucgdispbegin">ucg.disp:begin()<a class="headerlink" href="#ucgdispbegin" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#begin">ucglib begin()</a>.</p>
+<h2 id="ucgdispclearscreen">ucg.disp:clearScreen()<a class="headerlink" href="#ucgdispclearscreen" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#clearscreen">ucglib clearScreen()</a>.</p>
+<h2 id="ucgdispdraw90line">ucg.disp:draw90Line()<a class="headerlink" href="#ucgdispdraw90line" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#draw90line">ucglib draw90Line()</a>.</p>
+<h2 id="ucgdispdrawbox">ucg.disp:drawBox()<a class="headerlink" href="#ucgdispdrawbox" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawbox">ucglib drawBox()</a>.</p>
+<h2 id="ucgdispdrawcircle">ucg.disp:drawCircle()<a class="headerlink" href="#ucgdispdrawcircle" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawcircle">ucglib drawCircle()</a>.</p>
+<h2 id="ucgdispdrawdisc">ucg.disp:drawDisc()<a class="headerlink" href="#ucgdispdrawdisc" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawdisc">ucglib drawDisc()</a>.</p>
+<h2 id="ucgdispdrawframe">ucg.disp:drawFrame()<a class="headerlink" href="#ucgdispdrawframe" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawframe">ucglib drawFrame()</a>.</p>
+<h2 id="ucgdispdrawglyph">ucg.disp:drawGlyph()<a class="headerlink" href="#ucgdispdrawglyph" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawglyph">ucglib drawGlyph()</a>.</p>
+<h2 id="ucgdispdrawgradientbox">ucg.disp:drawGradientBox()<a class="headerlink" href="#ucgdispdrawgradientbox" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawgradientbox">ucglib drawGradientBox()</a>.</p>
+<h2 id="ucgdispdrawgradientline">ucg.disp:drawGradientLine()<a class="headerlink" href="#ucgdispdrawgradientline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawgradientline">ucglib drawGradientLine()</a>.</p>
+<h2 id="ucgdispdrawhline">ucg.disp:drawHLine()<a class="headerlink" href="#ucgdispdrawhline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawhline">ucglib drawHLine()</a>.</p>
+<h2 id="ucgdispdrawline">ucg.disp:drawLine()<a class="headerlink" href="#ucgdispdrawline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawline">ucglib drawLine()</a>.</p>
+<h2 id="ucgdispdrawpixel">ucg.disp:drawPixel()<a class="headerlink" href="#ucgdispdrawpixel" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawpixel">ucglib drawPixel()</a>.</p>
+<h2 id="ucgdispdrawrbox">ucg.disp:drawRBox()<a class="headerlink" href="#ucgdispdrawrbox" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawrbox">ucglib drawRBox()</a>.</p>
+<h2 id="ucgdispdrawrframe">ucg.disp:drawRFrame()<a class="headerlink" href="#ucgdispdrawrframe" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawrframe">ucglib drawRFrame()</a>.</p>
+<h2 id="ucgdispdrawstring">ucg.disp:drawString()<a class="headerlink" href="#ucgdispdrawstring" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawstring">ucglib drawString()</a>.</p>
+<h2 id="ucgdispdrawtetragon">ucg.disp:drawTetragon()<a class="headerlink" href="#ucgdispdrawtetragon" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawtetragon">ucglib drawTetragon()</a>.</p>
+<h2 id="ucgdispdrawtriangle">ucg.disp:drawTriangle()<a class="headerlink" href="#ucgdispdrawtriangle" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawrtiangle">ucglib drawTriangle()</a>.</p>
+<h2 id="ucgdispdrawvline">ucg.disp:drawVLine()<a class="headerlink" href="#ucgdispdrawvline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#drawvline">ucglib drawVline()</a>.</p>
+<h2 id="ucgdispgetfontascent">ucg.disp:getFontAscent()<a class="headerlink" href="#ucgdispgetfontascent" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#getfontascent">ucglib getFontAscent()</a>.</p>
+<h2 id="ucgdispgetfontdescent">ucg.disp:getFontDescent()<a class="headerlink" href="#ucgdispgetfontdescent" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#getfontdescent">ucglib getFontDescent()</a>.</p>
+<h2 id="ucgdispgetheight">ucg.disp:getHeight()<a class="headerlink" href="#ucgdispgetheight" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#getheight">ucglib getHeight()</a>.</p>
+<h2 id="ucgdispgetstrwidth">ucg.disp:getStrWidth()<a class="headerlink" href="#ucgdispgetstrwidth" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#getstrwidth">ucglib getStrWidth()</a>.</p>
+<h2 id="ucgdispgetwidth">ucg.disp:getWidth()<a class="headerlink" href="#ucgdispgetwidth" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#getwidth">ucglib getWidth()</a>.</p>
+<h2 id="ucgdispprint">ucg.disp:print()<a class="headerlink" href="#ucgdispprint" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#print">ucglib print()</a>.</p>
+<h2 id="ucgdispsetcliprange">ucg.disp:setClipRange()<a class="headerlink" href="#ucgdispsetcliprange" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setcliprange">ucglib setClipRange()</a>.</p>
+<h2 id="ucgdispsetcolor">ucg.disp:setColor()<a class="headerlink" href="#ucgdispsetcolor" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setcolor">ucglib setColor()</a>.</p>
+<h2 id="ucgdispsetfont">ucg.disp:setFont()<a class="headerlink" href="#ucgdispsetfont" title="Permanent link">&para;</a></h2>
+<p>ucglib comes with a wide range of fonts for small displays. Since they need to be compiled into the firmware image, you'd need to include them in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/app/include/ucg_config.h">app/include/ucg_config.h</a> and recompile. Simply add the desired fonts to the font table:</p>
+<pre><code class="c">#define UCG_FONT_TABLE                              \
+    UCG_FONT_TABLE_ENTRY(font_7x13B_tr)             \
+    UCG_FONT_TABLE_ENTRY(font_helvB12_hr)           \
+    UCG_FONT_TABLE_ENTRY(font_helvB18_hr)           \
+    UCG_FONT_TABLE_ENTRY(font_ncenR12_tr)           \
+    UCG_FONT_TABLE_ENTRY(font_ncenR14_hr)
+</code></pre>
+
+<p>They'll be available as <code>ucg.&lt;font_name&gt;</code> in Lua.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>disp:setFont(font)</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p><code>font</code> constant to identify pre-compiled font</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">disp:setFont(ucg.font_7x13B_tr)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/olikraus/ucglib/wiki/reference#setfont">ucglib setFont()</a></p>
+<h2 id="ucgdispsetfontmode">ucg.disp:setFontMode()<a class="headerlink" href="#ucgdispsetfontmode" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setfontmode">ucglib setFontMode()</a>.</p>
+<h2 id="ucgdispsetfontposbaseline">ucg.disp:setFontPosBaseline()<a class="headerlink" href="#ucgdispsetfontposbaseline" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setfontposbaseline">ucglib setFontPosBaseline()</a>.</p>
+<h2 id="ucgdispsetfontposbottom">ucg.disp:setFontPosBottom()<a class="headerlink" href="#ucgdispsetfontposbottom" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setfontposbottom">ucglib setFontPosBottom()</a>.</p>
+<h2 id="ucgdispsetfontposcenter">ucg.disp:setFontPosCenter()<a class="headerlink" href="#ucgdispsetfontposcenter" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setfontposcenter">ucglib setFontPosCenter()</a>.</p>
+<h2 id="ucgdispsetfontpostop">ucg.disp:setFontPosTop()<a class="headerlink" href="#ucgdispsetfontpostop" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setfontpostop">ucglib setFontPosTop()</a>.</p>
+<h2 id="ucgdispsetmaxcliprange">ucg.disp:setMaxClipRange()<a class="headerlink" href="#ucgdispsetmaxcliprange" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setmaxcliprange">ucglib setMaxClipRange()</a>.</p>
+<h2 id="ucgdispsetprintdir">ucg.disp:setPrintDir()<a class="headerlink" href="#ucgdispsetprintdir" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setprintdir">ucglib setPrintDir()</a>.</p>
+<h2 id="ucgdispsetprintpos">ucg.disp:setPrintPos()<a class="headerlink" href="#ucgdispsetprintpos" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setprintpos">ucglib setPrintPos()</a>.</p>
+<h2 id="ucgdispsetrotate90">ucg.disp:setRotate90()<a class="headerlink" href="#ucgdispsetrotate90" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setrotate90">ucglib setRotate90()</a>.</p>
+<h2 id="ucgdispsetrotate180">ucg.disp:setRotate180()<a class="headerlink" href="#ucgdispsetrotate180" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setrotate180">ucglib setRotate180()</a>.</p>
+<h2 id="ucgdispsetrotate270">ucg.disp:setRotate270()<a class="headerlink" href="#ucgdispsetrotate270" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setrotate270">ucglib setRotate270()</a>.</p>
+<h2 id="ucgdispsetscale2x2">ucg.disp:setScale2x2()<a class="headerlink" href="#ucgdispsetscale2x2" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#setscale2x2">ucglib setScale2x2()</a>.</p>
+<h2 id="ucgdispundocliprange">ucg.disp:undoClipRange()<a class="headerlink" href="#ucgdispundocliprange" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#undocliprange">ucglib undoClipRange()</a>.</p>
+<h2 id="ucgdispundorotate">ucg.disp:undoRotate()<a class="headerlink" href="#ucgdispundorotate" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#undorotate">ucglib undoRotate()</a>.</p>
+<h2 id="ucgdispundoscale">ucg.disp:undoScale()<a class="headerlink" href="#ucgdispundoscale" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://github.com/olikraus/ucglib/wiki/reference#undoscale">ucglib undoScale()</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../websocket/" class="btn btn-neutral float-right" title="websocket">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../uart/" class="btn btn-neutral" title="uart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../uart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../websocket/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

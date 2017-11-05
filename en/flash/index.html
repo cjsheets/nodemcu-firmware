@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Flashing the firmware - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Flashing the firmware";
+    var mkdocs_page_input_path = "en/flash.md";
+    var mkdocs_page_url = "/en/flash/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Flashing the firmware</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#tool-overview">Tool overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#esptoolpy">esptool.py</a></li>
+        
+            <li><a class="toctree-l3" href="#nodemcu-flasher">NodeMCU Flasher</a></li>
+        
+            <li><a class="toctree-l3" href="#nodemcu-pyflasher">NodeMCU PyFlasher</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#putting-device-into-flash-mode">Putting Device Into Flash Mode</a></li>
+    
+
+    <li class="toctree-l2"><a href="#which-files-to-flash">Which Files To Flash</a></li>
+    
+
+    <li class="toctree-l2"><a href="#upgrading-firmware">Upgrading Firmware</a></li>
+    
+
+    <li class="toctree-l2"><a href="#sdk-init-data">SDK Init Data</a></li>
+    
+
+    <li class="toctree-l2"><a href="#determine-flash-size">Determine flash size</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../modules/adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Flashing the firmware</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/flash.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Below you'll find all necessary information to flash a NodeMCU firmware binary to ESP8266 or ESP8285. Note that this is a reference documentation and not a tutorial with fancy screen shots. Turn to your favorite search engine for those. Make sure you follow a recent tutorial rather than one that is several months old!</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Keep in mind that the ESP8266 needs to be <a href="#putting-device-into-flash-mode">put into flash mode</a> before you can flash a new firmware!</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When switching between NodeMCU versions, see the notes about
+<a href="#upgrading-firmware">Upgrading Firmware</a>.</p>
+</div>
+<h2 id="tool-overview">Tool overview<a class="headerlink" href="#tool-overview" title="Permanent link">&para;</a></h2>
+<h3 id="esptoolpy">esptool.py<a class="headerlink" href="#esptoolpy" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>A Python-based, open source, platform independent, utility to communicate with the ROM bootloader in Espressif ESP8266.</p>
+</blockquote>
+<p>Source: <a href="https://github.com/espressif/esptool">https://github.com/espressif/esptool</a></p>
+<p>Supported platforms: OS X, Linux, Windows, anything that runs Python</p>
+<p><strong>Running esptool.py</strong></p>
+<p>Run the following command to flash an <em>aggregated</em> binary as is produced for example by the <a href="../build/#cloud-build-service">cloud build service</a> or the <a href="../build/#docker-image">Docker image</a>.</p>
+<p><code>esptool.py --port &lt;serial-port-of-ESP8266&gt; write_flash -fm &lt;mode&gt; 0x00000 &lt;nodemcu-firmware&gt;.bin</code></p>
+<p><code>mode</code> is <code>qio</code> for 512&nbsp;kByte modules and <code>dio</code> for &gt;=4&nbsp;MByte modules (<code>qio</code> might work as well, YMMV).</p>
+<p><strong>Gotchas</strong></p>
+<ul>
+<li>See <a href="#determine-flash-size">below</a> if you don't know or are uncertain about the capacity of the flash chip on your device. It might help to double check as e.g. some ESP-01 modules come with 512kB while others are equipped with 1MB.</li>
+<li>esptool.py is under heavy development. It's advised you run the latest version (check with <code>esptool.py version</code>). Since this documentation may not have been able to keep up refer to the <a href="https://github.com/themadinventor/esptool#flash-modes">esptool flash modes documentation</a> for current options and parameters.</li>
+<li>The firmware image file contains default settings <code>dio</code> for flash mode and <code>40m</code> for flash frequency.</li>
+<li>In some uncommon cases, the <a href="#sdk-init-data">SDK init data</a> may be invalid and NodeMCU may fail to boot. The easiest solution is to fully erase the chip before flashing:
+<code>esptool.py --port &lt;serial-port-of-ESP8266&gt; erase_flash</code></li>
+</ul>
+<h3 id="nodemcu-flasher">NodeMCU Flasher<a class="headerlink" href="#nodemcu-flasher" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>A firmware Flash tool for NodeMCU...We are working on next version and will use QT framework. It will be cross platform and open-source.</p>
+</blockquote>
+<p>Source: <a href="https://github.com/nodemcu/nodemcu-flasher">https://github.com/nodemcu/nodemcu-flasher</a></p>
+<p>Supported platforms: Windows</p>
+<p>Note that this tool was created by the initial developers of the NodeMCU firmware. <strong>It hasn't seen updates since September 2015</strong> and is not maintained by the current NodeMCU <em>firmware</em> team. Be careful to not accidentally flash the very old default firmware the tool is shipped with.</p>
+<h3 id="nodemcu-pyflasher">NodeMCU PyFlasher<a class="headerlink" href="#nodemcu-pyflasher" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Self-contained <a href="https://github.com/nodemcu/nodemcu-firmware">NodeMCU</a> flasher with GUI based on <a href="https://github.com/espressif/esptool">esptool.py</a> and <a href="https://www.wxpython.org/">wxPython</a>.</p>
+</blockquote>
+<p>Source: <a href="https://github.com/marcelstoer/nodemcu-pyflasher">https://github.com/marcelstoer/nodemcu-pyflasher</a></p>
+<p>Supported platforms: anything that runs Python, runnable .exe available for Windows</p>
+<p>Disclaimer: the availability of <a href="https://www.facebook.com/NodeMCU/posts/663197460515251">NodeMCU PyFlasher was announced on the NodeMCU Facebook page</a> but it is not an official offering of the current NodeMCU firmware team.</p>
+<h2 id="putting-device-into-flash-mode">Putting Device Into Flash Mode<a class="headerlink" href="#putting-device-into-flash-mode" title="Permanent link">&para;</a></h2>
+<p>To enable ESP8266 firmware flashing GPIO0 pin must be pulled low before the device is reset. Conversely, for a normal boot, GPIO0 must be pulled high or floating.</p>
+<p>If you have a <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0">NodeMCU dev kit</a> then you don't need to do anything, as the USB connection can pull GPIO0 low by asserting DTR and reset your board by asserting RTS.</p>
+<p>If you have an ESP-01 or other device without built-in USB, you will need to enable flashing yourself by pulling GPIO0 low or pressing a "flash" switch, while powering up or resetting the module.</p>
+<h2 id="which-files-to-flash">Which Files To Flash<a class="headerlink" href="#which-files-to-flash" title="Permanent link">&para;</a></h2>
+<p>If you build your firmware with the <a href="../build/">cloud builder or the Docker image</a>, or any other method that produces a <em>combined binary</em>, then you can flash that file directly to address 0x00000.</p>
+<p>Otherwise, if you built your own firmware from source code:</p>
+<ul>
+<li><code>bin/0x00000.bin</code> to 0x00000</li>
+<li><code>bin/0x10000.bin</code> to 0x10000</li>
+</ul>
+<h2 id="upgrading-firmware">Upgrading Firmware<a class="headerlink" href="#upgrading-firmware" title="Permanent link">&para;</a></h2>
+<p>There are three potential issues that arise from upgrading (or downgrading!) firmware from one NodeMCU version to another:</p>
+<ul>
+<li>
+<p>Lua scripts written for one NodeMCU version (like 0.9.x) may not work error-free on a more recent firmware.  For example, Espressif changed the <code>socket:send</code> operation to be asynchronous i.e. non-blocking. See <a href="../modules/net/#netsocketsend">API documentation</a> for details.</p>
+</li>
+<li>
+<p>The NodeMCU flash file system may need to be reformatted, particularly if its address has changed because the new firmware is different in size from the old firmware.  If it is not automatically formatted then it should be valid and have the same contents as before the flash operation. You can still run <a href="../modules/file/#fileformat"><code>file.format()</code></a> manually to re-format your flash file system. You will know if you need to do this if your flash files exist but seem empty, or if data cannot be written to new files. However, this should be an exceptional case.
+Formatting a file system on a large flash device (e.g. the 16MB parts) can take some time. So, on the first boot, you shouldn't get worried if nothing appears to happen for a minute. There's a message printed to console to make you aware of this.</p>
+</li>
+<li>
+<p>The Espressif SDK Init Data may change between each NodeMCU firmware version, and may need to be erased or reflashed.  See <a href="#sdk-init-data">SDK Init Data</a> for details.  Fully erasing the module before upgrading firmware will avoid this issue.</p>
+</li>
+</ul>
+<h2 id="sdk-init-data">SDK Init Data<a class="headerlink" href="#sdk-init-data" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Normally, NodeMCU will take care of writing the SDK init data when needed. Most users can ignore this section.</p>
+</div>
+<p>NodeMCU versions are compiled against specific versions of the Espressif SDK. The SDK reserves space in flash that is used to store calibration and other data. This data changes between SDK versions, and if it is invalid or not present, the firmware may not boot correctly. Symptoms include messages like <code>rf_cal[0] !=0x05,is 0xFF</code>, or endless reboot loops and/or fast blinking module LEDs.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are seeing one or several of the above symptoms, ensure that your chip is fully erased before flashing, for example:</p>
+<p><code>esptool.py --port &lt;serial-port-of-ESP8266&gt; erase_flash</code></p>
+<p>Also verify that you are using an up-to-date NodeMCU release, as some early releases of NodeMCU 1.5.4.1 did not write the SDK init data to a freshly erased chip.</p>
+</div>
+<p>Espressif refers to this area as "System Param" and it resides in the last four 4&nbsp;kB sectors of flash. Since SDK 1.5.4.1 a fifth sector is reserved for RF calibration (and its placement is controlled by NodeMCU) as described by this <a href="http://bbs.espressif.com/viewtopic.php?f=46&amp;t=2407">patch notice</a>. At minimum, Espressif states that the 4th sector from the end needs to be flashed with "init data", and the 2nd sector from the end should be blank.</p>
+<p>The default init data is provided as part of the SDK in the file <code>esp_init_data_default.bin</code>. NodeMCU will automatically flash this file to the right place on first boot if the sector appears to be empty.</p>
+<p>If you need to customize init data then first download the <a href="https://github.com/espressif/ESP8266_NONOS_SDK/archive/v2.1.0.zip">Espressif SDK 2.1.0</a> and extract <code>esp_init_data_default.bin</code>. Then flash that file just like you'd flash the firmware. The correct address for the init data depends on the capacity of the flash chip. </p>
+<ul>
+<li><code>0x7c000</code> for 512 kB, modules like most ESP-01, -03, -07 etc.</li>
+<li><code>0xfc000</code> for 1 MB, modules like ESP8285, PSF-A85, some ESP-01, -03 etc.</li>
+<li><code>0x1fc000</code> for 2 MB</li>
+<li><code>0x3fc000</code> for 4 MB, modules like ESP-12E, NodeMCU devkit 1.0, WeMos D1 mini</li>
+<li><code>0x7fc000</code> for 8 MB</li>
+<li><code>0xffc000</code> for 16 MB, modules like WeMos D1 mini pro</li>
+</ul>
+<p>See "4.1 Non-FOTA Flash Map" and "6.3 RF Initialization Configuration" of the <a href="https://espressif.com/en/support/explore/get-started/esp8266/getting-started-guide">ESP8266 Getting Started Guide</a> for details on init data addresses and customization.</p>
+<h2 id="determine-flash-size">Determine flash size<a class="headerlink" href="#determine-flash-size" title="Permanent link">&para;</a></h2>
+<p>To determine the capacity of the flash chip <em>before</em> a firmware is installed you can run</p>
+<p><code>esptool.py --port &lt;serial-port&gt; flash_id</code></p>
+<p>It will return a manufacturer ID and a chip ID like so:</p>
+<pre><code>Connecting...
+Manufacturer: e0
+Device: 4016
+</code></pre>
+
+<p>The chip ID can then be looked up in <a href="https://code.coreboot.org/p/flashrom/source/tree/HEAD/trunk/flashchips.h">https://code.coreboot.org/p/flashrom/source/tree/HEAD/trunk/flashchips.h</a>. This leads to a manufacturer name and a chip model name/number e.g. <code>AMIC_A25LQ032</code>. That information can then be fed into your favorite search engine to find chip descriptions and data sheets.</p>
+<p>By convention the last two or three digits in the module name denote the capacity in megabits. So, <code>A25LQ032</code> in the example above is a 32Mb(=4MB) module.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../spiffs/" class="btn btn-neutral float-right" title="Internal filesystem notes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../build/" class="btn btn-neutral" title="Building the firmware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../build/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../spiffs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/extra.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>node - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "node";
+    var mkdocs_page_input_path = "en/modules/node.md";
+    var mkdocs_page_url = "/en/modules/node/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">node</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#node-module">node Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#nodebootreason">node.bootreason()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodechipid">node.chipid()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodecompile">node.compile()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodedsleep">node.dsleep()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeflashid">node.flashid()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeflashsize">node.flashsize()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeheap">node.heap()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeinfo">node.info()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeinput">node.input()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeoutput">node.output()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodereadvdd33-deprecated">node.readvdd33() --deprecated</a></li>
+        
+            <li><a class="toctree-l4" href="#noderestart">node.restart()</a></li>
+        
+            <li><a class="toctree-l4" href="#noderestore">node.restore()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodesetcpufreq">node.setcpufreq()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodesleep">node.sleep()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodestripdebug">node.stripdebug()</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeosprint">node.osprint()</a></li>
+        
+            <li><a class="toctree-l4" href="#noderandom">node.random()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#nodeegc-module">node.egc module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#nodeegcsetmode">node.egc.setmode()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#nodetask-module">node.task module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#nodetaskpost">node.task.post()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>node</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/node.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="node-module">node Module<a class="headerlink" href="#node-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-22</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="../../../../app/modules/node.c">node.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The node module provides access to system-level features such as sleep, restart and various info and IDs.</p>
+<h2 id="nodebootreason">node.bootreason()<a class="headerlink" href="#nodebootreason" title="Permanent link">&para;</a></h2>
+<p>Returns the boot reason and extended reset info.</p>
+<p>The first value returned is the raw code, not the new "reset info" code which was introduced in recent SDKs. Values are:</p>
+<ul>
+<li>1, power-on</li>
+<li>2, reset (software?)</li>
+<li>3, hardware reset via reset pin</li>
+<li>4, WDT reset (watchdog timeout)</li>
+</ul>
+<p>The second value returned is the extended reset cause. Values are:</p>
+<ul>
+<li>0, power-on</li>
+<li>1, hardware watchdog reset</li>
+<li>2, exception reset</li>
+<li>3, software watchdog reset</li>
+<li>4, software restart</li>
+<li>5, wake from deep sleep</li>
+<li>6, external reset</li>
+</ul>
+<p>In general, the extended reset cause supercedes the raw code. The raw code is kept for backwards compatibility only. For new applications it is highly recommended to use the extended reset cause instead.</p>
+<p>In case of extended reset cause 3 (exception reset), additional values are returned containing the crash information. These are, in order, EXCCAUSE, EPC1, EPC2, EPC3, EXCVADDR, and DEPC.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>node.bootreason()</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>rawcode, reason [, exccause, epc1, epc2, epc3, excvaddr, depc ]</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">_, reset_reason = node.bootreason()
+if reset_reason == 0 then print(&quot;Power UP!&quot;) end
+</code></pre>
+
+<h2 id="nodechipid">node.chipid()<a class="headerlink" href="#nodechipid" title="Permanent link">&para;</a></h2>
+<p>Returns the ESP chip ID.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>node.chipid()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>chip ID (number)</p>
+<h2 id="nodecompile">node.compile()<a class="headerlink" href="#nodecompile" title="Permanent link">&para;</a></h2>
+<p>Compiles a Lua text file into Lua bytecode, and saves it as .lc file.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>node.compile("file.lua")</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p><code>filename</code> name of Lua text file</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">file.open(&quot;hello.lua&quot;,&quot;w+&quot;)
+file.writeline([[print(&quot;hello nodemcu&quot;)]])
+file.writeline([[print(node.heap())]])
+file.close()
+
+node.compile(&quot;hello.lua&quot;)
+dofile(&quot;hello.lua&quot;)
+dofile(&quot;hello.lc&quot;)
+</code></pre>
+
+<h2 id="nodedsleep">node.dsleep()<a class="headerlink" href="#nodedsleep" title="Permanent link">&para;</a></h2>
+<p>Enters deep sleep mode, wakes up when timed out.</p>
+<p>The maximum sleep time is 4294967295us, ~71 minutes. This is an SDK limitation.
+Firmware from before 05 Jan 2016 have a maximum sleeptime of ~35 minutes.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This function can only be used in the condition that esp8266 PIN32(RST) and PIN8(XPD_DCDC aka GPIO16) are connected together. Using sleep(0) will set no wake up timer, connect a GPIO to pin RST, the chip will wake up by a falling-edge on pin RST.</p>
+</div>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>node.dsleep(us, option, instant)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>us</code> number (integer) or <code>nil</code>, sleep time in micro second. If <code>us == 0</code>, it will sleep forever. If <code>us == nil</code>, will not set sleep time.</p>
+</li>
+<li>
+<p><code>option</code> number (integer) or <code>nil</code>. If <code>nil</code>, it will use last alive setting as default option.</p>
+<ul>
+<li>0, init data byte 108 is valuable</li>
+<li>> 0, init data byte 108 is valueless</li>
+<li>0, RF_CAL or not after deep-sleep wake up, depends on init data byte 108</li>
+<li>1, RF_CAL after deep-sleep wake up, there will be large current</li>
+<li>2, no RF_CAL after deep-sleep wake up, there will only be small current</li>
+<li>4, disable RF after deep-sleep wake up, just like modem sleep, there will be the smallest current</li>
+</ul>
+</li>
+<li><code>instant</code> number (integer) or <code>nil</code>. If present and non-zero, do not use
+    the normal grace time before entering deep sleep.  This is a largely
+    undocumented feature, and is only briefly mentioned in Espressif's
+    <a href="https://espressif.com/sites/default/files/documentation/9b-esp8266_low_power_solutions_en.pdf#page=10">low power solutions</a> document (chapter 4.5).</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--do nothing
+node.dsleep()
+--sleep μs
+node.dsleep(1000000)
+--set sleep option, then sleep μs
+node.dsleep(1000000, 4)
+--set sleep option only
+node.dsleep(nil,4)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../wifi/#wifisuspend"><code>wifi.suspend()</code></a></li>
+<li><a href="../wifi/#wifiresume"><code>wifi.resume()</code></a></li>
+<li><a href="#nodesleep"><code>node.sleep()</code></a></li>
+</ul>
+<h2 id="nodeflashid">node.flashid()<a class="headerlink" href="#nodeflashid" title="Permanent link">&para;</a></h2>
+<p>Returns the flash chip ID.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>node.flashid()</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>flash ID (number)</p>
+<h2 id="nodeflashsize">node.flashsize()<a class="headerlink" href="#nodeflashsize" title="Permanent link">&para;</a></h2>
+<p>Returns the flash chip size in bytes. On 4MB modules like ESP-12 the return value is 4194304 = 4096KB.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>node.flashsize()</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>flash size in bytes (integer)</p>
+<h2 id="nodeheap">node.heap()<a class="headerlink" href="#nodeheap" title="Permanent link">&para;</a></h2>
+<p>Returns the current available heap size in bytes. Note that due to fragmentation, actual allocations of this size may not be possible.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>node.heap()</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>system heap size left in bytes (number)</p>
+<h2 id="nodeinfo">node.info()<a class="headerlink" href="#nodeinfo" title="Permanent link">&para;</a></h2>
+<p>Returns NodeMCU version, chipid, flashid, flash size, flash mode, flash speed.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>node.info()</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>majorVer</code> (number)</li>
+<li><code>minorVer</code> (number)</li>
+<li><code>devVer</code> (number)</li>
+<li><code>chipid</code> (number)</li>
+<li><code>flashid</code> (number)</li>
+<li><code>flashsize</code> (number)</li>
+<li><code>flashmode</code> (number)</li>
+<li><code>flashspeed</code> (number)</li>
+</ul>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">majorVer, minorVer, devVer, chipid, flashid, flashsize, flashmode, flashspeed = node.info()
+print(&quot;NodeMCU &quot;..majorVer..&quot;.&quot;..minorVer..&quot;.&quot;..devVer)
+</code></pre>
+
+<h2 id="nodeinput">node.input()<a class="headerlink" href="#nodeinput" title="Permanent link">&para;</a></h2>
+<p>Submits a string to the Lua interpreter. Similar to <code>pcall(loadstring(str))</code>, but without the single-line limitation.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This function only has an effect when invoked from a callback. Using it directly on the console <strong>does not work</strong>.</p>
+</div>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>node.input(str)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p><code>str</code> Lua chunk</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">sk:on(&quot;receive&quot;, function(conn, payload) node.input(payload) end)
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#nodeoutput"><code>node.output()</code></a></p>
+<h2 id="nodeoutput">node.output()<a class="headerlink" href="#nodeoutput" title="Permanent link">&para;</a></h2>
+<p>Redirects the Lua interpreter output to a callback function. Optionally also prints it to the serial console.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do <strong>not</strong> attempt to <code>print()</code> or otherwise induce the Lua interpreter to produce output from within the callback function. Doing so results in infinite recursion, and leads to a watchdog-triggered restart.</p>
+</div>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>node.output(function(str), serial_debug)</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>output_fn(str)</code> a function accept every output as str, and can send the output to a socket (or maybe a file).</li>
+<li><code>serial_debug</code> 1 output also show in serial. 0: no serial output.</li>
+</ul>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">function tonet(str)
+  sk:send(str)
+end
+node.output(tonet, 1)  -- serial also get the lua output.
+</code></pre>
+
+<pre><code class="lua">-- a simple telnet server
+s=net.createServer(net.TCP)
+s:listen(2323,function(c)
+   con_std = c
+   function s_output(str)
+      if(con_std~=nil)
+         then con_std:send(str)
+      end
+   end
+   node.output(s_output, 0)   -- re-direct output to function s_ouput.
+   c:on(&quot;receive&quot;,function(c,l)
+      node.input(l)           -- works like pcall(loadstring(l)) but support multiple separate line
+   end)
+   c:on(&quot;disconnection&quot;,function(c)
+      con_std = nil
+      node.output(nil)        -- un-regist the redirect output function, output goes to serial
+   end)
+end)
+</code></pre>
+
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#nodeinput"><code>node.input()</code></a></p>
+<h2 id="nodereadvdd33-deprecated">node.readvdd33() --deprecated<a class="headerlink" href="#nodereadvdd33-deprecated" title="Permanent link">&para;</a></h2>
+<p>Moved to <a href="../adc/#adcreadvdd33"><code>adc.readvdd33()</code></a>.</p>
+<h2 id="noderestart">node.restart()<a class="headerlink" href="#noderestart" title="Permanent link">&para;</a></h2>
+<p>Restarts the chip.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>node.restart()</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="noderestore">node.restore()<a class="headerlink" href="#noderestore" title="Permanent link">&para;</a></h2>
+<p>Restores system configuration to defaults using the SDK function <code>system_restore()</code>, which is described in the documentation as:</p>
+<blockquote>
+<p>Reset default settings of following APIs: <code>wifi_station_set_auto_connect</code>, <code>wifi_set_phy_mode</code>, <code>wifi_softap_set_config</code> related, <code>wifi_station_set_config</code> related, <code>wifi_set_opmode</code>, and APs’ information recorded by <code>#define AP_CACHE</code>.</p>
+</blockquote>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>node.restore()</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">node.restore()
+node.restart() -- ensure the restored settings take effect
+</code></pre>
+
+<h2 id="nodesetcpufreq">node.setcpufreq()<a class="headerlink" href="#nodesetcpufreq" title="Permanent link">&para;</a></h2>
+<p>Change the working CPU Frequency.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>node.setcpufreq(speed)</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p><code>speed</code> constant 'node.CPU80MHZ' or 'node.CPU160MHZ'</p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p>target CPU frequency (number)</p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">node.setcpufreq(node.CPU80MHZ)
+</code></pre>
+
+<h2 id="nodesleep">node.sleep()<a class="headerlink" href="#nodesleep" title="Permanent link">&para;</a></h2>
+<p>Put NodeMCU in light sleep mode to reduce current consumption. </p>
+<ul>
+<li>NodeMCU can not enter light sleep mode if wifi is suspended.</li>
+<li>All active timers will be suspended and then resumed when NodeMCU wakes from sleep. </li>
+<li>Any previously suspended timers will be resumed when NodeMCU wakes from sleep.</li>
+</ul>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>node.sleep({wake_gpio[, duration, int_type, resume_cb, preserve_mode]})</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>duration</code> Sleep duration in microseconds(μs). If a sleep duration of <code>0</code> is specified, suspension will be indefinite (Range: 0 or 50000 - 268435454 μs (0:4:28.000454))</li>
+<li><code>wake_pin</code> 1-12, pin to attach wake interrupt to. Note that pin 0(GPIO 16) does not support interrupts. </li>
+<li>If sleep duration is indefinite, <code>wake_pin</code> must be specified</li>
+<li>Please refer to the <a href="../gpio/"><code>GPIO module</code></a> for more info on the pin map.</li>
+<li><code>int_type</code> type of interrupt that you would like to wake on. (Optional, Default: <code>node.INT_LOW</code>)</li>
+<li>valid interrupt modes:</li>
+<li><code>node.INT_UP</code>   Rising edge</li>
+<li><code>node.INT_DOWN</code> Falling edge</li>
+<li><code>node.INT_BOTH</code> Both edges</li>
+<li><code>node.INT_LOW</code>  Low level</li>
+<li><code>node.INT_HIGH</code> High level</li>
+<li><code>resume_cb</code> Callback to execute when WiFi wakes from suspension. (Optional)</li>
+<li><code>preserve_mode</code> preserve current WiFi mode through node sleep. (Optional, Default: true)  </li>
+<li>If true, Station and StationAP modes will automatically reconnect to previously configured Access Point when NodeMCU resumes.</li>
+<li>If false, discard WiFi mode and leave NodeMCU in <code>wifi.NULL_MODE</code>. WiFi mode will be restored to original mode on restart.</li>
+</ul>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">
+--Put NodeMCU in light sleep mode indefinitely with resume callback and wake interrupt
+ cfg={}
+ cfg.wake_pin=3
+ cfg.resume_cb=function() print(&quot;WiFi resume&quot;) end
+
+ node.sleep(cfg)
+
+--Put NodeMCU in light sleep mode with interrupt, resume callback and discard WiFi mode
+ cfg={}
+ cfg.wake_pin=3 --GPIO0
+ cfg.resume_cb=function() print(&quot;WiFi resume&quot;) end
+ cfg.preserve_mode=false
+
+ node.sleep(cfg)
+
+--Put NodeMCU in light sleep mode for 10 seconds with resume callback
+ cfg={}
+ cfg.duration=10*1000*1000
+ cfg.resume_cb=function() print(&quot;WiFi resume&quot;) end
+
+ node.sleep(cfg)
+
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../wifi/#wifisuspend"><code>wifi.suspend()</code></a></li>
+<li><a href="../wifi/#wifiresume"><code>wifi.resume()</code></a></li>
+<li><a href="#nodedsleep"><code>node.dsleep()</code></a></li>
+</ul>
+<h2 id="nodestripdebug">node.stripdebug()<a class="headerlink" href="#nodestripdebug" title="Permanent link">&para;</a></h2>
+<p>Controls the amount of debug information kept during <a href="#nodecompile"><code>node.compile()</code></a>, and allows removal of debug information from already compiled Lua code.</p>
+<p>Only recommended for advanced users, the NodeMCU defaults are fine for almost all use cases.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>node.stripdebug([level[, function]])</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>level</code><ul>
+<li>1, don't discard debug info</li>
+<li>2, discard Local and Upvalue debug info</li>
+<li>3, discard Local, Upvalue and line-number debug info</li>
+</ul>
+</li>
+<li><code>function</code> a compiled function to be stripped per setfenv except 0 is not permitted.</li>
+</ul>
+<p>If no arguments are given then the current default setting is returned. If function is omitted, this is the default setting for future compiles. The function argument uses the same rules as for <code>setfenv()</code>.</p>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>If invoked without arguments, returns the current level settings. Otherwise, <code>nil</code> is returned.</p>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">node.stripdebug(3)
+node.compile('bigstuff.lua')
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<p><a href="#nodecompile"><code>node.compile()</code></a></p>
+<h2 id="nodeosprint">node.osprint()<a class="headerlink" href="#nodeosprint" title="Permanent link">&para;</a></h2>
+<p>Controls whether the debugging output from the Espressif SDK is printed. Note that this is only available if
+the firmware is build with DEVELOPMENT_TOOLS defined.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>node.osprint(enabled)</code></p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>enabled</code> This is either <code>true</code> to enable printing, or <code>false</code> to disable it. The default is <code>false</code>.</li>
+</ul>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p>Nothing</p>
+<h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">node.osprint(true)
+</code></pre>
+
+<h2 id="noderandom">node.random()<a class="headerlink" href="#noderandom" title="Permanent link">&para;</a></h2>
+<p>This behaves like math.random except that it uses true random numbers derived from the ESP8266 hardware. It returns uniformly distributed
+numbers in the required range. It also takes care to get large ranges correct. </p>
+<p>It can be called in three ways. Without arguments in the floating point build of NodeMCU, it returns a random real number with uniform distribution in the interval [0,1). 
+When called with only one argument, an integer n, it returns an integer random number x such that 1 &lt;= x &lt;= n. For instance, you can simulate the result of a die with random(6). 
+Finally, random can be called with two integer arguments, l and u, to get a pseudo-random integer x such that l &lt;= x &lt;= u.</p>
+<h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
+<p><code>node.random()</code>
+<code>node.random(n)</code>
+<code>node.random(l, u)</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>n</code> the number of distinct integer values that can be returned -- in the (inclusive) range 1 .. <code>n</code></li>
+<li><code>l</code> the lower bound of the range</li>
+<li><code>u</code> the upper bound of the range</li>
+</ul>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p>The random number in the appropriate range. Note that the zero argument form will always return 0 in the integer build.</p>
+<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print (&quot;I rolled a&quot;, node.random(6))
+</code></pre>
+
+<h1 id="nodeegc-module">node.egc module<a class="headerlink" href="#nodeegc-module" title="Permanent link">&para;</a></h1>
+<h2 id="nodeegcsetmode">node.egc.setmode()<a class="headerlink" href="#nodeegcsetmode" title="Permanent link">&para;</a></h2>
+<p>Sets the Emergency Garbage Collector mode. <a href="http://www.eluaproject.net/doc/v0.9/en_elua_egc.html">The EGC whitepaper</a>
+provides more detailed information on the EGC.</p>
+<h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
+<p><code>node.egc.setmode(mode, [param])</code></p>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>mode</code><ul>
+<li><code>node.egc.NOT_ACTIVE</code> EGC inactive, no collection cycle will be forced in low memory situations</li>
+<li><code>node.egc.ON_ALLOC_FAILURE</code> Try to allocate a new block of memory, and run the garbage collector if the allocation fails. If the allocation fails even after running the garbage collector, the allocator will return with error. </li>
+<li><code>node.egc.ON_MEM_LIMIT</code> Run the garbage collector when the memory used by the Lua script goes beyond an upper <code>limit</code>. If the upper limit can't be satisfied even after running the garbage collector, the allocator will return with error.</li>
+<li><code>node.egc.ALWAYS</code> Run the garbage collector before each memory allocation. If the allocation fails even after running the garbage collector, the allocator will return with error. This mode is very efficient with regards to memory savings, but it's also the slowest.</li>
+</ul>
+</li>
+<li><code>level</code> in the case of <code>node.egc.ON_MEM_LIMIT</code>, this specifies the memory limit.</li>
+</ul>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<p><code>node.egc.setmode(node.egc.ALWAYS, 4096)  -- This is the default setting at startup.</code>
+<code>node.egc.setmode(node.egc.ON_ALLOC_FAILURE) -- This is the fastest activeEGC mode.</code></p>
+<h1 id="nodetask-module">node.task module<a class="headerlink" href="#nodetask-module" title="Permanent link">&para;</a></h1>
+<h2 id="nodetaskpost">node.task.post()<a class="headerlink" href="#nodetaskpost" title="Permanent link">&para;</a></h2>
+<p>Enable a Lua callback or task to post another task request. Note that as per the 
+example multiple tasks can be posted in any task, but the highest priority is 
+always delivered first.</p>
+<p>If the task queue is full then a queue full error is raised.  </p>
+<h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
+<p><code>node.task.post([task_priority], function)</code></p>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>task_priority</code> (optional)<ul>
+<li><code>node.task.LOW_PRIORITY</code> = 0</li>
+<li><code>node.task.MEDIUM_PRIORITY</code> = 1</li>
+<li><code>node.task.HIGH_PRIORITY</code> = 2</li>
+</ul>
+</li>
+<li><code>function</code> a callback function to be executed when the task is run. </li>
+</ul>
+<p>If the priority is omitted then  this defaults  to <code>node.task.MEDIUM_PRIORITY</code></p>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">for i = node.task.LOW_PRIORITY, node.task.HIGH_PRIORITY do 
+  node.task.post(i,function(p2)
+    print(&quot;priority is &quot;..p2)
+  end) 
+end      
+</code></pre>
+
+<p>prints</p>
+<pre><code>priority is 2
+priority is 1
+priority is 0
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ow/" class="btn btn-neutral float-right" title="ow (1-Wire)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../net/" class="btn btn-neutral" title="net"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../net/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ow/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Extension Developer FAQ - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Extension Developer FAQ";
+    var mkdocs_page_input_path = "en/extn-developer-faq.md";
+    var mkdocs_page_url = "/en/extn-developer-faq/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Extension Developer FAQ</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#extension-developer-faq">Extension Developer FAQ</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#firmware-build-options">Firmware build options</a></li>
+        
+            <li><a class="toctree-l4" href="#how-does-the-non-os-sdk-structure-execution">How does the non-OS SDK structure execution</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../modules/adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FAQs &raquo;</li>
+        
+      
+    
+    <li>Extension Developer FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/extn-developer-faq.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="extension-developer-faq">Extension Developer FAQ<a class="headerlink" href="#extension-developer-faq" title="Permanent link">&para;</a></h1>
+<h2 id="firmware-build-options">Firmware build options<a class="headerlink" href="#firmware-build-options" title="Permanent link">&para;</a></h2>
+<p><a href="../build/#build-options">Building the firmware → Build Options</a> lists a few of the common parameters to customize your firmware <em>at build time</em>.</p>
+<h2 id="how-does-the-non-os-sdk-structure-execution">How does the non-OS SDK structure execution<a class="headerlink" href="#how-does-the-non-os-sdk-structure-execution" title="Permanent link">&para;</a></h2>
+<p>Details of the execution model for the <strong>non-OS SDK</strong> is not well documented by 
+Espressif. This section summarises the project's understanding of how this execution
+model works based on the Espressif-supplied examples and SDK documentation, plus
+various posts on the Espressif BBS and other forums, and an examination of the
+BootROM code.</p>
+<p>The ESP8266 boot ROM contains a set of primitive tasking and dispatch functions
+which are also used by the SDK. In this model, execution units are either:</p>
+<ul>
+<li>
+<p><strong>INTERRUPT SERVICE ROUTINES (ISRs)</strong> which are declared and controlled
+    through the <code>ets_isr_attach()</code> and other <code>ets_isr_*</code> and <code>ets_intr_*</code>
+    functions. ISRs can be defined on a range of priorities, where a higher
+    priority ISR is able to interrupt a lower priority one. ISRs are time
+    critical and should complete in no more than 50 µSec.</p>
+<p>ISR code and data constants should be run out of RAM or ROM, for two reasons:
+if an ISR interrupts a flash I/O operation (which must disable the Flash 
+instruction cache) and a cache miss occurs, then the ISR will trigger a
+fatal exception; secondly, the
+execution time for Flash memory (that is located in the <code>irom0</code> load section)
+is indeterminate: whilst cache-hits can run at full memory bandwidth, any
+cache-misses require the code to be read from Flash; and even though
+H/W-based, this is at roughly 26x slower than memory bandwidth (for DIO
+flash); this will cause ISR execution to fall outside the require time
+guidelines. (Note that any time critical code within normal execution and that
+is bracketed by interrupt lock / unlock guards should also follow this 50
+µSec guideline.)<br/><br/></p>
+</li>
+<li>
+<p><strong>TASKS</strong>. A task is a normal execution unit running at a non-interrupt priority.
+    Tasks can be executed from Flash memory. An executing task can be interrupted
+    by one or more ISRs being delivered, but it won't be preempted by another
+    queued task. The Espressif guideline is that no individual task should run for
+    more than 15 mSec, before returning control to the SDK.</p>
+<p>The ROM will queue up to 32 pending tasks at priorities 0..31 and will
+execute the highest priority queued task next (or wait on interrupt if none
+is runnable). The SDK tasking system is layered on this ROM dispatcher and
+it reserves 29 of these task priorities for its own use, including the
+implementation of the various SDK timer, WiFi and other callback mechanisms
+such as the software WDT.</p>
+<p>Three of these task priorities are allocated for and exposed directly at an
+application level. The application can declare a single task handler for each
+level, and associate a task queue with the level. Tasks can be posted to this
+queue. (The post will fail is the queue is full). Tasks are then delivered
+FIFO within task priority.</p>
+<p>How the three user task priorities USER0 .. USER2 are positioned relative to
+the SDK task priorities is undocumented, but some SDK tasks definitely run at
+a lower priority than USER0. As a result if you always have a USER task queued
+for execution, then you can starve SDK housekeeping tasks and you will start
+to get WiFi and other failures. Espressif therefore recommends that you don't
+stay computable for more than 500 mSec to avoid such timeouts.</p>
+</li>
+</ul>
+<p>Note that the 50µS, 15mSec and 500mSec limits are guidelines
+and not hard constraints -- that is if you break them (slightly) then your code
+may (usually) work, but you can get very difficult to diagnose and intermittent
+failures. Also running ISRs from Flash may work until there is a collision with
+SPIFFS I/O which will then a cause CPU exception.</p>
+<p>Also note that the SDK API function <code>system_os_post()</code>, and the <code>task_post_*()</code>
+macros which generate this can be safely called from an ISR.</p>
+<p>The Lua runtime is NOT reentrant, and hence any code which calls any Lua API
+must run within a task context. Any such task is what we call a <em>Lua-Land Task</em>
+(or <strong>LLT</strong>). <em>ISRs must not access the Lua API or Lua resources.</em> LLTs can be
+executed as SDK API callbacks or OS tasks. They can also, of course, call the
+Lua execution system to execute Lua code (e.g. <code>luaL_dofile()</code> and related
+calls).</p>
+<p>Also since the application has no control over the relative time ordering of
+tasks and SDK API callbacks, LLTs can't make any assumptions about whether a
+task and any posted successors will run consecutively.</p>
+<p>This API is designed to complement the Lua library model, so that a library can
+declare one or more task handlers and that both ISPs and LLTs can then post a
+message for delivery to a task handler. Each task handler has a unique message
+associated with it, and may bind a single uint32 parameter. How this parameter
+is interpreted is left to the task poster and task handler to coordinate.</p>
+<p>The interface is exposed through <code>#include "task/task.h"</code> and involves two API
+calls. Any task handlers are declared, typically in the module_init function by
+assigning <code>task_get_id(some_task_callback)</code> to a (typically globally) accessible
+handle variable, say <code>XXX_callback_handle</code>. This can then be used in an ISR or
+normal LLT to execute a <code>task_post_YYY(XXX_callback_handle,param)</code> where YYY is
+one of <code>low</code>, <code>medium</code>, <code>high</code>. The callback will then be executed when the SDK
+delivers the task.</p>
+<p><em>Note</em>: <code>task_post_YYY</code> can fail with a false return if the task Q is full. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hardware-faq/" class="btn btn-neutral float-right" title="Hardware FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lua-developer-faq/" class="btn btn-neutral" title="Lua Developer FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../lua-developer-faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../hardware-faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/extra.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

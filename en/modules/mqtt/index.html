@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>mqtt - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "mqtt";
+    var mkdocs_page_input_path = "en/modules/mqtt.md";
+    var mkdocs_page_url = "/en/modules/mqtt/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">mqtt</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#mqtt-module">MQTT Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#mqttclient">mqtt.Client()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#mqtt-client">MQTT Client</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#mqttclientclose">mqtt.client:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclientconnect">mqtt.client:connect()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclientlwt">mqtt.client:lwt()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclienton">mqtt.client:on()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclientpublish">mqtt.client:publish()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclientsubscribe">mqtt.client:subscribe()</a></li>
+        
+            <li><a class="toctree-l4" href="#mqttclientunsubscribe">mqtt.client:unsubscribe()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>mqtt</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/mqtt.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mqtt-module">MQTT Module<a class="headerlink" href="#mqtt-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-01-23</td>
+<td align="left"><a href="https://github.com/esar/contiki-mqtt">Stephen Robinson</a>, <a href="https://github.com/tuanpmt/esp_mqtt">Tuan PM</a></td>
+<td align="left"><a href="https://github.com/vowstar">Vowstar</a></td>
+<td align="left"><a href="../../../../app/modules/mqtt.c">mqtt.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The client adheres to version 3.1.1 of the <a href="https://en.wikipedia.org/wiki/MQTT">MQTT</a> protocol. Make sure that your broker supports and is correctly configured for version 3.1.1. The client is backwards incompatible with brokers running MQTT 3.1.</p>
+<h2 id="mqttclient">mqtt.Client()<a class="headerlink" href="#mqttclient" title="Permanent link">&para;</a></h2>
+<p>Creates a MQTT client.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>mqtt.Client(clientid, keepalive[, username, password, cleansession])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>clientid</code> client ID</li>
+<li><code>keepalive</code> keepalive seconds</li>
+<li><code>username</code> user name</li>
+<li><code>password</code> user password</li>
+<li><code>cleansession</code> 0/1 for <code>false</code>/<code>true</code>. Default is 1 (<code>true</code>).</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>MQTT client</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- init mqtt client without logins, keepalive timer 120s
+m = mqtt.Client(&quot;clientid&quot;, 120)
+
+-- init mqtt client with logins, keepalive timer 120sec
+m = mqtt.Client(&quot;clientid&quot;, 120, &quot;user&quot;, &quot;password&quot;)
+
+-- setup Last Will and Testament (optional)
+-- Broker will publish a message with qos = 0, retain = 0, data = &quot;offline&quot; 
+-- to topic &quot;/lwt&quot; if client don't send keepalive packet
+m:lwt(&quot;/lwt&quot;, &quot;offline&quot;, 0, 0)
+
+m:on(&quot;connect&quot;, function(client) print (&quot;connected&quot;) end)
+m:on(&quot;offline&quot;, function(client) print (&quot;offline&quot;) end)
+
+-- on publish message receive event
+m:on(&quot;message&quot;, function(client, topic, data) 
+  print(topic .. &quot;:&quot; ) 
+  if data ~= nil then
+    print(data)
+  end
+end)
+
+-- for TLS: m:connect(&quot;192.168.11.118&quot;, secure-port, 1)
+m:connect(&quot;192.168.11.118&quot;, 1883, 0, function(client)
+  print(&quot;connected&quot;)
+  -- Calling subscribe/publish only makes sense once the connection
+  -- was successfully established. You can do that either here in the
+  -- 'connect' callback or you need to otherwise make sure the
+  -- connection was established (e.g. tracking connection status or in
+  -- m:on(&quot;connect&quot;, function)).
+
+  -- subscribe topic with qos = 0
+  client:subscribe(&quot;/topic&quot;, 0, function(client) print(&quot;subscribe success&quot;) end)
+  -- publish a message with data = hello, QoS = 0, retain = 0
+  client:publish(&quot;/topic&quot;, &quot;hello&quot;, 0, 0, function(client) print(&quot;sent&quot;) end)
+end,
+function(client, reason)
+  print(&quot;failed reason: &quot; .. reason)
+end)
+
+m:close();
+-- you can call m:connect again
+</code></pre>
+
+<h1 id="mqtt-client">MQTT Client<a class="headerlink" href="#mqtt-client" title="Permanent link">&para;</a></h1>
+<h2 id="mqttclientclose">mqtt.client:close()<a class="headerlink" href="#mqttclientclose" title="Permanent link">&para;</a></h2>
+<p>Closes connection to the broker.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:close()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h2 id="mqttclientconnect">mqtt.client:connect()<a class="headerlink" href="#mqttclientconnect" title="Permanent link">&para;</a></h2>
+<p>Connects to the broker specified by the given host, port, and secure options.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:connect(host[, port[, secure[, autoreconnect]]][, function(client)[, function(client, reason)]])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>host</code> host, domain or IP (string)</li>
+<li><code>port</code> broker port (number), default 1883</li>
+<li><code>secure</code> 0/1 for <code>false</code>/<code>true</code>, default 0. Take note of constraints documented in the <a href="../net/">net module</a>.</li>
+<li><code>autoreconnect</code> 0/1 for <code>false</code>/<code>true</code>, default 0. This option is <em>deprecated</em>.</li>
+<li><code>function(client)</code> callback function for when the connection was established</li>
+<li><code>function(client, reason)</code> callback function for when the connection could not be established. No further callbacks should be called.</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
+<p>Don't use <code>autoreconnect</code>. Let me repeat that, don't use <code>autoreconnect</code>. You should handle the errors explicitly and appropriately for
+your application. In particular, the default for <code>cleansession</code> above is <code>true</code>, so all subscriptions are destroyed when the connection
+is lost for any reason.</p>
+<p>In order to acheive a consistent connection, handle errors in the error callback. For example:</p>
+<pre><code>function handle_mqtt_error(client, reason) 
+  tmr.create():alarm(10 * 1000, tmr.ALARM_SINGLE, do_mqtt_connect)
+end
+
+function do_mqtt_connect()
+  mqtt:connect(&quot;server&quot;, function(client) print(&quot;connected&quot;) end, handle_mqtt_error)
+end
+</code></pre>
+
+<p>In reality, the connected function should do something useful!</p>
+<p>This is the description of how the <code>autoreconnect</code> functionality may (or may not) work.</p>
+<blockquote>
+<p>When <code>autoreconnect</code> is set, then the connection will be re-established when it breaks. No error indication will be given (but all the
+subscriptions may be lost if <code>cleansession</code> is true). However, if the
+very first connection fails, then no reconnect attempt is made, and the error is signalled through the callback (if any). The first connection
+is considered a success if the client connects to a server and gets back a good response packet in response to its MQTT connection request.
+This implies (for example) that the username and password are correct.</p>
+</blockquote>
+<h4 id="connection-failure-callback-reason-codes">Connection failure callback reason codes:<a class="headerlink" href="#connection-failure-callback-reason-codes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mqtt.CONN_FAIL_SERVER_NOT_FOUND</code></td>
+<td>-5</td>
+<td>There is no broker listening at the specified IP Address and Port</td>
+</tr>
+<tr>
+<td><code>mqtt.CONN_FAIL_NOT_A_CONNACK_MSG</code></td>
+<td>-4</td>
+<td>The response from the broker was not a CONNACK as required by the protocol</td>
+</tr>
+<tr>
+<td><code>mqtt.CONN_FAIL_DNS</code></td>
+<td>-3</td>
+<td>DNS Lookup failed</td>
+</tr>
+<tr>
+<td><code>mqtt.CONN_FAIL_TIMEOUT_RECEIVING</code></td>
+<td>-2</td>
+<td>Timeout waiting for a CONNACK from the broker</td>
+</tr>
+<tr>
+<td><code>mqtt.CONN_FAIL_TIMEOUT_SENDING</code></td>
+<td>-1</td>
+<td>Timeout trying to send the Connect message</td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_ACCEPTED</code></td>
+<td>0</td>
+<td>No errors. <em>Note: This will not trigger a failure callback.</em></td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_REFUSED_PROTOCOL_VER</code></td>
+<td>1</td>
+<td>The broker is not a 3.1.1 MQTT broker.</td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_REFUSED_ID_REJECTED</code></td>
+<td>2</td>
+<td>The specified ClientID was rejected by the broker. (See <code>mqtt.Client()</code>)</td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_REFUSED_SERVER_UNAVAILABLE</code></td>
+<td>3</td>
+<td>The server is unavailable.</td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_REFUSED_BAD_USER_OR_PASS</code></td>
+<td>4</td>
+<td>The broker refused the specified username or password.</td>
+</tr>
+<tr>
+<td><code>mqtt.CONNACK_REFUSED_NOT_AUTHORIZED</code></td>
+<td>5</td>
+<td>The username is not authorized.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mqttclientlwt">mqtt.client:lwt()<a class="headerlink" href="#mqttclientlwt" title="Permanent link">&para;</a></h2>
+<p>Setup <a href="http://www.hivemq.com/blog/mqtt-essentials-part-9-last-will-and-testament">Last Will and Testament</a> (optional). A broker will publish a message with qos = 0, retain = 0, data = "offline" to topic "/lwt" if client does not send keepalive packet.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:lwt(topic, message[, qos[, retain]])</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>topic</code> the topic to publish to (string)</li>
+<li><code>message</code> the message to publish, (buffer or string)</li>
+<li><code>qos</code> QoS level, default 0</li>
+<li><code>retain</code> retain flag, default 0</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="mqttclienton">mqtt.client:on()<a class="headerlink" href="#mqttclienton" title="Permanent link">&para;</a></h2>
+<p>Registers a callback function for an event.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:on(event, function(client[, topic[, message]]))</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>event</code> can be "connect", "message" or "offline"</li>
+<li><code>function(client[, topic[, message]])</code> callback function. The first parameter is the client. If event is "message", the 2nd and 3rd param are received topic and message (strings).</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="mqttclientpublish">mqtt.client:publish()<a class="headerlink" href="#mqttclientpublish" title="Permanent link">&para;</a></h2>
+<p>Publishes a message.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:publish(topic, payload, qos, retain[, function(client)])</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>topic</code> the topic to publish to (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">topic string</a>)</li>
+<li><code>message</code> the message to publish, (buffer or string)</li>
+<li><code>qos</code> QoS level</li>
+<li><code>retain</code> retain flag</li>
+<li><code>function(client)</code> optional callback fired when PUBACK received.  NOTE: When calling publish() more than once, the last callback function defined will be called for ALL publish commands.</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h2 id="mqttclientsubscribe">mqtt.client:subscribe()<a class="headerlink" href="#mqttclientsubscribe" title="Permanent link">&para;</a></h2>
+<p>Subscribes to one or several topics.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:subscribe(topic, qos[, function(client)])</code>
+<code>mqtt:subscribe(table[, function(client)])</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>topic</code> a <a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">topic string</a></li>
+<li><code>qos</code> QoS subscription level, default 0</li>
+<li><code>table</code> array of 'topic, qos' pairs to subscribe to</li>
+<li><code>function(client)</code> optional callback fired when subscription(s) succeeded.  NOTE: When calling subscribe() more than once, the last callback function defined will be called for ALL subscribe commands.</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- subscribe topic with qos = 0
+m:subscribe(&quot;/topic&quot;,0, function(conn) print(&quot;subscribe success&quot;) end)
+
+-- or subscribe multiple topic (topic/0, qos = 0; topic/1, qos = 1; topic2 , qos = 2)
+m:subscribe({[&quot;topic/0&quot;]=0,[&quot;topic/1&quot;]=1,topic2=2}, function(conn) print(&quot;subscribe success&quot;) end)
+</code></pre>
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Rather than calling <code>subscribe</code> multiple times you should use the multiple topics syntax shown in the above example if you want to subscribe to more than one topic at once.</p>
+</div>
+<h2 id="mqttclientunsubscribe">mqtt.client:unsubscribe()<a class="headerlink" href="#mqttclientunsubscribe" title="Permanent link">&para;</a></h2>
+<p>Unsubscribes from one or several topics.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>mqtt:unsubscribe(topic[, function(client)])</code>
+<code>mqtt:unsubscribe(table[, function(client)])</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>topic</code> a <a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">topic string</a></li>
+<li><code>table</code> array of 'topic, anything' pairs to unsubscribe from</li>
+<li><code>function(client)</code> optional callback fired when unsubscription(s) succeeded.  NOTE: When calling unsubscribe() more than once, the last callback function defined will be called for ALL unsubscribe commands.</li>
+</ul>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>true</code> on success, <code>false</code> otherwise</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- unsubscribe topic
+m:unsubscribe(&quot;/topic&quot;, function(conn) print(&quot;unsubscribe success&quot;) end)
+
+-- or unsubscribe multiple topic (topic/0; topic/1; topic2)
+m:unsubscribe({[&quot;topic/0&quot;]=0,[&quot;topic/1&quot;]=0,topic2=&quot;anything&quot;}, function(conn) print(&quot;unsubscribe success&quot;) end)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../net/" class="btn btn-neutral float-right" title="net">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mdns/" class="btn btn-neutral" title="mdns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../mdns/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../net/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>crypto - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "crypto";
+    var mkdocs_page_input_path = "en/modules/crypto.md";
+    var mkdocs_page_url = "/en/modules/crypto/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">crypto</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#crypto-module">crypto Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cryptoencrypt">crypto.encrypt()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptodecrypt">crypto.decrypt()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptofhash">crypto.fhash()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptohash">crypto.hash()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptonew_hash">crypto.new_hash()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptohmac">crypto.hmac()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptonew_hmac">crypto.new_hmac()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptomask">crypto.mask()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptotobase64">crypto.toBase64()</a></li>
+        
+            <li><a class="toctree-l4" href="#cryptotohex">crypto.toHex()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>crypto</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/crypto.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="crypto-module">crypto Module<a class="headerlink" href="#crypto-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-06-02</td>
+<td align="left"><a href="https://github.com/DiUS">DiUS</a>, <a href="https://github.com/jmattsson">Johny Mattsson</a></td>
+<td align="left"><a href="https://github.com/jmattsson">Johny Mattsson</a></td>
+<td align="left"><a href="../../../../app/modules/crypto.c">crypto.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The crypto modules provides various functions for working with cryptographic algorithms.</p>
+<p>The following encryption/decryption algorithms/modes are supported:
+- <code>"AES-ECB"</code> for 128-bit AES in ECB mode (NOT recommended)
+- <code>"AES-CBC"</code> for 128-bit AES in CBC mode</p>
+<p>The following hash algorithms are supported:
+- MD2 (not available by default, has to be explicitly enabled in <code>app/include/user_config.h</code>)
+- MD5
+- SHA1
+- SHA256, SHA384, SHA512 (unless disabled in <code>app/include/user_config.h</code>)</p>
+<h2 id="cryptoencrypt">crypto.encrypt()<a class="headerlink" href="#cryptoencrypt" title="Permanent link">&para;</a></h2>
+<p>Encrypts Lua strings.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>crypto.encrypt(algo, key, plain [, iv])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>algo</code> the name of a supported encryption algorithm to use</li>
+<li><code>key</code> the encryption key as a string; for AES encryption this <em>MUST</em> be 16 bytes long</li>
+<li><code>plain</code> the string to encrypt; it will be automatically zero-padded to a 16-byte boundary if necessary</li>
+<li><code>iv</code> the initilization vector, if using AES-CBC; defaults to all-zero if not given</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>The encrypted data as a binary string. For AES this is always a multiple of 16 bytes in length.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.encrypt(&quot;AES-ECB&quot;, &quot;1234567890abcdef&quot;, &quot;Hi, I'm secret!&quot;)))
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#cryptodecrypt"><code>crypto.decrypt()</code></a></li>
+</ul>
+<h2 id="cryptodecrypt">crypto.decrypt()<a class="headerlink" href="#cryptodecrypt" title="Permanent link">&para;</a></h2>
+<p>Decrypts previously encrypted data.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>crypto.decrypt(algo, key, cipher [, iv])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>algo</code> the name of a supported encryption algorithm to use</li>
+<li><code>key</code> the encryption key as a string; for AES encryption this <em>MUST</em> be 16 bytes long</li>
+<li><code>cipher</code> the cipher text to decrypt (as obtained from <code>crypto.encrypt()</code>)</li>
+<li><code>iv</code> the initilization vector, if using AES-CBC; defaults to all-zero if not given</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>The decrypted string.</p>
+<p>Note that the decrypted string may contain extra zero-bytes of padding at the end. One way of stripping such padding is to use <code>:match("(.-)%z*$")</code> on the decrypted string. Additional care needs to be taken if working on binary data, in which case the real length likely needs to be encoded with the data, and at which point <code>:sub(1, n)</code> can be used to strip the padding.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">key = &quot;1234567890abcdef&quot;
+cipher = crypto.encrypt(&quot;AES-ECB&quot;, key, &quot;Hi, I'm secret!&quot;)
+print(crypto.toHex(cipher))
+print(crypto.decrypt(&quot;AES-ECB&quot;, key, cipher))
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#cryptoencrypt"><code>crypto.encrypt()</code></a></li>
+</ul>
+<h2 id="cryptofhash">crypto.fhash()<a class="headerlink" href="#cryptofhash" title="Permanent link">&para;</a></h2>
+<p>Compute a cryptographic hash of a a file.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>hash = crypto.fhash(algo, filename)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>algo</code> the hash algorithm to use, case insensitive string</li>
+<li><code>filename</code> the path to the file to hash</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>A binary string containing the message digest. To obtain the textual version (ASCII hex characters), please use <a href="#cryptotohex"><code>crypto.toHex()</code></a>.</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.fhash(&quot;sha1&quot;,&quot;myfile.lua&quot;)))
+</code></pre>
+
+<h2 id="cryptohash">crypto.hash()<a class="headerlink" href="#cryptohash" title="Permanent link">&para;</a></h2>
+<p>Compute a cryptographic hash of a Lua string.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>hash = crypto.hash(algo, str)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p><code>algo</code> the hash algorithm to use, case insensitive string
+<code>str</code> string to hash contents of</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p>A binary string containing the message digest. To obtain the textual version (ASCII hex characters), please use <a href="#cryptotohex"><code>crypto.toHex()</code></a>.</p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.hash(&quot;sha1&quot;,&quot;abc&quot;)))
+</code></pre>
+
+<h2 id="cryptonew_hash">crypto.new_hash()<a class="headerlink" href="#cryptonew_hash" title="Permanent link">&para;</a></h2>
+<p>Create a digest/hash object that can have any number of strings added to it. Object has <code>update</code> and <code>finalize</code> functions.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>hashobj = crypto.new_hash(algo)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p><code>algo</code> the hash algorithm to use, case insensitive string</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>Userdata object with <code>update</code> and <code>finalize</code> functions available.</p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">hashobj = crypto.new_hash(&quot;SHA1&quot;)
+hashobj:update(&quot;FirstString&quot;))
+hashobj:update(&quot;SecondString&quot;))
+digest = hashobj:finalize()
+print(crypto.toHex(digest))
+</code></pre>
+
+<h2 id="cryptohmac">crypto.hmac()<a class="headerlink" href="#cryptohmac" title="Permanent link">&para;</a></h2>
+<p>Compute a <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> (Hashed Message Authentication Code) signature for a Lua string.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>signature = crypto.hmac(algo, str, key)</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>algo</code> hash algorithm to use, case insensitive string</li>
+<li><code>str</code> data to calculate the hash for</li>
+<li><code>key</code> key to use for signing, may be a binary string</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>A binary string containing the HMAC signature. Use <a href="#cryptotohex"><code>crypto.toHex()</code></a> to obtain the textual version.</p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.hmac(&quot;sha1&quot;,&quot;abc&quot;,&quot;mysecret&quot;)))
+</code></pre>
+
+<h2 id="cryptonew_hmac">crypto.new_hmac()<a class="headerlink" href="#cryptonew_hmac" title="Permanent link">&para;</a></h2>
+<p>Create a hmac object that can have any number of strings added to it. Object has <code>update</code> and <code>finalize</code> functions.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>hmacobj = crypto.new_hmac(algo, key)</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>algo</code> the hash algorithm to use, case insensitive string</li>
+<li><code>key</code> the key to use (may be a binary string)</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>Userdata object with <code>update</code> and <code>finalize</code> functions available.</p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">hmacobj = crypto.new_hmac(&quot;SHA1&quot;, &quot;s3kr3t&quot;)
+hmacobj:update(&quot;FirstString&quot;))
+hmacobj:update(&quot;SecondString&quot;))
+digest = hmacobj:finalize()
+print(crypto.toHex(digest))
+</code></pre>
+
+<h2 id="cryptomask">crypto.mask()<a class="headerlink" href="#cryptomask" title="Permanent link">&para;</a></h2>
+<p>Applies an XOR mask to a Lua string. Note that this is not a proper cryptographic mechanism, but some protocols may use it nevertheless.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>crypto.mask(message, mask)</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>message</code> message to mask</li>
+<li><code>mask</code> the mask to apply, repeated if shorter than the message</li>
+</ul>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>The masked message, as a binary string. Use <a href="#cryptotohex"><code>crypto.toHex()</code></a> to get a textual representation of it.</p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.mask(&quot;some message to obscure&quot;,&quot;X0Y7&quot;)))
+</code></pre>
+
+<h2 id="cryptotobase64">crypto.toBase64()<a class="headerlink" href="#cryptotobase64" title="Permanent link">&para;</a></h2>
+<p>Provides a Base64 representation of a (binary) Lua string.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>b64 = crypto.toBase64(binary)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p><code>binary</code> input string to Base64 encode</p>
+<h4 id="return">Return<a class="headerlink" href="#return" title="Permanent link">&para;</a></h4>
+<p>A Base64 encoded string.</p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toBase64(crypto.hash(&quot;sha1&quot;,&quot;abc&quot;)))
+</code></pre>
+
+<h2 id="cryptotohex">crypto.toHex()<a class="headerlink" href="#cryptotohex" title="Permanent link">&para;</a></h2>
+<p>Provides an ASCII hex representation of a (binary) Lua string. Each byte in the input string is represented as two hex characters in the output.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>hexstr = crypto.toHex(binary)</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<p><code>binary</code> input string to get hex representation for</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p>An ASCII hex string.</p>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(crypto.toHex(crypto.hash(&quot;sha1&quot;,&quot;abc&quot;)))
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dht/" class="btn btn-neutral float-right" title="dht">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cron/" class="btn btn-neutral" title="cron"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../cron/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dht/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

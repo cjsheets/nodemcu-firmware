@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Filesystem on SD card - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Filesystem on SD card";
+    var mkdocs_page_input_path = "en/sdcard.md";
+    var mkdocs_page_url = "/en/sdcard/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Filesystem on SD card</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#fat-file-system-on-sd-card">FAT File System on SD Card</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#enabling-fatfs">Enabling FatFs</a></li>
+        
+            <li><a class="toctree-l3" href="#sd-card-connection">SD Card connection</a></li>
+        
+            <li><a class="toctree-l3" href="#lua-bindings">Lua bindings</a></li>
+        
+            <li><a class="toctree-l3" href="#multiple-partitions-multiple-cards">Multiple partitions / multiple cards</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../modules/adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Filesystem on SD card</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/sdcard.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="fat-file-system-on-sd-card">FAT File System on SD Card<a class="headerlink" href="#fat-file-system-on-sd-card" title="Permanent link">&para;</a></h1>
+<p>Accessing files on external SD cards is currently only supported from the <code>file</code> module. This imposes the same overall restrictions of internal SPIFFS to SD cards:</p>
+<ul>
+<li>no support for sub-folders</li>
+<li>no timestamps</li>
+<li>no file attributes (read-only, system, etc.)</li>
+</ul>
+<p>Work is in progress to extend the <code>file</code> API with support for the missing features.</p>
+<h2 id="enabling-fatfs">Enabling FatFs<a class="headerlink" href="#enabling-fatfs" title="Permanent link">&para;</a></h2>
+<p>The FAT file system is implemented by <a href="http://elm-chan.org/fsw/ff/00index_e.html">Chan's FatFs</a> version <a href="http://elm-chan.org/fsw/ff/ff12a.zip">R0.12a</a>. It's disabled by default to save memory space and has to be enabled before compiling the firmware:</p>
+<p>Uncomment <code>#define BUILD_FATFS</code> in <a href="../../../app/include/user_config.h"><code>user_config.h</code></a>.</p>
+<h2 id="sd-card-connection">SD Card connection<a class="headerlink" href="#sd-card-connection" title="Permanent link">&para;</a></h2>
+<p>The SD card is operated in SPI mode, thus the card has to be wired to the respective ESP pins of the HSPI interface. There are several naming schemes used on different adapters - the following list shows alternative terms:</p>
+<ul>
+<li><code>CK, CLK, SCLK</code> to pin5 / GPIO14</li>
+<li><code>DO, DAT0, MISO</code> to pin 6 / GPIO12</li>
+<li><code>DI, CMD, MOSI</code> to pin 7 / GPIO13</li>
+<li><code>CS, DAT3, SS</code> to pin 8 / GPIO15 recommended</li>
+<li><code>VCC, VDD</code> to 3V3 supply</li>
+<li><code>VSS, GND</code> to common ground</li>
+</ul>
+<p>Connection of <code>SS/CS</code> can be done to any of the GPIOs on pins 1 to 12. This allows coexistence of the SD card with other SPI slaves on the same bus. There's no support for detection of card presence or the write protection switch. These would need to be handled as additional GPIOs in the user application.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The adapter does not require level shifters since SD and ESP are supposed to be powered with the same voltage. If your specific model contains level shifters then make sure that both sides can be operated at 3V3.</p>
+</div>
+<p><img alt="1:1 micro-sd adapter" src="../../img/micro_sd-small.jpg" title="1:1 micro-sd adapter" />
+<img alt="micro-sd shield" src="../../img/micro_sd_shield-small.jpg" title="micro-sd shield" /></p>
+<h2 id="lua-bindings">Lua bindings<a class="headerlink" href="#lua-bindings" title="Permanent link">&para;</a></h2>
+<p>Before mounting the volume(s) on the SD card, you need to initialize the SPI interface from Lua.</p>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, 8, 8)
+
+-- initialize other spi slaves
+
+-- then mount the sd
+-- note: the card initialization process during `file.mount()` will set spi divider temporarily to 200 (400 kHz)
+-- it's reverted back to the current user setting before `file.mount()` finishes
+vol = file.mount(&quot;/SD0&quot;, 8)   -- 2nd parameter is optional for non-standard SS/CS pin
+if not vol then
+  print(&quot;retry mounting&quot;)
+  vol = file.mount(&quot;/SD0&quot;, 8)
+  if not vol then
+    error(&quot;mount failed&quot;)
+  end
+end
+file.open(&quot;/SD0/path/to/somefile&quot;)
+print(file.read())
+file.close()
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the card doesn't work when calling <code>file.mount()</code> for the first time then re-try the command. It's possible that certain cards time out during the first initialization after power-up.</p>
+</div>
+<p>The logical drives are mounted at the root of a unified directory tree where the mount points distinguish between internal flash (<code>/FLASH</code>) and the card's paritions (<code>/SD0</code> to <code>/SD3</code>). Files are accessed via either the absolute hierarchical path or relative to the current working directory. It defaults to <code>/FLASH</code> and can be changed with <code>file.chdir(path)</code>.</p>
+<p>Subdirectories are supported on FAT volumes only.</p>
+<h2 id="multiple-partitions-multiple-cards">Multiple partitions / multiple cards<a class="headerlink" href="#multiple-partitions-multiple-cards" title="Permanent link">&para;</a></h2>
+<p>The mapping from logical volumes (eg. <code>/SD0</code>) to partitions on an SD card is defined in <a href="../../../app/include/fatfs_config.h"><code>fatfs_config.h</code></a>. More volumes can be added to the <code>VolToPart</code> array with any combination of physical drive number (aka SS/CS pin) and partition number. Their names have to be added to <code>_VOLUME_STRS</code> in <a href="../../../app/fatfs/ffconf.h"><code>ffconf.h</code></a> as well.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../upload/" class="btn btn-neutral float-right" title="Uploading code">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../spiffs/" class="btn btn-neutral" title="Internal filesystem notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../spiffs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../upload/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/extra.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

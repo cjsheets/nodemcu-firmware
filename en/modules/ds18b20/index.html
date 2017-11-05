@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ds18b20 - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ds18b20";
+    var mkdocs_page_input_path = "en/modules/ds18b20.md";
+    var mkdocs_page_url = "/en/modules/ds18b20/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ds18b20</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ds18b20-module">DS18B20 Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ds18b20read">ds18b20.read()</a></li>
+        
+            <li><a class="toctree-l4" href="#ds18b20setting">ds18b20.setting()</a></li>
+        
+            <li><a class="toctree-l4" href="#ds18b20setup">ds18b20.setup()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>ds18b20</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/ds18b20.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ds18b20-module">DS18B20 Module<a class="headerlink" href="#ds18b20-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2017-06-11</td>
+<td align="left"><a href="https://github.com/fetchbot">fetchbot</a></td>
+<td align="left"><a href="https://github.com/fetchbot">fetchbot</a></td>
+<td align="left"><a href="../../../../app/modules/ds18b20.c">ds18b20.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module provides access to the DS18B20 1-Wire digital thermometer. Note that NodeMCU offers both a C module (this one) and <a href="https://github.com/nodemcu/nodemcu-firmware/tree/dev/lua_modules/ds18b20">a Lua module for this sensor</a>. See <a href="https://github.com/nodemcu/nodemcu-firmware/pull/2003">#2003</a> for a discussion on the respective merits of them.</p>
+<h2 id="ds18b20read">ds18b20.read()<a class="headerlink" href="#ds18b20read" title="Permanent link">&para;</a></h2>
+<p>Issues a temperature conversion of all connected sensors on the onewire bus and returns the measurment results after a conversion delay in a callback function.
+The returned measurements can be filtered through the ROM addresses passed as a table or by the family type.
+The callback function gets invoked for every specified sensor.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>ds18b20.read(CALLBACK, ROM[, FAMILY_ADDRESS])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>CALLBACK</code> callback function executed for each sensor<ul>
+<li>e.g. <code>function(INDEX, ROM, RES, TEMP, TEMP_DEC, PAR) print(INDEX, ROM, RES, TEMP, TEMP_DEC, PAR) end</code></li>
+</ul>
+</li>
+<li><code>ROM</code> table which contains the addresses for the specified sensors, or left empty to perform a onewire bus search for all sensors<ul>
+<li>e.g. <code>{"28:FF:FF:FF:FF:FF:FF:FF","28:FF:FF:FF:FF:FF:FF:FF"}</code>, <code>{}</code></li>
+</ul>
+</li>
+<li><code>FAMILY_ADDRESS</code> optional to limit the search for devices to a specific family type<ul>
+<li>e.g <code>0x28</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="callback-function-parameters">Callback function parameters<a class="headerlink" href="#callback-function-parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>INDEX</code> index of the sensor on the bus</li>
+<li><code>ROM</code> sensors 64-bit lasered rom code<ul>
+<li><code>28:FF:FF:FF:FF:FF:FF:FF</code> LSB, 8-bit family code, 48-bit serial number, MSB 8-bit crc</li>
+</ul>
+</li>
+<li><code>RES</code> temperature resolution</li>
+<li><code>TEMP</code> temperature</li>
+<li><code>TEMP_DEC</code> temperature decimals for integer firmware</li>
+<li><code>PAR</code> sensor parasitic flag</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using float firmware then <code>temp</code> is a floating point number. On an integer firmware, the final value has to be concatenated from <code>temp</code> and <code>temp_dec</code>.</p>
+</div>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local ow_pin = 3
+ds18b20.setup(ow_pin)
+
+-- read all sensors and print all measurement results
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+    end,{});
+
+-- read only sensors with family type 0x28 and print all measurement results
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+    end,{},0x28);
+
+-- save device roms in a variable
+local addr = {}
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        addr[ind] = {string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;))}
+    end,{});
+
+-- read only sensors listed in the variable addr
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+    end,addr);
+
+-- print only parasitic sensors
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        if (par == 1) then
+            print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+        end
+    end,{});
+
+-- print if temperature is greater or less than a defined value
+ds18b20.read(
+    function(ind,rom,res,temp,tdec,par)
+        if (t &gt; 25) then
+            print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+        end
+        if (t &lt; 20) then
+            print(ind,string.format(&quot;%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X&quot;,string.match(rom,&quot;(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)&quot;)),res,temp,tdec,par)
+        end
+    end,{});
+</code></pre>
+
+<h2 id="ds18b20setting">ds18b20.setting()<a class="headerlink" href="#ds18b20setting" title="Permanent link">&para;</a></h2>
+<p>Configuration of the temperature resolution settings.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>ds18b20.setting(ROM, RES)</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ROM</code> table which contains the addresses for the specified sensors, or empty for all sensors<ul>
+<li>e.g. <code>{"28:FF:FF:FF:FF:FF:FF:FF","28:FF:FF:FF:FF:FF:FF:FF"}</code>, <code>{}</code></li>
+</ul>
+</li>
+<li><code>RES</code> temperature bit resolution<ul>
+<li><code>9</code> - <code>12</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local ow_pin = 3
+ds18b20.setup(ow_pin)
+
+ds18b20.setting({&quot;28:FF:FF:FF:FF:FF:FF:FF&quot;,&quot;28:FF:FF:FF:FF:FF:FF:FF&quot;}, 9)
+</code></pre>
+
+<h2 id="ds18b20setup">ds18b20.setup()<a class="headerlink" href="#ds18b20setup" title="Permanent link">&para;</a></h2>
+<p>Initializes the onewire bus on the selected pin.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>ds18b20.setup(OW_BUS_PIN)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>OW_BUS_PIN</code><ul>
+<li><code>1</code> - <code>12</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local ow_pin = 3
+ds18b20.setup(ow_pin)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../encoder/" class="btn btn-neutral float-right" title="encoder">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dht/" class="btn btn-neutral" title="dht"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../dht/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../encoder/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

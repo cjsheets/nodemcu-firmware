@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>spi - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "spi";
+    var mkdocs_page_input_path = "en/modules/spi.md";
+    var mkdocs_page_url = "/en/modules/spi/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">spi</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#spi-module">SPI Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#high-level-functions">High Level Functions</a></li>
+        
+            <li><a class="toctree-l4" href="#spirecv">spi.recv()</a></li>
+        
+            <li><a class="toctree-l4" href="#spisend">spi.send()</a></li>
+        
+            <li><a class="toctree-l4" href="#spisetup">spi.setup()</a></li>
+        
+            <li><a class="toctree-l4" href="#low-level-hardware-functions">Low Level Hardware Functions</a></li>
+        
+            <li><a class="toctree-l4" href="#spiget_miso">spi.get_miso()</a></li>
+        
+            <li><a class="toctree-l4" href="#spiset_mosi">spi.set_mosi()</a></li>
+        
+            <li><a class="toctree-l4" href="#spitransaction">spi.transaction()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>spi</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/spi.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="spi-module">SPI Module<a class="headerlink" href="#spi-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-01-16</td>
+<td align="left"><a href="https://github.com/iabdalkader">Ibrahim Abd Elkader</a></td>
+<td align="left"><a href="https://github.com/devsaurus">Arnim Läuger</a></td>
+<td align="left"><a href="../../../../app/modules/spi.c">spi.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>All transactions for sending and receiving are most-significant-bit first and least-significant last.
+For technical details of the underlying hardware refer to <a href="http://d.av.id.au/blog/tag/hspi/">metalphreak's ESP8266 HSPI articles</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ESP hardware provides two SPI busses, with IDs 0, and 1, which map to pins generally labelled SPI and HSPI. If you are using any kind of development board which provides flash, then bus ID 0 (SPI) is almost certainly used for communicating with the flash chip. You probably want to choose bus ID 1 (HSPI) for your communication, as you will have uncontended use of it.</p>
+</div>
+<p>HSPI signals are fixed to the following IO indices and GPIO pins:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>IO index</th>
+<th>ESP8266 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HSPI CLK</td>
+<td>5</td>
+<td>GPIO14</td>
+</tr>
+<tr>
+<td>HSPI /CS</td>
+<td>8</td>
+<td>GPIO15</td>
+</tr>
+<tr>
+<td>HSPI MOSI</td>
+<td>7</td>
+<td>GPIO13</td>
+</tr>
+<tr>
+<td>HSPI MISO</td>
+<td>6</td>
+<td>GPIO12</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a href="#spisetup">spi.setup()</a>.</p>
+<h2 id="high-level-functions">High Level Functions<a class="headerlink" href="#high-level-functions" title="Permanent link">&para;</a></h2>
+<p>The high level functions provide a send &amp; receive API for half- and
+full-duplex mode. Sent and received data items are restricted to 1 - 32 bit
+length and each data item is surrounded by (H)SPI CS inactive.</p>
+<h2 id="spirecv">spi.recv()<a class="headerlink" href="#spirecv" title="Permanent link">&para;</a></h2>
+<p>Receive data from SPI.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>spi.recv(id, size[, default_data])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>size</code> number of data items to be read</li>
+<li><code>default_data</code> default data being sent on MOSI (all-1 if omitted)</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>String containing the bytes read from SPI.</p>
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="#spisend">spi.send()</a></p>
+<h2 id="spisend">spi.send()<a class="headerlink" href="#spisend" title="Permanent link">&para;</a></h2>
+<p>Send data via SPI in half-duplex mode. Send &amp; receive data in full-duplex mode.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p>HALFDUPLEX:<br />
+<code>wrote = spi.send(id, data1[, data2[, ..., datan]])</code></p>
+<p>FULLDUPLEX:<br />
+<code>wrote[, rdata1[, ..., rdatan]] = spi.send(id, data1[, data2[, ..., datan]])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>data</code> data can be either a string, a table or an integer number.<br/>Each data item is considered with <code>databits</code> number of bits.</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>wrote</code> number of written bytes</li>
+<li><code>rdata</code> received data when configured with <code>spi.FULLDUPLEX</code><br />Same data type as corresponding data parameter.</li>
+</ul>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">=spi.send(1, 0, 255, 255, 255)
+4       255     192     32      0
+x = {spi.send(1, 0, 255, 255, 255)}
+=x[1]
+4
+=x[2]
+255
+=x[3]
+192
+=x[4]
+32
+=x[5]
+0
+=x[6]
+nil
+=#x
+5
+
+_, _, x = spi.send(1, 0, {255, 255, 255})
+=x[1]
+192
+=x[2]
+32
+=x[3]
+0
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#spisetup">spi.setup()</a></li>
+<li><a href="#spirecv">spi.recv()</a></li>
+</ul>
+<h2 id="spisetup">spi.setup()<a class="headerlink" href="#spisetup" title="Permanent link">&para;</a></h2>
+<p>Set up the SPI configuration.
+Refer to <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus#Clock_polarity_and_phase">Serial Peripheral Interface Bus</a> for details regarding the clock polarity and phase definition.</p>
+<p>Calling <code>spi.setup()</code> will route the HSPI signals to the related pins, overriding previous configuration and control by the <code>gpio</code> module. It is possible to revert any pin back to gpio control if its HSPI functionality is not needed, just set the desired <code>gpio.mode()</code> for it. This is recommended especially for the HSPI /CS pin function in case that SPI slave-select is driven from a different pin by <code>gpio.write()</code> - the SPI engine would toggle pin 8 otherwise.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>spi.setup(id, mode, cpol, cpha, databits, clock_div[, duplex_mode])</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>mode</code> select master or slave mode<ul>
+<li><code>spi.MASTER</code></li>
+<li><code>spi.SLAVE</code> - <strong>not supported currently</strong></li>
+</ul>
+</li>
+<li><code>cpol</code> clock polarity selection<ul>
+<li><code>spi.CPOL_LOW</code> </li>
+<li><code>spi.CPOL_HIGH</code></li>
+</ul>
+</li>
+<li><code>cpha</code> clock phase selection<ul>
+<li><code>spi.CPHA_LOW</code></li>
+<li><code>spi.CPHA_HIGH</code></li>
+</ul>
+</li>
+<li><code>databits</code> number of bits per data item 1 - 32</li>
+<li><code>clock_div</code> SPI clock divider, f(SPI) = 80 MHz / <code>clock_div</code>, 1 .. n (0 defaults to divider 8)</li>
+<li><code>duplex_mode</code> duplex mode<ul>
+<li><code>spi.HALFDUPLEX</code> (default when omitted)</li>
+<li><code>spi.FULLDUPLEX</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>Number: 1</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, 8, 8)
+-- we won't be using the HSPI /CS line, so disable it again
+gpio.mode(8, gpio.INPUT, gpio.PULLUP)
+</code></pre>
+
+<h2 id="low-level-hardware-functions">Low Level Hardware Functions<a class="headerlink" href="#low-level-hardware-functions" title="Permanent link">&para;</a></h2>
+<p>The low level functions provide a hardware-centric API for application
+scenarios that need to excercise more complex SPI transactions. The
+programming model is built up around the HW send and receive buffers and SPI
+transactions are initiated with full control over the hardware features.</p>
+<h2 id="spiget_miso">spi.get_miso()<a class="headerlink" href="#spiget_miso" title="Permanent link">&para;</a></h2>
+<p>Extract data items from MISO buffer after <code>spi.transaction()</code>.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">data1[, data2[, ..., datan]] = spi.get_miso(id, offset, bitlen, num)
+string = spi.get_miso(id, num)
+</code></pre>
+
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>offset</code> bit offset into MISO buffer for first data item</li>
+<li><code>bitlen</code> bit length of a single data item</li>
+<li><code>num</code> number of data items to retrieve</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>num</code> data items or <code>string</code></p>
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#spitransaction">spi.transaction()</a></p>
+<h2 id="spiset_mosi">spi.set_mosi()<a class="headerlink" href="#spiset_mosi" title="Permanent link">&para;</a></h2>
+<p>Insert data items into MOSI buffer for <code>spi.transaction()</code>.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">spi.set_mosi(id, offset, bitlen, data1[, data2[, ..., datan]])
+spi.set_mosi(id, string)
+</code></pre>
+
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>offset</code> bit offset into MOSI buffer for inserting data1 and subsequent items</li>
+<li><code>bitlen</code> bit length of data1, data2, ...</li>
+<li><code>data</code> data items where <code>bitlen</code> number of bits are considered for the transaction.</li>
+<li><code>string</code> send data to be copied into MOSI buffer at offset 0, bit length 8</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<p><a href="#spitransaction">spi.transaction()</a></p>
+<h2 id="spitransaction">spi.transaction()<a class="headerlink" href="#spitransaction" title="Permanent link">&para;</a></h2>
+<p>Start an SPI transaction, consisting of up to 5 phases:</p>
+<ol>
+<li>Command</li>
+<li>Address</li>
+<li>MOSI</li>
+<li>Dummy</li>
+<li>MISO</li>
+</ol>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>spi.transaction(id, cmd_bitlen, cmd_data, addr_bitlen, addr_data, mosi_bitlen, dummy_bitlen, miso_bitlen)</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code> SPI ID number: 0 for SPI, 1 for HSPI</li>
+<li><code>cmd_bitlen</code> bit length of the command phase (0 - 16)</li>
+<li><code>cmd_data</code> data for command phase</li>
+<li><code>addr_bitlen</code> bit length for address phase (0 - 32)</li>
+<li><code>addr_data</code> data for command phase</li>
+<li><code>mosi_bitlen</code> bit length of the MOSI phase (0 - 512)</li>
+<li><code>dummy_bitlen</code> bit length of the dummy phase (0 - 256)</li>
+<li><code>miso_bitlen</code> bit length of the MISO phase (0 - 512) for half-duplex.<br />Full-duplex mode is activated with a negative value.</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#spisetmosi">spi.set_mosi()</a></li>
+<li><a href="#spigetmiso">spi.get_miso()</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../struct/" class="btn btn-neutral float-right" title="struct">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../somfy/" class="btn btn-neutral" title="somfy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../somfy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../struct/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

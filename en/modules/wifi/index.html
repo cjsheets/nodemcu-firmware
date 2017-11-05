@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>wifi - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "wifi";
+    var mkdocs_page_input_path = "en/modules/wifi.md";
+    var mkdocs_page_url = "/en/modules/wifi/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">wifi</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#wifi-module">WiFi Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#wifigetchannel">wifi.getchannel()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifigetdefaultmode">wifi.getdefaultmode()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifigetmode">wifi.getmode()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifigetphymode">wifi.getphymode()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifinullmodesleep">wifi.nullmodesleep()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiresume">wifi.resume()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifisetmode">wifi.setmode()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifisetphymode">wifi.setphymode()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistartsmart">wifi.startsmart()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistopsmart">wifi.stopsmart()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifisuspend">wifi.suspend()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#wifista-module">wifi.sta Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#wifistaautoconnect">wifi.sta.autoconnect()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistachangeap">wifi.sta.changeap()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistaclearconfig">wifi.sta.clearconfig()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistaconfig">wifi.sta.config()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistaconnect">wifi.sta.connect()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistadisconnect">wifi.sta.disconnect()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetap">wifi.sta.getap()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetapindex">wifi.sta.getapindex()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetapinfo">wifi.sta.getapinfo()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetbroadcast">wifi.sta.getbroadcast()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetconfig">wifi.sta.getconfig()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetdefaultconfig">wifi.sta.getdefaultconfig()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagethostname">wifi.sta.gethostname()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetip">wifi.sta.getip()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetmac">wifi.sta.getmac()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistagetrssi">wifi.sta.getrssi()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistasetaplimit">wifi.sta.setaplimit()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistasethostname">wifi.sta.sethostname()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistasetip">wifi.sta.setip()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistasetmac">wifi.sta.setmac()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistasleeptype">wifi.sta.sleeptype()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifistastatus">wifi.sta.status()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#wifiap-module">wifi.ap Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#wifiapconfig">wifi.ap.config()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapdeauth">wifi.ap.deauth()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetbroadcast">wifi.ap.getbroadcast()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetclient">wifi.ap.getclient()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetconfig">wifi.ap.getconfig()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetdefaultconfig">wifi.ap.getdefaultconfig()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetip">wifi.ap.getip()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapgetmac">wifi.ap.getmac()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapsetip">wifi.ap.setip()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapsetmac">wifi.ap.setmac()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#wifiapdhcp-module">wifi.ap.dhcp Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#wifiapdhcpconfig">wifi.ap.dhcp.config()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapdhcpstart">wifi.ap.dhcp.start()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifiapdhcpstop">wifi.ap.dhcp.stop()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#wifieventmon-module">wifi.eventmon Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#wifieventmonregister">wifi.eventmon.register()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifieventmonunregister">wifi.eventmon.unregister()</a></li>
+        
+            <li><a class="toctree-l4" href="#wifieventmonreason">wifi.eventmon.reason</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>wifi</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/wifi.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="wifi-module">WiFi Module<a class="headerlink" href="#wifi-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2015-05-12</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/dnc40085">dnc40085</a></td>
+<td align="left"><a href="../../../../app/modules/wifi.c">wifi.c</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The WiFi subsystem is maintained by background tasks that must run periodically. Any function or task that takes longer than 15ms (milliseconds) may cause the WiFi subsystem to crash. To avoid these potential crashes, it is advised that the WiFi subsystem be suspended with <a href="#wifisuspend">wifi.suspend()</a> prior to the execution of any tasks or functions that exceed this 15ms guideline.</p>
+</div>
+<p>The NodeMCU WiFi control is spread across several tables:</p>
+<ul>
+<li><code>wifi</code> for overall WiFi configuration</li>
+<li><a href="#wifista-module"><code>wifi.sta</code></a> for station mode functions</li>
+<li><a href="#wifiap-module"><code>wifi.ap</code></a> for wireless access point (WAP or simply AP) functions</li>
+<li><a href="#wifiapdhcp-module"><code>wifi.ap.dhcp</code></a> for DHCP server control</li>
+<li><a href="#wifieventmon-module"><code>wifi.eventmon</code></a> for wifi event monitor</li>
+</ul>
+<h2 id="wifigetchannel">wifi.getchannel()<a class="headerlink" href="#wifigetchannel" title="Permanent link">&para;</a></h2>
+<p>Gets the current WiFi channel.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>wifi.getchannel()</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>current WiFi channel</p>
+<h2 id="wifigetdefaultmode">wifi.getdefaultmode()<a class="headerlink" href="#wifigetdefaultmode" title="Permanent link">&para;</a></h2>
+<p>Gets default WiFi operation mode.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>wifi.getdefaultmode()</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>The WiFi mode, as one of the <code>wifi.STATION</code>, <code>wifi.SOFTAP</code>, <code>wifi.STATIONAP</code> or <code>wifi.NULLMODE</code> constants.</p>
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="#wifigetmode"><code>wifi.getmode()</code></a>
+<a href="#wifisetmode"><code>wifi.setmode()</code></a></p>
+<h2 id="wifigetmode">wifi.getmode()<a class="headerlink" href="#wifigetmode" title="Permanent link">&para;</a></h2>
+<p>Gets WiFi operation mode.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>wifi.getmode()</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>The WiFi mode, as one of the <code>wifi.STATION</code>, <code>wifi.SOFTAP</code>, <code>wifi.STATIONAP</code> or <code>wifi.NULLMODE</code> constants.</p>
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#wifigetdefaultmode"><code>wifi.getdefaultmode()</code></a>
+<a href="#wifisetmode"><code>wifi.setmode()</code></a></p>
+<h2 id="wifigetphymode">wifi.getphymode()<a class="headerlink" href="#wifigetphymode" title="Permanent link">&para;</a></h2>
+<p>Gets WiFi physical mode.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>wifi.getphymode()</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p>The current physical mode as one of <code>wifi.PHYMODE_B</code>, <code>wifi.PHYMODE_G</code> or <code>wifi.PHYMODE_N</code>.</p>
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#wifisetphymode"><code>wifi.setphymode()</code></a></p>
+<h2 id="wifinullmodesleep">wifi.nullmodesleep()<a class="headerlink" href="#wifinullmodesleep" title="Permanent link">&para;</a></h2>
+<p>Configures whether or not WiFi automatically goes to sleep in NULL_MODE. Enabled by default.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function <strong>does not</strong> store it's setting in flash, if auto sleep in NULL_MODE is not desired, <code>wifi.nullmodesleep(false)</code> must be called after power-up, restart, or wake from deep sleep.</p>
+</div>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>wifi.nullmodesleep([enable])</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>enable</code></li>
+<li><code>true</code> Enable WiFi auto sleep in NULL_MODE. (Default setting)</li>
+<li><code>false</code> Disable WiFi auto sleep in NULL_MODE.</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>sleep_enabled</code> Current/New NULL_MODE sleep setting<ul>
+<li>If <code>wifi.nullmodesleep()</code> is called with no arguments, current setting is returned.</li>
+<li>If <code>wifi.nullmodesleep()</code> is called with <code>enable</code> argument, confirmation of new setting is returned.</li>
+</ul>
+</li>
+</ul>
+<h2 id="wifiresume">wifi.resume()<a class="headerlink" href="#wifiresume" title="Permanent link">&para;</a></h2>
+<p>Wake up WiFi from suspended state or cancel pending wifi suspension.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wifi resume occurs asynchronously, this means that the resume request will only be processed when control of the processor is passed back to the SDK (after MyResumeFunction() has completed). The resume callback also executes asynchronously and will only execute after wifi has resumed normal operation. </p>
+</div>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>wifi.resume([resume_cb])</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>resume_cb</code> Callback to execute when WiFi wakes from suspension. 
+ !!! note "Note:"</p>
+<p>Any previously provided callbacks will be replaced!</p>
+</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--Resume wifi from timed or indefinite sleep
+wifi.resume()
+
+--Resume wifi from timed or indefinite sleep w/ resume callback
+wifi.resume(function() print(&quot;WiFi resume&quot;) end)
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifisuspend"><code>wifi.suspend()</code></a></li>
+<li><a href="../node/#nodesleep"><code>node.sleep()</code></a></li>
+<li><a href="../node/#nodedsleep"><code>node.dsleep()</code></a></li>
+</ul>
+<h2 id="wifisetmode">wifi.setmode()<a class="headerlink" href="#wifisetmode" title="Permanent link">&para;</a></h2>
+<p>Configures the WiFi mode to use. NodeMCU can run in one of four WiFi modes:</p>
+<ul>
+<li>Station mode, where the NodeMCU device joins an existing network</li>
+<li>Access point (AP) mode, where it creates its own network that others can join</li>
+<li>Station + AP mode, where it both creates its own network while at the same time being joined to another existing network</li>
+<li>WiFi off</li>
+</ul>
+<p>When using the combined Station + AP mode, the same channel will be used for both networks as the radio can only listen on a single channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WiFi configuration will be retained until changed even if device is turned off.</p>
+</div>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>wifi.setmode(mode[, save])</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>mode</code> value should be one of<ul>
+<li><code>wifi.STATION</code> for when the device is connected to a WiFi router. This is often done to give the device access to the Internet.</li>
+<li><code>wifi.SOFTAP</code> for when the device is acting <em>only</em> as an access point. This will allow you to see the device in the list of WiFi networks (unless you hide the SSID, of course). In this mode your computer can connect to the device, creating a local area network. Unless you change the value, the NodeMCU device will be given a local IP address of 192.168.4.1 and assign your computer the next available IP address, such as 192.168.4.2.</li>
+<li><code>wifi.STATIONAP</code> is the combination of <code>wifi.STATION</code> and <code>wifi.SOFTAP</code>. It allows you to create a local WiFi connection <em>and</em> connect to another WiFi router.</li>
+<li><code>wifi.NULLMODE</code> changing WiFi mode to NULL_MODE will put wifi into a low power state similar to MODEM_SLEEP, provided <code>wifi.nullmodesleep(false)</code> has not been called.</li>
+</ul>
+</li>
+<li><code>save</code> choose whether or not to save wifi mode to flash<ul>
+<li><code>true</code> WiFi mode configuration <strong>will</strong> be retained through power cycle. (Default)</li>
+<li><code>false</code> WiFi mode configuration <strong>will not</strong> be retained through power cycle.</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>current mode after setup</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">wifi.setmode(wifi.STATION)
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<p><a href="#wifigetmode"><code>wifi.getmode()</code></a>
+<a href="#wifigetdefaultmode"><code>wifi.getdefaultmode()</code></a></p>
+<h2 id="wifisetphymode">wifi.setphymode()<a class="headerlink" href="#wifisetphymode" title="Permanent link">&para;</a></h2>
+<p>Sets WiFi physical mode.</p>
+<ul>
+<li><code>wifi.PHYMODE_B</code>
+    802.11b, more range, low Transfer rate, more current draw</li>
+<li><code>wifi.PHYMODE_G</code>
+    802.11g, medium range, medium transfer rate, medium current draw</li>
+<li><code>wifi.PHYMODE_N</code>
+    802.11n, least range, fast transfer rate, least current draw (STATION ONLY)
+Information from the Espressif datasheet v4.3</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Typical Power Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tx 802.11b, CCK 11Mbps, P OUT=+17dBm</td>
+<td>170 mA</td>
+</tr>
+<tr>
+<td>Tx 802.11g, OFDM 54Mbps, P OUT =+15dBm</td>
+<td>140 mA</td>
+</tr>
+<tr>
+<td>Tx 802.11n, MCS7 65Mbps, P OUT =+13dBm</td>
+<td>120 mA</td>
+</tr>
+<tr>
+<td>Rx 802.11b, 1024 bytes packet length, -80dBm</td>
+<td>50 mA</td>
+</tr>
+<tr>
+<td>Rx 802.11g, 1024 bytes packet length, -70dBm</td>
+<td>56 mA</td>
+</tr>
+<tr>
+<td>Rx 802.11n, 1024 bytes packet length, -65dBm</td>
+<td>56 mA</td>
+</tr>
+</tbody>
+</table>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>wifi.setphymode(mode)</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p><code>mode</code> one of the following</p>
+<ul>
+<li><code>wifi.PHYMODE_B</code></li>
+<li><code>wifi.PHYMODE_G</code></li>
+<li><code>wifi.PHYMODE_N</code></li>
+</ul>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>physical mode after setup</p>
+<h4 id="see-also_5">See also<a class="headerlink" href="#see-also_5" title="Permanent link">&para;</a></h4>
+<p><a href="#wifigetphymode"><code>wifi.getphymode()</code></a></p>
+<h2 id="wifistartsmart">wifi.startsmart()<a class="headerlink" href="#wifistartsmart" title="Permanent link">&para;</a></h2>
+<p>Starts to auto configuration, if success set up SSID and password automatically.</p>
+<p>Intended for use with SmartConfig apps, such as Espressif's <a href="https://github.com/espressifapp">Android &amp; iOS app</a>.</p>
+<p>Only usable in <code>wifi.STATION</code> mode.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>SmartConfig is disabled by default and can be enabled by setting <code>WIFI_SMART_ENABLE</code> in <a href="https://github.com/nodemcu/nodemcu-firmware/blob/dev/app/include/user_config.h#L96"><code>user_config.h</code></a> before you build the firmware.</p>
+</div>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>wifi.startsmart(type, callback)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> 0 for ESP_TOUCH, or 1 for AIR_KISS.</li>
+<li><code>callback</code> a callback function of the form <code>function(ssid, password) end</code> which gets called after configuration.</li>
+</ul>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">wifi.setmode(wifi.STATION)
+wifi.startsmart(0,
+    function(ssid, password)
+        print(string.format(&quot;Success. SSID:%s ; PASSWORD:%s&quot;, ssid, password))
+    end
+)
+</code></pre>
+
+<h4 id="see-also_6">See also<a class="headerlink" href="#see-also_6" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistopsmart"><code>wifi.stopsmart()</code></a></p>
+<h2 id="wifistopsmart">wifi.stopsmart()<a class="headerlink" href="#wifistopsmart" title="Permanent link">&para;</a></h2>
+<p>Stops the smart configuring process.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>wifi.stopsmart()</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_7">See also<a class="headerlink" href="#see-also_7" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistartsmart"><code>wifi.startsmart()</code></a></p>
+<h2 id="wifisuspend">wifi.suspend()<a class="headerlink" href="#wifisuspend" title="Permanent link">&para;</a></h2>
+<p>Suspend Wifi to reduce current consumption. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wifi suspension occurs asynchronously, this means that the suspend request will only be processed when control of the processor is passed back to the SDK (after MySuspendFunction() has completed). The suspend callback also executes asynchronously and will only execute after wifi has been successfully been suspended. </p>
+</div>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>wifi.suspend({duration[, suspend_cb, resume_cb, preserve_mode]})</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>duration</code> Suspend duration in microseconds(μs). If a suspend duration of <code>0</code> is specified, suspension will be indefinite (Range: 0 or 50000 - 268435454 μs (0:4:28.000454))</li>
+<li><code>suspend_cb</code> Callback to execute when WiFi is suspended. (Optional)</li>
+<li><code>resume_cb</code> Callback to execute when WiFi wakes from suspension. (Optional)</li>
+<li><code>preserve_mode</code> preserve current WiFi mode through node sleep. (Optional, Default: true)  </li>
+<li>If true, Station and StationAP modes will automatically reconnect to previously configured Access Point when NodeMCU resumes.</li>
+<li>If false, discard WiFi mode and leave NodeMCU in <a href="#wifigetmode"><code>wifi.NULL_MODE</code></a>. WiFi mode will be restored to original mode on restart.</li>
+</ul>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>suspend_state</code> if no parameters are provided, current WiFi suspension state will be returned</li>
+<li>States:</li>
+<li><code>0</code> WiFi is awake.</li>
+<li><code>1</code> WiFi suspension is pending. (Waiting for idle task)</li>
+<li><code>2</code> WiFi is suspended.</li>
+</ul>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--get current wifi suspension state
+print(wifi.suspend())
+
+--Suspend WiFi for 10 seconds with suspend/resume callbacks
+ cfg={}
+ cfg.duration=10*1000*1000
+ cfg.resume_cb=function() print(&quot;WiFi resume&quot;) end
+ cfg.suspend_cb=function() print(&quot;WiFi suspended&quot;) end
+
+ wifi.suspend(cfg)
+
+--Suspend WiFi for 10 seconds with suspend/resume callbacks and discard WiFi mode
+ cfg={}
+ cfg.duration=10*1000*1000
+ cfg.resume_cb=function() print(&quot;WiFi resume&quot;) end
+ cfg.suspend_cb=function() print(&quot;WiFfi suspended&quot;) end
+ cfg.preserve_mode=false
+
+ wifi.suspend(cfg)
+
+</code></pre>
+
+<h4 id="see-also_8">See also<a class="headerlink" href="#see-also_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifiresume"><code>wifi.resume()</code></a></li>
+<li><a href="../node/#nodesleep"><code>node.sleep()</code></a></li>
+<li><a href="../node/#nodedsleep"><code>node.dsleep()</code></a></li>
+</ul>
+<h1 id="wifista-module">wifi.sta Module<a class="headerlink" href="#wifista-module" title="Permanent link">&para;</a></h1>
+<h2 id="wifistaautoconnect">wifi.sta.autoconnect()<a class="headerlink" href="#wifistaautoconnect" title="Permanent link">&para;</a></h2>
+<p>Auto connects to AP in station mode.</p>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.autoconnect(auto)</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p><code>auto</code> 0 to disable auto connecting, 1 to enable auto connecting</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">wifi.sta.autoconnect(1)
+</code></pre>
+
+<h4 id="see-also_9">See also<a class="headerlink" href="#see-also_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistaconfig"><code>wifi.sta.config()</code></a></li>
+<li><a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+<li><a href="#wifistadisconnect"><code>wifi.sta.disconnect()</code></a></li>
+</ul>
+<h2 id="wifistachangeap">wifi.sta.changeap()<a class="headerlink" href="#wifistachangeap" title="Permanent link">&para;</a></h2>
+<p>Select Access Point from list returned by <code>wifi.sta.getapinfo()</code></p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.changeap(ap_index)</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p><code>ap_index</code> Index of Access Point you would like to change to. (Range:1-5)
+ - Corresponds to index used by <a href="#wifistagetapinfo"><code>wifi.sta.getapinfo()</code></a> and <a href="#wifistagetapindex"><code>wifi.sta.getapindex()</code></a></p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code>  Success</li>
+<li><code>false</code> Failure</li>
+</ul>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">wifi.sta.changeap(4)
+</code></pre>
+
+<h4 id="see-also_10">See also<a class="headerlink" href="#see-also_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetapinfo"><code>wifi.sta.getapinfo()</code></a></li>
+<li><a href="#wifistagetapindex"><code>wifi.sta.getapindex()</code></a></li>
+</ul>
+<h2 id="wifistaclearconfig">wifi.sta.clearconfig()<a class="headerlink" href="#wifistaclearconfig" title="Permanent link">&para;</a></h2>
+<p>Clears the currently saved WiFi station configuration, erasing it from the flash. May be useful for certain factory-reset 
+scenarios when a full <a href="../node/#noderestore"><code>node.restore()</code></a> is not desired, or to prepare for using
+<a href="../enduser-setup">End-User Setup</a> so that the SoftAP is able to lock onto a single hardware radio channel.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.clearconfig()</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code>  Success</li>
+<li><code>false</code> Failure</li>
+</ul>
+<h4 id="see-also_11">See also<a class="headerlink" href="#see-also_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistaconfig"><code>wifi.sta.config()</code></a></li>
+<li><a href="../node/#noderestore"><code>node.restore()</code></a></li>
+</ul>
+<h2 id="wifistaconfig">wifi.sta.config()<a class="headerlink" href="#wifistaconfig" title="Permanent link">&para;</a></h2>
+<p>Sets the WiFi station configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is not advised to assume that the WiFi is connected at any time during initialization start-up. WiFi connection status should be validated either by using a WiFi event callback or by polling the status on a timer.</p>
+</div>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.config(station_config)</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>station_config</code> table containing configuration data for station<ul>
+<li><code>ssid</code> string which is less than 32 bytes.</li>
+<li><code>pwd</code> string which is 0-64. Empty string indicates an open WiFi access point. <em>Note: WPA requires a minimum of 8-characters, but the ESP8266 can also connect to a WEP access point (a 40-bit WEP key can be provided as its corresponding 5-character ASCII string).</em></li>
+<li><code>auto</code> defaults to true<ul>
+<li><code>true</code> to enable auto connect and connect to access point, hence with <code>auto=true</code> there's no need to call <a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+<li><code>false</code> to disable auto connect and remain disconnected from access point</li>
+</ul>
+</li>
+<li><code>bssid</code> string that contains the MAC address of the access point (optional)<ul>
+<li>You can set BSSID if you have multiple access points with the same SSID.</li>
+<li>If you set BSSID for a specific SSID and would like to configure station to connect to the same SSID only without the BSSID requirement, you MUST first configure to station to a different SSID first, then connect to the desired SSID</li>
+<li>The following formats are valid:<ul>
+<li>"DE:C1:A5:51:F1:ED"</li>
+<li>"AC-1D-1C-B1-0B-22"</li>
+<li>"DE AD BE EF 7A C0"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>save</code> Save station configuration to flash. <ul>
+<li><code>true</code> configuration <strong>will</strong> be retained through power cycle.  (Default).</li>
+<li><code>false</code> configuration <strong>will not</strong> be retained through power cycle.</li>
+</ul>
+</li>
+<li>Event callbacks will only be available if <code>WIFI_SDK_EVENT_MONITOR_ENABLE</code> is uncommented in <code>user_config.h</code><ul>
+<li>Please note: To ensure all station events are handled at boot time, all relevant callbacks must be registered as early as possible in <code>init.lua</code> with either <code>wifi.sta.config()</code> or <code>wifi.eventmon.register()</code>.     </li>
+<li><code>connected_cb</code>: Callback to execute when station is connected to an access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>SSID</code>: SSID of access point.  (format: string)</li>
+<li><code>BSSID</code>: BSSID of access point.  (format: string)</li>
+<li><code>channel</code>: The channel the access point is on.  (format: number)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>disconnected_cb</code>: Callback to execute when station is disconnected from an access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>SSID</code>: SSID of access point.   (format: string)</li>
+<li><code>BSSID</code>: BSSID of access point. (format: string) </li>
+<li><code>REASON</code>: See <a href="#wifieventmonreason">wifi.eventmon.reason</a> below. (format: number)  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>authmode_change_cb</code>: Callback to execute when the access point has changed authorization mode. (Optional)    <ul>
+<li>Items returned in table :</li>
+<li><code>old_auth_mode</code>: Old wifi authorization mode. (format: number)  </li>
+<li><code>new_auth_mode</code>: New wifi authorization mode. (format: number)</li>
+</ul>
+</li>
+<li><code>got_ip_cb</code>: Callback to execute when the station received an IP address from the access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>IP</code>: The IP address assigned to the station.  (format: string)</li>
+<li><code>netmask</code>: Subnet mask.  (format: string)</li>
+<li><code>gateway</code>: The IP address of the access point the station is connected to. (format: string)  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>dhcp_timeout_cb</code>: Station DHCP request has timed out. (Optional)<ul>
+<li>Blank table is returned.  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code>  Success</li>
+<li><code>false</code> Failure</li>
+</ul>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--connect to Access Point (DO NOT save config to flash)
+station_cfg={}
+station_cfg.ssid=&quot;NODE-AABBCC&quot;
+station_cfg.pwd=&quot;password&quot;
+wifi.sta.config(station_cfg)
+
+--connect to Access Point (DO save config to flash)
+station_cfg={}
+station_cfg.ssid=&quot;NODE-AABBCC&quot;
+station_cfg.pwd=&quot;password&quot;
+station_cfg.save=true
+wifi.sta.config(station_cfg)
+
+--connect to Access Point with specific MAC address  
+station_cfg={}
+station_cfg.ssid=&quot;NODE-AABBCC&quot;
+station_cfg.pwd=&quot;password&quot;
+station_cfg.bssid=&quot;AA:BB:CC:DD:EE:FF&quot;
+wifi.sta.config(station_cfg)
+
+--configure station but don't connect to Access point
+station_cfg={}
+station_cfg.ssid=&quot;NODE-AABBCC&quot;
+station_cfg.pwd=&quot;password&quot;
+station_cfg.auto=false
+wifi.sta.config(station_cfg)
+
+</code></pre>
+
+<h4 id="see-also_12">See also<a class="headerlink" href="#see-also_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistaclearconfig"><code>wifi.sta.clearconfig()</code></a></li>
+<li><a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+<li><a href="#wifistadisconnect"><code>wifi.sta.disconnect()</code></a></li>
+<li><a href="#wifistaapinfo"><code>wifi.sta.apinfo()</code></a></li>
+</ul>
+<h2 id="wifistaconnect">wifi.sta.connect()<a class="headerlink" href="#wifistaconnect" title="Permanent link">&para;</a></h2>
+<p>Connects to the configured AP in station mode. You only ever need to call this if auto-connect was disabled in <a href="#wifistaconfig"><code>wifi.sta.config()</code></a>.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.connect([connected_cb])</code></p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>connected_cb</code>: Callback to execute when station is connected to an access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>SSID</code>: SSID of access point.  (format: string)</li>
+<li><code>BSSID</code>: BSSID of access point.  (format: string)</li>
+<li><code>channel</code>: The channel the access point is on.  (format: number)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_13">See also<a class="headerlink" href="#see-also_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistadisconnect"><code>wifi.sta.disconnect()</code></a></li>
+<li><a href="#wifistaconfig"><code>wifi.sta.config()</code></a></li>
+</ul>
+<h2 id="wifistadisconnect">wifi.sta.disconnect()<a class="headerlink" href="#wifistadisconnect" title="Permanent link">&para;</a></h2>
+<p>Disconnects from AP in station mode.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that disconnecting from Access Point does not reduce power consumption. If power saving is your goal, please refer to the description for <code>wifi.NULLMODE</code> in the function <a href="#wifisetmode"><code>wifi.setmode()</code></a> for more details.</p>
+</div>
+<h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.disconnect([disconnected_cb])</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>disconnected_cb</code>: Callback to execute when station is disconnected from an access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>SSID</code>: SSID of access point.   (format: string)</li>
+<li><code>BSSID</code>: BSSID of access point. (format: string) </li>
+<li><code>REASON</code>: See <a href="#wifieventmonreason">wifi.eventmon.reason</a> below. (format: number)  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_14">See also<a class="headerlink" href="#see-also_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistaconfig"><code>wifi.sta.config()</code></a></li>
+<li><a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+</ul>
+<h2 id="wifistagetap">wifi.sta.getap()<a class="headerlink" href="#wifistagetap" title="Permanent link">&para;</a></h2>
+<p>Scans AP list as a Lua table into callback function.</p>
+<h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getap([[cfg], format,] callback(table))</code></p>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cfg</code> table that contains scan configuration<ul>
+<li><code>ssid</code> SSID == nil, don't filter SSID</li>
+<li><code>bssid</code> BSSID == nil, don't filter BSSID</li>
+<li><code>channel</code> channel == 0, scan all channels, otherwise scan set channel (default is 0)</li>
+<li><code>show_hidden</code> show_hidden == 1, get info for router with hidden SSID (default is 0)</li>
+</ul>
+</li>
+<li><code>format</code> select output table format, defaults to 0<ul>
+<li>0: old format (SSID : Authmode, RSSI, BSSID, Channel), any duplicate SSIDs will be discarded</li>
+<li>1: new format (BSSID : SSID, RSSI, auth mode, Channel)</li>
+</ul>
+</li>
+<li><code>callback(table)</code> a callback function to receive the AP table when the scan is done. This function receives a table, the key is the BSSID, the value is other info in format: SSID, RSSID, auth mode, channel.</li>
+</ul>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print AP list in old format (format not defined)
+function listap(t)
+    for k,v in pairs(t) do
+        print(k..&quot; : &quot;..v)
+    end
+end
+wifi.sta.getap(listap)
+
+-- Print AP list that is easier to read
+function listap(t) -- (SSID : Authmode, RSSI, BSSID, Channel)
+    print(&quot;\n&quot;..string.format(&quot;%32s&quot;,&quot;SSID&quot;)..&quot;\tBSSID\t\t\t\t  RSSI\t\tAUTHMODE\tCHANNEL&quot;)
+    for ssid,v in pairs(t) do
+        local authmode, rssi, bssid, channel = string.match(v, &quot;([^,]+),([^,]+),([^,]+),([^,]+)&quot;)
+        print(string.format(&quot;%32s&quot;,ssid)..&quot;\t&quot;..bssid..&quot;\t  &quot;..rssi..&quot;\t\t&quot;..authmode..&quot;\t\t\t&quot;..channel)
+    end
+end
+wifi.sta.getap(listap)
+
+-- print AP list in new format
+function listap(t)
+    for k,v in pairs(t) do
+        print(k..&quot; : &quot;..v)
+    end
+end
+wifi.sta.getap(1, listap)
+
+-- Print AP list that is easier to read
+function listap(t) -- (SSID : Authmode, RSSI, BSSID, Channel)
+    print(&quot;\n\t\t\tSSID\t\t\t\t\tBSSID\t\t\t  RSSI\t\tAUTHMODE\t\tCHANNEL&quot;)
+    for bssid,v in pairs(t) do
+        local ssid, rssi, authmode, channel = string.match(v, &quot;([^,]+),([^,]+),([^,]+),([^,]*)&quot;)
+        print(string.format(&quot;%32s&quot;,ssid)..&quot;\t&quot;..bssid..&quot;\t  &quot;..rssi..&quot;\t\t&quot;..authmode..&quot;\t\t\t&quot;..channel)
+    end
+end
+wifi.sta.getap(1, listap)
+
+--check for specific AP
+function listap(t)
+    print(&quot;\n\t\t\tSSID\t\t\t\t\tBSSID\t\t\t  RSSI\t\tAUTHMODE\t\tCHANNEL&quot;)
+    for bssid,v in pairs(t) do
+        local ssid, rssi, authmode, channel = string.match(v, &quot;([^,]+),([^,]+),([^,]+),([^,]*)&quot;)
+        print(string.format(&quot;%32s&quot;,ssid)..&quot;\t&quot;..bssid..&quot;\t  &quot;..rssi..&quot;\t\t&quot;..authmode..&quot;\t\t\t&quot;..channel)
+    end
+end
+scan_cfg = {}
+scan_cfg.ssid = &quot;myssid&quot;
+scan_cfg.bssid = &quot;AA:AA:AA:AA:AA:AA&quot;
+scan_cfg.channel = 0
+scan_cfg.show_hidden = 1
+wifi.sta.getap(scan_cfg, 1, listap)
+
+--get RSSI for currently configured AP
+function listap(t)
+    for bssid,v in pairs(t) do
+        local ssid, rssi, authmode, channel = string.match(v, &quot;([^,]+),([^,]+),([^,]+),([^,]*)&quot;)
+        print(&quot;CURRENT RSSI IS: &quot;..rssi)
+    end
+end
+ssid, tmp, bssid_set, bssid=wifi.sta.getconfig()
+
+scan_cfg = {}
+scan_cfg.ssid = ssid
+if bssid_set == 1 then scan_cfg.bssid = bssid else scan_cfg.bssid = nil end
+scan_cfg.channel = wifi.getchannel()
+scan_cfg.show_hidden = 0
+ssid, tmp, bssid_set, bssid=nil, nil, nil, nil
+wifi.sta.getap(scan_cfg, 1, listap)
+
+</code></pre>
+
+<h4 id="see-also_15">See also<a class="headerlink" href="#see-also_15" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistagetip"><code>wifi.sta.getip()</code></a></p>
+<h2 id="wifistagetapindex">wifi.sta.getapindex()<a class="headerlink" href="#wifistagetapindex" title="Permanent link">&para;</a></h2>
+<p>Get index of current Access Point stored in AP cache.</p>
+<h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getapindex()</code></p>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p><code>current_index</code> index of currently selected Access Point. (Range:1-5)</p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(&quot;the index of the currently selected AP is: &quot;..wifi.sta.getapindex())
+</code></pre>
+
+<h4 id="see-also_16">See also<a class="headerlink" href="#see-also_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetapindex"><code>wifi.sta.getapindex()</code></a></li>
+<li><a href="#wifistaapinfo"><code>wifi.sta.apinfo()</code></a></li>
+<li><a href="#wifistaapchange"><code>wifi.sta.apchange()</code></a></li>
+</ul>
+<h2 id="wifistagetapinfo">wifi.sta.getapinfo()<a class="headerlink" href="#wifistagetapinfo" title="Permanent link">&para;</a></h2>
+<p>Get information of APs cached by ESP8266 station.</p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>Any Access Points configured with save disabled <code>wifi.sta.config({save=false})</code> will populate this list (appearing to overwrite APs stored in flash) until restart.</p>
+</p>
+</div>
+<h4 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getapinfo()</code></p>
+<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ap_info</code><ul>
+<li><code>qty</code> quantity of APs returned</li>
+<li><code>1-5</code> index of AP. (the index corresponds to index used by <a href="#wifistachangeap"><code>wifi.sta.changeap()</code></a> and <a href="#wifistagetapindex"><code>wifi.sta.getapindex()</code></a>)</li>
+<li><code>ssid</code>  ssid of Access Point</li>
+<li><code>pwd</code> password for Access Point, <code>nil</code> if no password was configured </li>
+<li><code>bssid</code> MAC address of Access Point</li>
+<li><code>nil</code> will be returned if no MAC address was configured during station configuration.</li>
+</ul>
+</li>
+</ul>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--print stored access point info
+do
+  for k,v in pairs(wifi.sta.getapinfo()) do
+    if (type(v)==&quot;table&quot;) then
+      print(&quot; &quot;..k..&quot; : &quot;..type(v))
+      for k,v in pairs(v) do
+        print(&quot;\t\t&quot;..k..&quot; : &quot;..v)
+      end
+    else
+      print(&quot; &quot;..k..&quot; : &quot;..v)
+    end
+  end
+end
+
+--print stored access point info(formatted)
+do
+  local x=wifi.sta.getapinfo()
+  local y=wifi.sta.getapindex()
+  print(&quot;\n Number of APs stored in flash:&quot;, x.qty)
+  print(string.format(&quot;  %-6s %-32s %-64s %-18s&quot;, &quot;index:&quot;, &quot;SSID:&quot;, &quot;Password:&quot;, &quot;BSSID:&quot;)) 
+  for i=1, (x.qty), 1 do
+    print(string.format(&quot; %s%-6d %-32s %-64s %-18s&quot;,(i==y and &quot;&gt;&quot; or &quot; &quot;), i, x[i].ssid, x[i].pwd and x[i].pwd or type(nil), x[i].bssid and x[i].bssid or type(nil)))
+  end
+end
+</code></pre>
+
+<h4 id="see-also_17">See also<a class="headerlink" href="#see-also_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetapindex"><code>wifi.sta.getapindex()</code></a></li>
+<li><a href="#wifistasetaplimit"><code>wifi.sta.setaplimit()</code></a></li>
+<li><a href="#wifistachangeap"><code>wifi.sta.changeap()</code></a></li>
+<li><a href="#wifistaconfig"><code>wifi.sta.config()</code></a></li>
+</ul>
+<h2 id="wifistagetbroadcast">wifi.sta.getbroadcast()<a class="headerlink" href="#wifistagetbroadcast" title="Permanent link">&para;</a></h2>
+<p>Gets the broadcast address in station mode.</p>
+<h4 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getbroadcast()</code></p>
+<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<p>broadcast address as string, for example "192.168.0.255",
+returns <code>nil</code> if IP address = "0.0.0.0".</p>
+<h4 id="see-also_18">See also<a class="headerlink" href="#see-also_18" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistagetip"><code>wifi.sta.getip()</code></a></p>
+<h2 id="wifistagetconfig">wifi.sta.getconfig()<a class="headerlink" href="#wifistagetconfig" title="Permanent link">&para;</a></h2>
+<p>Gets the WiFi station configuration.</p>
+<h4 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getconfig()</code></p>
+<h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>return_table</code><ul>
+<li><code>true</code> returns data in a table</li>
+<li><code>false</code> returns data in the old format (default)</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<p>If <code>return_table</code> is <code>true</code>:</p>
+<ul>
+<li><code>config_table</code><ul>
+<li><code>ssid</code> ssid of Access Point.</li>
+<li><code>pwd</code> password to Access Point, <code>nil</code> if no password was configured </li>
+<li><code>bssid_set</code> will return <code>true</code> if the station was configured specifically to connect to the AP with the matching <code>bssid</code>. </li>
+<li><code>bssid</code> If a connection has been made to the configured AP this field will contain the AP's MAC address. Otherwise "ff:ff:ff:ff:ff:ff" will be returned.</li>
+</ul>
+</li>
+</ul>
+<p>If <code>return_table</code> is <code>false</code>:</p>
+<ul>
+<li>ssid, password, bssid_set, bssid, if <code>bssid_set</code> is equal to <code>0</code> then <code>bssid</code> is irrelevant</li>
+</ul>
+<h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--Get current Station configuration (NEW FORMAT)
+do
+local sta_config=wifi.sta.getconfig(true)
+print(string.format(&quot;\tCurrent station config\n\tssid:\&quot;%s\&quot;\tpassword:\&quot;%s\&quot;\n\tbssid:\&quot;%s\&quot;\tbssid_set:%s&quot;, sta_config.ssid, sta_config.pwd, sta_config.bssid, (sta_config.bssid_set and &quot;true&quot; or &quot;false&quot;)))
+end
+
+--Get current Station configuration (OLD FORMAT)
+ssid, password, bssid_set, bssid=wifi.sta.getconfig()
+print(&quot;\nCurrent Station configuration:\nSSID : &quot;..ssid
+..&quot;\nPassword  : &quot;..password
+..&quot;\nBSSID_set  : &quot;..bssid_set
+..&quot;\nBSSID: &quot;..bssid..&quot;\n&quot;)
+ssid, password, bssid_set, bssid=nil, nil, nil, nil
+</code></pre>
+
+<h4 id="see-also_19">See also<a class="headerlink" href="#see-also_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetdefaultconfig"><code>wifi.sta.getdefaultconfig()</code></a></li>
+<li><a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+<li><a href="#wifistadisconnect"><code>wifi.sta.disconnect()</code></a></li>
+</ul>
+<h2 id="wifistagetdefaultconfig">wifi.sta.getdefaultconfig()<a class="headerlink" href="#wifistagetdefaultconfig" title="Permanent link">&para;</a></h2>
+<p>Gets the default WiFi station configuration stored in flash.</p>
+<h4 id="syntax_22">Syntax<a class="headerlink" href="#syntax_22" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getdefaultconfig(return_table)</code></p>
+<h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>return_table</code><ul>
+<li><code>true</code> returns data in a table</li>
+<li><code>false</code> returns data in the old format (default)</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
+<p>If <code>return_table</code> is <code>true</code>:</p>
+<ul>
+<li><code>config_table</code><ul>
+<li><code>ssid</code> ssid of Access Point.</li>
+<li><code>pwd</code> password to Access Point, <code>nil</code> if no password was configured</li>
+<li><code>bssid_set</code> will return <code>true</code> if the station was configured specifically to connect to the AP with the matching <code>bssid</code>. </li>
+<li><code>bssid</code> If a connection has been made to the configured AP this field will contain the AP's MAC address. Otherwise "ff:ff:ff:ff:ff:ff" will be returned.</li>
+</ul>
+</li>
+</ul>
+<p>If <code>return_table</code> is <code>false</code>:</p>
+<ul>
+<li>ssid, password, bssid_set, bssid, if <code>bssid_set</code> is equal to <code>0</code> then <code>bssid</code> is irrelevant</li>
+</ul>
+<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--Get default Station configuration (NEW FORMAT)
+do
+local def_sta_config=wifi.sta.getdefaultconfig(true)
+print(string.format(&quot;\tDefault station config\n\tssid:\&quot;%s\&quot;\tpassword:\&quot;%s\&quot;\n\tbssid:\&quot;%s\&quot;\tbssid_set:%s&quot;, def_sta_config.ssid, def_sta_config.pwd, def_sta_config.bssid, (def_sta_config.bssid_set and &quot;true&quot; or &quot;false&quot;)))
+end
+
+--Get default Station configuration (OLD FORMAT)
+ssid, password, bssid_set, bssid=wifi.sta.getdefaultconfig()
+print(&quot;\nCurrent Station configuration:\nSSID : &quot;..ssid
+..&quot;\nPassword  : &quot;..password
+..&quot;\nBSSID_set  : &quot;..bssid_set
+..&quot;\nBSSID: &quot;..bssid..&quot;\n&quot;)
+ssid, password, bssid_set, bssid=nil, nil, nil, nil
+</code></pre>
+
+<h4 id="see-also_20">See also<a class="headerlink" href="#see-also_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetconfig"><code>wifi.sta.getconfig()</code></a></li>
+<li><a href="#wifistaconnect"><code>wifi.sta.connect()</code></a></li>
+<li><a href="#wifistadisconnect"><code>wifi.sta.disconnect()</code></a></li>
+</ul>
+<h2 id="wifistagethostname">wifi.sta.gethostname()<a class="headerlink" href="#wifistagethostname" title="Permanent link">&para;</a></h2>
+<p>Gets current station hostname.</p>
+<h4 id="syntax_23">Syntax<a class="headerlink" href="#syntax_23" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.gethostname()</code></p>
+<h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
+<p>currently configured hostname</p>
+<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(&quot;Current hostname is: \&quot;&quot;..wifi.sta.gethostname()..&quot;\&quot;&quot;)
+</code></pre>
+
+<h2 id="wifistagetip">wifi.sta.getip()<a class="headerlink" href="#wifistagetip" title="Permanent link">&para;</a></h2>
+<p>Gets IP address, netmask, and gateway address in station mode.</p>
+<h4 id="syntax_24">Syntax<a class="headerlink" href="#syntax_24" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getip()</code></p>
+<h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
+<p>IP address, netmask, gateway address as string, for example "192.168.0.111". Returns <code>nil</code> if IP = "0.0.0.0".</p>
+<h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print current IP address, netmask, gateway
+print(wifi.sta.getip())
+-- 192.168.0.111  255.255.255.0  192.168.0.1
+ip = wifi.sta.getip()
+print(ip)
+-- 192.168.0.111
+ip, nm = wifi.sta.getip()
+print(nm)
+-- 255.255.255.0
+</code></pre>
+
+<h4 id="see-also_21">See also<a class="headerlink" href="#see-also_21" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistagetmac"><code>wifi.sta.getmac()</code></a></p>
+<h2 id="wifistagetmac">wifi.sta.getmac()<a class="headerlink" href="#wifistagetmac" title="Permanent link">&para;</a></h2>
+<p>Gets MAC address in station mode.</p>
+<h4 id="syntax_25">Syntax<a class="headerlink" href="#syntax_25" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getmac()</code></p>
+<h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
+<p>MAC address as string e.g. "18:fe:34:a2:d7:34"</p>
+<h4 id="see-also_22">See also<a class="headerlink" href="#see-also_22" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistagetip"><code>wifi.sta.getip()</code></a></p>
+<h2 id="wifistagetrssi">wifi.sta.getrssi()<a class="headerlink" href="#wifistagetrssi" title="Permanent link">&para;</a></h2>
+<p>Get RSSI(Received Signal Strength Indicator) of the Access Point which ESP8266 station connected to.</p>
+<h4 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.getrssi()</code></p>
+<h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li>If station is connected to an access point, <code>rssi</code> is returned.</li>
+<li>If station is not connected to an access point, <code>nil</code> is returned.  </li>
+</ul>
+<h4 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">RSSI=wifi.sta.getrssi()
+print(&quot;RSSI is&quot;, RSSI)
+</code></pre>
+
+<h2 id="wifistasetaplimit">wifi.sta.setaplimit()<a class="headerlink" href="#wifistasetaplimit" title="Permanent link">&para;</a></h2>
+<p>Set Maximum number of Access Points to store in flash.
+ - This value is written to flash</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>New setting will not take effect until restart. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If 5 Access Points are stored and AP limit is set to 4, the AP at index 5 will remain until <a href="../node/#noderestore"><code>node.restore()</code></a> is called or AP limit is set to 5 and AP is overwritten.</p>
+</div>
+<h4 id="syntax_27">Syntax<a class="headerlink" href="#syntax_27" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.setaplimit(qty)</code></p>
+<h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
+<p><code>qty</code> Quantity of Access Points to store in flash. Range: 1-5 (Default: 1)</p>
+<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code>  Success</li>
+<li><code>false</code> Failure</li>
+</ul>
+<h4 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">wifi.sta.setaplimit(5)
+</code></pre>
+
+<h4 id="see-also_23">See also<a class="headerlink" href="#see-also_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifistagetapinfo"><code>wifi.sta.getapinfo()</code></a></li>
+</ul>
+<h2 id="wifistasethostname">wifi.sta.sethostname()<a class="headerlink" href="#wifistasethostname" title="Permanent link">&para;</a></h2>
+<p>Sets station hostname.</p>
+<h4 id="syntax_28">Syntax<a class="headerlink" href="#syntax_28" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.sethostname(hostname)</code></p>
+<h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
+<p><code>hostname</code> must only contain letters, numbers and hyphens('-') and be 32 characters or less with first and last character being alphanumeric</p>
+<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_16">Example<a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">if (wifi.sta.sethostname(&quot;NodeMCU&quot;) == true) then
+    print(&quot;hostname was successfully changed&quot;)
+else
+    print(&quot;hostname was not changed&quot;)
+end
+</code></pre>
+
+<h2 id="wifistasetip">wifi.sta.setip()<a class="headerlink" href="#wifistasetip" title="Permanent link">&para;</a></h2>
+<p>Sets IP address, netmask, gateway address in station mode.</p>
+<h4 id="syntax_29">Syntax<a class="headerlink" href="#syntax_29" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.setip(cfg)</code></p>
+<h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
+<p><code>cfg</code> table contain IP address, netmask, and gateway</p>
+<pre><code class="lua">{
+  ip = &quot;192.168.0.111&quot;,
+  netmask = &quot;255.255.255.0&quot;,
+  gateway = &quot;192.168.0.1&quot;
+}
+</code></pre>
+
+<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
+<p>true if success, false otherwise</p>
+<h4 id="see-also_24">See also<a class="headerlink" href="#see-also_24" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistasetmac"><code>wifi.sta.setmac()</code></a></p>
+<h2 id="wifistasetmac">wifi.sta.setmac()<a class="headerlink" href="#wifistasetmac" title="Permanent link">&para;</a></h2>
+<p>Sets MAC address in station mode.</p>
+<h4 id="syntax_30">Syntax<a class="headerlink" href="#syntax_30" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.setmac(mac)</code></p>
+<h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
+<p>MAC address in string e.g. "DE:AD:BE:EF:7A:C0"</p>
+<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
+<p>true if success, false otherwise</p>
+<h4 id="example_17">Example<a class="headerlink" href="#example_17" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(wifi.sta.setmac(&quot;DE:AD:BE:EF:7A:C0&quot;))
+</code></pre>
+
+<h4 id="see-also_25">See also<a class="headerlink" href="#see-also_25" title="Permanent link">&para;</a></h4>
+<p><a href="#wifistasetip"><code>wifi.sta.setip()</code></a></p>
+<h2 id="wifistasleeptype">wifi.sta.sleeptype()<a class="headerlink" href="#wifistasleeptype" title="Permanent link">&para;</a></h2>
+<p>Configures the WiFi modem sleep type to be used while station is connected to an Access Point.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Does not apply to <code>wifi.SOFTAP</code>, <code>wifi.STATIONAP</code> or <code>wifi.NULLMODE</code>.</p>
+</div>
+<h4 id="syntax_31">Syntax<a class="headerlink" href="#syntax_31" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.sleeptype(type_wanted)</code></p>
+<h4 id="parameters_31">Parameters<a class="headerlink" href="#parameters_31" title="Permanent link">&para;</a></h4>
+<p><code>type_wanted</code> one of the following:</p>
+<ul>
+<li><code>wifi.NONE_SLEEP</code> to keep the modem on at all times</li>
+<li><code>wifi.LIGHT_SLEEP</code> to allow the CPU to power down under some circumstances</li>
+<li><code>wifi.MODEM_SLEEP</code> to power down the modem as much as possible</li>
+</ul>
+<h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
+<p>The actual sleep mode set, as one of <code>wifi.NONE_SLEEP</code>, <code>wifi.LIGHT_SLEEP</code> or <code>wifi.MODEM_SLEEP</code>.</p>
+<h2 id="wifistastatus">wifi.sta.status()<a class="headerlink" href="#wifistastatus" title="Permanent link">&para;</a></h2>
+<p>Gets the current status in station mode.</p>
+<h4 id="syntax_32">Syntax<a class="headerlink" href="#syntax_32" title="Permanent link">&para;</a></h4>
+<p><code>wifi.sta.status()</code></p>
+<h4 id="parameters_32">Parameters<a class="headerlink" href="#parameters_32" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
+<p>The current state which can be one of the following:</p>
+<ul>
+<li><code>wifi.STA_IDLE</code></li>
+<li><code>wifi.STA_CONNECTING</code></li>
+<li><code>wifi.STA_WRONGPWD</code></li>
+<li><code>wifi.STA_APNOTFOUND</code></li>
+<li><code>wifi.STA_FAIL</code></li>
+<li><code>wifi.STA_GOTIP</code></li>
+</ul>
+<h1 id="wifiap-module">wifi.ap Module<a class="headerlink" href="#wifiap-module" title="Permanent link">&para;</a></h1>
+<h2 id="wifiapconfig">wifi.ap.config()<a class="headerlink" href="#wifiapconfig" title="Permanent link">&para;</a></h2>
+<p>Sets SSID and password in AP mode. Be sure to make the password at least 8 characters long! If you don't it will default to <em>no</em> password and not set the SSID! It will still work as an access point but use a default SSID like e.g. NODE_9997C3.</p>
+<h4 id="syntax_33">Syntax<a class="headerlink" href="#syntax_33" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.config(cfg)</code></p>
+<h4 id="parameters_33">Parameters<a class="headerlink" href="#parameters_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cfg</code> table to hold configuration<ul>
+<li><code>ssid</code> SSID chars 1-32</li>
+<li><code>pwd</code> password chars 8-64</li>
+<li><code>auth</code> authentication method, one of <code>wifi.OPEN</code> (default), <code>wifi.WPA_PSK</code>, <code>wifi.WPA2_PSK</code>, <code>wifi.WPA_WPA2_PSK</code></li>
+<li><code>channel</code> channel number 1-14 default = 6</li>
+<li><code>hidden</code> false = not hidden, true = hidden, default = false</li>
+<li><code>max</code> maximum number of connections 1-4 default=4</li>
+<li><code>beacon</code> beacon interval time in range 100-60000, default = 100</li>
+<li><code>save</code> save configuration to flash.<ul>
+<li><code>true</code> configuration <strong>will</strong> be retained through power cycle. (Default)</li>
+<li><code>false</code> configuration <strong>will not</strong> be retained through power cycle.</li>
+</ul>
+</li>
+<li>Event callbacks will only be available if <code>WIFI_SDK_EVENT_MONITOR_ENABLE</code> is uncommented in <code>user_config.h</code><ul>
+<li>Please note: To ensure all SoftAP events are handled at boot time, all relevant callbacks must be registered as early as possible in <code>init.lua</code> with either <code>wifi.ap.config()</code> or <code>wifi.eventmon.register()</code>.     </li>
+<li><code>staconnected_cb</code>: Callback executed when a new client has connected to the access point. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>MAC</code>: MAC address of client that has connected.  </li>
+<li><code>AID</code>: SDK provides no details concerning this return value.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>stadisconnected_cb</code>: Callback executed when a client has disconnected from the access point. (Optional)  <ul>
+<li>Items returned in table :<ul>
+<li><code>MAC</code>: MAC address of client that has disconnected.  </li>
+<li><code>AID</code>: SDK provides no details concerning this return value.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>probereq_cb</code>: Callback executed when a probe request was received. (Optional)<ul>
+<li>Items returned in table :<ul>
+<li><code>MAC</code>: MAC address of the client that is probing the access point.  </li>
+<li><code>RSSI</code>: Received Signal Strength Indicator of client.  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code>  Success</li>
+<li><code>false</code> Failure</li>
+</ul>
+<h4 id="example_18">Example:<a class="headerlink" href="#example_18" title="Permanent link">&para;</a></h4>
+<pre><code class="lua"> cfg={}
+ cfg.ssid=&quot;myssid&quot;
+ cfg.pwd=&quot;mypassword&quot;
+ wifi.ap.config(cfg)
+</code></pre>
+
+<h2 id="wifiapdeauth">wifi.ap.deauth()<a class="headerlink" href="#wifiapdeauth" title="Permanent link">&para;</a></h2>
+<p>Deauths (forcibly removes) a client from the ESP access point by sending a corresponding IEEE802.11 management packet (first) and removing the client from it's data structures (afterwards).</p>
+<p>The IEEE802.11 reason code used is 2 for "Previous authentication no longer valid"(AUTH_EXPIRE).</p>
+<h4 id="syntax_34">Syntax<a class="headerlink" href="#syntax_34" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.deauth([MAC])</code></p>
+<h4 id="parameters_34">Parameters<a class="headerlink" href="#parameters_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>MAC</code> address of station to be deauthed.<ul>
+<li>Note: if this field is left blank, all currently connected stations will get deauthed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
+<p>Returns true unless called while the ESP is in the STATION opmode</p>
+<h4 id="example_19">Example<a class="headerlink" href="#example_19" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">allowed_mac_list={&quot;18:fe:34:00:00:00&quot;, &quot;18:fe:34:00:00:01&quot;}
+
+wifi.eventmon.register(wifi.eventmon.AP_STACONNECTED, function(T)
+  print(&quot;\n\tAP - STATION CONNECTED&quot;..&quot;\n\tMAC: &quot;..T.MAC..&quot;\n\tAID: &quot;..T.AID)
+  if(allowed_mac_list~=nil) then
+    for _, v in pairs(allowed_mac_list) do
+      if(v == T.MAC) then return end
+    end
+  end
+  wifi.ap.deauth(T.MAC)
+  print(&quot;\tStation DeAuthed!&quot;)
+end)
+
+</code></pre>
+
+<h4 id="see-also_26">See also<a class="headerlink" href="#see-also_26" title="Permanent link">&para;</a></h4>
+<p><a href="#wifieventmonregister"><code>wifi.eventmon.register()</code></a><br />
+<a href="#wifieventmonreason"><code>wifi.eventmon.reason()</code></a></p>
+<h2 id="wifiapgetbroadcast">wifi.ap.getbroadcast()<a class="headerlink" href="#wifiapgetbroadcast" title="Permanent link">&para;</a></h2>
+<p>Gets broadcast address in AP mode.</p>
+<h4 id="syntax_35">Syntax<a class="headerlink" href="#syntax_35" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getbroadcast()</code></p>
+<h4 id="parameters_35">Parameters<a class="headerlink" href="#parameters_35" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
+<p>broadcast address in string, for example "192.168.0.255",
+returns <code>nil</code> if IP address = "0.0.0.0".</p>
+<h4 id="example_20">Example<a class="headerlink" href="#example_20" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">bc = wifi.ap.getbroadcast()
+print(bc)
+-- 192.168.0.255
+</code></pre>
+
+<h4 id="see-also_27">See also<a class="headerlink" href="#see-also_27" title="Permanent link">&para;</a></h4>
+<p><a href="#wifiapgetip"><code>wifi.ap.getip()</code></a></p>
+<h2 id="wifiapgetclient">wifi.ap.getclient()<a class="headerlink" href="#wifiapgetclient" title="Permanent link">&para;</a></h2>
+<p>Gets table of clients connected to device in AP mode.</p>
+<h4 id="syntax_36">Syntax<a class="headerlink" href="#syntax_36" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getclient()</code></p>
+<h4 id="parameters_36">Parameters<a class="headerlink" href="#parameters_36" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_36">Returns<a class="headerlink" href="#returns_36" title="Permanent link">&para;</a></h4>
+<p>table of connected clients</p>
+<h4 id="example_21">Example<a class="headerlink" href="#example_21" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">table={}
+table=wifi.ap.getclient()
+for mac,ip in pairs(table) do
+    print(mac,ip)
+end
+
+-- or shorter
+for mac,ip in pairs(wifi.ap.getclient()) do
+    print(mac,ip)
+end
+</code></pre>
+
+<h2 id="wifiapgetconfig">wifi.ap.getconfig()<a class="headerlink" href="#wifiapgetconfig" title="Permanent link">&para;</a></h2>
+<p>Gets the current SoftAP configuration.</p>
+<h4 id="syntax_37">Syntax<a class="headerlink" href="#syntax_37" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getconfig(return_table)</code></p>
+<h4 id="parameters_37">Parameters<a class="headerlink" href="#parameters_37" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>return_table</code><ul>
+<li><code>true</code> returns data in a table</li>
+<li><code>false</code> returns data in the old format (default)</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
+<p>If <code>return_table</code> is true:</p>
+<ul>
+<li><code>config_table</code><ul>
+<li><code>ssid</code> Network name</li>
+<li><code>pwd</code> Password, <code>nil</code> if no password was configured   - <code>auth</code> Authentication Method (<code>wifi.OPEN</code>, <code>wifi.WPA_PSK</code>, <code>wifi.WPA2_PSK</code> or <code>wifi.WPA_WPA2_PSK</code>)</li>
+<li><code>channel</code> Channel number</li>
+<li><code>hidden</code> <code>false</code> = not hidden, <code>true</code> = hidden</li>
+<li><code>max</code> Maximum number of client connections</li>
+<li><code>beacon</code> Beacon interval</li>
+</ul>
+</li>
+</ul>
+<p>If <code>return_table</code> is false:</p>
+<ul>
+<li>ssid, password, if <code>bssid_set</code> is equal to 0 then <code>bssid</code> is irrelevant</li>
+</ul>
+<h4 id="example_22">Example<a class="headerlink" href="#example_22" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--Get SoftAP configuration table (NEW FORMAT)
+do
+  print(&quot;\n  Current SoftAP configuration:&quot;)
+  for k,v in pairs(wifi.ap.getconfig(true)) do
+      print(&quot;   &quot;..k..&quot; :&quot;,v)
+  end
+end
+
+--Get current SoftAP configuration (OLD FORMAT)
+do
+  local ssid, password=wifi.ap.getconfig()
+  print(&quot;\n  Current SoftAP configuration:\n   SSID : &quot;..ssid..
+    &quot;\n   Password  :&quot;,password)
+  ssid, password=nil, nil
+end
+</code></pre>
+
+<h2 id="wifiapgetdefaultconfig">wifi.ap.getdefaultconfig()<a class="headerlink" href="#wifiapgetdefaultconfig" title="Permanent link">&para;</a></h2>
+<p>Gets the default SoftAP configuration stored in flash.</p>
+<h4 id="syntax_38">Syntax<a class="headerlink" href="#syntax_38" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getdefaultconfig(return_table)</code></p>
+<h4 id="parameters_38">Parameters<a class="headerlink" href="#parameters_38" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>return_table</code><ul>
+<li><code>true</code> returns data in a table</li>
+<li><code>false</code> returns data in the old format (default)</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
+<p>If <code>return_table</code> is true:</p>
+<ul>
+<li><code>config_table</code><ul>
+<li><code>ssid</code> Network name</li>
+<li><code>pwd</code> Password, <code>nil</code> if no password was configured   - <code>auth</code> Authentication Method (<code>wifi.OPEN</code>, <code>wifi.WPA_PSK</code>, <code>wifi.WPA2_PSK</code> or <code>wifi.WPA_WPA2_PSK</code>)</li>
+<li><code>channel</code> Channel number</li>
+<li><code>hidden</code> <code>false</code> = not hidden, <code>true</code> = hidden</li>
+<li><code>max</code> Maximum number of client connections</li>
+<li><code>beacon</code> Beacon interval</li>
+</ul>
+</li>
+</ul>
+<p>If <code>return_table</code> is false:</p>
+<ul>
+<li>ssid, password, if <code>bssid_set</code> is equal to 0 then <code>bssid</code> is irrelevant</li>
+</ul>
+<h4 id="example_23">Example<a class="headerlink" href="#example_23" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--Get default SoftAP configuration table (NEW FORMAT)
+do
+  print(&quot;\n  Default SoftAP configuration:&quot;)
+  for k,v in pairs(wifi.ap.getdefaultconfig(true)) do
+      print(&quot;   &quot;..k..&quot; :&quot;,v)
+  end
+end
+
+--Get default SoftAP configuration (OLD FORMAT)
+do
+  local ssid, password=wifi.ap.getdefaultconfig()
+  print(&quot;\n  Default SoftAP configuration:\n   SSID : &quot;..ssid..
+    &quot;\n   Password  :&quot;,password)
+  ssid, password=nil, nil
+end
+</code></pre>
+
+<h2 id="wifiapgetip">wifi.ap.getip()<a class="headerlink" href="#wifiapgetip" title="Permanent link">&para;</a></h2>
+<p>Gets IP address, netmask and gateway in AP mode.</p>
+<h4 id="syntax_39">Syntax<a class="headerlink" href="#syntax_39" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getip()</code></p>
+<h4 id="parameters_39">Parameters<a class="headerlink" href="#parameters_39" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
+<p>IP address, netmask, gateway address as string, for example "192.168.0.111", returns <code>nil</code> if IP address = "0.0.0.0".</p>
+<h4 id="example_24">Example<a class="headerlink" href="#example_24" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- print current ip, netmask, gateway
+print(wifi.ap.getip())
+-- 192.168.4.1  255.255.255.0  192.168.4.1
+ip = wifi.ap.getip()
+print(ip)
+-- 192.168.4.1
+ip, nm = wifi.ap.getip()
+print(nm)
+-- 255.255.255.0
+ip, nm, gw = wifi.ap.getip()
+print(gw)
+-- 192.168.4.1
+</code></pre>
+
+<h4 id="see-also_28">See also<a class="headerlink" href="#see-also_28" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifiapgetmac"><code>wifi.ap.getmac()</code></a></li>
+</ul>
+<h2 id="wifiapgetmac">wifi.ap.getmac()<a class="headerlink" href="#wifiapgetmac" title="Permanent link">&para;</a></h2>
+<p>Gets MAC address in AP mode.</p>
+<h4 id="syntax_40">Syntax<a class="headerlink" href="#syntax_40" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.getmac()</code></p>
+<h4 id="parameters_40">Parameters<a class="headerlink" href="#parameters_40" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
+<p>MAC address as string, for example "1A-33-44-FE-55-BB"</p>
+<h4 id="see-also_29">See also<a class="headerlink" href="#see-also_29" title="Permanent link">&para;</a></h4>
+<p><a href="#wifiapgetip"><code>wifi.ap.getip()</code></a></p>
+<h2 id="wifiapsetip">wifi.ap.setip()<a class="headerlink" href="#wifiapsetip" title="Permanent link">&para;</a></h2>
+<p>Sets IP address, netmask and gateway address in AP mode.</p>
+<h4 id="syntax_41">Syntax<a class="headerlink" href="#syntax_41" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.setip(cfg)</code></p>
+<h4 id="parameters_41">Parameters<a class="headerlink" href="#parameters_41" title="Permanent link">&para;</a></h4>
+<p><code>cfg</code> table contain IP address, netmask, and gateway</p>
+<h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
+<p>true if successful, false otherwise</p>
+<h4 id="example_25">Example<a class="headerlink" href="#example_25" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">cfg =
+{
+    ip=&quot;192.168.1.1&quot;,
+    netmask=&quot;255.255.255.0&quot;,
+    gateway=&quot;192.168.1.1&quot;
+}
+wifi.ap.setip(cfg)
+</code></pre>
+
+<h4 id="see-also_30">See also<a class="headerlink" href="#see-also_30" title="Permanent link">&para;</a></h4>
+<p><a href="#wifiapsetmac"><code>wifi.ap.setmac()</code></a></p>
+<h2 id="wifiapsetmac">wifi.ap.setmac()<a class="headerlink" href="#wifiapsetmac" title="Permanent link">&para;</a></h2>
+<p>Sets MAC address in AP mode.</p>
+<h4 id="syntax_42">Syntax<a class="headerlink" href="#syntax_42" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.setmac(mac)</code></p>
+<h4 id="parameters_42">Parameters<a class="headerlink" href="#parameters_42" title="Permanent link">&para;</a></h4>
+<p>MAC address in byte string, for example "AC-1D-1C-B1-0B-22"</p>
+<h4 id="returns_42">Returns<a class="headerlink" href="#returns_42" title="Permanent link">&para;</a></h4>
+<p>true if success, false otherwise</p>
+<h4 id="example_26">Example<a class="headerlink" href="#example_26" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(wifi.ap.setmac(&quot;AC-1D-1C-B1-0B-22&quot;))
+</code></pre>
+
+<h4 id="see-also_31">See also<a class="headerlink" href="#see-also_31" title="Permanent link">&para;</a></h4>
+<p><a href="#wifiapsetip"><code>wifi.ap.setip()</code></a></p>
+<h1 id="wifiapdhcp-module">wifi.ap.dhcp Module<a class="headerlink" href="#wifiapdhcp-module" title="Permanent link">&para;</a></h1>
+<h2 id="wifiapdhcpconfig">wifi.ap.dhcp.config()<a class="headerlink" href="#wifiapdhcpconfig" title="Permanent link">&para;</a></h2>
+<p>Configure the dhcp service. Currently only supports setting the start address of the dhcp address pool.</p>
+<h4 id="syntax_43">Syntax<a class="headerlink" href="#syntax_43" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.dhcp.config(dhcp_config)</code></p>
+<h4 id="parameters_43">Parameters<a class="headerlink" href="#parameters_43" title="Permanent link">&para;</a></h4>
+<p><code>dhcp_config</code> table containing the start-IP of the DHCP address pool, eg. "192.168.1.100"</p>
+<h4 id="returns_43">Returns<a class="headerlink" href="#returns_43" title="Permanent link">&para;</a></h4>
+<p><code>pool_startip</code>, <code>pool_endip</code></p>
+<h4 id="example_27">Example<a class="headerlink" href="#example_27" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">dhcp_config ={}
+dhcp_config.start = &quot;192.168.1.100&quot;
+wifi.ap.dhcp.config(dhcp_config)
+</code></pre>
+
+<h2 id="wifiapdhcpstart">wifi.ap.dhcp.start()<a class="headerlink" href="#wifiapdhcpstart" title="Permanent link">&para;</a></h2>
+<p>Starts the DHCP service.</p>
+<h4 id="syntax_44">Syntax<a class="headerlink" href="#syntax_44" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.dhcp.start()</code></p>
+<h4 id="parameters_44">Parameters<a class="headerlink" href="#parameters_44" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
+<p>boolean indicating success</p>
+<h2 id="wifiapdhcpstop">wifi.ap.dhcp.stop()<a class="headerlink" href="#wifiapdhcpstop" title="Permanent link">&para;</a></h2>
+<p>Stops the DHCP service.</p>
+<h4 id="syntax_45">Syntax<a class="headerlink" href="#syntax_45" title="Permanent link">&para;</a></h4>
+<p><code>wifi.ap.dhcp.stop()</code></p>
+<h4 id="parameters_45">Parameters<a class="headerlink" href="#parameters_45" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_45">Returns<a class="headerlink" href="#returns_45" title="Permanent link">&para;</a></h4>
+<p>boolean indicating success</p>
+<h1 id="wifieventmon-module">wifi.eventmon Module<a class="headerlink" href="#wifieventmon-module" title="Permanent link">&para;</a></h1>
+<h2 id="wifieventmonregister">wifi.eventmon.register()<a class="headerlink" href="#wifieventmonregister" title="Permanent link">&para;</a></h2>
+<p>Register/unregister callbacks for WiFi event monitor.
+ - After a callback is registered, this function may be called to update a callback's function at any time</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To ensure all WiFi events are caught, the Wifi event monitor callbacks should be registered as early as possible in <code>init.lua</code>. Any events that occur before callbacks are registered will be discarded!</p>
+</div>
+<h4 id="syntax_46">Syntax<a class="headerlink" href="#syntax_46" title="Permanent link">&para;</a></h4>
+<p>wifi.eventmon.register(Event[, function(T)])</p>
+<h4 id="parameters_46">Parameters<a class="headerlink" href="#parameters_46" title="Permanent link">&para;</a></h4>
+<p>Event: WiFi event you would like to set a callback for.  </p>
+<ul>
+<li>Valid WiFi events:  <ul>
+<li>wifi.eventmon.STA_CONNECTED  </li>
+<li>wifi.eventmon.STA_DISCONNECTED  </li>
+<li>wifi.eventmon.STA_AUTHMODE_CHANGE  </li>
+<li>wifi.eventmon.STA_GOT_IP  </li>
+<li>wifi.eventmon.STA_DHCP_TIMEOUT  </li>
+<li>wifi.eventmon.AP_STACONNECTED  </li>
+<li>wifi.eventmon.AP_STADISCONNECTED  </li>
+<li>wifi.eventmon.AP_PROBEREQRECVED  </li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_46">Returns<a class="headerlink" href="#returns_46" title="Permanent link">&para;</a></h4>
+<p>Function:<br />
+<code>nil</code></p>
+<p>Callback:<br />
+T: Table returned by event.  </p>
+<ul>
+<li><code>wifi.eventmon.STA_CONNECTED</code> Station is connected to access point.  <ul>
+<li><code>SSID</code>: SSID of access point.  </li>
+<li><code>BSSID</code>: BSSID of access point.  </li>
+<li><code>channel</code>: The channel the access point is on.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.STA_DISCONNECTED</code>: Station was disconnected from access point.  <ul>
+<li><code>SSID</code>: SSID of access point.  </li>
+<li><code>BSSID</code>: BSSID of access point.  </li>
+<li><code>reason</code>: See <a href="#wifieventmonreason">wifi.eventmon.reason</a> below.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.STA_AUTHMODE_CHANGE</code>: Access point has changed authorization mode.    <ul>
+<li><code>old_auth_mode</code>: Old wifi authorization mode.  </li>
+<li><code>new_auth_mode</code>: New wifi authorization mode.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.STA_GOT_IP</code>: Station got an IP address.  <ul>
+<li><code>IP</code>: The IP address assigned to the station.  </li>
+<li><code>netmask</code>: Subnet mask.  </li>
+<li><code>gateway</code>: The IP address of the access point the station is connected to.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.STA_DHCP_TIMEOUT</code>: Station DHCP request has timed out.  <ul>
+<li>Blank table is returned.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.AP_STACONNECTED</code>: A new client has connected to the access point.  <ul>
+<li><code>MAC</code>: MAC address of client that has connected.  </li>
+<li><code>AID</code>: SDK provides no details concerning this return value.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.AP_STADISCONNECTED</code>: A client has disconnected from the access point.  <ul>
+<li><code>MAC</code>: MAC address of client that has disconnected.  </li>
+<li><code>AID</code>: SDK provides no details concerning this return value.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.AP_PROBEREQRECVED</code>: A probe request was received.  <ul>
+<li><code>MAC</code>: MAC address of the client that is probing the access point.  </li>
+<li><code>RSSI</code>: Received Signal Strength Indicator of client.  </li>
+</ul>
+</li>
+<li><code>wifi.eventmon.WIFI_MODE_CHANGE</code>: WiFi mode has changed.    <ul>
+<li><code>old_auth_mode</code>: Old WiFi mode.  </li>
+<li><code>new_auth_mode</code>: New WiFi mode.  </li>
+</ul>
+</li>
+</ul>
+<h4 id="example_28">Example<a class="headerlink" href="#example_28" title="Permanent link">&para;</a></h4>
+<pre><code class="lua"> wifi.eventmon.register(wifi.eventmon.STA_CONNECTED, function(T)
+ print(&quot;\n\tSTA - CONNECTED&quot;..&quot;\n\tSSID: &quot;..T.SSID..&quot;\n\tBSSID: &quot;..
+ T.BSSID..&quot;\n\tChannel: &quot;..T.channel)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.STA_DISCONNECTED, function(T)
+ print(&quot;\n\tSTA - DISCONNECTED&quot;..&quot;\n\tSSID: &quot;..T.SSID..&quot;\n\tBSSID: &quot;..
+ T.BSSID..&quot;\n\treason: &quot;..T.reason)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.STA_AUTHMODE_CHANGE, function(T)
+ print(&quot;\n\tSTA - AUTHMODE CHANGE&quot;..&quot;\n\told_auth_mode: &quot;..
+ T.old_auth_mode..&quot;\n\tnew_auth_mode: &quot;..T.new_auth_mode)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.STA_GOT_IP, function(T)
+ print(&quot;\n\tSTA - GOT IP&quot;..&quot;\n\tStation IP: &quot;..T.IP..&quot;\n\tSubnet mask: &quot;..
+ T.netmask..&quot;\n\tGateway IP: &quot;..T.gateway)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.STA_DHCP_TIMEOUT, function()
+ print(&quot;\n\tSTA - DHCP TIMEOUT&quot;)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.AP_STACONNECTED, function(T)
+ print(&quot;\n\tAP - STATION CONNECTED&quot;..&quot;\n\tMAC: &quot;..T.MAC..&quot;\n\tAID: &quot;..T.AID)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.AP_STADISCONNECTED, function(T)
+ print(&quot;\n\tAP - STATION DISCONNECTED&quot;..&quot;\n\tMAC: &quot;..T.MAC..&quot;\n\tAID: &quot;..T.AID)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.AP_PROBEREQRECVED, function(T)
+ print(&quot;\n\tAP - PROBE REQUEST RECEIVED&quot;..&quot;\n\tMAC: &quot;.. T.MAC..&quot;\n\tRSSI: &quot;..T.RSSI)
+ end)
+
+ wifi.eventmon.register(wifi.eventmon.WIFI_MODE_CHANGED, function(T)
+ print(&quot;\n\tSTA - WIFI MODE CHANGED&quot;..&quot;\n\told_mode: &quot;..
+ T.old_mode..&quot;\n\tnew_mode: &quot;..T.new_mode)
+ end)
+</code></pre>
+
+<h4 id="see-also_32">See also<a class="headerlink" href="#see-also_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifieventmonunregister"><code>wifi.eventmon.unregister()</code></a></li>
+</ul>
+<h2 id="wifieventmonunregister">wifi.eventmon.unregister()<a class="headerlink" href="#wifieventmonunregister" title="Permanent link">&para;</a></h2>
+<p>Unregister callbacks for WiFi event monitor.</p>
+<h4 id="syntax_47">Syntax<a class="headerlink" href="#syntax_47" title="Permanent link">&para;</a></h4>
+<p>wifi.eventmon.unregister(Event)</p>
+<h4 id="parameters_47">Parameters<a class="headerlink" href="#parameters_47" title="Permanent link">&para;</a></h4>
+<p>Event: WiFi event you would like to set a callback for.  </p>
+<ul>
+<li>Valid WiFi events:<ul>
+<li>wifi.eventmon.STA_CONNECTED  </li>
+<li>wifi.eventmon.STA_DISCONNECTED  </li>
+<li>wifi.eventmon.STA_AUTHMODE_CHANGE  </li>
+<li>wifi.eventmon.STA_GOT_IP  </li>
+<li>wifi.eventmon.STA_DHCP_TIMEOUT  </li>
+<li>wifi.eventmon.AP_STACONNECTED  </li>
+<li>wifi.eventmon.AP_STADISCONNECTED  </li>
+<li>wifi.eventmon.AP_PROBEREQRECVED  </li>
+<li>wifi.eventmon.WIFI_MODE_CHANGED  </li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_47">Returns<a class="headerlink" href="#returns_47" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_29">Example<a class="headerlink" href="#example_29" title="Permanent link">&para;</a></h4>
+<pre><code class="lua"> wifi.eventmon.unregister(wifi.eventmon.STA_CONNECTED)
+</code></pre>
+
+<h4 id="see-also_33">See also<a class="headerlink" href="#see-also_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#wifieventmonregister"><code>wifi.eventmon.register()</code></a></li>
+</ul>
+<h2 id="wifieventmonreason">wifi.eventmon.reason<a class="headerlink" href="#wifieventmonreason" title="Permanent link">&para;</a></h2>
+<p>Table containing disconnect reasons.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Disconnect reason</th>
+<th align="center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">wifi.eventmon.reason.UNSPECIFIED</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.AUTH_EXPIRE</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.AUTH_LEAVE</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.ASSOC_EXPIRE</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.ASSOC_TOOMANY</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.NOT_AUTHED</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.NOT_ASSOCED</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.ASSOC_LEAVE</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.ASSOC_NOT_AUTHED</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.DISASSOC_PWRCAP_BAD</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.DISASSOC_SUPCHAN_BAD</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.IE_INVALID</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.MIC_FAILURE</td>
+<td align="center">14</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.4WAY_HANDSHAKE_TIMEOUT</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.GROUP_KEY_UPDATE_TIMEOUT</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.IE_IN_4WAY_DIFFERS</td>
+<td align="center">17</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.GROUP_CIPHER_INVALID</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.PAIRWISE_CIPHER_INVALID</td>
+<td align="center">19</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.AKMP_INVALID</td>
+<td align="center">20</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.UNSUPP_RSN_IE_VERSION</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.INVALID_RSN_IE_CAP</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.802_1X_AUTH_FAILED</td>
+<td align="center">23</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.CIPHER_SUITE_REJECTED</td>
+<td align="center">24</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.BEACON_TIMEOUT</td>
+<td align="center">200</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.NO_AP_FOUND</td>
+<td align="center">201</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.AUTH_FAIL</td>
+<td align="center">202</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.ASSOC_FAIL</td>
+<td align="center">203</td>
+</tr>
+<tr>
+<td align="left">wifi.eventmon.reason.HANDSHAKE_TIMEOUT</td>
+<td align="center">204</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wps/" class="btn btn-neutral float-right" title="wps">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../websocket/" class="btn btn-neutral" title="websocket"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../websocket/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../wps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

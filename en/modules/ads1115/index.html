@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ads1115 - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ads1115";
+    var mkdocs_page_input_path = "en/modules/ads1115.md";
+    var mkdocs_page_url = "/en/modules/ads1115/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ads1115</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ads1115-module">ADS1115 Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ads1115read">ads1115.read()</a></li>
+        
+            <li><a class="toctree-l4" href="#ads1115setting">ads1115.setting()</a></li>
+        
+            <li><a class="toctree-l4" href="#ads1115setup">ads1115.setup()</a></li>
+        
+            <li><a class="toctree-l4" href="#ads1115startread">ads1115.startread()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>ads1115</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/ads1115.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ads1115-module">ADS1115 Module<a class="headerlink" href="#ads1115-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2017-04-24</td>
+<td align="left"><a href="https://github.com/fetchbot">fetchbot</a></td>
+<td align="left"><a href="https://github.com/fetchbot">fetchbot</a></td>
+<td align="left"><a href="../../../../app/modules/ads1115.c">ads1115.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>This module provides access to the ADS1115 16-Bit analog-to-digital converter.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The <strong>ABSOLUTE MAXIMUM RATINGS</strong> for all analog inputs are <code>–0.3V to VDD+0.3V</code> referred to GND.</p>
+</div>
+<h2 id="ads1115read">ads1115.read()<a class="headerlink" href="#ads1115read" title="Permanent link">&para;</a></h2>
+<p>Gets the result stored in the register of a previously issued conversion, e.g. in continuous mode or with a conversion ready interrupt.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>volt, volt_dec, adc = ads1115.read()</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>volt</code> voltage in mV (see note below)</li>
+<li><code>volt_dec</code> voltage decimal (see note below)</li>
+<li><code>adc</code> raw adc value</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using float firmware then <code>volt</code> is a floating point number. On an integer firmware, the final value has to be concatenated from <code>volt</code> and <code>volt_dec</code>.</p>
+</div>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local id, alert_pin, sda, scl = 0, 7, 6, 5
+i2c.setup(id, sda, scl, i2c.SLOW)
+ads1115.setup(ads1115.ADDR_GND)
+
+-- continuous mode
+ads1115.setting(ads1115.GAIN_6_144V, ads1115.DR_128SPS, ads1115.SINGLE_0, ads1115.CONTINUOUS)
+-- read adc result with read()
+volt, volt_dec, adc = ads1115.read()
+print(volt, volt_dec, adc)
+
+-- comparator
+ads1115.setting(ads1115.GAIN_6_144V, ads1115.DR_128SPS, ads1115.SINGLE_0, ads1115.CONTINUOUS, ads1115.COMP_1CONV, 1000, 2000)
+local function comparator(level, when)
+    -- read adc result with read() when threshold reached
+    volt, volt_dec, adc = ads1115.read()
+    print(volt, volt_dec, adc)
+end
+gpio.mode(alert_pin, gpio.INT)
+gpio.trig(alert_pin, &quot;both&quot;, comparator)
+-- read adc result with read()
+volt, volt_dec, adc = ads1115.read()
+print(volt, volt_dec, adc)
+</code></pre>
+
+<h2 id="ads1115setting">ads1115.setting()<a class="headerlink" href="#ads1115setting" title="Permanent link">&para;</a></h2>
+<p>Configuration settings for the ADC.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>ads1115.setting(GAIN, SAMPLES, CHANNEL, MODE[, CONVERSION_RDY][, COMPARATOR, THRESHOLD_LOW, THRESHOLD_HI])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>GAIN</code> Programmable gain amplifier<ul>
+<li><code>ads1115.GAIN_6_144V</code> 2/3x Gain</li>
+<li><code>ads1115.GAIN_4_096V</code> 1x Gain</li>
+<li><code>ads1115.GAIN_2_048V</code> 2x Gain</li>
+<li><code>ads1115.GAIN_1_024V</code> 4x Gain</li>
+<li><code>ads1115.GAIN_0_512V</code> 8x Gain</li>
+<li><code>ads1115.GAIN_0_256V</code> 16x Gain</li>
+</ul>
+</li>
+<li><code>SAMPLES</code> Data rate in samples per second<ul>
+<li><code>ads1115.DR_8SPS</code></li>
+<li><code>ads1115.DR_16SPS</code></li>
+<li><code>ads1115.DR_32SPS</code></li>
+<li><code>ads1115.DR_64SPS</code></li>
+<li><code>ads1115.DR_128SPS</code></li>
+<li><code>ads1115.DR_250SPS</code></li>
+<li><code>ads1115.DR_475SPS</code></li>
+<li><code>ads1115.DR_860SPS</code></li>
+</ul>
+</li>
+<li><code>CHANNEL</code> Input multiplexer for single-ended or differential measurement<ul>
+<li><code>ads1115.SINGLE_0</code> channel 0 to GND</li>
+<li><code>ads1115.SINGLE_1</code> channel 1 to GND</li>
+<li><code>ads1115.SINGLE_2</code> channel 2 to GND</li>
+<li><code>ads1115.SINGLE_3</code> channel 3 to GND</li>
+<li><code>ads1115.DIFF_0_1</code> channel 0 to 1</li>
+<li><code>ads1115.DIFF_0_3</code> channel 0 to 3</li>
+<li><code>ads1115.DIFF_1_3</code> channel 1 to 3</li>
+<li><code>ads1115.DIFF_2_3</code> channel 2 to 3</li>
+</ul>
+</li>
+<li><code>MODE</code> Device operating mode<ul>
+<li><code>ads1115.SINGLE_SHOT</code> single-shot mode</li>
+<li><code>ads1115.CONTINUOUS</code> continuous mode</li>
+</ul>
+</li>
+<li><code>CONVERSION_RDY</code> Number of conversions after conversion ready asserts (optional)<ul>
+<li><code>ads1115.CONV_RDY_1</code></li>
+<li><code>ads1115.CONV_RDY_2</code></li>
+<li><code>ads1115.CONV_RDY_4</code></li>
+</ul>
+</li>
+<li><code>COMPARATOR</code> Number of conversions after comparator asserts (optional)<ul>
+<li><code>ads1115.COMP_1CONV</code></li>
+<li><code>ads1115.COMP_2CONV</code></li>
+<li><code>ads1115.COMP_4CONV</code></li>
+</ul>
+</li>
+<li><code>THRESHOLD_LOW</code><ul>
+<li><code>0</code> - <code>+ GAIN_MAX</code> in mV for single-ended inputs</li>
+<li><code>- GAIN_MAX</code> - <code>+ GAIN_MAX</code> in mV for differential inputs</li>
+</ul>
+</li>
+<li><code>THRESHOLD_HI</code><ul>
+<li><code>0</code> - <code>+ GAIN_MAX</code> in mV for single-ended inputs</li>
+<li><code>- GAIN_MAX</code> - <code>+ GAIN_MAX</code> in mV for differential inputs</li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local id, sda, scl = 0, 6, 5
+i2c.setup(id, sda, scl, i2c.SLOW)
+ads1115.setup(ads1115.ADDR_GND)
+
+ads1115.setting(ads1115.GAIN_6_144V, ads1115.DR_128SPS, ads1115.SINGLE_0, ads1115.SINGLE_SHOT)
+</code></pre>
+
+<h2 id="ads1115setup">ads1115.setup()<a class="headerlink" href="#ads1115setup" title="Permanent link">&para;</a></h2>
+<p>Initializes the device on the defined I²C device address.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>ads1115.setup(ADDRESS)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ADDRESS</code><ul>
+<li><code>ads1115.ADDR_GND</code></li>
+<li><code>ads1115.ADDR_VDD</code></li>
+<li><code>ads1115.ADDR_SDA</code></li>
+<li><code>ads1115.ADDR_SCL</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local id, sda, scl = 0, 6, 5
+i2c.setup(id, sda, scl, i2c.SLOW)
+
+ads1115.setup(ads1115.ADDR_GND)
+</code></pre>
+
+<h2 id="ads1115startread">ads1115.startread()<a class="headerlink" href="#ads1115startread" title="Permanent link">&para;</a></h2>
+<p>Starts the ADC reading for single-shot mode and after the conversion is done it will invoke an optional callback function in which the ADC conversion result can be obtained.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>ads1115.startread([CALLBACK])</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>CALLBACK</code> callback function which will be invoked after the adc conversion is done<ul>
+<li><code>function(volt, volt_dec, adc) end</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local id, alert_pin, sda, scl = 0, 7, 6, 5
+i2c.setup(id, sda, scl, i2c.SLOW)
+ads1115.setup(ads1115.ADDR_GND)
+
+-- single shot
+ads1115.setting(ads1115.GAIN_6_144V, ads1115.DR_128SPS, ads1115.SINGLE_0, ads1115.SINGLE_SHOT)
+-- start adc conversion and get result in callback after conversion is ready
+ads1115.startread(function(volt, volt_dec, adc) print(volt, volt_dec, adc) end)
+
+-- conversion ready
+ads1115.setting(ads1115.GAIN_6_144V, ads1115.DR_128SPS, ads1115.SINGLE_0, ads1115.SINGLE_SHOT, ads1115.CONV_RDY_1)
+local function conversion_ready(level, when)
+    volt, volt_dec, adc = ads1115.read()
+    print(volt, volt_dec, adc)
+end
+gpio.mode(alert_pin, gpio.INT)
+gpio.trig(alert_pin, &quot;down&quot;, conversion_ready)
+-- start conversion and get result with read() after conversion ready pin asserts
+ads1115.startread()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../adxl345/" class="btn btn-neutral float-right" title="adxl345">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../adc/" class="btn btn-neutral" title="adc"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../adc/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../adxl345/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

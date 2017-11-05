@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>net - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "net";
+    var mkdocs_page_input_path = "en/modules/net.md";
+    var mkdocs_page_url = "/en/modules/net/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">net</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#net-module">net Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#constants">Constants</a></li>
+        
+            <li><a class="toctree-l4" href="#netcreateconnection">net.createConnection()</a></li>
+        
+            <li><a class="toctree-l4" href="#netcreateserver">net.createServer()</a></li>
+        
+            <li><a class="toctree-l4" href="#netcreateudpsocket">net.createUDPSocket()</a></li>
+        
+            <li><a class="toctree-l4" href="#netmulticastjoin">net.multicastJoin()</a></li>
+        
+            <li><a class="toctree-l4" href="#netmulticastleave">net.multicastLeave()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#netserver-module">net.server Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#netserverclose">net.server:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#netserverlisten">net.server:listen()</a></li>
+        
+            <li><a class="toctree-l4" href="#netservergetaddr">net.server:getaddr()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#netsocket-module">net.socket Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#netsocketclose">net.socket:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketconnect">net.socket:connect()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketdns">net.socket:dns()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketgetpeer">net.socket:getpeer()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketgetaddr">net.socket:getaddr()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsockethold">net.socket:hold()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketon">net.socket:on()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketsend">net.socket:send()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketttl">net.socket:ttl()</a></li>
+        
+            <li><a class="toctree-l4" href="#netsocketunhold">net.socket:unhold()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#netudpsocket-module">net.udpsocket Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#netudpsocketclose">net.udpsocket:close()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketlisten">net.udpsocket:listen()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketon">net.udpsocket:on()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketsend">net.udpsocket:send()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketdns">net.udpsocket:dns()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketgetaddr">net.udpsocket:getaddr()</a></li>
+        
+            <li><a class="toctree-l4" href="#netudpsocketttl">net.udpsocket:ttl()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#netdns-module">net.dns Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#netdnsgetdnsserver">net.dns.getdnsserver()</a></li>
+        
+            <li><a class="toctree-l4" href="#netdnsresolve">net.dns.resolve()</a></li>
+        
+            <li><a class="toctree-l4" href="#netdnssetdnsserver">net.dns.setdnsserver()</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#netcert-module">net.cert Module</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>net</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/net.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="net-module">net Module<a class="headerlink" href="#net-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-22</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/djphoenix">PhoeniX</a></td>
+<td align="left"><a href="../../../../app/modules/net.c">net.c</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong> TLS operations was moved to the <a href="../tls/">TLS</a> module </strong></p>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<p>Constants to be used in other functions: <code>net.TCP</code>, <code>net.UDP</code></p>
+<h2 id="netcreateconnection">net.createConnection()<a class="headerlink" href="#netcreateconnection" title="Permanent link">&para;</a></h2>
+<p>Creates a client.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>net.createConnection([type[, secure]])</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> <code>net.TCP</code> (default) or <code>net.UDP</code></li>
+<li><code>secure</code> 1 for encrypted, 0 for plain (default)</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This will change in upcoming releases so that <code>net.createConnection</code> will always create an unencrypted TCP connection.</p>
+<p>There's no such thing as a UDP <em>connection</em> because UDP is connection<em>less</em>. Thus no connection <code>type</code> parameter should be required. For UDP use <a href="#netcreateudpsocket">net.createUDPSocket()</a> instead. To create <em>secure</em> connections use <a href="../tls/#tlscreateconnection">tls.createConnection()</a> instead.</p>
+</div>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<ul>
+<li>for <code>net.TCP</code> - net.socket sub module</li>
+<li>for <code>net.UDP</code> - net.udpsocket sub module</li>
+<li>for <code>net.TCP</code> with <code>secure</code> - tls.socket sub module</li>
+</ul>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">net.createConnection(net.TCP, 0)
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateserver"><code>net.createServer()</code></a>, <a href="#netcreateudpsocket"><code>net.createUDPSocket()</code></a>, <a href="../tls/#tlscreateconnection"><code>tls.createConnection()</code></a></p>
+<h2 id="netcreateserver">net.createServer()<a class="headerlink" href="#netcreateserver" title="Permanent link">&para;</a></h2>
+<p>Creates a server.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>net.createServer([type[, timeout]])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code> <code>net.TCP</code> (default) or <code>net.UDP</code></li>
+<li><code>timeout</code> for a TCP server timeout is 1~28'800 seconds, 30 sec by default (for an inactive client to be disconnected)</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The <code>type</code> parameter will be removed in upcoming releases so that <code>net.createServer</code> will always create a TCP-based server. For UDP use <a href="#netcreateudpsocket">net.createUDPSocket()</a> instead.</p>
+</div>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>for <code>net.TCP</code> - net.server sub module</li>
+<li>for <code>net.UDP</code> - net.udpsocket sub module</li>
+</ul>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">net.createServer(net.TCP, 30) -- 30s timeout
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateconnection"><code>net.createConnection()</code></a>, <a href="#netcreateudpsocket"><code>net.createUDPSocket()</code></a></p>
+<h2 id="netcreateudpsocket">net.createUDPSocket()<a class="headerlink" href="#netcreateudpsocket" title="Permanent link">&para;</a></h2>
+<p>Creates an UDP socket.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>net.createUDPSocket()</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><a href="#netudpsocket-module">net.udpsocket sub module</a></p>
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateconnection"><code>net.createConnection()</code></a></p>
+<h2 id="netmulticastjoin">net.multicastJoin()<a class="headerlink" href="#netmulticastjoin" title="Permanent link">&para;</a></h2>
+<p>Join multicast group.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>net.multicastJoin(if_ip, multicast_ip)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>if_ip</code> string containing the interface ip to join the multicast group. "any" or "" affects all interfaces.</li>
+<li><code>multicast_ip</code> of the group to join</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h2 id="netmulticastleave">net.multicastLeave()<a class="headerlink" href="#netmulticastleave" title="Permanent link">&para;</a></h2>
+<p>Leave multicast group.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>net.multicastLeave(if_ip, multicast_ip)</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>if_ip</code> string containing the interface ip to leave the multicast group. "any" or "" affects all interfaces.</li>
+<li><code>multicast_ip</code> of the group to leave</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h1 id="netserver-module">net.server Module<a class="headerlink" href="#netserver-module" title="Permanent link">&para;</a></h1>
+<h2 id="netserverclose">net.server:close()<a class="headerlink" href="#netserverclose" title="Permanent link">&para;</a></h2>
+<p>Closes the server.</p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>net.server.close()</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- creates a server
+sv = net.createServer(net.TCP, 30)
+-- closes the server
+sv:close()
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateserver"><code>net.createServer()</code></a></p>
+<h2 id="netserverlisten">net.server:listen()<a class="headerlink" href="#netserverlisten" title="Permanent link">&para;</a></h2>
+<p>Listen on port from IP address.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>net.server.listen([port],[ip],function(net.socket))</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>port</code> port number, can be omitted (random port will be chosen)</li>
+<li><code>ip</code> IP address string, can be omitted</li>
+<li><code>function(net.socket)</code> callback function, pass to caller function as param if a connection is created successfully</li>
+</ul>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">-- server listens on 80, if data received, print data to console and send &quot;hello world&quot; back to caller
+-- 30s time out for a inactive client
+sv = net.createServer(net.TCP, 30)
+
+function receiver(sck, data)
+  print(data)
+  sck:close()
+end
+
+if sv then
+  sv:listen(80, function(conn)
+    conn:on(&quot;receive&quot;, receiver)
+    conn:send(&quot;hello world&quot;)
+  end)
+end
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateserver"><code>net.createServer()</code></a></p>
+<h2 id="netservergetaddr">net.server:getaddr()<a class="headerlink" href="#netservergetaddr" title="Permanent link">&para;</a></h2>
+<p>Returns server local address/port.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>net.server.getaddr()</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>port</code>, <code>ip</code> (or <code>nil, nil</code> if not listening)</p>
+<h4 id="see-also_5">See also<a class="headerlink" href="#see-also_5" title="Permanent link">&para;</a></h4>
+<p><a href="#netserverlisten"><code>net.server:listen()</code></a></p>
+<h1 id="netsocket-module">net.socket Module<a class="headerlink" href="#netsocket-module" title="Permanent link">&para;</a></h1>
+<h2 id="netsocketclose">net.socket:close()<a class="headerlink" href="#netsocketclose" title="Permanent link">&para;</a></h2>
+<p>Closes socket.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>close()</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_6">See also<a class="headerlink" href="#see-also_6" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateserver"><code>net.createServer()</code></a></p>
+<h2 id="netsocketconnect">net.socket:connect()<a class="headerlink" href="#netsocketconnect" title="Permanent link">&para;</a></h2>
+<p>Connect to a remote server.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>connect(port, ip|domain)</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>port</code> port number</li>
+<li><code>ip</code> IP address or domain name string</li>
+</ul>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_7">See also<a class="headerlink" href="#see-also_7" title="Permanent link">&para;</a></h4>
+<p><a href="#netsocketon"><code>net.socket:on()</code></a></p>
+<h2 id="netsocketdns">net.socket:dns()<a class="headerlink" href="#netsocketdns" title="Permanent link">&para;</a></h2>
+<p>Provides DNS resolution for a hostname.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>dns(domain, function(net.socket, ip))</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>domain</code> domain name</li>
+<li><code>function(net.socket, ip)</code> callback function. The first parameter is the socket, the second parameter is the IP address as a string.</li>
+</ul>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">sk = net.createConnection(net.TCP, 0)
+sk:dns(&quot;www.nodemcu.com&quot;, function(conn, ip) print(ip) end)
+sk = nil
+</code></pre>
+
+<h4 id="see-also_8">See also<a class="headerlink" href="#see-also_8" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateserver"><code>net.createServer()</code></a></p>
+<h2 id="netsocketgetpeer">net.socket:getpeer()<a class="headerlink" href="#netsocketgetpeer" title="Permanent link">&para;</a></h2>
+<p>Retrieve port and ip of remote peer.</p>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>getpeer()</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>port</code>, <code>ip</code> (or <code>nil, nil</code> if not connected)</p>
+<h2 id="netsocketgetaddr">net.socket:getaddr()<a class="headerlink" href="#netsocketgetaddr" title="Permanent link">&para;</a></h2>
+<p>Retrieve local port and ip of socket.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>getaddr()</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p><code>port</code>, <code>ip</code> (or <code>nil, nil</code> if not connected)</p>
+<h2 id="netsockethold">net.socket:hold()<a class="headerlink" href="#netsockethold" title="Permanent link">&para;</a></h2>
+<p>Throttle data reception by placing a request to block the TCP receive function. This request is not effective immediately, Espressif recommends to call it while reserving 5*1460 bytes of memory.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>hold()</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_9">See also<a class="headerlink" href="#see-also_9" title="Permanent link">&para;</a></h4>
+<p><a href="#netsocketunhold"><code>net.socket:unhold()</code></a></p>
+<h2 id="netsocketon">net.socket:on()<a class="headerlink" href="#netsocketon" title="Permanent link">&para;</a></h2>
+<p>Register callback functions for specific events.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>on(event, function())</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>event</code> string, which can be "connection", "reconnection", "disconnection", "receive" or "sent"</li>
+<li><code>function(net.socket[, string])</code> callback function. Can be <code>nil</code> to remove callback.</li>
+</ul>
+<p>The first parameter of callback is the socket.</p>
+<ul>
+<li>If event is "receive", the second parameter is the received data as string.</li>
+<li>If event is "disconnection" or "reconnection", the second parameter is error code.</li>
+</ul>
+<p>If reconnection event is specified, disconnection receives only "normal close" events.</p>
+<p>Otherwise, all connection errors (with normal close) passed to disconnection event.</p>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">srv = net.createConnection(net.TCP, 0)
+srv:on(&quot;receive&quot;, function(sck, c) print(c) end)
+-- Wait for connection before sending.
+srv:on(&quot;connection&quot;, function(sck, c)
+  -- 'Connection: close' rather than 'Connection: keep-alive' to have server 
+  -- initiate a close of the connection after final response (frees memory 
+  -- earlier here), https://tools.ietf.org/html/rfc7230#section-6.6 
+  sck:send(&quot;GET /get HTTP/1.1\r\nHost: httpbin.org\r\nConnection: close\r\nAccept: */*\r\n\r\n&quot;)
+end)
+srv:connect(80,&quot;httpbin.org&quot;)
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>receive</code> event is fired for every network frame! Hence, if the data sent to the device exceeds 1460 bytes (derived from <a href="https://en.wikipedia.org/wiki/Ethernet_frame">Ethernet frame size</a>) it will fire more than once. There may be other situations where incoming data is split across multiple frames (e.g. HTTP POST with <code>multipart/form-data</code>). You need to manually buffer the data and find means to determine if all data was received.</p>
+</div>
+<pre><code class="lua">local buffer = nil
+
+srv:on(&quot;receive&quot;, function(sck, c)
+  if buffer == nil then
+    buffer = c
+  else
+    buffer = buffer .. c
+  end
+end)
+-- throttling could be implemented using socket:hold()
+-- example: https://github.com/nodemcu/nodemcu-firmware/blob/master/lua_examples/pcm/play_network.lua#L83
+</code></pre>
+
+<h4 id="see-also_10">See also<a class="headerlink" href="#see-also_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#netcreateserver"><code>net.createServer()</code></a></li>
+<li><a href="#netsockethold"><code>net.socket:hold()</code></a></li>
+</ul>
+<h2 id="netsocketsend">net.socket:send()<a class="headerlink" href="#netsocketsend" title="Permanent link">&para;</a></h2>
+<p>Sends data to remote peer.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>send(string[, function(sent)])</code></p>
+<p><code>sck:send(data, fnA)</code> is functionally equivalent to <code>sck:send(data) sck:on("sent", fnA)</code>.</p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>string</code> data in string which will be sent to server</li>
+<li><code>function(sent)</code> callback function for sending string</li>
+</ul>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h4>
+<p>Multiple consecutive <code>send()</code> calls aren't guaranteed to work (and often don't) as network requests are treated as separate tasks by the SDK. Instead, subscribe to the "sent" event on the socket and send additional data (or close) in that callback. See <a href="https://github.com/nodemcu/nodemcu-firmware/issues/730#issuecomment-154241161">#730</a> for details.</p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">srv = net.createServer(net.TCP)
+
+function receiver(sck, data)
+  local response = {}
+
+  -- if you're sending back HTML over HTTP you'll want something like this instead
+  -- local response = {&quot;HTTP/1.0 200 OK\r\nServer: NodeMCU on ESP8266\r\nContent-Type: text/html\r\n\r\n&quot;}
+
+  response[#response + 1] = &quot;lots of data&quot;
+  response[#response + 1] = &quot;even more data&quot;
+  response[#response + 1] = &quot;e.g. content read from a file&quot;
+
+  -- sends and removes the first element from the 'response' table
+  local function send(localSocket)
+    if #response &gt; 0 then
+      localSocket:send(table.remove(response, 1))
+    else
+      localSocket:close()
+      response = nil
+    end
+  end
+
+  -- triggers the send() function again once the first chunk of data was sent
+  sck:on(&quot;sent&quot;, send)
+
+  send(sck)
+end
+
+srv:listen(80, function(conn)
+  conn:on(&quot;receive&quot;, receiver)
+end)
+</code></pre>
+
+<p>If you do not or can not keep all the data you send back in memory at one time (remember that <code>response</code> is an aggregation) you may use explicit callbacks instead of building up a table like so:</p>
+<pre><code class="lua">sck:send(header, function() 
+  local data1 = &quot;some large chunk of dynamically loaded data&quot;
+  sck:send(data1, function()
+    local data2 = &quot;even more dynamically loaded data&quot;
+    sck:send(data2, function(sk) 
+      sk:close()
+    end)
+  end)
+end)
+</code></pre>
+
+<h4 id="see-also_11">See also<a class="headerlink" href="#see-also_11" title="Permanent link">&para;</a></h4>
+<p><a href="#netsocketon"><code>net.socket:on()</code></a></p>
+<h2 id="netsocketttl">net.socket:ttl()<a class="headerlink" href="#netsocketttl" title="Permanent link">&para;</a></h2>
+<p>Changes or retrieves Time-To-Live value on socket.</p>
+<h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
+<p><code>ttl([ttl])</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ttl</code> (optional) new time-to-live value</li>
+</ul>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p>current / new ttl value</p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">sk = net.createConnection(net.TCP, 0)
+sk:connect(80, '192.168.1.1')
+sk:ttl(1) -- restrict frames to single subnet
+</code></pre>
+
+<h4 id="see-also_12">See also<a class="headerlink" href="#see-also_12" title="Permanent link">&para;</a></h4>
+<p><a href="#netcreateconnection"><code>net.createConnection()</code></a></p>
+<h2 id="netsocketunhold">net.socket:unhold()<a class="headerlink" href="#netsocketunhold" title="Permanent link">&para;</a></h2>
+<p>Unblock TCP receiving data by revocation of a preceding <code>hold()</code>.</p>
+<h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
+<p><code>unhold()</code></p>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_13">See also<a class="headerlink" href="#see-also_13" title="Permanent link">&para;</a></h4>
+<p><a href="#netsockethold"><code>net.socket:hold()</code></a></p>
+<h1 id="netudpsocket-module">net.udpsocket Module<a class="headerlink" href="#netudpsocket-module" title="Permanent link">&para;</a></h1>
+<p>Remember that in contrast to TCP <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> is connectionless. Therefore, there is a minor but natural mismatch as for TCP/UDP functions in this module. While you would call <a href="#netcreateconnection">net.createConnection()</a> for TCP it is <a href="#netcreateudpsocket">net.createUDPSocket()</a> for UDP.</p>
+<p>Other points worth noting:</p>
+<ul>
+<li>UDP sockets do not have a connection callback for the <a href="#netudpsocketlisten"><code>listen</code></a> function.</li>
+<li>UDP sockets do not have a <code>connect</code> function. Remote IP and port thus need to be defined in <a href="#netudpsocketsend"><code>send()</code></a>.</li>
+<li>UDP socket's <code>receive</code> callback receives port/ip after the <code>data</code> argument.</li>
+</ul>
+<h2 id="netudpsocketclose">net.udpsocket:close()<a class="headerlink" href="#netudpsocketclose" title="Permanent link">&para;</a></h2>
+<p>Closes UDP socket.</p>
+<p>The syntax and functional identical to <a href="#netsocketclose"><code>net.socket:close()</code></a>.</p>
+<h2 id="netudpsocketlisten">net.udpsocket:listen()<a class="headerlink" href="#netudpsocketlisten" title="Permanent link">&para;</a></h2>
+<p>Listen on port from IP address.</p>
+<p>The syntax and functional similar to <a href="#netserverlisten"><code>net.server:listen()</code></a>, but callback parameter is not provided.</p>
+<h2 id="netudpsocketon">net.udpsocket:on()<a class="headerlink" href="#netudpsocketon" title="Permanent link">&para;</a></h2>
+<p>Register callback functions for specific events.</p>
+<p>The syntax and functional similar to <a href="#netsocketon"><code>net.socket:on()</code></a>. However, only "receive", "sent" and "dns" are supported events.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>receive</code> callback receives <code>port</code> and <code>ip</code> <em>after</em> the <code>data</code> argument.</p>
+</div>
+<h2 id="netudpsocketsend">net.udpsocket:send()<a class="headerlink" href="#netudpsocketsend" title="Permanent link">&para;</a></h2>
+<p>Sends data to specific remote peer.</p>
+<h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
+<p><code>send(port, ip, data)</code></p>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>port</code> remote socket port</li>
+<li><code>ip</code> remote socket IP</li>
+<li><code>data</code> the payload to send</li>
+</ul>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">udpSocket = net.createUDPSocket()
+udpSocket:listen(5000)
+udpSocket:on(&quot;receive&quot;, function(s, data, port, ip)
+    print(string.format(&quot;received '%s' from %s:%d&quot;, data, ip, port))
+    s:send(port, ip, &quot;echo: &quot; .. data)
+end)
+port, ip = udpSocket:getaddr()
+print(string.format(&quot;local UDP socket address / port: %s:%d&quot;, ip, port))
+</code></pre>
+
+<p>On *nix systems that can then be tested by issuing</p>
+<pre><code>echo -n &quot;foo&quot; | nc -w1 -u &lt;device-IP-address&gt; 5000
+</code></pre>
+
+<h2 id="netudpsocketdns">net.udpsocket:dns()<a class="headerlink" href="#netudpsocketdns" title="Permanent link">&para;</a></h2>
+<p>Provides DNS resolution for a hostname.</p>
+<p>The syntax and functional identical to <a href="#netsocketdns"><code>net.socket:dns()</code></a>.</p>
+<h2 id="netudpsocketgetaddr">net.udpsocket:getaddr()<a class="headerlink" href="#netudpsocketgetaddr" title="Permanent link">&para;</a></h2>
+<p>Retrieve local port and ip of socket.</p>
+<p>The syntax and functional identical to <a href="#netsocketgetaddr"><code>net.socket:getaddr()</code></a>.</p>
+<h2 id="netudpsocketttl">net.udpsocket:ttl()<a class="headerlink" href="#netudpsocketttl" title="Permanent link">&para;</a></h2>
+<p>Changes or retrieves Time-To-Live value on socket.</p>
+<p>The syntax and functional identical to <a href="#netsocketttl"><code>net.socket:ttl()</code></a>.</p>
+<h1 id="netdns-module">net.dns Module<a class="headerlink" href="#netdns-module" title="Permanent link">&para;</a></h1>
+<h2 id="netdnsgetdnsserver">net.dns.getdnsserver()<a class="headerlink" href="#netdnsgetdnsserver" title="Permanent link">&para;</a></h2>
+<p>Gets the IP address of the DNS server used to resolve hostnames.</p>
+<h4 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h4>
+<p><code>net.dns.getdnsserver(dns_index)</code></p>
+<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
+<p>dns_index which DNS server to get (range 0~1)</p>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<p>IP address (string) of DNS server</p>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(net.dns.getdnsserver(0)) -- 208.67.222.222
+print(net.dns.getdnsserver(1)) -- nil
+
+net.dns.setdnsserver(&quot;8.8.8.8&quot;, 0)
+net.dns.setdnsserver(&quot;192.168.1.252&quot;, 1)
+
+print(net.dns.getdnsserver(0)) -- 8.8.8.8
+print(net.dns.getdnsserver(1)) -- 192.168.1.252
+</code></pre>
+
+<h4 id="see-also_14">See also<a class="headerlink" href="#see-also_14" title="Permanent link">&para;</a></h4>
+<p><a href="#netdnssetdnsserver"><code>net.dns:setdnsserver()</code></a></p>
+<h2 id="netdnsresolve">net.dns.resolve()<a class="headerlink" href="#netdnsresolve" title="Permanent link">&para;</a></h2>
+<p>Resolve a hostname to an IP address. Doesn't require a socket like <a href="#netsocketdns"><code>net.socket.dns()</code></a>.</p>
+<h4 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h4>
+<p><code>net.dns.resolve(host, function(sk, ip))</code></p>
+<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>host</code> hostname to resolve</li>
+<li><code>function(sk, ip)</code> callback called when the name was resolved. <code>sk</code> is always <code>nil</code></li>
+</ul>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">net.dns.resolve(&quot;www.google.com&quot;, function(sk, ip)
+    if (ip == nil) then print(&quot;DNS fail!&quot;) else print(ip) end
+end)
+</code></pre>
+
+<h4 id="see-also_15">See also<a class="headerlink" href="#see-also_15" title="Permanent link">&para;</a></h4>
+<p><a href="#netsocketdns"><code>net.socket:dns()</code></a></p>
+<h2 id="netdnssetdnsserver">net.dns.setdnsserver()<a class="headerlink" href="#netdnssetdnsserver" title="Permanent link">&para;</a></h2>
+<p>Sets the IP of the DNS server used to resolve hostnames. Default: resolver1.opendns.com (208.67.222.222). You can specify up to 2 DNS servers.</p>
+<h4 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h4>
+<p><code>net.dns.setdnsserver(dns_ip_addr, dns_index)</code></p>
+<h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>dns_ip_addr</code> IP address of a DNS server</li>
+<li><code>dns_index</code> which DNS server to set (range 0~1). Hence, it supports max. 2 servers. </li>
+</ul>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="see-also_16">See also<a class="headerlink" href="#see-also_16" title="Permanent link">&para;</a></h4>
+<p><a href="#netdnsgetdnsserver"><code>net.dns:getdnsserver()</code></a></p>
+<h1 id="netcert-module">net.cert Module<a class="headerlink" href="#netcert-module" title="Permanent link">&para;</a></h1>
+<p>This part gone to the <a href="../tls/">TLS</a> module, link kept for backward compatibility.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../node/" class="btn btn-neutral float-right" title="node">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mqtt/" class="btn btn-neutral" title="mqtt"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../mqtt/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

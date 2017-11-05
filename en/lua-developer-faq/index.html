@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Lua Developer FAQ - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lua Developer FAQ";
+    var mkdocs_page_input_path = "en/lua-developer-faq.md";
+    var mkdocs_page_url = "/en/lua-developer-faq/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Lua Developer FAQ</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#faq">FAQ</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#what-is-this-faq-for">What is this FAQ for?</a></li>
+        
+            <li><a class="toctree-l4" href="#what-has-changed-since-the-first-version-of-this-faq">What has changed since the first version of this FAQ?</a></li>
+        
+            <li><a class="toctree-l4" href="#lua-language">Lua Language</a></li>
+        
+            <li><a class="toctree-l4" href="#esp8266-specifics">ESP8266 Specifics</a></li>
+        
+            <li><a class="toctree-l4" href="#compiling-and-debugging">Compiling and Debugging</a></li>
+        
+            <li><a class="toctree-l4" href="#techniques-for-reducing-ram-and-spiffs-footprint">Techniques for Reducing RAM and SPIFFS footprint</a></li>
+        
+            <li><a class="toctree-l4" href="#firmware-and-lua-app-development">Firmware and Lua app development</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../modules/adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tm1829/">tm1829</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tmr/">tmr</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FAQs &raquo;</li>
+        
+      
+    
+    <li>Lua Developer FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/lua-developer-faq.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
+<p><em>This FAQ was started by <a href="https://github.com/TerryE">Terry Ellison</a> as an unofficial FAQ in mid 2015.  This version as at April 2017 includes some significant rewrites.</em></p>
+<h2 id="what-is-this-faq-for">What is this FAQ for?<a class="headerlink" href="#what-is-this-faq-for" title="Permanent link">&para;</a></h2>
+<p>This FAQ does not aim to help you to learn to program or even how to program in Lua.  There are plenty of resources on the Internet for this, some of which are listed in <a href="#where-to-start">Where to start</a>.  What this FAQ does is to answer some of the common questions that a competent Lua developer would ask in learning how to develop Lua applications for the ESP8266 based boards running the <a href="https://github.com/nodemcu/nodemcu-firmware">NodeMcu firmware</a>.  This includes the NodeMCU Devkits.  However, the scope of the firmware is far wider than this as it can be used on any ESP8266 module.</p>
+<h2 id="what-has-changed-since-the-first-version-of-this-faq">What has changed since the first version of this FAQ?<a class="headerlink" href="#what-has-changed-since-the-first-version-of-this-faq" title="Permanent link">&para;</a></h2>
+<p>The <a href="http://NodeMCU.com/index_en.html">NodeMCU company</a> was set up by <a href="../zeroday@nodemcu.com">Zeroday</a> to develop and to market a set of Lua firmware-based development boards which employ the Espressif ESP8266 SoC.  The initial development of the firmware was done by Zeroday and a colleague, Vowstar, in-house with the firmware being first open-sourced on Github in late 2014.  In mid-2015, Zeroday decided to open the firmware development to a wider group of community developers, so the core group of developers now comprises 6 community developers (including this author), and we are also supported by another dozen or so active contributors, and two NodeMCU originators.</p>
+<p>This larger active team has allowed us to address most of the outstanding issues present at the first version of this FAQ.  These include:</p>
+<ul>
+<li>For some time the project was locked into an old SDK version, but we now regularly rebaseline to the current SDK version.</li>
+<li>Johny Mattsson's software exception handler and my LCD patch have allowed us to move the bulk of constant data out of RAM and into the firmware address space, and as a result current builds now typically boot with over 40Kb free RAM instead of 15Kb free and the code density is roughly 40% better.</li>
+<li>We have  fixed error reporting so errors now correctly report line numbers in tracebacks.</li>
+<li>We have addressed most of the various library resource leaks, so memory exhaustion is much less of an issue.</li>
+<li>We have reimplemented the network stack natively over the now Open-sourced Espressif implementation of LwIP.</li>
+<li>Thanks to a documentation effort lead by Marcel Stör, we now have a complete documentation online, and this FAQ forms a small part.</li>
+<li>We have fixed various stability issues relating to the use of GPIO trigger callbacks.</li>
+<li>Johny Mattsson is currently leading an ESP32 port.</li>
+<li>We have a lot more hardware modules supported.</li>
+</ul>
+<p>Because the development is active this list will no doubt continue to be revised and updated.  See the <a href="https://github.com/nodemcu/nodemcu-firmware/blob/dev/README.md">development README</a> for more details.</p>
+<h2 id="lua-language">Lua Language<a class="headerlink" href="#lua-language" title="Permanent link">&para;</a></h2>
+<h3 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h3>
+<p>The NodeMCU firmware implements Lua 5.1 over the Espressif SDK for its ESP8266 SoC and the IoT modules based on this.</p>
+<ul>
+<li>The official lua.org <strong><a href="http://www.lua.org/manual/5.1/manual.html">Lua Language specification</a></strong>  gives a terse but complete language specification.</li>
+<li>Its <a href="http://www.lua.org/faq.html">FAQ</a>  provides information on Lua availability and licensing issues.</li>
+<li>The <strong><a href="http://www.luafaq.org/">unofficial Lua FAQ</a></strong> provides a lot of useful Q and A content, and is extremely useful for those learning Lua as a second language.</li>
+<li>The <a href="http://lua-users.org/wiki/">Lua User's Wiki</a>  gives useful example source and relevant discussion. In particular, its <a href="http://lua-users.org/wiki/Learning">Lua Learning Lua</a>  section is a good place to start learning Lua.</li>
+<li>The best book to learn Lua is <em>Programming in Lua</em> by Roberto Ierusalimschy, one of the creators of Lua. It's first edition is available free <a href="http://www.lua.org/pil/contents.html">online</a> . The second edition was aimed at Lua 5.1, but is out of print. The third edition is still in print and available in paperback.  It contains a lot more material and clearly identifies Lua 5.1 vs Lua 5.2 differences. <strong>This third edition is widely available for purchase and probably the best value for money</strong>. References of the format [PiL <strong>n.m</strong>] refer to section <strong>n.m</strong> in this edition.</li>
+<li>The Espressif ESP8266 architecture is closed source, but the Espressif SDK itself is continually being updated so the best way to get the documentation for this is to <a href="https://www.google.co.uk/search?q=Espressif+IoT+SDK+Programming+Guide">google Espressif IoT SDK Programming Guide</a> or to look at the Espressif <a href="http://bbs.espressif.com/viewforum.php?f=5">downloads forum</a> .</li>
+<li>The <strong>NodeMCU documentation</strong> is now available online, and this FAQ forms part of this.</li>
+<li>As with all Open Source projects the source for the NodeMCU firmware is openly available on the <a href="https://github.com/NodeMCU/NodeMCU-firmware">GitHub NodeMCU-firmware</a> repository.</li>
+</ul>
+<h3 id="how-is-nodemcu-lua-different-to-standard-lua">How is NodeMCU Lua different to standard Lua?<a class="headerlink" href="#how-is-nodemcu-lua-different-to-standard-lua" title="Permanent link">&para;</a></h3>
+<p>Whilst the Lua standard distribution includes a stand-alone Lua interpreter, Lua itself is primarily an <em>extension language</em> that makes no assumptions about a "main" program: Lua works embedded in a host application to provide a powerful, lightweight scripting language for use within the application. This host application can then invoke functions to execute a piece of Lua code, can write and read Lua variables, and can register C functions to be called by Lua code. Through the use of C functions, Lua can be augmented to cope with a wide range of different domains, thus creating customized programming languages sharing a syntactical framework.</p>
+<p>The ESP8266 was designed and is fabricated in China by <a href="http://espressif.com/new-sdk-release/">Espressif Systems</a>.  Espressif have also developed and released a companion software development kit (SDK) to enable developers to build practical IoT applications for the ESP8266.  The SDK is made freely available to developers in the form of binary libraries and SDK documentation.  However this is in a <em>closed format</em>, with no developer access to the source files, so anyone developing ESP8266 applications must rely solely on the SDK API (and the somewhat Spartan SDK API documentation).  (Note that for the ESP32, Espressif have moved to an open-source approach for its ESP-IDF.)</p>
+<p>The NodeMCU Lua firmware is an ESP8266 application and must therefore be layered over the ESP8266 SDK. However, the hooks and features of Lua enable it to be seamlessly integrated without losing any of the standard Lua language features.  The firmware has replaced some standard Lua modules that don't align well with the SDK structure with ESP8266-specific versions.  For example, the standard  <code>io</code> and <code>os</code> libraries don't work, but have been largely replaced by the NodeMCU <code>node</code> and <code>file</code> libraries.  The <code>debug</code> and <code>math</code> libraries have also been omitted to reduce the runtime footprint (<code>modulo</code> can be done via <code>%</code>, <code>power</code> via <code>^</code>).</p>
+<p>NodeMCU Lua is based on <a href="http://www.eluaproject.net/overview">eLua</a>, a fully featured implementation of Lua 5.1 that has been optimized for embedded system development and execution to provide a scripting framework that can be used to deliver useful applications within the limited RAM and Flash memory resources of embedded processors such as the ESP8266. One of the main changes introduced in the eLua fork is to use read-only tables and constants wherever practical for library modules.  On a typical build this approach reduces the RAM footprint by some 20-25KB and this makes a Lua implementation for the ESP8266 feasible. This technique is called LTR and this is documented in detail in an eLua technical paper: <a href="http://www.eluaproject.net/doc/master/en_arch_ltr.html">Lua Tiny RAM</a>.</p>
+<p>The main impacts of the ESP8266 SDK and together with its hardware resource limitations are not in the Lua language implementation itself, but in how <em>application programmers must approach developing and structuring their applications</em>. As discussed in detail below, the SDK is non-preemptive and event driven.  Tasks can be associated with given events by using the SDK API to registering callback functions to the corresponding events.  Events are queued internally within the SDK, and it then calls the associated tasks one at a time, with each task returning control to the SDK on completion. <em>The SDK states that if any tasks run for more than 15 mSec, then services such as WiFi can fail.</em></p>
+<p>The NodeMCU libraries act as C wrappers around registered Lua callback functions to enable these to be used as SDK tasks. <strong><em>You must therefore use an Event-driven programming style in writing your ESP8266 Lua programs</em></strong>.  Most programmers are used to writing in a procedural style where there is a clear single flow of execution, and the program interfaces to operating system services by a set of synchronous API calls to do network I/O, etc.  Whilst the logic of each individual task is procedural, this is not how you code up ESP8266 applications.</p>
+<h2 id="esp8266-specifics">ESP8266 Specifics<a class="headerlink" href="#esp8266-specifics" title="Permanent link">&para;</a></h2>
+<h3 id="how-is-coding-for-the-esp8266-the-same-as-standard-lua">How is coding for the ESP8266 the same as standard Lua?<a class="headerlink" href="#how-is-coding-for-the-esp8266-the-same-as-standard-lua" title="Permanent link">&para;</a></h3>
+<ul>
+<li>This is a fully featured Lua 5.1 implementation so all standard Lua language constructs and data types work.</li>
+<li>The main standard Lua libraries -- <code>core</code>, <code>coroutine</code>, <code>string</code> and <code>table</code> are implemented.</li>
+</ul>
+<h3 id="how-is-coding-for-the-esp8266-different-to-standard-lua">How is coding for the ESP8266 different to standard Lua?<a class="headerlink" href="#how-is-coding-for-the-esp8266-different-to-standard-lua" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The ESP8266 uses a combination of on-chip RAM and off-chip Flash memory connected using a dedicated SPI interface.  Code can be executed directly from Flash-mapped address space. In fact the ESP hardware actually executes code in RAM, and in the case of Flash-mapped addresses it executes this code from a RAM-based L1 cache which maps onto the Flash addresses.  If the addressed line is in the cache then the code runs at full clock speed, but if not then the hardware transparently handles the adress fault by first copying the code from Flash to RAM.  This is largely transparent in terms of programming ESP8266 applications, though the faulting access runs at SRAM speeds and this code runs perhaps 13× slower than already cached code.  The Lua firmware largely runs out of Flash, but even so, both the RAM and the Flash memory are <em>very</em> limited when compared to systems that most application programmers use.</li>
+<li>Over the last two years, both the Espressif non-OS SDK developers and the NodeMCU team have made a range of improvements and optimisations to increase the amount of RAM available to developers, from a typical 15Kb or so with Version 0.9 builds to some 45Kb with the current firmware Version 2.x builds.  See the <a href="https://espressif.com/sites/default/files/documentation/2c-esp8266_non_os_sdk_api_reference_en.pdf">ESP8266 Non-OS SDK API Reference</a> for more detals on the SDK.</li>
+<li>The early ESP8266 modules were typically configured with 512Kb Flash.  Fitting a fully featured Lua build with a number of optional libraries and still enough usable Flash to hold a Lua application was a struggle.  However the code-size of the SDK has grown significantly between the early versions and the current 2.0 version.  Applications based on the current SDK can no longer fit in 512Kb Flash memory, and so all currently produced ESP modules now contain a minimum of 1Mb with 4 and 16Mb becoming more common. The current NodeMCU firmware will fit comfortably in a 1Mb Flash and still have ample remaining Flash memory to support Lua IoT applications. Note that the <a href="https://github.com/nodemcu/nodemcu-firmware/tree/1.5.4.1-final"><code>1.5.4.1-final</code> branch</a> is the last available release if you still wish to develop applications for 512Kb modules</li>
+<li>The NodeMCU firmware makes any unused Flash memory available as a <a href="https://github.com/pellepl/spiffs">SPI Flash File System (SPIFFS)</a> through the <code>file</code> library. The SPIFFS file system is designed for SPI NOR flash devices on embedded targets, and is optimised for static wear levelling and low RAM footprint.  For further details, see the link.  How much Flash is available as SPIFFS file space depends on the number of modules included in the specific firmware build.</li>
+<li>The firmware has a wide range of libraries available to support common hardware options.  Including any library will increase both the code and RAM size of the build, so our recommended practice is for application developers to choose a custom build that only includes the library that are needed for your application and hardware variants. The developers that don't want to bother with setting up their own build environment can use Marcel Stör's excellent <a href="http://nodemcu-build.com">Cloud build service</a> instead.</li>
+<li>There are also further tailoring options available, for example you can choose to have a firmware build which uses 32-bit integer arithmetic instead of floating point.  Our integer builds have a smaller Flash footprint and execute faster, but working in integer also has a number of pitfalls, so our general recommendation is to use floating point builds.</li>
+<li>Unlike Arduino or ESP8266 development, where each application change requires the flashing of a new copy of the firmware, in the case of Lua the firmware is normally flashed once, and all application development is done by updating files on the SPIFFS file system.  In this respect, Lua development on the ESP8266 is far more like developing applications on a more traditional PC.  The firmware will only be reflashed if the developer wants to add or update one or more of the hardware-related libraries. </li>
+<li>Those developers who are used to dealing in MB or GB of RAM and file systems can easily run out of memory resources, but with care and using some of the techniques discussed below can go a long way to mitigate this.</li>
+<li>The ESP8266 runs the SDK over the native hardware, so there is no underlying operating system to capture errors and to provide graceful failure modes.  Hence system or application errors can easily "PANIC" the system causing it to reboot. Error handling has been kept simple to save on the limited code space, and this exacerbates this tendency. Running out of a system resource such as RAM will invariably cause a messy failure and system reboot.</li>
+<li>Note that in the 3 years since the firmware was first developed, Espressif has developed and released a new RTOS alternative to the non-OS SDK, and and the latest version of the SDK API reference recommends using RTOS.  Unfortunately, the richer RTOS has a significantly larger RAM footprint.  Whilst our port to the ESP-32 (with its significantly larger RAM) uses the <a href="https://github.com/espressif/esp-idf">ESP-IDF</a> which is based on RTOS, the ESP8266 RTOS versions don't have enough free RAM for a RTOS-based NodeMCU firmware build to have sufficient free RAM to write usable applications. </li>
+<li>There is currently no <code>debug</code> library support. So you have to use 1980s-style "binary-chop" to locate errors and use print statement diagnostics though the system's UART interface.  (This omission was largely because of the Flash memory footprint of this library, but there is no reason in principle why we couldn't make this library available in the near future as a custom build option).</li>
+<li>The LTR implementation means that you can't extend standard libraries as easily as you can in normal Lua, so for example an attempt to define <code>function table.pack()</code> will cause a runtime error because you can't write to the global <code>table</code>. Standard sand-boxing techniques can be used to achieve the same effect by using metatable based inheritance, but if you choose this option, then you need to be aware of the potential runtime and RAM impacts of this approach.</li>
+<li>There are standard libraries to provide access to the various hardware options supported by the hardware: WiFi, GPIO, One-wire, I²C, SPI, ADC, PWM, UART, etc.</li>
+<li>The runtime system runs in interactive-mode.  In this mode it first executes any <code>init.lua</code> script.  It then "listens" to the serial port for input Lua chunks, and executes them once syntactically complete. </li>
+<li>There is no batch support, although automated embedded processing is normally achieved by setting up the necessary event triggers in the <a href="../../upload/#initlua"><code>init.lua</code></a> script.</li>
+<li>The various libraries (<code>net</code>, <code>tmr</code>, <code>wifi</code>, etc.) use the SDK callback mechanism to bind Lua processing to individual events (for example a timer alarm firing).  Developers should make full use of these events to keep Lua execution sequences short.</li>
+<li>Non-Lua processing (e.g. network functions) will usually only take place once the current Lua chunk has completed execution.  So any network calls should be viewed at an asynchronous request. A common coding mistake is to assume that they are synchronous, that is if two <code>socket:send()</code> are on consecutive lines in a Lua programme, then the first has completed by the time the second is executed.  This is wrong. A <code>socket:send()</code> request simply queues the send task for dispatch by the SDK.  This task can't start to process until the Lua code has returned to is calling C function to allow this running task to exit. Stacking up such requests in a single Lua task function burns scarce RAM and can trigger a PANIC.  This is true for timer, network, and other callbacks.  It is even the case for actions such as requesting a system restart, as can be seen by the following example which will print twenty "not quite yet" messages before restarting.</li>
+</ul>
+<pre><code class="lua">node.restart(); for i = 1, 20 do print(&quot;not quite yet -- &quot;,i); end
+</code></pre>
+
+<ul>
+<li>You therefore <em>have</em> to implement ESP8266 Lua applications using an event driven approach.  You have to understand which SDK API requests schedule asynchronous processing, and which define event actions through Lua callbacks.  Yes, such an event-driven approach makes it difficult to develop procedurally structured applications, but it is well suited to developing the sorts of application that you will typically want to implement on an IoT device.</li>
+</ul>
+<h3 id="so-how-does-the-sdk-event-tasking-system-work-in-lua">So how does the SDK event / tasking system work in Lua?<a class="headerlink" href="#so-how-does-the-sdk-event-tasking-system-work-in-lua" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The SDK uses a small number of Interrupt Service Routines (ISRs) to handle short time critical hardware interrupt related processing. These are very short duration and can interrupt a running task for up to 10µSec.  (Modifying these ISRs or adding new ones is not a viable options for most developers.)</li>
+<li>All other service and application processing is split into code execution blocks, known as <strong>tasks</strong>.  The individual tasks are executed one at a time and run to completion. No task can never pre-empt another.</li>
+<li>Runnable tasks are queued in one of three priority queues and the SDK contains a simple scheduler which executes queued tasks FIFO within priority.  The high priority queue is used for hardware-related task, the middle for timer and event-driven tasks and the low priority queue for all other tasks.</li>
+<li>It is important to keep task times as short as practical so that the overall system can work smoothly and responsively.  The general recommendation is to keep medium priority tasks under 2mSec and low priority tasks under 15 mSec in duration.  This is a guideline, and your application <em>might</em> work stably if you exceed this, but you might also start to experience intermittent problems because of internal timeout within the WiFi and network services, etc..</li>
+<li>If tasks take longer than 500mSec then the watchdog timer will reset the processor.  This watchdog can be reset at an application level using the <a href="../modules/tmr/#tmrwdclr"><code>tmr.wdclr()</code></a> function, but this should be avoided.</li>
+<li>Application tasks can disable interrupts to prevent an ISR interrupting a time-critical code section,  The SDK guideline is that system ISRs might overrun if such critical code section last more than 10µSec.  This means that such disabling can only be done within hardware-related library modules, written in C; it is not available at a Lua application level.</li>
+<li>The SDK provide a C API for interfacing to it; this includes a set of functions for declaring application functions (written in C) as callbacks to associate application tasks with specific hardware and timer events, and their execution will be interleaved with the SDKs Wifi and Network processing tasks.</li>
+</ul>
+<p>In essence, the NodeMCU firmware is a C application which exploits the ability of Lua to execute as a embedded language and runtime to mirror this structure at a Lua scripting level.  All of the complexities of, and interface to, the SDK and the hardware are wrapped in firmware libraries which translate the appropriate calls into the corresponding Lua API.</p>
+<ul>
+<li>The SDK invokes a startup hook within the firmware on boot-up.  This firmware code initialises the Lua environment and then attempts to execute the Lua module <code>init.lua</code> from the SPIFFS file system.  This <code>init.lua</code>  module can then be used to do any application initialisation required and to call the necessary timer alarms or library calls to bind and callback routines to implement the tasks needed in response to any system events.</li>
+<li>By default, the Lua runtime also 'listens' to UART 0, the serial port, in interactive mode and will execute any Lua commands input through this serial port.  Using the serial port in this way is the most common method of developing and debugging Lua applications on the ESP8266/</li>
+<li>The Lua libraries provide a set of functions for declaring application functions (written in Lua) as callbacks (which are stored in the <a href="#so-how-is-the-lua-registry-used-and-why-is-this-important">Lua registry</a>) to associate application tasks with specific hardware and timer events.  These are also non-preemptive at an applications level. The Lua libraries work in consort with the SDK to queue pending events and invoke any registered Lua callback routines, which then run to completion uninterrupted.  For example the Lua <a href="../modules/tmr/#tmralarm"><code>mytimer:alarm(interval, repeat, callback)</code></a> calls a function in the <code>tmr</code> library which registers a C function for this alarm using the SDK, and when this C alarm callback function is called it then in turn invokes the Lua callback.</li>
+<li>Excessively long-running Lua functions (or Lua code chunks executed at the interactive prompt through UART 0) can cause other system functions and services to timeout, or to allocate scarce RAM resources to buffer queued data, which can then trigger either the watchdog timer or memory exhaustion, both of which will ultimately cause the system to reboot.</li>
+<li>Just like their C counterparts, Lua tasks initiated by timer, network, GPIO and other callbacks run non pre-emptively to completion before the next task can run, and this includes SDK tasks. Printing to the default serial port is done by the Lua runtime libraries, but SDK services including even a reboot request are run as individual tasks.  This is why in the previous example printout out twenty copies of "not quite yet --" before completing and return control the SDK which then allows the reboot to occur. </li>
+</ul>
+<p>This event-driven approach is very different to a conventional procedural applications written in Lua, and different from how you develop C sketches and applications for the Arduino architectures.  <em>There is little point in constructing poll loops in your NodeMCU Lua code since almost always the event that you are polling will not be delivered by the SDK until after your Lua code returns control to the SDK.</em>  The most robust and efficient approach to coding ESP8266 Lua applications is to embrace this event model paradigm, and to decompose your application into atomic tasks that are threaded by events which themselves initiate callback functions.  Each event task is established by a callback in an API call in an earlier task. </p>
+<p>Understanding how the system executes your code can help you structure it better and improve both performance and memory usage. </p>
+<ul>
+<li>
+<p><em>If you are not using timers and other callback, then you are using the wrong approach.</em></p>
+</li>
+<li>
+<p><em>If you are using poll loops, then you are using the wrong approach.</em></p>
+</li>
+<li>
+<p><em>If you are executing more an a few hundred lines of Lua per callback, then you are using the wrong approach.</em></p>
+</li>
+</ul>
+<h3 id="so-what-lua-library-functions-enable-the-registration-of-lua-callbacks">So what Lua library functions enable the registration of Lua callbacks?<a class="headerlink" href="#so-what-lua-library-functions-enable-the-registration-of-lua-callbacks" title="Permanent link">&para;</a></h3>
+<p>SDK Callbacks include:</p>
+<table>
+<thead>
+<tr>
+<th>Lua Module</th>
+<th>Functions which define or remove callbacks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tmr</td>
+<td><code>register([id,] interval, mode, function())</code></td>
+</tr>
+<tr>
+<td>node</td>
+<td><code>task.post([task_priority], function)</code>, <code>output(function(str), serial_debug)</code></td>
+</tr>
+<tr>
+<td>wifi</td>
+<td><code>startsmart(chan, function())</code>, <code>sta.getap(function(table))</code></td>
+</tr>
+<tr>
+<td>net.server</td>
+<td><code>sk:listen(port,[ip],function(socket))</code></td>
+</tr>
+<tr>
+<td>net</td>
+<td><code>sk:on(event, function(socket, [, data]))</code>, <code>sk:send(string, function(sent))</code>, <code>sk:dns(domain, function(socket,ip))</code></td>
+</tr>
+<tr>
+<td>gpio</td>
+<td><code>trig(pin, type, function(level))</code></td>
+</tr>
+<tr>
+<td>mqtt</td>
+<td><code>client:m:on(event, function(conn[, topic, data])</code></td>
+</tr>
+<tr>
+<td>uart</td>
+<td><code>uart.on(event, cnt, [function(data)], [run_input])</code></td>
+</tr>
+</tbody>
+</table>
+<p>For a comprehensive list refer to the Module documentation on this site.</p>
+<h3 id="so-what-are-the-different-ways-of-declaring-variables-and-how-is-nodemcu-different-here">So what are the different ways of declaring variables and how is NodeMCU different here?<a class="headerlink" href="#so-what-are-the-different-ways-of-declaring-variables-and-how-is-nodemcu-different-here" title="Permanent link">&para;</a></h3>
+<p>The following is all standard Lua and is explained in detail in PiL etc., but it is worth summarising here because understanding this is of particular importance in the NodeMCU environment. </p>
+<ul>
+<li>All variables in Lua can be classed as globals, locals or upvalues.  But by default any variable that is referenced and not previously declared as <code>local</code> is <strong>global</strong> and this variable will persist in the global table until it is explicitly deleted. If you want to see what global variables are in scope then try</li>
+</ul>
+<pre><code class="Lua">   for k,v in pairs(_G) do print(k,v) end
+</code></pre>
+
+<ul>
+<li>Local variables are 'lexically scoped', and you may declare any variables as local within nested blocks or functions without affecting the enclosing scope.</li>
+<li>Because locals are lexically scoped you can also refer to local variables in an outer scope and these are still accessible within the inner scope. Such variables are know as <strong>upvalues</strong>..</li>
+<li>Lua variable can be assigned two broad types of data: <strong>values</strong> such as numbers, booleans, and strings and <strong>references</strong> such as functions, tables and userdata.  You can see the difference here  when you assign the contents of a variable <code>a</code> to <code>b</code>.  In the case of a value then it is simply copied into <code>b</code>.  In the case of a reference, both <code>a</code> and <code>b</code> now refer to the <em>same object</em>, and no copying of content takes place.  This process of referencing can have some counter-intuitive consequences. For example, in the following code by the time it exists, the variable <code>timer2func</code> is out of scope.  However a reference to the function has now been stored in the Lua registry by the alarm API call, so it and any upvalues that it uses will persist until it is eventually entirely dereferenced (e.g. by <code>tmr2:unregister()</code>.</li>
+</ul>
+<pre><code class="Lua">  do
+    local tmr2func = function() ds.convert_T(true); tmr1:start() end
+    tmr2:alarm(300000, tmr.ALARM_AUTO, tmr2func)
+  end
+  -- 
+</code></pre>
+
+<ul>
+<li>You need to understand the difference between when a function is compiled, when it is bound as a closure and when it is invoked at runtime. The closure is normally bound once pretty much immediately after compile, but this isn't necessarily the case.  Consider the following example from my MCP23008 module below.</li>
+</ul>
+<pre><code class="Lua">  --  Bind the read and write functions for commonly accessed registers
+
+  for reg, regAddr in pairs {
+    IODOR = 0x00,
+    GPPU  = 0x06,  -- Pull-up resistors register for MCP23008
+    GPIO  = 0x09,
+    OLAT = 0x0A,
+    } do  
+    dev['write'..reg] = function(o, dataByte)
+                          write(MCP23008addr, regAddr, dataByte)
+                        end
+    dev['read'..reg]  = function(o)
+                          return read(MCP23008addr, regAddr)
+                        end
+  end
+</code></pre>
+
+<ul>
+<li>This loop is compiled once when the module is required.   The opcode vectors for the read and write functions are created during the compile, along with a header which defines how many upvalues and locals are used by each function. However, these two functions are then bound <em>four</em> times as different functions (e.g. <code>mcp23008.writeIODOR()</code>) and each closure inherits its own copies of the upvalues it uses so the <code>regAddr</code> for this function is <code>0x00</code>). The upvalue list is created when the closure is created and through some Lua magic, even if the outer routine that initially declared them is no longer in scope and has been GCed (Garbage Collected), the Lua RTS ensures that any upvalue will still persist whilst the closure persists.</li>
+<li>On the other hand the storage for any locals is allocated each time the routine is called, and this can be many times in a running application.</li>
+<li>The Lua runtime uses hashed key access internally to retrieve keyed data from a table.  On the other hand locals and upvalues are stored as a contiguous vector and are accessed directly by an index, which is a lot faster.  In NodeMCU Lua accesses to Firmware-based tables is particularly slow, which is why you will often see statements like the following at the beginning of modules.  <em>Using locals and upvalues this way is both a lot faster at runtime and generates less bytecode instructions for their access.</em></li>
+</ul>
+<pre><code class="Lua">local i2c = i2c
+local i2c_start, i2c_stop, i2c_address, i2c_read, i2c_write, i2c_TRANSMITTER, i2c_RECEIVER = 
+      i2c.start, i2c.stop, i2c.address, i2c.read, i2c.write, i2c.TRANSMITTER, i2c.RECEIVER
+</code></pre>
+
+<ul>
+<li>I will cover some useful Global and Upvalue techniques in later Qs.</li>
+</ul>
+<h3 id="so-how-is-context-passed-between-lua-event-tasks">So how is context passed between Lua event tasks?<a class="headerlink" href="#so-how-is-context-passed-between-lua-event-tasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>It is important to understand that a single Lua function is associated with / bound to any event callback task. This function is executed from within the relevant NodeMCU library C code using a <code>lua_call()</code>. Even system initialisation which executes the <code>dofile("init.lua")</code> is really a special case of this.  Each function can invoke other functions and so on, but it must ultimately return control to the C library code which then returns control the SDK, terminating the task. </li>
+<li>By their very nature Lua <code>local</code> variables only exist within the context of an executing Lua function, and so locals are unreferenced on exit and any local data (unless also a reference type such as a function, table, or user data which is also referenced elsewhere) can therefore be garbage collected between these <code>lua_call()</code> actions. </li>
+</ul>
+<p>So context can only be passed between event routines by one of the following mechanisms:</p>
+<ul>
+<li><strong>Globals</strong> are by nature globally accessible.  Any global will persist until explicitly dereferenced by assigning <code>nil</code> to it.  Globals can be readily enumerated, e.g. by a <code>for k,v in pairs(_G) do</code>, so their use is transparent.</li>
+<li>The <strong>File system</strong> is a special case of persistent global, so there is no reason in principle why it and the files it contains can't be used to pass context.  However the ESP8266 file system uses flash memory and even with the SPIFFS file system still has a limited write cycle lifetime, so it is best to avoid using the file system to store frequently changing content except as a mechanism of last resort.</li>
+<li>The <strong>Lua Registry</strong>.  This is a normally hidden table used by the library modules to store callback functions and other Lua data types. The GC treats the registry as in scope and hence any content referenced in the registry will not be garbage collected. </li>
+<li><strong>Upvalues</strong>.  These are a standard feature of Lua as described above that is fully implemented in NodeMCU.  When a function is declared within an outer function, all of the local variables within the outer scope are available to the inner function.  Ierusalimschy's paper, <a href="http://www.cs.tufts.edu/~nr/cs257/archive/roberto-ierusalimschy/closures-draft.pdf">Closures in Lua</a>, gives a lot more detail for those that want to dig deeper.</li>
+</ul>
+<h3 id="so-how-is-the-lua-registry-used-and-why-is-this-important">So how is the Lua Registry used and why is this important?<a class="headerlink" href="#so-how-is-the-lua-registry-used-and-why-is-this-important" title="Permanent link">&para;</a></h3>
+<p>All Lua callbacks are called by C wrapper functions within the NodeMCU libraries that are themselves callbacks that have been activated by the SDK as a result of a given event.  Such C wrapper functions themselves frequently need to store state for passing between calls or to other wrapper C functions.  The Lua registry is a special Lua table which is used for this purpose, except that it is hidden from direct Lua access, but using a standard Lua table for this store enables standard garbage collection algorithms to operate on its content.  Any content that needs to be saved is created with a unique key.  The upvalues for functions that are global or referenced in the Lua Registry will persist between event routines, and hence any upvalues used by them will also persist and can be used for passing context.</p>
+<ul>
+<li>If you are running out of memory, then you might not be correctly clearing down Registry entries.  One example is as above where you are setting up timers but not unregistering them.  Another occurs in the following code fragment. The <code>on()</code> function passes the socket to the connection callback as it's first argument <code>sck</code>.  This is local variable in the callback function, and it also references the same socket as the upvalue <code>srv</code>.  So functionally <code>srv</code> and <code>sck</code> are interchangeable.  So why pass it as an argument?  Normally garbage collecting a socket will automatically unregister any of its callbacks, but if you use a socket as an upvalue in the callback, the socket is now referenced through the Register, and now it won't be GCed because it is referenced.  Catch-22 and a programming error, not a bug. </li>
+</ul>
+<pre><code class="Lua">srv:on(&quot;connection&quot;, function(sck, c)
+  svr:send(reply)
+end)
+</code></pre>
+
+<ul>
+<li>One way to check the registry is to use the construct <code>for k,v in pairs(debug.getregistry()) do print (k,v) end</code> to track the registry size.  If this is growing then you've got a leak.</li>
+</ul>
+<h3 id="how-do-i-track-globals">How do I track globals<a class="headerlink" href="#how-do-i-track-globals" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>See the Unofficial LUA FAQ: <a href="http://lua-users.org/wiki/DetectingUndefinedVariables">Detecting Undefined Variables</a>.</p>
+</li>
+<li>
+<p>My approach is to avoid using them unless I have a <em>very</em> good reason to justify this. I track them statically by running a <code>luac -p -l XXX.lua | grep GLOBAL</code> filter on any new modules and replace any accidental globals by local or upvalued local declarations. </p>
+</li>
+<li>
+<p>On NodeMCU, _G's metatable is _G, so you can create any globals that you need and then 'close the barn door' by assigning
+<code>_G.__newindex=function(g,k,v) error ("attempting to set global "..k.." to "..v) end</code> and any attempt to create new globals with now throw an error and give you a traceback of where this has happened.</p>
+</li>
+</ul>
+<h3 id="why-is-it-importance-to-understand-how-upvalues-are-implemented-when-programming-for-the-esp8266">Why is it importance to understand how upvalues are implemented when programming for the ESP8266?<a class="headerlink" href="#why-is-it-importance-to-understand-how-upvalues-are-implemented-when-programming-for-the-esp8266" title="Permanent link">&para;</a></h3>
+<p>The use of upvalues is a core Lua feature.  This is explained in detail in PiL.  Any Lua routines defined within an outer scope my use them.  This can include routines directly or indirectly referenced in the globals table, <strong>_G</strong>, or in the Lua Registry. </p>
+<p>The number of upvalues associated with a given routine is calculated during compile and a stack vector is allocated for them when the closure is bound to hold these references.  Each upvalues is classed as open or closed. All upvalues are initially open which means that the upvalue references back to the outer function's register set.  However, upvalues must be able to outlive the scope of the outer routine where they are declared as a local variable.  The runtime VM does this by adding extra checks when executing a function return to scan any defined closures within its scope for back references and allocate memory to hold the upvalue and points the upvalue's reference to this.  This is known as a closed upvalue. </p>
+<p>This processing is a mature part of the Lua 5.x runtime system, and for normal Lua applications development this "behind-the-scenes" magic ensures that upvalues just work as any programmer might expect.  Sufficient garbage collector metadata is also stored so that these hidden values will be garbage collected correctly <em>when properly dereferenced</em>.</p>
+<p>One further complication is that some library functions don't implicitly dereference expired callback references and as a result their upvalues may not be garbage collected and this application error can be be manifested as a memory leak. So using upvalues can cause more frequent and difficult to diagnose PANICs during testing. So my general recommendation is still to stick to globals during initial development, and explicitly dereference resources by setting them to <code>nil</code> when you have done with them.</p>
+<h3 id="can-i-encapsulate-actions-such-as-sending-an-email-in-a-lua-function">Can I encapsulate actions such as sending an email in a Lua function?<a class="headerlink" href="#can-i-encapsulate-actions-such-as-sending-an-email-in-a-lua-function" title="Permanent link">&para;</a></h3>
+<p>Think about the implications of these last few answers.
+<em> An action such as composing and sending an email involves a message dialogue with a mail server over TCP.  This in turn requires calling multiple API calls to the SDK and your Lua code must return control to the C calling library for this to be scheduled, otherwise these requests will just queue up, you'll run out of RAM and your application will PANIC.
+</em> Hence it is simply <strong><em>impossible</em></strong> to write a Lua module so that you can do something like:</p>
+<pre><code class="lua">-- prepare message
+status = mail.send(to, subject, body)
+-- move on to next phase of processing.
+</code></pre>
+
+<ul>
+<li>But you could code up a event-driven task to do this and pass it a callback to be executed on completion of the mail send, something along the lines of the following.  Note that since this involves a lot of asynchronous processing and which therefore won't take place until you've returned control to the calling library C code, you will typically execute this as the last step in a function and therefore this is best done as a tailcall [PiL 6.3].</li>
+</ul>
+<pre><code class="lua">  -- prepare message
+  local ms = require(&quot;mail_sender&quot;)
+  return ms.send(to, subject, body, function(status)
+      loadfile(&quot;process_next.lua&quot;)(status)
+    end)
+</code></pre>
+
+<ul>
+<li>Building an application on the ESP8266 is a bit like threading pearls onto a necklace.  Each pearl is an event task which must be small enough to run within its RAM resources and the string is the variable context that links the pearls together.</li>
+</ul>
+<h3 id="when-and-why-should-i-avoid-using-tmrdelay">When and why should I avoid using tmr.delay()?<a class="headerlink" href="#when-and-why-should-i-avoid-using-tmrdelay" title="Permanent link">&para;</a></h3>
+<p>If you are used coding in a procedural paradigm then it is understandable that you consider using <a href="../modules/tmr/#tmrdelay"><code>tmr.delay()</code></a> to time sequence your application.  However as discussed in the previous section, with NodeMCU Lua you are coding in an event-driven paradigm.  </p>
+<p>If you look at the <code>app/modules/tmr.c</code> code for this function, then you will see that it executes a low level  <code>ets_delay_us(delay)</code>.  This function isn't part of the NodeMCU code or the SDK; it's actually part of the xtensa-lx106 boot ROM, and is a simple timing loop which polls against the internal CPU clock.  <code>tmr.delay()</code> is really intended to be used where you need to have more precise timing control on an external hardware I/O (e.g. lifting a GPIO pin high for 20  μSec).  It does this with interrupts enabled, because so there is no guarantee that the delay will be as requested, and the Lua RTS itself may inject operations such as GC, so if you do this level of precise control then you should encode your application as a C library. </p>
+<p>It will achieve no functional purpose in pretty much every other usecase, as any other system code-based activity will be blocked from execution; at worst it will break your application and create hard-to-diagnose timeout errors. We therefore deprecate its general use.</p>
+<h3 id="how-do-i-avoid-a-panic-loop-in-initlua">How do I avoid a PANIC loop in init.lua?<a class="headerlink" href="#how-do-i-avoid-a-panic-loop-in-initlua" title="Permanent link">&para;</a></h3>
+<p>Most of us have fallen into the trap of creating an <code>init.lua</code> that has a bug in it, which then causes the system to reboot and hence gets stuck in a reboot loop.  If you haven't then you probably will do so at least once.</p>
+<ul>
+<li>When this happens, the only robust solution is to reflash the firmware.</li>
+<li>The simplest way to avoid having to do this is to keep the <code>init.lua</code> as simple as possible -- say configure the wifi and then start your app using a one-time <code>tmr.alarm()</code> after a 2-3 sec delay.  This delay is long enough to issue a <code>file.remove("init.lua")</code> through the serial port and recover control that way.</li>
+<li>Another trick is to poll a spare GPIO input pin in your startup.  I do this on my boards by taking this GPIO plus Vcc to a jumper on the board, so that I can set the jumper to jump into debug mode or reprovision the software.</li>
+<li>Also it is always best to test any new <code>init.lua</code> by creating it as <code>init_test.lua</code>, say, and manually issuing a <code>dofile("init_test.lua")</code> through the serial port, and then only rename it when you are certain it is working as you require.</li>
+</ul>
+<p>See <a href="../upload/#initlua">"Uploading code" → init.lua</a> for an example.</p>
+<h2 id="compiling-and-debugging">Compiling and Debugging<a class="headerlink" href="#compiling-and-debugging" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>We recommend that you install Lua 5.1 on your delopment host.  This often is useful for debugging Lua fragments on your PC.  You also use it for compile validation.</p>
+</li>
+<li>
+<p>You can also build <code>luac.cross</code> on your development host if you have Lua locally installed.  This runs on your host and has all of the features of standard <code>luac</code>, except that the output code file will run under NodeMCU as an <em>lc</em> file.</p>
+</li>
+</ul>
+<h2 id="techniques-for-reducing-ram-and-spiffs-footprint">Techniques for Reducing RAM and SPIFFS footprint<a class="headerlink" href="#techniques-for-reducing-ram-and-spiffs-footprint" title="Permanent link">&para;</a></h2>
+<h3 id="how-do-i-minimise-the-footprint-of-an-application">How do I minimise the footprint of an application?<a class="headerlink" href="#how-do-i-minimise-the-footprint-of-an-application" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Perhaps the simplest aspect of reducing the footprint of an application is to get its scope correct.  The ESP8266 is an IoT device and not a general purpose system.  It is typically used to attach real-world monitors, controls, etc. to an intranet and is therefore designed to implement functions that have limited scope.  We commonly come across developers who are trying to treat the ESP8266 as a general purpose device and can't understand why their application can't run.  </li>
+<li>The simplest and safest way to use IoT devices is to control them through a dedicated general purpose system on the same network.  This could be a low cost system such as a <a href="https://www.raspberrypi.org/">RaspberryPi (RPi)</a> server, running your custom code or an open source home automation (HA) application. Such systems have orders of magnitude more capacity than the ESP8266, for example the RPi has 2GB RAM and its SD card can be up to 32GB in capacity, and it can support the full range of USB-attached disk drives and other devices.  It also runs a fully featured Linux OS, and has a rich selection of applications pre configured for it. There are plenty of alternative systems available in this under $50 price range, as well as proprietary HA systems which can cost 10-50 times more.</li>
+<li>Using a tiered approach where all user access to the ESP8266 is passed through a controlling server means that the end-user interface (or smartphone connector), together with all of the associated validation and security can be implemented on a system designed to have the capacity to do this.  This means that you can limit the scope of your ESP8266 application to a limited set of functions being sent to or responding to requests from this system.</li>
+<li><em>If you are trying to implement a user-interface or HTTP webserver in your ESP8266 then you are really abusing its intended purpose.  When it comes to scoping your ESP8266 applications, the adage <strong>K</strong>eep <strong>I</strong>t <strong>S</strong>imple <strong>S</strong>tupid truly applies.</em></li>
+</ul>
+<h3 id="how-do-i-minimise-the-footprint-of-an-application-on-the-file-system">How do I minimise the footprint of an application on the file system<a class="headerlink" href="#how-do-i-minimise-the-footprint-of-an-application-on-the-file-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>It is possible to write Lua code in a very compact format which is very dense in terms of functionality per KB of source code.</li>
+<li>However if you do this then you will also find it extremely difficult to debug or maintain your application.</li>
+<li>A good compromise is to use a tool such as <a href="http://luaforge.net/projects/luasrcdiet/">LuaSrcDiet</a>, which you can use to compact production code for downloading to the ESP8266:</li>
+<li>Keep a master repository of your code on your PC or a cloud-based versioning repository such as <a href="https://github.com/">GitHub</a></li>
+<li>Lay it out and comment it for ease of maintenance and debugging </li>
+<li>Use a package such as <a href="https://github.com/4refr0nt/ESPlorer">Esplorer</a> to download modules that you are debugging and to test them.</li>
+<li>Once the code is tested and stable, then compress it using LuaSrcDiet before downloading to the ESP8266.  Doing this will reduce the code footprint on the SPIFFS by 2-3x.  Also note that LuaSrcDiet has a mode which achieves perhaps 95% of the possible code compaction but which still preserves line numbering.  This means that any line number-based error messages will still be usable.</li>
+<li>Standard Lua compiled code includes a lot of debug information which almost doubles its RAM size.  <a href="../modules/node/#nodestripdebug">node.stripdebug()</a> can be used to change this default setting either to increase the debug information for a given module or to remove line number information to save a little more space.  Using <code>node.compile()</code> to pre-compile any production code will remove all compiled code including error line info and so is not recommended except for stable production code where line numbers are not needed.</li>
+</ul>
+<h3 id="how-do-i-minimise-the-footprint-of-running-application">How do I minimise the footprint of running application?<a class="headerlink" href="#how-do-i-minimise-the-footprint-of-running-application" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The Lua Garbage collector is very aggressive at scanning and recovering dead resources.  It uses an incremental mark-and-sweep strategy which means that any data which is not ultimately referenced back to the Globals table, the Lua registry or in-scope local variables in the current Lua code will be collected.</li>
+<li>Setting any variable to <code>nil</code> dereferences the previous context of that variable.  (Note that reference-based variables such as tables, strings and functions can have multiple variables referencing the same object, but once the last reference has been set to <code>nil</code>, the collector will recover the storage.</li>
+<li>Unlike other compile-on-load languages such as PHP, Lua compiled code is treated the same way as any other variable type when it comes to garbage collection and can be collected when fully dereferenced, so that the code-space can be reused.</li>
+<li>The default garbage collection mode is very aggressive and results in a GC sweep after every allocation.  See <a href="../modules/node/#nodeegcsetmode">node.egc.setmode()</a> for how to turn this down. <code>node.egc.setmode(node.egc.ON_MEM_LIMIT, 4096)</code> is a good compromise of performance and having enough free headboard.</li>
+<li>Lua execution is intrinsically divided into separate event tasks with each bound to a Lua callback.  This, when coupled with the strong dispose on dereference feature, means that it is very easy to structure your application using an classic technique which dates back to the 1950s known as Overlays.</li>
+<li>Various approaches can be use to implement this.  One is described by DP Whittaker in his <a href="http://www.esp8266.com/viewtopic.php?f=19&amp;t=1940">Massive memory optimization: flash functions</a> topic.  Another is to use <em>volatile modules</em>.  There are standard Lua templates for creating modules, but the <code>require()</code> library function creates a reference for the loaded module in the <code>package.loaded</code> table, and this reference prevents the module from being garbage collected.  To make a module volatile, you should remove this reference to the loaded module by setting its corresponding entry in <code>package.loaded</code> to <code>nil</code>.  You can't do this in the outermost level of the module (since the reference is only created once execution has returned from the module code), but you can do it in any module function, and typically an initialisation function for the module, as in the following example:</li>
+</ul>
+<pre><code class="lua">local s=net.createServer(net.TCP) 
+s:listen(80,function(c) require(&quot;connector&quot;).init(c) end) 
+</code></pre>
+
+<ul>
+<li><strong><code>connector.lua</code></strong> would be a standard module pattern except that the <code>M.init()</code> routine must include the lines</li>
+</ul>
+<pre><code class="lua">local M, module = {}, ...
+...
+function M.init(csocket)
+  package.loaded[module]=nil
+  ...
+end
+--
+return M 
+</code></pre>
+
+<ul>
+<li>This approach ensures that the module can be fully dereferenced on completion.  OK, in this case, this also means that the module has to be reloaded on each TCP connection to port 80; however, loading a compiled module from SPIFFS only takes a few mSec, so surely this is an acceptable overhead if it enables you to break down your application into RAM-sized chunks.  Note that <code>require()</code> will automatically search for <code>connector.lc</code> followed by <code>connector.lua</code>, so the code will work for both source and compiled variants. </li>
+<li>Whilst the general practice is for a module to return a table, [PiL 15.1] suggests that it is sometimes appropriate to return a single function instead as this avoids the memory overhead of an additional table. This pattern would look as follows:</li>
+</ul>
+<pre><code class="lua">--
+local s=net.createServer(net.TCP) 
+s:listen(80,function(c) require(&quot;connector&quot;)(c) end) 
+</code></pre>
+
+<pre><code class="lua">local module = _  -- this is a situation where using an upvalue is essential!
+return function (csocket)
+  package.loaded[module]=nil
+  module = nil
+  ...
+end
+</code></pre>
+
+<ul>
+<li>Also note that you should <strong><em>not</em></strong> normally code this up listener call as the following because the RAM now has to accommodate both the module which creates the server <em>and</em> the connector logic.</li>
+</ul>
+<pre><code class="lua">...
+local s=net.createServer(net.TCP)
+local connector = require(&quot;connector&quot;) -- don't do this unless you've got the RAM available! 
+s:listen(80,connector) 
+</code></pre>
+
+<h3 id="how-do-i-reduce-the-size-of-my-compiled-code">How do I reduce the size of my compiled code?<a class="headerlink" href="#how-do-i-reduce-the-size-of-my-compiled-code" title="Permanent link">&para;</a></h3>
+<p>Note that there are two methods of saving compiled Lua to SPIFFS:
+  - The first is to use <code>node.compile()</code> on the <code>.lua</code> source file, which generates the equivalent bytecode <code>.lc</code> file. This approach strips out all the debug line and variable information.
+  - The second is to use <code>loadfile()</code> to load the source file into memory, followed by <code>string.dump()</code> to convert it in-memory to a serialised load format which can then be written back to a <code>.lc</code> file.  The amount of debug saved will depend on the <a href="../modules/node/#nodestripdebug">node.stripdebug()</a> settings.</p>
+<p>The memory footprint of the bytecode created by method (2) is the same as when executing source files directly, but the footprint of bytecode created by method (1) is typically 10% smaller than a dump with the stripdebug level of 2 or 60% smaller than a dump with a  stripdebug level of 0, because the debug information is almost as large as the code itself.</p>
+<p>In general consider method (1) if you have stable production code that you want to run in as low a RAM footprint as possible.  Yes, method (2) can be used if you are still debugging, but you will probably be changing this code quite frequently, so it is easier to stick with <code>.lua</code> files for code that you are still developing.</p>
+<p>Note that if you use <code>require("XXX")</code> to load your code then this will automatically search for <code>XXX.lc</code> then <code>XXX.lua</code> so you don't need to include the conditional logic to load the bytecode version if it exists, falling back to the source version otherwise.</p>
+<h3 id="how-do-i-get-a-feel-for-how-much-memory-my-functions-use">How do I get a feel for how much memory my functions use?<a class="headerlink" href="#how-do-i-get-a-feel-for-how-much-memory-my-functions-use" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You should get an overall understanding of the VM model if you want to make good use of the limited resources available to Lua applications.  An essential reference here is <a href="http://luaforge.net/docman/83/98/ANoFrillsIntroToLua51VMInstructions.pdf">A No Frills Introduction to Lua 5.1 VM Instructions</a> .  This explain how the code generator works, how much memory overhead is involved with each table, function, string etc..</li>
+<li>You can't easily get a bytecode listing of your ESP8266 code; however there are two broad options for doing this:</li>
+<li><strong>Generate a bytecode listing on your development PC</strong>. The Lua 5.1 code generator is basically the same on the PC and on the ESP8266, so whilst it isn't identical, using the standard Lua batch compiler <code>luac</code> against your source on your PC with the <code>-l -s</code> option will give you a good idea of what your code will generate.  The main difference between these two variants is the size_t for ESP8266 is 4 bytes rather than the 8 bytes size_t found on modern 64bit development PCs; and the eLua variants generate different access references for ROM data types.  If you want to see what the <code>string.dump()</code> version generates then drop the <code>-s</code> option to retain the debug information.  You can also build <code>luac.cross</code> with this firmware and this generate lc code for the target ESP architecture.</li>
+<li><strong>Upload your <code>.lc</code> files to the PC and disassemble them there</strong>. There are a number of Lua code disassemblers which can list off the compiled code that your application modules will generate, <code>if</code> you have a script to upload files from your ESP8266 to your development PC.  I use <a href="http://luaforge.net/projects/chunkspy/">ChunkSpy</a>  which can be downloaded <a href="http://files.luaforge.net/releases/chunkspy/chunkspy/ChunkSpy-0.9.8/ChunkSpy-0.9.8.zip">here</a> , but you will need to apply the following patch so that ChunkSpy understands eLua data types:</li>
+</ul>
+<pre><code class="diff"> --- a/ChunkSpy-0.9.8/5.1/ChunkSpy.lua   2015-05-04 12:39:01.267975498 +0100
+ +++ b/ChunkSpy-0.9.8/5.1/ChunkSpy.lua   2015-05-04 12:35:59.623983095 +0100
+ @@ -2193,6 +2193,9 @@
+            config.AUTO_DETECT = true
+          elseif a == &quot;--brief&quot; then
+            config.DISPLAY_BRIEF = true
+ +        elseif a == &quot;--elua&quot; then
+ +          config.LUA_TNUMBER = 5
+ +          config.LUA_TSTRING = 6
+          elseif a == &quot;--interact&quot; then
+            perform = ChunkSpy_Interact
+</code></pre>
+
+<ul>
+<li>Your other great friend is to use <code>node.heap()</code> regularly through your code.</li>
+<li>Use these tools and play with coding approaches to see how many instructions each typical line of code takes in your coding style.  The Lua Wiki gives some general optimisation tips, but in general just remember that these focus on optimising for execution speed and you will be interested mainly in optimising for code and variable space as these are what consumes precious RAM.</li>
+</ul>
+<h3 id="what-is-the-cost-of-using-functions">What is the cost of using functions?<a class="headerlink" href="#what-is-the-cost-of-using-functions" title="Permanent link">&para;</a></h3>
+<p>Functions have fixed overheads, so in general the more that you group your application code into larger functions, then the less RAM used will be used overall.  The main caveat here is that if you are starting to do "copy and paste" coding across functions then you are wasting resources.  So of course you should still use functions to structure your code and encapsulate common repeated processing, but just bear in mind that each function definition has a relatively high overhead for its header record and stack frame.  <em>So try to avoid overusing functions. If there are less than a dozen or so lines in the function then you should consider putting this code inline if it makes sense to do so.</em></p>
+<h3 id="what-other-resources-are-available">What other resources are available?<a class="headerlink" href="#what-other-resources-are-available" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install lua and luac on your development PC.  This is freely available for Windows, Mac and Linux distributions, but we strongly suggest that you use Lua 5.1 to maintain source compatibility with ESP8266 code.  This will allow you not only to unit test some modules on your PC in a rich development environment, but you can also use <code>luac</code> to generate a bytecode listing of your code and to validate new code syntactically before downloading to the ESP8266.  This will also allow you to develop server-side applications and embedded applications in a common language. </li>
+</ul>
+<h2 id="firmware-and-lua-app-development">Firmware and Lua app development<a class="headerlink" href="#firmware-and-lua-app-development" title="Permanent link">&para;</a></h2>
+<h3 id="how-to-reduce-the-size-of-the-firmware">How to reduce the size of the firmware?<a class="headerlink" href="#how-to-reduce-the-size-of-the-firmware" title="Permanent link">&para;</a></h3>
+<ul>
+<li>We recommend that you use a tailored firmware build; one which only includes the modules that you plan to use in developing any Lua application. Once you have the ability to make and flash custom builds, the you also have the option of moving time sensitive or logic intensive code into your own custom module. Doing this can save a large amount of RAM as C code can be run directly from Flash memory. See <a href="../../build/">Building the firmware</a> for more details and options.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extn-developer-faq/" class="btn btn-neutral float-right" title="Extension Developer FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../upload/" class="btn btn-neutral" title="Uploading code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../upload/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../extn-developer-faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/extra.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

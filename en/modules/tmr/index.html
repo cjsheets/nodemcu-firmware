@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>tmr - NodeMCU Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "tmr";
+    var mkdocs_page_input_path = "en/modules/tmr.md";
+    var mkdocs_page_url = "/en/modules/tmr/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> NodeMCU Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../build/">Building the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../flash/">Flashing the firmware</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../spiffs/">Internal filesystem notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sdcard/">Filesystem on SD card</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../upload/">Uploading code</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">FAQs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lua-developer-faq/">Lua Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../extn-developer-faq/">Extension Developer FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hardware-faq/">Hardware FAQ</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Modules</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../adc/">adc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ads1115/">ads1115</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../adxl345/">adxl345</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../am2320/">am2320</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apa102/">apa102</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bit/">bit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bme280/">bme280</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bmp085/">bmp085</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cjson/">cjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coap/">coap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cron/">cron</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../crypto/">crypto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dht/">dht</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ds18b20/">ds18b20</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../encoder/">encoder</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../enduser-setup/">enduser setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file/">file</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gdbstub/">gdbstub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gpio/">gpio</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hdc1080/">hdc1080</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hmc5883l/">hmc5883l</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../http/">http</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx711/">hx711</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../i2c/">i2c</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../l3g4200d/">l3g4200d</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mcp4725/">mcp4725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mdns/">mdns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mqtt/">mqtt</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../net/">net</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ow/">ow (1-Wire)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pcm/">pcm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../perf/">perf</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pwm/">pwm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rc/">rc</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rfswitch/">rfswitch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rotary/">rotary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcfifo/">rtcfifo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtcmem/">rtcmem</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rtctime/">rtctime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../si7021/">si7021</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sigma-delta/">sigma delta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sjson/">sjson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sntp/">sntp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../somfy/">somfy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../spi/">spi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../struct/">struct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switec/">switec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tcs34725/">tcs34725</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tls/">tls</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tm1829/">tm1829</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">tmr</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#timer-module">Timer Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#tmralarm">tmr.alarm()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrcreate">tmr.create()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrdelay">tmr.delay()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrinterval">tmr.interval()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrnow">tmr.now()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrregister">tmr.register()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrresume">tmr.resume()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrresume_all">tmr.resume_all()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrsoftwd">tmr.softwd()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrstart">tmr.start()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrstate">tmr.state()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrstop">tmr.stop()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrsuspend">tmr.suspend()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrsuspend_all">tmr.suspend_all()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrtime">tmr.time()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrunregister">tmr.unregister()</a></li>
+        
+            <li><a class="toctree-l4" href="#tmrwdclr">tmr.wdclr()</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tsl2561/">tsl2561</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../u8g/">u8g</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uart/">uart</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ucg/">ucg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/">websocket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wifi/">wifi</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wps/">wps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2801/">ws2801</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws2812/">ws2812</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../xpt2046/">xpt2046</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">NodeMCU Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modules &raquo;</li>
+        
+      
+    
+    <li>tmr</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nodemcu/nodemcu-firmware/edit/master/docs/en/modules/tmr.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="timer-module">Timer Module<a class="headerlink" href="#timer-module" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th align="left">Since</th>
+<th align="left">Origin / Contributor</th>
+<th align="left">Maintainer</th>
+<th align="left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2014-12-12</td>
+<td align="left"><a href="https://github.com/funshine">Zeroday</a></td>
+<td align="left"><a href="https://github.com/dnc40085">dnc40085</a></td>
+<td align="left"><a href="../../../../app/modules/tmr.c">tmr.c</a></td>
+</tr>
+</tbody>
+</table>
+<p>The tmr module allows access to simple timers, the system counter and uptime.</p>
+<p>It is aimed at setting up regularly occurring tasks, timing out operations, and provide low-resolution deltas.</p>
+<p>What the tmr module is <em>not</em> however, is a time keeping module. While most timeouts are expressed in milliseconds or even microseconds, the accuracy is limited and compounding errors would lead to rather inaccurate time keeping. Consider using the <a href="../rtctime/">rtctime</a> module for "wall clock" time.</p>
+<p>NodeMCU provides 7 static timers, numbered 0-6, and dynamic timer creation function <a href="#tmrcreate"><code>tmr.create()</code></a>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Static timers are deprecated and will be removed later. Use the OO API initiated with <a href="#tmrcreate"><code>tmr.create()</code></a>.</p>
+</div>
+<h2 id="tmralarm">tmr.alarm()<a class="headerlink" href="#tmralarm" title="Permanent link">&para;</a></h2>
+<p>This is a convenience function combining <a href="#tmrregister"><code>tmr.register()</code></a> and <a href="#tmrstart"><code>tmr.start()</code></a> into a single call.</p>
+<p>To free up the resources with this timer when done using it, call <a href="#tmrunregister"><code>tmr.unregister()</code></a> on it. For one-shot timers this is not necessary, unless they were stopped before they expired.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>tmr.alarm([id/ref], interval_ms, mode, func())</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</li>
+<li><code>interval_ms</code> timer interval in milliseconds. Maximum value is 6870947 (1:54:30.947).</li>
+<li><code>mode</code> timer mode:<ul>
+<li><code>tmr.ALARM_SINGLE</code> a one-shot alarm (and no need to call <a href="#tmrunregister"><code>tmr.unregister()</code></a>)</li>
+<li><code>tmr.ALARM_SEMI</code> manually repeating alarm (call <a href="#tmrstart"><code>tmr.start()</code></a> to restart)</li>
+<li><code>tmr.ALARM_AUTO</code> automatically repeating alarm</li>
+</ul>
+</li>
+<li><code>func(timer)</code> callback function which is invoked with the timer object as an argument</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if the timer was started, <code>false</code> on error</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">if not tmr.create():alarm(5000, tmr.ALARM_SINGLE, function()
+  print(&quot;hey there&quot;)
+end)
+then
+  print(&quot;whoopsie&quot;)
+end
+</code></pre>
+
+<h4 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrcreate"><code>tmr.create()</code></a></li>
+<li><a href="#tmrregister"><code>tmr.register()</code></a></li>
+<li><a href="#tmrstart"><code>tmr.start()</code></a></li>
+<li><a href="#tmrunregister"><code>tmr.unregister()</code></a></li>
+</ul>
+<h2 id="tmrcreate">tmr.create()<a class="headerlink" href="#tmrcreate" title="Permanent link">&para;</a></h2>
+<p>Creates a dynamic timer object.</p>
+<p>Dynamic timer can be used instead of numeric ID in control functions. Also can be controlled in object-oriented way.</p>
+<p>Functions supported in timer object:</p>
+<ul>
+<li><a href="#tmralarm"><code>t:alarm()</code></a></li>
+<li><a href="#tmrinterval"><code>t:interval()</code></a></li>
+<li><a href="#tmrregister"><code>t:register()</code></a></li>
+<li><a href="#tmrresume"><code>t:resume()</code></a></li>
+<li><a href="#tmrstart"><code>t:start()</code></a></li>
+<li><a href="#tmrstate"><code>t:state()</code></a></li>
+<li><a href="#tmrstop"><code>t:stop()</code></a></li>
+<li><a href="#tmrsuspend"><code>t:suspend()</code></a></li>
+<li><a href="#tmrunregister"><code>t:unregister()</code></a></li>
+</ul>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p><code>timer</code> object</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">local mytimer = tmr.create()
+
+-- oo calling
+mytimer:register(5000, tmr.ALARM_SINGLE, function (t) print(&quot;expired&quot;); t:unregister() end)
+mytimer:start()
+
+-- with self parameter
+tmr.register(mytimer, 5000, tmr.ALARM_SINGLE, function (t) print(&quot;expired&quot;); tmr.unregister(t) end)
+tmr.start(mytimer)
+</code></pre>
+
+<h2 id="tmrdelay">tmr.delay()<a class="headerlink" href="#tmrdelay" title="Permanent link">&para;</a></h2>
+<p>Busyloops the processor for a specified number of microseconds.</p>
+<p>This is in general a <strong>bad</strong> idea, because nothing else gets to run, and the networking stack (and other things) can fall over as a result. The only time <code>tmr.delay()</code> may be appropriate to use is if dealing with a peripheral device which needs a (very) brief delay between commands, or similar. <em>Use with caution!</em></p>
+<p>Also note that the actual amount of time delayed for may be noticeably greater, both as a result of timing inaccuracies as well as interrupts which may run during this time.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>tmr.delay(us)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p><code>us</code> microseconds to busyloop for</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">tmr.delay(100)
+</code></pre>
+
+<h2 id="tmrinterval">tmr.interval()<a class="headerlink" href="#tmrinterval" title="Permanent link">&para;</a></h2>
+<p>Changes a registered timer's expiry interval.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>tmr.interval([id/ref], interval_ms)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</li>
+<li><code>interval_ms</code> new timer interval in milliseconds. Maximum value is 6870947 (1:54:30.947).</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">mytimer = tmr.create()
+mytimer:register(10000, tmr.ALARM_AUTO, function() print(&quot;hey there&quot;) end)
+mytimer:interval(3000) -- actually, 3 seconds is better!
+mytimer:start()
+</code></pre>
+
+<h2 id="tmrnow">tmr.now()<a class="headerlink" href="#tmrnow" title="Permanent link">&para;</a></h2>
+<p>Returns the system counter, which counts in microseconds. Limited to 31 bits, after that it wraps around back to zero. That is essential if you use this function to <a href="https://github.com/hackhitchin/esp8266-co-uk/issues/2">debounce or throttle GPIO input</a>.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>tmr.now()</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>the current value of the system counter</p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(tmr.now())
+print(tmr.now())
+</code></pre>
+
+<h2 id="tmrregister">tmr.register()<a class="headerlink" href="#tmrregister" title="Permanent link">&para;</a></h2>
+<p>Configures a timer and registers the callback function to call on expiry.</p>
+<p>To free up the resources with this timer when done using it, call <a href="#tmrunregister"><code>tmr.unregister()</code></a> on it. For one-shot timers this is not necessary, unless they were stopped before they expired.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>tmr.register([id/ref], interval_ms, mode, func())</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</li>
+<li><code>interval_ms</code> timer interval in milliseconds. Maximum value is 6870947 (1:54:30.947).</li>
+<li><code>mode</code> timer mode:<ul>
+<li><code>tmr.ALARM_SINGLE</code> a one-shot alarm (and no need to call <a href="#tmrunregister"><code>tmr.unregister()</code></a>)</li>
+<li><code>tmr.ALARM_SEMI</code> manually repeating alarm (call <a href="#tmrunregister"><code>tmr.start()</code></a> to restart)</li>
+<li><code>tmr.ALARM_AUTO</code> automatically repeating alarm</li>
+</ul>
+</li>
+<li><code>func(timer)</code> callback function which is invoked with the timer object as an argument</li>
+</ul>
+<p>Note that registering does <em>not</em> start the alarm.</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">mytimer = tmr.create()
+mytimer:register(5000, tmr.ALARM_SINGLE, function() print(&quot;hey there&quot;) end)
+mytimer:start()
+</code></pre>
+
+<h4 id="see-also_1">See also<a class="headerlink" href="#see-also_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrcreate"><code>tmr.create()</code></a></li>
+<li><a href="#tmralarm"><code>tmr.alarm()</code></a></li>
+</ul>
+<h2 id="tmrresume">tmr.resume()<a class="headerlink" href="#tmrresume" title="Permanent link">&para;</a></h2>
+<p>Resume an individual timer.</p>
+<p>Resumes a timer that has previously been suspended with either <code>tmr.suspend</code> or <code>tmr.suspend_all</code> </p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>tmr.resume(id/ref)</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<p><code>id/ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if timer was resumed successfully </p>
+<h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--resume timer mytimer
+mytimer:resume()
+
+--alternate metod
+tmr.resume(mytimer)
+
+</code></pre>
+
+<h4 id="see-also_2">See also<a class="headerlink" href="#see-also_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrsuspend"><code>tmr.suspend()</code></a></li>
+<li><a href="#tmrsuspendall"><code>tmr.suspend_all()</code></a></li>
+<li><a href="#tmrresumeall"><code>tmr.resume_all()</code></a></li>
+</ul>
+<h2 id="tmrresume_all">tmr.resume_all()<a class="headerlink" href="#tmrresume_all" title="Permanent link">&para;</a></h2>
+<p>Resume all timers.</p>
+<p>Resumes all timers including those previously been suspended with either <code>tmr.suspend</code> or <code>tmr.suspend_all</code> </p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>tmr.resume_all()</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if timers were resumed successfully </p>
+<h4 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--resume all previously suspended timers
+tmr.resume_all()
+
+</code></pre>
+
+<h4 id="see-also_3">See also<a class="headerlink" href="#see-also_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrsuspend"><code>tmr.suspend()</code></a></li>
+<li><a href="#tmrsuspendall"><code>tmr.suspend_all()</code></a></li>
+<li><a href="#tmrresume"><code>tmr.resume()</code></a></li>
+</ul>
+<h2 id="tmrsoftwd">tmr.softwd()<a class="headerlink" href="#tmrsoftwd" title="Permanent link">&para;</a></h2>
+<p>Provides a simple software watchdog, which needs to be re-armed or disabled before it expires, or the system will be restarted.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>tmr.softwd(timeout_s)</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p><code>timeout_s</code> watchdog timeout, in seconds. To disable the watchdog, use -1 (or any other negative value).</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">function on_success_callback()
+  tmr.softwd(-1)
+  print(&quot;Complex task done, soft watchdog disabled!&quot;)
+end
+
+tmr.softwd(5)
+-- go off and attempt to do whatever might need a restart to recover from
+complex_stuff_which_might_never_call_the_callback(on_success_callback)
+</code></pre>
+
+<h2 id="tmrstart">tmr.start()<a class="headerlink" href="#tmrstart" title="Permanent link">&para;</a></h2>
+<p>Starts or restarts a previously configured timer.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>tmr.start([id/ref])</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<p><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if the timer was started, <code>false</code> on error</p>
+<h4 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">mytimer = tmr.create()
+mytimer:register(5000, tmr.ALARM_SINGLE, function() print(&quot;hey there&quot;) end)
+if not mytimer:start() then print(&quot;uh oh&quot;) end
+</code></pre>
+
+<h4 id="see-also_4">See also<a class="headerlink" href="#see-also_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrcreate"><code>tmr.create()</code></a></li>
+<li><a href="#tmrregister"><code>tmr.register()</code></a></li>
+<li><a href="#tmrstop"><code>tmr.stop()</code></a></li>
+<li><a href="#tmrunregister"><code>tmr.unregister()</code></a></li>
+</ul>
+<h2 id="tmrstate">tmr.state()<a class="headerlink" href="#tmrstate" title="Permanent link">&para;</a></h2>
+<p>Checks the state of a timer.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>tmr.state([id/ref])</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<p><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p>(bool, int) or <code>nil</code></p>
+<p>If the specified timer is registered, returns whether it is currently started and its mode. If the timer is not registered, <code>nil</code> is returned.</p>
+<h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">mytimer = tmr.create()
+print(mytimer:state()) -- nil
+mytimer:register(5000, tmr.ALARM_SINGLE, function() print(&quot;hey there&quot;) end)
+running, mode = mytimer:state()
+print(&quot;running: &quot; .. tostring(running) .. &quot;, mode: &quot; .. mode) -- running: false, mode: 0
+</code></pre>
+
+<h2 id="tmrstop">tmr.stop()<a class="headerlink" href="#tmrstop" title="Permanent link">&para;</a></h2>
+<p>Stops a running timer, but does <em>not</em> unregister it. A stopped timer can be restarted with <a href="#tmrstart"><code>tmr.start()</code></a>.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>tmr.stop([id/ref])</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if the timer was stopped, <code>false</code> on error</p>
+<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">mytimer = tmr.create()
+if not mytimer:stop() then print(&quot;timer not stopped, not registered?&quot;) end
+</code></pre>
+
+<h4 id="see-also_5">See also<a class="headerlink" href="#see-also_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrregister"><code>tmr.register()</code></a></li>
+<li><a href="#tmrstop"><code>tmr.stop()</code></a></li>
+<li><a href="#tmrunregister"><code>tmr.unregister()</code></a></li>
+</ul>
+<h2 id="tmrsuspend">tmr.suspend()<a class="headerlink" href="#tmrsuspend" title="Permanent link">&para;</a></h2>
+<p>Suspend an armed timer. </p>
+<ul>
+<li>Timers can be suspended at any time after they are armed.</li>
+<li>If a timer is rearmed with <code>tmr.start</code> or <code>tmr.alarm</code> any matching suspended timers will be discarded.</li>
+</ul>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>tmr.suspend(id/ref)</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p><code>id/ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if timer was resumed successfully </p>
+<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--suspend timer mytimer
+mytimer:suspend()
+
+--alternate metod
+tmr.suspend(mytimer)
+
+</code></pre>
+
+<h4 id="see-also_6">See also<a class="headerlink" href="#see-also_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrsuspendall"><code>tmr.suspend_all()</code></a></li>
+<li><a href="#tmrresume"><code>tmr.resume()</code></a></li>
+<li><a href="#tmrresumeall"><code>tmr.resume_all()</code></a></li>
+</ul>
+<h2 id="tmrsuspend_all">tmr.suspend_all()<a class="headerlink" href="#tmrsuspend_all" title="Permanent link">&para;</a></h2>
+<p>Suspend all currently armed timers. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function suspends ALL active timers, including any active timers started by the NodeMCU subsystem or other modules. this may cause parts of your program to stop functioning properly. 
+USE THIS FUNCTION AT YOUR OWN RISK!</p>
+</div>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>tmr.suspend_all()</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p><code>true</code> if timers were suspended successfully </p>
+<h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">--suspend timer mytimer
+tmr.suspend_all()
+
+</code></pre>
+
+<h4 id="see-also_7">See also<a class="headerlink" href="#see-also_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="#tmrsuspend"><code>tmr.suspendl()</code></a></li>
+<li><a href="#tmrresume"><code>tmr.resume()</code></a></li>
+<li><a href="#tmrresumeall"><code>tmr.resume_all()</code></a></li>
+</ul>
+<h2 id="tmrtime">tmr.time()<a class="headerlink" href="#tmrtime" title="Permanent link">&para;</a></h2>
+<p>Returns the system uptime, in seconds. Limited to 31 bits, after that it wraps around back to zero.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>tmr.time()</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>the system uptime, in seconds, possibly wrapped around</p>
+<h4 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">print(&quot;Uptime (probably):&quot;, tmr.time())
+</code></pre>
+
+<h2 id="tmrunregister">tmr.unregister()<a class="headerlink" href="#tmrunregister" title="Permanent link">&para;</a></h2>
+<p>Stops the timer (if running) and unregisters the associated callback.</p>
+<p>This isn't necessary for one-shot timers (<code>tmr.ALARM_SINGLE</code>), as those automatically unregister themselves when fired.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>tmr.unregister([id/ref])</code></p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<p><code>id</code>/<code>ref</code> timer id (0-6) or object, obsolete for OO API (→ <a href="#tmrcreate"><code>tmr.create()</code></a>)</p>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+<h4 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h4>
+<pre><code class="lua">tmr.unregister(0)
+</code></pre>
+
+<h4 id="see-also_8">See also<a class="headerlink" href="#see-also_8" title="Permanent link">&para;</a></h4>
+<p><a href="#tmrregister"><code>tmr.register()</code></a></p>
+<h2 id="tmrwdclr">tmr.wdclr()<a class="headerlink" href="#tmrwdclr" title="Permanent link">&para;</a></h2>
+<p>Feed the system watchdog.</p>
+<p><em>In general, if you ever need to use this function, you are doing it wrong.</em></p>
+<p>The event-driven model of NodeMCU means that there is no need to be sitting in hard loops waiting for things to occur. Rather, simply use the callbacks to get notified when somethings happens. With this approach, there should never be a need to manually feed the system watchdog.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>tmr.wdclr()</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<p>none</p>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p><code>nil</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tsl2561/" class="btn btn-neutral float-right" title="tsl2561">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tm1829/" class="btn btn-neutral" title="tm1829"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nodemcu/nodemcu-firmware/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tm1829/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tsl2561/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/extra.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>
